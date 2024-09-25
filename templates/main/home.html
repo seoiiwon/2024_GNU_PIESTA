@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page3.css') }}">
     <script src="{{ url_for('static', path='js/main/home.js') }}" defer></script>
     <title>2024 GNU FIESTA</title>
 </head>
@@ -12,8 +12,51 @@
     <!-- Page1 포스터&디데이 -->
     <div id="home_poster"></div>
     <!-- Page2 라인업 -->
-    <div id="home_lineup"></div>
+    <div id="home_lineup">
+        <!-- 로고 div -->
+        <div id="logoImg">
+            <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+            <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+        </div>
+    </div>
     <!-- Page3 공지&오시는길 -->
-    <div id="home_info"></div>
+    <div id="home_info">
+        <div class="announcement titleBox">
+            <img class="icon" src="{{ url_for('static', path='icons/announcement_icon.svg')}}" alt="">
+            <div class="title">공지사항</div>
+        </div>
+        <div class="announcementBoxContainer">
+            <div class="announcementBox">
+                <div class="announcementTitle">
+                    <div>[우천 안내]</div>
+                    <div>우천 시 공지사항</div>
+                </div>
+                <div class="announcementContent">
+                    <div>우천시 이벤트 부스 조기 마감 될 </div>
+                </div>
+            </div>
+        </div>
+        <div class="vehicle titleBox">
+            <img class="icon" src="{{ url_for('static', path='icons/bus_icon.svg')}}" alt="">
+            <div class="title">오시는 길</div>
+        </div>
+        <div>
+            <div class="toggleBox">
+                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
+                <div class="campus">경상국립대학교 칠암캠퍼스</div>
+            </div>
+            <hr class="dottedLine">
+            <div class="toggleBox">
+                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
+                <div class="campus">경상국립대학교 통영캠퍼스</div>
+            </div>
+            <hr class="dottedLine">
+            <div class="toggleBox">
+                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
+                <div class="campus">경상국립대학교 창원산학캠퍼스</div>
+            </div>
+            <hr class="dottedLine">
+        </div>
+    </div>
 </body>
 </html>

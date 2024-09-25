@@ -1,0 +1,162 @@
+font-face {
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
+div, body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#home_poster {
+    background-color: aqua;
+}
+
+#home_lineup {
+    background-color: violet;
+}
+
+#home_info {
+    background-color: #2C2F74;
+}
+
+/* PIESTA LOGO */
+#logoImg {
+    position: fixed;
+    width: 60vw;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+.logoDate {
+    text-align: center;
+    font-family: "Pretendard-Regular";
+    color: #AFAFAF;
+    font-size: 2.5vw;
+    letter-spacing: 0.5vw;
+}
+.logo-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 공지사항 */
+.announcement {
+    display: flex;
+    position: relative;
+}
+/* 오시는 길 */
+.vehicle {
+    display: flex;
+    position: relative;
+}
+.title {
+    font-weight: bold;
+    background: linear-gradient(to bottom, #ffffff, #FFE2BC);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 0px 2px 4px rgba(255, 226, 188, 0.5);
+}
+
+/* 공지사항 컨테이너 */
+.announcementBox {
+    background-color: rgb(217, 217, 217, 0.5);
+    border-radius: 10px;
+    display: inline-block;
+}
+.announcementTitle {
+    font-weight: bold;
+    color: #ffffff;
+}
+.announcementContent {
+    color: #DFDFDF;
+}
+
+/* 오시는 길 */
+.toggle {
+    width: fit-content;
+    display: inline-block;
+}
+.campus {
+    color: #FFFFFF;
+    display: inline-block;
+}
+
+/* 구분선 */
+.dottedLine {
+    border: none; 
+    border-top: 2px dotted #DFDFDF;
+}
+
+@media (max-width: 1024px) {
+    #home_poster, #home_lineup, #home_info {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .titleBox {
+        display: flex;
+        align-items: center;
+    }
+    .announcement {
+        margin-top: 18vh;
+        margin-left: 8vw;
+    }
+    .vehicle {
+        margin-top: 4vh;
+        margin-left: 8vw;
+    }
+    .icon {
+        height: 6vw;
+        width: auto;
+        margin-right: 4vw;
+    }
+    .title {
+        font-size: 5vw;
+    }
+
+    .announcementBoxContainer {
+        margin-top: 2vh;
+        margin-left: 8vw;
+    }
+    .announcementBox {
+        width: 55vw;
+        height: 12vh;
+    }
+    .announcementTitle {
+        font-size: 4vw;
+        margin: 3vw 3vw 0vw 3vw;
+    }
+    .announcementContent {
+        margin: 2vw 3vw 0 3vw;
+    }
+
+    /* 오시는 길 */
+    .toggleBox {
+        margin: 4vh 8vw 0 8vw;
+        display: flex; 
+        align-items: center;
+    }
+    .toggle {
+        height: 4vw;
+    }
+    .campus {
+        font-size: 4vw;
+        margin-left: 4vw;
+    }
+
+    /* 구분선 */
+    .dottedLine {
+        width: 80vw;
+        margin: 2vh 8vw; 
+    }
+}
