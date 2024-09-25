@@ -9,3 +9,7 @@ templates = Jinja2Templates(directory="./templates/main")
 @router.get("/test", response_class=HTMLResponse)
 async def testRouter(request: Request):
     return templates.TemplateResponse(name="test.html", request=request)
+
+@router.get("/GNU_FIESTA/home", response_class=HTMLResponse)
+async def getHome(request: Request):
+    return templates.TemplateResponse(name="home.html", request=request)
