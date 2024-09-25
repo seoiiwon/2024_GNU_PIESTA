@@ -1,0 +1,26 @@
+div {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#home_poster {
+    background-color: aqua;
+}
+
+#home_lineup {
+    background-color: violet;
+}
+
+#home_info {
+    background-color: thistle;
+}
+
+@media (max-width: 1024px) {
+    #home_poster, #home_lineup, #home_info {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+} 
