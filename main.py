@@ -7,7 +7,11 @@ from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.middleware.cors import CORSMiddleware
 
-from api.main import GNU_FIESTA_home
+from api.main import home_router
+from api.booth import booth_detail_router, booth_list_router
+from api.comment import comment_router
+from api.faq import faq_router
+from api.timetable import timetable_router
 
 # from routers import
 
@@ -41,13 +45,17 @@ app.add_middleware(
 )
 
 # 라우터 포함
-app.include_router(GNU_FIESTA_home.router)
+app.include_router(home_router.router)
+app.include_router(booth_detail_router.router)
+app.include_router(booth_list_router.router)
+app.include_router(comment_router.router)
+app.include_router(faq_router.router)
+app.include_router(timetable_router.router)
 
 
-
-@app.get("/favicon.ico", include_in_schema=False)
-async def favicon():
-    return FileResponse("favicon.ico")
+# @app.get("/favicon.ico", include_in_schema=False)
+# async def favicon():
+#     return FileResponse("favicon.ico")
 
 
 HOST = "127.0.0.1"

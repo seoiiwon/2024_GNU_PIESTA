@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/test.css') }}">
+    <script src="{{ url_for('static', path='js/main/test.js') }}" defer></script>
     <title>TEST</title>
 </head>
 <body>
-    test templates
+    <div class="div1">DIV 1</div>
+    <DIv class="div2">DIV 2</DIv>
 </body>
 </html>
