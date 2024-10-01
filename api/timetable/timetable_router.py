@@ -3,14 +3,12 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 
 # 템플릿 디렉토리 설정
-templates = Jinja2Templates(directory="templates")
+templates = Jinja2Templates(directory="templates/timetable")
 
-# 라우터 설정
-router = APIRouter(tags=["TIMETABLE"])
+# APIRouter 인스턴스 생성
+router = APIRouter(tags=["timetable"])
 
-# /main 경로
+# /timetable 경로로 라우트 정의
 @router.get("/timetable", response_class=HTMLResponse)
-async def main(request: Request):
-    # 로그인 여부와 상관없이 /main으로 바로 접속 가능
+async def read_timetable(request: Request):
     return templates.TemplateResponse("timetable.html", {"request": request})
-

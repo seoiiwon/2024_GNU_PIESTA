@@ -1,0 +1,200 @@
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ휴대폰 */
+@media (max-width: 1024px) {
+  body {
+    font-family: 'prata', sans-serif;
+    background-color: #2b2355;
+    color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 2rem;
+  }
+  
+  .timetable {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr 1fr; /* 첫 번째 열 크기 수정 */
+    grid-template-rows: repeat(18, 40px); /* 시간과 이벤트 그리드의 행을 동일하게 설정 */
+    gap: 10px;
+    padding: 20px;
+}
+
+  .times {
+    display: grid;
+    grid-template-rows: repeat(18, 40px); /* 시간도 동일한 행 크기를 공유 */
+    align-items: center;
+    justify-content: flex-end;
+}
+  
+  .time-slot, .half-hour {
+    height: 40px;
+    display: flex;
+    justify-content: flex-end; /* 시간 텍스트를 아래로 정렬 */
+    align-items: flex-end; /* 세로로 텍스트를 아래로 내림 */
+    padding-right: 5px; /* 텍스트와 경계선 사이 간격 조절 */
+    /* border-bottom: 2px solid #f39ac8; */
+  }
+  
+  .time-slot span {
+    font-size: 10px; /* 시간 글자 크기 */
+  }
+  
+  .half-hour span {
+    font-size: 7px; /* '30' 글자 크기 */
+  }
+  
+  .day-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border-left: 3px solid #f39ac8; 세로선 제거 */
+  }
+  
+  .day-column:not(:first-child) {
+    /* border-left: 3px solid #f39ac8; 첫 번째 열을 제외한 나머지 열에만 세로선 추가 */
+  }
+  
+  
+  .day {
+    text-align: center;
+    font-weight: bold;
+    color: #e5d5fc;
+    padding-bottom: 10px;
+    font-size: 10px; /* 요일 및 날짜 글자 크기 */
+  }
+  
+  .events-day {
+    display: grid;
+    grid-template-rows: repeat(10, 80px);
+    gap: 5px;
+  }
+  
+  .event {
+    background-color: #7d50d0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .event:hover {
+    background-color: #9a76d7;
+  }
+  
+  /* Popup */
+  .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 100;
+    width: 300px;
+  }
+  
+  .popup-content {
+    color: white;
+  }
+  
+  .close-btn {
+    color: white;
+    font-size: 20px;
+    float: right;
+    cursor: pointer;
+  }
+  
+}
+
+
+
+
+ /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ여기서부턴 큰화면  */
+ @media (min-width: 1025px) {
+  .div1 {
+      width: 49vw;
+      height: 50vw;
+  }
+  .div2 {
+      width: 49vw;
+      height: 50vw;
+  }
+} 
+
+
+/* Popup
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 100;
+  width: 300px;
+}
+
+.popup-content {
+  color: white;
+}
+
+.close-btn {
+  color: white;
+  font-size: 20px;
+  float: right;
+  cursor: pointer;
+} */
+
+/* modal */
+.modal {
+  display: none; /* 기본적으로 모달은 보이지 않음 */
+  position: fixed; /* 화면 중앙에 고정 */
+  z-index: 200; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 배경을 어둡게 */
+}
+
+.modal-content {
+  position: absolute;
+  left: 10%;
+  top: 40%;
+  background-color: #B18FEB; 
+  color: white; 
+  padding: 20px;
+  border-radius: 10px; /* 약간의 둥근 모서리 */
+  width: 300px;
+  text-align: right; 
+}
+
+.close-modal {
+  color: #FEE5C6;
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.close-modal:hover {
+  color: #442081; 
+}
+
+.modal h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.modal p {
+  font-size: 1.2rem;
+}

@@ -20,7 +20,7 @@
         <!-- 포스터 들어올 자리 -->
         <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" class="poster">
         <div class="ddayTop">
-            <div id="dday">Day</div>
+            <div id="dday">D -</div>
             <div id="countdown"></div>
         </div>
 
@@ -39,21 +39,20 @@
                 <div class="date" data-date="10/17">10/17</div>
                 <div class="date" data-date="10/18">10/18</div>
             </div>
+            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1">
+            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2">
             <div class="lineupContainer">
-                <div class="lineup" id="lineup16">
+                <div class="lineUpList" id="lineup16">
                     <div class="commingSoon">???</div>
                 </div>
-                <div class="lineup" id="lineup17">
+                <div class="lineUpList" id="lineup17">
                     <div class="commingSoon">???</div>
                 </div>
-                <div class="lineup" id="lineup18">
+                <div class="lineUpList" id="lineup18">
                     <div class="commingSoon">???</div>
                 </div>
             </div>
-            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1">
-            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2">
         </div>
-
     </div>
     <!-- Page3 공지&오시는길 -->
     <div id="home_info">
@@ -63,14 +62,12 @@
         </div>
         <div class="announcementBoxContainer">
             <div class="announcementBox">
-                <div class="announcement1">
-                    <div class="announcementTitle">
-                        <div>[우천 안내]</div>
-                        <div>우천 시 공지사항</div>
-                    </div>
-                    <div class="announcementContent">
-                        <div>우천시 이벤트 부스 조기 마감 될 수도 있으니 어쩌고 저쩌고 어쩔저쩔 어쩔티비 감사합니다 감사핑</div>
-                    </div>
+                <div class="announcementTitle">
+                    <div>[우천 안내]</div>
+                    <div>우천 시 공지사항</div>
+                </div>
+                <div class="announcementContent">
+                    <div>우천시 이벤트 부스 조기 마감 될 </div>
                 </div>
             </div>
         </div>
@@ -82,7 +79,7 @@
             <div class="toggleBox">
                 <div class="toggleList1">
                     <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                    <div class="campus" onclick="toggleList('busList1')">경상국립대학교 칠암캠퍼스</div>    
+                    <div class="campus" onclick="toggleList('busList1')">경상국립대학교 칠암캠퍼스</div>
                 </div>
 
                 <div id="busList1">
@@ -103,18 +100,12 @@
             <hr class="dottedLine">
             <div class="toggleBox">
                 <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                <div class="campus" onclick="toggleList('busList2')">경상국립대학교 통영캠퍼스</div>
-                <div id="busList2">
-                    <span onclick="showModal()">경상국립대학교 왕복 셔틀버스</span>
-                </div>
+                <div class="campus">경상국립대학교 통영캠퍼스</div>
             </div>
             <hr class="dottedLine">
             <div class="toggleBox">
                 <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                <div class="campus" onclick="toggleList('busList3')">경상국립대학교 창원산학캠퍼스</div>
-                <div id="busList3">
-                    <span onclick="showModal()">경상국립대학교 왕복 셔틀버스</span>
-                </div>
+                <div class="campus">경상국립대학교 창원산학캠퍼스</div>
             </div>
             <hr class="dottedLine">
 
@@ -145,6 +136,7 @@
                 </div>
             </div>
             
+
         </div>
     </div>
 </body>
