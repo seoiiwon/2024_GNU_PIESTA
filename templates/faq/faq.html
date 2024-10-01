@@ -6,11 +6,17 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/faq/faq.css') }}">
     <script src="{{ url_for('static', path='js/faq/faq.js') }}" defer></script>
+    <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet'>
 </head>
 <body>
     <div class="container">
-        <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
-        <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+        <div id="home_lineup">
+            <!-- 로고 div -->
+           
+                <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+                <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+            
+        </div>
         <section class="faq-section">
             <h2 class="FAQ">FAQ</h2>
             <div class="faq-item">

@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+#logoImg {
+    position: fixed;
+    width: 60vw;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
 .logoDate {
     text-align: center;
     font-family: "Pretendard-Regular";
@@ -14,9 +24,9 @@
 
 .FAQ {
     text-align: center;
-    font-family: "Prata-Regular";
+    font-family: "Prata";
     color: white;
-    font-size: 3vw;
+    font-size: 24px;
     letter-spacing: 0.5vw;
     margin-top: 53px;
 }
@@ -66,7 +76,7 @@ body {
     padding: 10px;
     font-size: 14px;
     display: none;
-    color: #423B78;
+    color: #413978;
 }
 
 .faq-answer.active {
@@ -74,5 +84,5 @@ body {
 }
 
 .faq-item.active .faq-question {
-    border-bottom: 1px solid #423B78;
+    border-bottom: 1px solid #413978;
 }
