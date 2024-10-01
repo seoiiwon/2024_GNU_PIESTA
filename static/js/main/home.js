@@ -50,3 +50,38 @@ document.addEventListener("DOMContentLoaded", function() {
 
     handleLogoPosition();
 });
+
+
+// 토글 리스트 함수
+function toggleList(listId) {
+    const busLists = ['busList1', 'busList2', 'busList3'];
+
+    busLists.forEach(id => {
+        const busList = document.getElementById(id);
+        
+        if (id === listId) {
+            // 클릭된 리스트가 현재 닫혀있으면 열고, 아니면 닫기
+            busList.style.display = busList.style.display === "none" || busList.style.display === "" ? "block" : "none";
+        } else {
+            // 클릭된 리스트가 아닌 다른 리스트는 항상 닫기
+            busList.style.display = "none";
+        }
+    });
+}
+
+
+// 모달 열기
+function showModal(title, content) {
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalContent').textContent = content;
+    document.getElementById('myModal').style.display = "block";
+}
+
+
+// 모달 바깥을 클릭하면 닫기
+window.onclick = function(event) {
+    const modal = document.getElementById('myModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
