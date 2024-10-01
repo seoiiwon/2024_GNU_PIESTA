@@ -4,6 +4,23 @@
     box-sizing: border-box;
 }
 
+.logoDate {
+    text-align: center;
+    font-family: "Pretendard-Regular";
+    color: #AFAFAF;
+    font-size: 2.5vw;
+    letter-spacing: 0.5vw;
+}
+
+.FAQ {
+    text-align: center;
+    font-family: "Prata-Regular";
+    color: white;
+    font-size: 3vw;
+    letter-spacing: 0.5vw;
+    margin-top: 53px;
+}
+
 body {
     font-family: Arial, sans-serif;
     background: linear-gradient(#7e727d, #484176, #39317a, #939390, #fcfbff);
@@ -19,16 +36,6 @@ body {
     border-radius: 20px;
     padding: 20px;
     text-align: center;
-}
-
-header h1 {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-header p {
-    font-size: 14px;
-    color: #a0a0a0;
 }
 
 .faq-section h2 {
@@ -47,7 +54,7 @@ header p {
     width: 100%;
     background-color: white;
     border: none;
-    color: #423B78;
+    color: #413978;
     padding: 15px;
     text-align: left;
     cursor: pointer;
