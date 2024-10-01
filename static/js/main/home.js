@@ -1,9 +1,9 @@
-// 스크롤 페이지 전환
 document.addEventListener("DOMContentLoaded", function() {
     let currentSection = 0;
     const sections = document.querySelectorAll('div');
     const totalSections = sections.length;
     const logoImg = document.getElementById('logoImg');
+    let scrollThrottle = false; // 스크롤 감도 플래그
 
     function scrollToSection(sectionIndex) {
         window.scrollTo({
@@ -28,19 +28,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // 스크롤 이벤트
     window.addEventListener('wheel', function(event) {
-        if (event.deltaY > 0) {
-            if (currentSection < totalSections - 1) {
-                currentSection++;
-                scrollToSection(currentSection);
-                handleLogoPosition();
+        if (scrollThrottle) return; 
+        scrollThrottle = true; // 스크롤 시 플래그 활성화
+
+        setTimeout(() => {
+            if (event.deltaY > 0) {
+                if (currentSection < totalSections - 1) {
+                    currentSection++;
+                    scrollToSection(currentSection);
+                    handleLogoPosition();
+                }
+            } else {
+                if (currentSection > 0) {
+                    currentSection--;
+                    scrollToSection(currentSection);
+                    handleLogoPosition();
+                }
             }
-        } else {
-            if (currentSection > 0) {
-                currentSection--;
-                scrollToSection(currentSection);
-                handleLogoPosition();
-            }
-        }
+            scrollThrottle = false; 
+        }, 1000); 
     });
 
     window.addEventListener('resize', function() {
@@ -60,10 +66,8 @@ function toggleList(listId) {
         const busList = document.getElementById(id);
         
         if (id === listId) {
-            // 클릭된 리스트가 현재 닫혀있으면 열고, 아니면 닫기
             busList.style.display = busList.style.display === "none" || busList.style.display === "" ? "block" : "none";
         } else {
-            // 클릭된 리스트가 아닌 다른 리스트는 항상 닫기
             busList.style.display = "none";
         }
     });
