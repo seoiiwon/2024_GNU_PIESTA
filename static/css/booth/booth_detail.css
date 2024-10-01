@@ -48,6 +48,7 @@ font-face {
 
 .title
 {
+    color: white;
     position: fixed;
     top: 20%; /* 로고 아래에 비례해서 위치 설정 */
     left: 50%;
@@ -92,12 +93,12 @@ font-face {
 .content_box
 {
     position: absolute;
-    top: 26%; /* 타이틀 아래 위치 */
+    top: 26% ; /* 타이틀 아래 위치 */
     left: 50%;
     transform: translateX(-50%); /* 수평 가운데 정렬 */
     width: 93vw; /* 반응형 너비 설정 */
     height: 90vh; /* 반응형 높이 설정 */
-    background-color: rgba(255, 255, 255, 0.082);
+    background-color: rgba(255, 255, 255, 0.812);
     border-radius: 20px;
     border: 1px solid gray;
     box-sizing: border-box;
@@ -352,17 +353,17 @@ font-face {
 {
     .title
     {
-        top: 28%;
-        font-size: 1.8vw;
+        top: 22%;
+        font-size: 2.3vw;
     }
 
 
    .content_box
    {
-    top: 40%;
-    width: 60%;
-    padding: 4vw 1vw;
-    height: 70vh;
+    top: 28%;
+    width: 70%;
+    padding: 5vw 1vw;
+    height: 90vh;
 
    }
 
@@ -374,9 +375,16 @@ font-face {
 
    .booth_detail p 
    {
-        font-size: 1.6vw;
-
+        font-size: 1.65vw !important;
+        /* font-weight: 550; */
     }
+
+    .booth_detail h4
+    {
+        font-size: 2.0vw;
+        padding-right: 1vw;
+    }
+    
   .booth_name span
   {
     font-size: 2vw;
@@ -384,12 +392,17 @@ font-face {
 
   .booth_name h3
   {
-    font-size: 2vw;
+    font-size: 2.8vw;
   }
 
+  .booth_tt
+  {
+    margin-bottom: 2.2vw;
+  }
     .heart img
     {
-        width: 3.5vw;
+        width: 4vw;
+        padding-right: 2vw;
     }
 
     .fa-instagram
@@ -401,21 +414,16 @@ font-face {
     .booth_detail 
     {
         font-size: 1.5rem;
+        margin-bottom: 3.5vw !important;
     }
-
-    .booth_detail p
-    {
-        font-size: 1.2vw;
-    }
- 
     .booth_detail .line-wrapper
     {
-        margin-bottom: 1vw;
+        margin-bottom: 1.5vw;
     }
 
     .booth_info span,.booth_info p
     {
-        font-size: 1.5vw;
+        font-size: 1.6vw;
     }
     
     .fa-utensils
@@ -426,6 +434,10 @@ font-face {
 .fa-instagram
 {
     font-size: 2vw;
+}
+.line {
+    flex: 1; /* 남은 공간을 차지하도록 설정 */
+    border-top: 2.5px solid #9F8BEE; /* 실선 추가 */
 }
 } 
 
@@ -438,10 +450,13 @@ font-face {
 
 body
 {
-    /* background: url(/static/images/부스\ 상세페이지2.png); */
+    /* background: url(/static/images/poster.jpg); */
     background-repeat: no-repeat;
+    /* background-position: 0%; */
     background-size: cover; /* 화면에 맞게 배경 이미지 크기 조정 */
     overflow: hidden; /* 스크롤 방지 */
-    background-attachment: fixed; /* 배경 고정 */
-    height: 100vh; /* 전체 화면 크기로 고정 */
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+     /* 전체 화면 크기로 고정 */
 }
