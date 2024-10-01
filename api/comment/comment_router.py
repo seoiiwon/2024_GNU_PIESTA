@@ -12,4 +12,4 @@ router = APIRouter(tags=["COMMENT"])
 @router.get("/comment", response_class=HTMLResponse)
 async def comment(request: Request):
     # 로그인 체크 없이 comment.html 렌더링
-    return templates.TemplateResponse("comment.html", {"request": request})
+    return templates.TemplateResponse("comment/comment.html", {"request": request})
