@@ -1,0 +1,447 @@
+/* 공통으로 적용되는 부분 */
+font-face {
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
+
+.logo p
+{
+    color: #AFAFAF;
+}
+
+.ff
+{
+    display: flex;
+}
+
+.sb
+{
+    justify-content: space-between;
+}
+
+
+
+#logoImg {
+    position: fixed;
+    width: 60vw;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%); /* 수평 가운데 정렬만 */
+    text-align: center;
+    /* transform: translate(-50%, -50%); */
+    /* opacity: 0;
+    visibility: hidden; */
+    /* transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; */
+}
+.logoDate {
+    text-align: center;
+    font-family: "Pretendard-Regular";
+    color: #AFAFAF;
+    font-size: 2.5vw;
+    letter-spacing: 0.5vw;
+}
+/* .logo-visible {
+    opacity: 1;
+    visibility: visible;
+} */
+
+.title
+{
+    position: fixed;
+    top: 20%; /* 로고 아래에 비례해서 위치 설정 */
+    left: 50%;
+    transform: translateX(-50%); /* 수평 가운데 정렬만 */
+    font-family: 'Prata';
+    text-align: center;
+}
+
+.booth_detail h4
+{
+    display: inline-block;
+    padding-right: 2.8vw;
+    color: #9F8BEE;
+}
+
+.menu_box
+{
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: space-between; /* 양쪽으로 배치 */
+    padding: 10px 0; /* 위아래 패딩 추가 */
+    text-align: center;
+}
+
+.menu_box p
+{
+    flex: 1; /* 메뉴 이름과 가격의 비율을 동일하게 유지 */
+    text-align: center;
+}
+.separator {
+    border-top: 2px dashed gray; /* 점선 선 추가 */
+    flex: 0 1 50%; /* 점선의 길이 조정 */
+    margin: 0 1vw; /* 좌우 여백 추가 */
+}
+
+.booth_name>h3
+{
+    color: #282828;
+    border-bottom:1.7px solid #ADADAD;
+    padding-bottom: 1.0vw !important;
+}
+.content_box
+{
+    position: absolute;
+    top: 26%; /* 타이틀 아래 위치 */
+    left: 50%;
+    transform: translateX(-50%); /* 수평 가운데 정렬 */
+    width: 93vw; /* 반응형 너비 설정 */
+    height: 90vh; /* 반응형 높이 설정 */
+    background-color: rgba(255, 255, 255, 0.082);
+    border-radius: 20px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    overflow-y: auto; /* 내용만 스크롤 가능 */
+    padding-top: 4.8vh;
+    padding-bottom: 10vw;
+}
+
+.fa-circle
+{
+    color: #9E9E9E;
+   
+}
+
+.booth_name ~ div 
+{
+    margin: auto 0;
+}
+
+.line-wrapper
+{
+    display: flex; /* Flexbox 사용 */
+    align-items: center; /* 세로 가운데 정렬 */
+    padding-right: 2.8vw;
+    margin-bottom: 2.3vw;
+}
+
+
+.line {
+    flex: 1; /* 남은 공간을 차지하도록 설정 */
+    border-top: 1.5px solid #9F8BEE; /* 실선 추가 */
+}
+
+.booth_detail
+{
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom:2.2vh !important;
+}
+
+.booth_detail p 
+{
+    font-weight: 500;
+}
+
+.fa-instagram
+{
+    font-size: 4vw;
+    text-align: center;
+    transform: translateY(15%);
+}
+
+
+.booth_tt
+{
+    width: 80%;
+    margin: 0 7vw 0 auto;
+}
+.booth_time>div
+{
+    margin-bottom: 4vw;
+}
+.fa-utensils
+{
+    font-size: 6vw;
+    display: inline-block;
+    margin-right: 2.5vw;
+    margin-left: 1vw;
+    
+}
+
+.booth_info
+{
+    font-size: 3vw;
+    margin-top: 1.4vw;
+}
+
+.booth_info span, .booth_info a
+{
+    margin: 0vw 1vw;
+}
+
+.booth_detail h4
+{
+    font-weight: 700;
+}
+
+.booth_detail
+{
+    font-size: 4.4vw;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom:2.2vh !important;
+}
+
+.booth_detail p 
+{
+    font-size: 3.05vw;
+}
+.booth_desc
+{
+    margin-bottom: 5vw;
+}
+
+.booth_menu
+{
+    margin-bottom: 5.5vw ;
+}
+.booth_time img
+{
+   width: 10vw;
+    margin: auto 0;
+}
+
+.booth_name
+{
+    padding-bottom: 1.3vw;
+}
+
+.booth_time p
+{
+    margin-left: 4.5vw;
+    margin-bottom: 2.3vw;
+}
+.fa-circle
+{
+    font-size: 1.2vw;
+    vertical-align: middle; /* 텍스트의 세로 중앙 정렬 */
+    line-height: 1 !important; /* 아이콘의 줄 높이를 텍스트와 맞춤 */ 
+}
+
+.heart img
+{
+    width: 8.5vw;
+    height: auto;
+    padding-right: 4vw;
+    margin-bottom: 4.8vw;
+}
+
+@media(max-width: 768px) 
+{
+    .title
+    {
+        font-size: 5vw;
+    }
+
+    .booth_name h3
+    {
+        font-size: 6.2vw;
+    }
+
+    .content_box>div
+    {
+        margin-bottom: 3vw;
+    }
+    /* .booth_info
+    {
+        margin-top: 1vw;
+    } */
+
+    /*booth menu*/
+
+    .booth_detail
+    {
+        font-size: 4.4vw;
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom:3.8vw !important;
+    }
+
+    .booth_detail p 
+    {
+        font-size: 3.05vw;
+    }
+    .booth_desc
+    {
+        margin-bottom: 5vw;
+    }
+   
+   .booth_menu
+   {
+        margin-bottom: 3.8vw !important;
+   }
+   .booth_time img
+   {
+       width: 10vw;
+        margin: auto 0;
+    }
+
+    
+    .booth_time p
+    {
+        margin-left: 4.5vw;
+        margin-bottom: 2.3vw;
+    }
+
+    
+}
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+
+    .content_box
+    {
+        position: absolute;
+        top: 35%; /* 타이틀 아래 위치 */
+        left: 50%;
+        transform: translateX(-50%); /* 수평 가운데 정렬 */
+        width: 85vw; /* 반응형 너비 설정 */
+        height: 70vh; /* 반응형 높이 설정 */
+        background-color: rgba(255, 255, 255, 0.082);
+        border-radius: 20px;
+        border: 1px solid gray;
+        box-sizing: border-box;
+        overflow-y: auto; /* 내용만 스크롤 가능 */
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+    }
+    .booth_name>h3
+    {
+        border-bottom:3.5px solid #ADADAD;
+    
+    }
+    .title
+    {
+        top: 23%;
+        font-size: 4vw;
+    }
+    
+    .booth_name h3
+    {
+        font-size: 5vw;
+    }
+
+
+    .booth_detail h4
+    {
+        font-size: 3.8vw;
+    }
+
+    .booth_detail p
+    {
+        font-size: 2.8vw;
+    }
+    .content_box>div
+    {
+        margin-bottom: 1vw;
+    }
+  }
+
+ /* PC에서 적용되는 css -> 가로 해상도가 1025px 보다 작은 화면에 적용  */
+@media (min-width: 1025px) 
+{
+    .title
+    {
+        top: 28%;
+        font-size: 1.8vw;
+    }
+
+
+   .content_box
+   {
+    top: 40%;
+    width: 60%;
+    padding: 4vw 1vw;
+    height: 70vh;
+
+   }
+
+ 
+   .fa-circle
+   {
+       font-size: 0.6vw;
+   }
+
+   .booth_detail p 
+   {
+        font-size: 1.6vw;
+
+    }
+  .booth_name span
+  {
+    font-size: 2vw;
+  }
+
+  .booth_name h3
+  {
+    font-size: 2vw;
+  }
+
+    .heart img
+    {
+        width: 3.5vw;
+    }
+
+    .fa-instagram
+    {
+    font-size: 2.6vw;
+    text-align: center;
+    }
+
+    .booth_detail 
+    {
+        font-size: 1.5rem;
+    }
+
+    .booth_detail p
+    {
+        font-size: 1.2vw;
+    }
+ 
+    .booth_detail .line-wrapper
+    {
+        margin-bottom: 1vw;
+    }
+
+    .booth_info span,.booth_info p
+    {
+        font-size: 1.5vw;
+    }
+    
+    .fa-utensils
+{
+    font-size: 2.4vw;
+    margin-right: 2vw;
+}
+.fa-instagram
+{
+    font-size: 2vw;
+}
+} 
+
+*
+{
+    /* border: 0.1px solid black; */
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    /* background: url(/static/images/부스\ 상세페이지2.png); */
+    background-repeat: no-repeat;
+    background-size: cover; /* 화면에 맞게 배경 이미지 크기 조정 */
+    overflow: hidden; /* 스크롤 방지 */
+    background-attachment: fixed; /* 배경 고정 */
+    height: 100vh; /* 전체 화면 크기로 고정 */
+}
