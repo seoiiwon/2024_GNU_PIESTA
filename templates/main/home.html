@@ -19,7 +19,7 @@
         <!-- 포스터 들어올 자리 -->
         <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" class="poster">
         <div class="ddayTop">
-            <div id="dday">Day</div>
+            <div id="dday">D -</div>
             <div id="countdown"></div>
         </div>
 
@@ -38,21 +38,20 @@
                 <div class="date" data-date="10/17">10/17</div>
                 <div class="date" data-date="10/18">10/18</div>
             </div>
+            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1">
+            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2">
             <div class="lineupContainer">
-                <div class="lineup" id="lineup16">
+                <div class="lineUpList" id="lineup16">
                     <div class="commingSoon">???</div>
                 </div>
-                <div class="lineup" id="lineup17">
+                <div class="lineUpList" id="lineup17">
                     <div class="commingSoon">???</div>
                 </div>
-                <div class="lineup" id="lineup18">
+                <div class="lineUpList" id="lineup18">
                     <div class="commingSoon">???</div>
                 </div>
             </div>
-            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1">
-            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2">
         </div>
-
     </div>
     <!-- Page3 공지&오시는길 -->
     <div id="home_info">
@@ -81,7 +80,7 @@
             <div class="toggleBox">
                 <div class="toggleList1">
                     <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                    <div class="campus" onclick="toggleList('busList1')">경상국립대학교 칠암캠퍼스</div>    
+                    <div class="campus" onclick="toggleList('busList1')">경상국립대학교 칠암캠퍼스</div>
                 </div>
 
                 <div id="busList1">
@@ -123,7 +122,7 @@
                     <p id="modalContent"></p>
                 </div>
             </div>
-            
+
         </div>
     </div>
 </body>

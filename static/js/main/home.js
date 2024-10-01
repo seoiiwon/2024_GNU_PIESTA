@@ -78,54 +78,65 @@ function countdown() {
 const x = setInterval(countdown, 1000);
 countdown();
 
-// 라인업 표시
+// 라인업
 document.addEventListener("DOMContentLoaded", function () {
   const dates = document.querySelectorAll(".date");
-  const lineups = document.querySelectorAll(".lineup");
-  let currentActive = "10/16";
+  const lineUpLists = document.querySelectorAll(".lineUpList");
 
   dates.forEach((date) => {
     date.addEventListener("click", function () {
-      const selectedDate = this.getAttribute("data-date");
-      if (selectedDate !== currentActive) {
-        const currentLineup = document.getElementById(
-          `lineup-${currentActive.replace("/", "-")}`
-        );
-        const newLineup = document.getElementById(
-          `lineup-${selectedDate.replace("/", "-")}`
-        );
+      const selectedDate = date.getAttribute("data-date");
+      const selectedLineUp = document.getElementById(
+        "lineup" + selectedDate.split("/")[1]
+      );
 
-        // 방향에 따라 애니메이션 설정
-        if (selectedDate > currentActive) {
-          newLineup.style.display = "block";
-          newLineup.style.transform = "translateX(100%)";
-          setTimeout(() => {
-            currentLineup.style.transform = "translateX(-100%)";
-            newLineup.style.transform = "translateX(0)";
-          }, 10);
+      lineUpLists.forEach((lineUp) => {
+        lineUp.classList.remove("active", "left", "right");
+
+        const lineUpDate = lineUp.getAttribute("id").replace("lineup", "");
+        const selectedDateNumber = selectedDate.split("/")[1];
+
+        if (lineUpDate < selectedDateNumber) {
+          lineUp.classList.add("left");
+        } else if (lineUpDate > selectedDateNumber) {
+          lineUp.classList.add("right");
         } else {
-          newLineup.style.display = "block";
-          newLineup.style.transform = "translateX(-100%)";
-          setTimeout(() => {
-            currentLineup.style.transform = "translateX(100%)";
-            newLineup.style.transform = "translateX(0)";
-          }, 10);
+          lineUp.classList.add("active");
         }
-
-        // 이전 라인업 숨기기
-        setTimeout(() => {
-          currentLineup.style.display = "none";
-          currentLineup.style.transform = "translateX(0)";
-          currentLineup.classList.remove("active");
-        }, 500);
-
-        newLineup.classList.add("active");
-        currentActive = selectedDate;
-      }
+      });
     });
   });
-
-  // 초기 상태 설정
-  document.getElementById("lineup16").classList.add("active");
-  document.getElementById("lineup16").style.display = "block";
 });
+
+// 토글 리스트 함수
+function toggleList(listId) {
+  const busLists = ["busList1", "busList2", "busList3"];
+
+  busLists.forEach((id) => {
+    const busList = document.getElementById(id);
+
+    if (id === listId) {
+      busList.style.display =
+        busList.style.display === "none" || busList.style.display === ""
+          ? "block"
+          : "none";
+    } else {
+      busList.style.display = "none";
+    }
+  });
+}
+
+// 모달 열기
+function showModal(title, content) {
+  document.getElementById("modalTitle").textContent = title;
+  document.getElementById("modalContent").textContent = content;
+  document.getElementById("myModal").style.display = "block";
+}
+
+// 모달 바깥을 클릭하면 닫기
+window.onclick = function (event) {
+  const modal = document.getElementById("myModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
