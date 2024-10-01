@@ -86,15 +86,85 @@ body {
   width: fit-content;
   display: inline-block;
 }
+
 .campus {
   color: #ffffff;
-  display: inline-block;
+}
+
+.clear {
+  clear: both;
+  display: block;
 }
 
 /* 구분선 */
 .dottedLine {
   border: none;
   border-top: 2px dotted #dfdfdf;
+}
+
+/* 토글 디자인 */
+#busList1,
+#busList2,
+#busList3 {
+  display: none;
+  margin: 5vw 3vw 0 3vw;
+}
+#busList1 > span {
+  color: #dfdfdf;
+  margin: 0 2vw 1vw 2vw;
+}
+.mapBox {
+  background-color: white;
+  height: 20vh;
+  margin-bottom: 1em;
+}
+#busList2 > span {
+  color: #dfdfdf;
+  margin: 0 2vw 1vw 2vw;
+}
+#busList3 > span {
+  color: #dfdfdf;
+  margin: 0 2vw 1vw 2vw;
+}
+
+/* 모달 스타일 */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.modalContent {
+  background-color: rgba(255, 255, 255, 0.6); /* 60% 투명도 */
+  backdrop-filter: blur(5px); /* 배경 블러 효과 */
+
+  position: relative;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+
+  width: 80%;
+  max-width: 500px;
+}
+
+#modalTitle {
+  color: #58437c;
+  font-weight: bold;
+  font-size: 1.4em;
+}
+#modalContent {
+  color: #221959;
+  font-size: 1.2em;
 }
 
 @media (max-width: 1024px) {
@@ -120,12 +190,12 @@ body {
     margin-left: 8vw;
   }
   .icon {
-    height: 6vw;
+    height: 1.8em;
     width: auto;
     margin-right: 4vw;
   }
   .title {
-    font-size: 5vw;
+    font-size: 1.6em;
   }
 
   .announcementBoxContainer {
@@ -134,33 +204,49 @@ body {
   }
   .announcementBox {
     width: 55vw;
-    height: 12vh;
+    /* height: 12vh; */
+  }
+  .announcement1 {
+    padding: 1.6em;
   }
   .announcementTitle {
-    font-size: 4vw;
-    margin: 3vw 3vw 0vw 3vw;
+    font-size: 1.2em;
+    height: 2.8em;
+    overflow: hidden;
+    /* margin: 3vw 3vw 0vw 3vw; */
   }
   .announcementContent {
-    margin: 2vw 3vw 0 3vw;
+    font-size: 1em;
+    height: 1.2em;
+    margin-top: 0.5em;
+    overflow: hidden;
+    /* margin: 2vw 3vw 0 3vw; */
   }
 
   /* 오시는 길 */
   .toggleBox {
-    margin: 4vh 8vw 0 8vw;
-    display: flex;
+    margin: 2vh 8vw 0 8vw;
+    /* display: flex;  */
+    align-items: center;
+  }
+  .toggleList1 {
+    display: flex; /* 자식 요소들을 수평으로 정렬 */
     align-items: center;
   }
   .toggle {
-    height: 4vw;
+    height: 1.2em;
+    display: inline-block;
   }
   .campus {
-    font-size: 4vw;
-    margin-left: 4vw;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-left: 3vw;
   }
 
   /* 구분선 */
   .dottedLine {
-    width: 80vw;
-    margin: 2vh 8vw;
+    width: 90vw;
+    margin-top: 2vh;
+    /* margin: 2vh 8vw;  */
   }
 }
