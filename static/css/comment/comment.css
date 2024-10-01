@@ -1,0 +1,209 @@
+font-face {
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+}
+
+html,
+body {
+  height: 100%; /* html과 body의 높이를 100%로 설정 */
+  width: 100%;
+  margin: 0; /* 기본 여백 제거 */
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
+}
+
+.comment-section {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#comment-form {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to right bottom, #f0f0f0, #ffd0d0);
+  padding: 10px;
+  border: 1px solid black;
+  width: 100vw;
+  height: 5vh;
+  z-index: 1000;
+}
+
+button:hover {
+  background-color: #6b6592;
+}
+
+.logo {
+  position: fixed;
+  width: 60vw;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* opacity: 0;
+  visibility: hidden; */
+  transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+/* .logoDate {
+  text-align: center;
+  font-family: "Pretendard-Regular";
+  color: #afafaf;
+  font-size: 2.5vw;
+  letter-spacing: 0.5vw;
+} */
+.logo-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 1024px) {
+  #comment-form {
+    width: 100%;
+    height: 8vh;
+  }
+  .text {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 0px 30px 30px 30px;
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, #f0f0f0, #ffc8c8);
+  }
+
+  .name {
+    color: white;
+  }
+
+  .comment {
+    width: 70vw;
+  }
+  #hambuger {
+    left: 90%;
+    position: relative;
+  }
+
+  #comment-input {
+    width: 70%;
+    height: 7vh;
+    margin: 0;
+    border-radius: 20px;
+  }
+  button {
+    background-color: #ededed;
+    color: white;
+    border: solid black 1px;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 20vw;
+    height: 7vh;
+    margin-left: 2vw;
+    font-size: 30px;
+  }
+
+  .noticec {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 70vw;
+    background-color: #6b6592;
+    color: white;
+    font-weight: 200;
+    font-size: small;
+  }
+  .notice {
+    left: 12vw;
+    position: relative;
+    width: 70vw;
+    top: 17vh;
+  }
+
+  .noticetitle {
+    color: white;
+    font-weight: 200;
+    font-size: 20px;
+    margin-bottom: 1%;
+  }
+}
+
+/* ------------------------------------------------------------------------------------------------- */
+
+@media (min-width: 1025px) {
+  #comment-form {
+    width: 100%;
+    height: 10vh;
+  }
+  .text {
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 0px 30px 30px 30px;
+    margin-bottom: 10px;
+    background: linear-gradient(to bottom, #f0f0f0, #ffc8c8);
+  }
+
+  .name {
+    color: white;
+  }
+
+  #hambuger {
+    left: 90%;
+    position: relative;
+  }
+  #comment-input {
+    width: 90%;
+    height: 10vh;
+    border-radius: 20px;
+  }
+
+  button {
+    background-color: #ededed;
+    color: white;
+    border: solid black 1px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 1.5vw;
+    width: 6vw;
+    height: 10vh;
+    padding: 10px;
+    font-size: 30px;
+  }
+
+  .noticec {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    width: 70vw;
+    background-color: #6b6592;
+    color: white;
+    font-size: 20px;
+    font-weight: 200;
+  }
+  .notice {
+    left: 10%;
+    position: relative;
+    width: 70vw;
+    top: 17vw;
+  }
+
+  .noticetitle {
+    color: white;
+    font-weight: 200;
+    font-size: 20px;
+    margin-bottom: 1%;
+  }
+  .comment {
+    width: 70vw;
+  }
+}
+#comments-container {
+  width: 70vw;
+  position: absolute;
+  left: 10%;
+  margin: 10px;
+}

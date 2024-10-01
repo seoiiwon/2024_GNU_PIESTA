@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/prata-2">
     <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page2.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page3.css') }}">
     <script src="{{ url_for('static', path='js/main/home.js') }}" defer></script>
     <title>2024 GNU FIESTA</title>
 </head>
+
 <body>
     <!-- Page1 포스터&디데이 -->
-    <div id="home_poster"></div>
+    <div id="home_poster">
+        <!-- 포스터 들어올 자리 -->
+        <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" class="poster">
+        <div class="ddayTop">
+            <div id="dday">Day</div>
+            <div id="countdown"></div>
+        </div>
+
+    </div>
     <!-- Page2 라인업 -->
     <div id="home_lineup">
         <!-- 로고 div -->
@@ -18,6 +31,28 @@
             <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
             <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
         </div>
+        <div class="blankTop">
+            <div class="lineUp">LINE UP</div>
+            <div class="piestaDates">
+                <div class="date" data-date="10/16">10/16</div>
+                <div class="date" data-date="10/17">10/17</div>
+                <div class="date" data-date="10/18">10/18</div>
+            </div>
+            <div class="lineupContainer">
+                <div class="lineup" id="lineup16">
+                    <div class="commingSoon">???</div>
+                </div>
+                <div class="lineup" id="lineup17">
+                    <div class="commingSoon">???</div>
+                </div>
+                <div class="lineup" id="lineup18">
+                    <div class="commingSoon">???</div>
+                </div>
+            </div>
+            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1">
+            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2">
+        </div>
+
     </div>
     <!-- Page3 공지&오시는길 -->
     <div id="home_info">
@@ -59,4 +94,5 @@
         </div>
     </div>
 </body>
+
 </html>
