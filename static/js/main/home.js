@@ -129,3 +129,81 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("lineup16").classList.add("active");
   document.getElementById("lineup16").style.display = "block";
 });
+
+
+// 토글 리스트 함수
+function toggleList(listId) {
+    const busLists = ['busList1', 'busList2', 'busList3'];
+
+    busLists.forEach(id => {
+        const busList = document.getElementById(id);
+        
+        if (id === listId) {
+            busList.style.display = busList.style.display === "none" || busList.style.display === "" ? "block" : "none";
+        } else {
+            busList.style.display = "none";
+        }
+    });
+}
+
+// let busInfo_chiram = {};
+
+// fetch("{{ url_for('static', path='json/bus_info.json') }}").then(response => response.json()).then(data => {busInfo = data["칠암"];}).catch(error => console.log("Json Error!!!!!!!! : ", error));
+
+
+let busInfo_chiram = {};
+const jsonFilePath = "{{ url_for('static', filename='json/bus_info.json') }}";
+
+    fetch(jsonFilePath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data); // 데이터 확인
+        })
+        .catch(error => console.error("Error fetching JSON:", error));
+
+// 모달 열기
+function showBusModalChiram(busNumber) {
+    const bus = busInfo_chiram[busNumber];
+    console.log(bus);
+    
+    if (bus) {
+        const startPoint = bus.startPoint;  
+        const endPoint = bus.endPoint;      
+        
+        const sp = startPoint.sp;                         
+        const firstBusFromStartPoint = startPoint.firstBus; 
+        const lastBusFromStartPoint = startPoint.lastBus;   
+        const termFromStartPoint = startPoint.term;         
+        
+        const lp = endPoint.lp;                           
+        const firstBusFromEndPoint = endPoint.firstBus;   
+        const lastBusFromEndPoint = endPoint.lastBus;     
+        const termFromEndPoint = endPoint.term;           
+
+        document.getElementById('busNumber').textContent = busNumber; 
+        document.getElementById('busChannel').textContent = `${sp} - ${lp}`; 
+        document.getElementById('firstTimeFromStartPoint').textContent = `첫차: ${firstBusFromStartPoint}`; 
+        document.getElementById('lastTimeFromStartPoint').textContent = `막차: ${lastBusFromStartPoint}`;
+        document.getElementById('termsFromStartPoint').textContent = `배차: ${termFromStartPoint}`;
+        
+        document.getElementById('firstTimeFromEndPoint').textContent = `첫차: ${firstBusFromEndPoint}`;
+        document.getElementById('lastTimeFromEndPoint').textContent = `막차: ${lastBusFromEndPoint}`;
+        document.getElementById('termsFromEndPoint').textContent = `배차: ${termFromEndPoint}`;
+    } else {
+        alert('해당 버스 정보를 찾을 수 없습니다.'); 
+    }
+}
+
+
+// 모달 바깥을 클릭하면 닫기
+window.onclick = function(event) {
+    const modal = document.getElementById('myModal');
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page1.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page2.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page3.css') }}">
+    
     <script src="{{ url_for('static', path='js/main/home.js') }}" defer></script>
     <title>2024 GNU FIESTA</title>
 </head>
@@ -86,7 +87,7 @@
 
                 <div id="busList1">
                     <div class="mapBox">지도</div>
-                    <span onclick="showModal('130', '130 버스입니다.')">130</span>
+                    <span onclick="showBusModalChiram('130')">130</span>
                     <span onclick="showModal('131', '130 버스입니다.')">132</span>
                     <span onclick="showModal('132', '130 버스입니다.')">133</span>
                     <span onclick="showModal('133', '130 버스입니다.')">140</span>
@@ -121,6 +122,26 @@
                 <div class="modalContent">
                     <h2 id="modalTitle"></h2>
                     <p id="modalContent"></p>
+                </div>
+            </div>
+            <div id="Modal" class="busModal">
+                <div class="busModalContent">
+                    <div id="busModalTitle">
+                        <div id="busNumber"></div>
+                        <div id="busChannel"></div>
+                    </div>
+                    <div>
+                        <div>경상국립대학교 칠암캠퍼스 > 경상국립대학교 가좌캠퍼스</div>
+                        <div id="firstTimeFromStartPoint"></div>
+                        <div id="lastTimeFromStartPoint"></div>
+                        <div id="termsFromStartPoint"></div>
+                    </div>
+                    <div>
+                        <div>경상국립대학교 가좌캠퍼스 > 경상국립대학교 칠암캠퍼스</div>
+                        <div id="firstTimeFromEndPoint"></div>
+                        <div id="lastTimeFromEndPoint"></div>
+                        <div id="termsFromEndPoint"></div>
+                    </div>
                 </div>
             </div>
             
