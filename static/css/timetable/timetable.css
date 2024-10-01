@@ -35,7 +35,7 @@
     justify-content: flex-end; /* 시간 텍스트를 아래로 정렬 */
     align-items: flex-end; /* 세로로 텍스트를 아래로 내림 */
     padding-right: 5px; /* 텍스트와 경계선 사이 간격 조절 */
-    border-bottom: 2px solid #f39ac8;
+    /* border-bottom: 2px solid #f39ac8; */
   }
   
   .time-slot span {
@@ -54,7 +54,7 @@
   }
   
   .day-column:not(:first-child) {
-    border-left: 3px solid #f39ac8; /* 첫 번째 열을 제외한 나머지 열에만 세로선 추가 */
+    /* border-left: 3px solid #f39ac8; 첫 번째 열을 제외한 나머지 열에만 세로선 추가 */
   }
   
   
