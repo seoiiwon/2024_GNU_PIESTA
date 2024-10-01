@@ -3,89 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', path='static/css/timetable/timetable.css') }}"
-    />
-    <script
-      src="{{ url_for('static', path='static/js/timetable/timetable.js') }}"
-      defer
-    ></script>
+    <title>Timetable</title>
+    <link rel="stylesheet" href="/static/css/timetable/timetable.css">
+    <script src="/static/js/timetable/timetable.js"></script>
 </head>
 <body>
-    <header class="cd-main-header text-center flex flex-column flex-center">
-      <h1 class="text-xl">PIESTA Time Table</h1>
-    </header>
-  
-    <div class="cd-schedule cd-schedule--loading margin-top-lg margin-bottom-lg js-cd-schedule">
-      <div class="cd-schedule__timeline">
-        <ul>
-          <li><span>09:00</span></li>
-          <li><span>09:30</span></li>
-          <li><span>10:00</span></li>
-          <li><span>10:30</span></li>
-          <li><span>11:00</span></li>
-          <li><span>11:30</span></li>
-          <li><span>12:00</span></li>
-          <li><span>12:30</span></li>
-          <li><span>13:00</span></li>
-          <li><span>13:30</span></li>
-          <li><span>14:00</span></li>
-          <li><span>14:30</span></li>
-          <li><span>15:00</span></li>
-          <li><span>15:30</span></li>
-          <li><span>16:00</span></li>
-          <li><span>16:30</span></li>
-          <li><span>17:00</span></li>
-          <li><span>17:30</span></li>
-          <li><span>18:00</span></li>
-        </ul>
-      </div> <!-- .cd-schedule__timeline -->
-    
-      <div class="cd-schedule__events">
-        <ul>
-          <li class="cd-schedule__group">
-            <div class="cd-schedule__top-info"><span>Monday</span></div>
-            <ul>
-              <li class="cd-schedule__event">
-                <a data-start="09:30" data-end="10:30" data-content="event-abs-circuit" data-event="event-1" href="#0">
-                  <em class="cd-schedule__name">Opening Ceremony</em>
-                </a>
-              </li>
-              <li class="cd-schedule__event">
-                <a data-start="11:00" data-end="12:00" data-content="event-restorative-yoga" data-event="event-2" href="#0">
-                  <em class="cd-schedule__name">Guest Speaker</em>
-                </a>
-              </li>
-              <!-- Add more events here -->
-            </ul>
-          </li>
-          <!-- Add more days here -->
-        </ul>
+  <header class="header">
+      <h1>Time Table</h1>
+  </header>
+
+  <div class="timetable">
+      <div class="times">
+          <div class="time-slot"><span>14:00</span></div>
+          <div class="half-hour"><span>30</span></div>
+          <div class="time-slot"><span>15:00</span></div>
+          <div class="half-hour"><span>30</span></div>
+          <div class="time-slot"><span>16:00</span></div>
+          <div class="half-hour"><span>30</span></div>
+          <div class="time-slot"><span>17:00</span></div>
+          <div class="half-hour"><span>30</span></div>
+          <div class="time-slot"><span>18:00</span></div>
+          <div class="half-hour"><span>30</span></div>
+          <div class="time-slot"><span>19:00</span></div>
+          <div class="half-hour"><span>30</span></div>
+          <div class="time-slot"><span>20:00</span></div>
+          <div class="half-hour"><span>30</span></div>
+          <div class="time-slot"><span>21:00</span></div>
+          <div class="half-hour"><span>30</span></div>
+          <div class="time-slot"><span>22:00</span></div>
       </div>
-  
-      <!-- Modal -->
-      <div class="cd-schedule-modal">
-        <header class="cd-schedule-modal__header">
-          <div class="cd-schedule-modal__content">
-            <span class="cd-schedule-modal__date"></span>
-            <h3 class="cd-schedule-modal__name"></h3>
+
+      <!-- Day 1: OCT 16, WED -->
+      <div class="day-column">
+          <div class="day">OCT 16, WED</div>
+          <div class="events-day">
+              <div class="event" style="grid-row: 3 / 4;" onclick="showPopup('풍물', '15:30 ~ 16:00')">풍물</div>
+              <div class="event" style="grid-row: 4 / 5;" onclick="showPopup('소리울림', '16:00 ~ 17:00')">소리울림</div>
+              <div class="event" style="grid-row: 5 / 6;" onclick="showPopup('기라성', '17:00 ~ 18:00')">기라성</div>
+              <div class="event" style="grid-row: 6 / 7;" onclick="showPopup('남가람', '18:00 ~ 19:00')">남가람</div>
+              <div class="event" style="grid-row: 7 / 8;" onclick="showPopup('헛귀', '19:00 ~ 20:00')">햇귀</div>
+              <div class="event" style="grid-row: 8 / 9;" onclick="showPopup('토네이도', '20:00 ~ 20:30')">토네이도</div>
+              <div class="event" style="grid-row: 9 / 10;" onclick="showPopup('스페셜 게스트', '21:00 ~ 22:00')">스페셜 게스트</div>
           </div>
-          <div class="cd-schedule-modal__header-bg"></div>
-        </header>
-  
-        <div class="cd-schedule-modal__body">
-          <div class="cd-schedule-modal__event-info"></div>
-          <div class="cd-schedule-modal__body-bg"></div>
-        </div>
-  
-        <a href="#0" class="cd-schedule-modal__close text-replace">Close</a>
       </div>
-      <div class="cd-schedule__cover-layer"></div>
-    </div> <!-- .cd-schedule -->
-  
-    <script src="assets/js/util.js"></script> <!-- util functions included in the CodyHouse framework -->
-    <script src="assets/js/main.js"></script>
+
+      <!-- Day 2: OCT 17, THU -->
+      <div class="day-column">
+          <div class="day">OCT 17, THU</div>
+          <div class="events-day">
+              <div class="event" style="grid-row: 2 / 7;" onclick="showPopup('미스터 개척', '14:00 ~ 19:00')">미스터 개척</div>
+              <div class="event" style="grid-row: 9 / 10;" onclick="showPopup('스페셜 게스트', '21:00 ~ 22:00')">스페셜 게스트</div>
+          </div>
+      </div>
+
+      <!-- Day 3: OCT 18, FRI -->
+      <div class="day-column">
+          <div class="day">OCT 18, FRI</div>
+          <div class="events-day">
+              <div class="event" style="grid-row: 2 / 3;" onclick="showPopup('소울', '14:00 ~ 15:00')">소울</div>
+              <div class="event" style="grid-row: 4 / 5;" onclick="showPopup('다운타운', '15:30 ~ 16:30')">다운타운</div>
+              <div class="event" style="grid-row: 5 / 6;" onclick="showPopup('베이비 스트링스', '17:00 ~ 18:00')">베이비 스트링스</div>
+              <div class="event" style="grid-row: 7 / 8;" onclick="showPopup('불꽃놀이', '18:30 ~ 20:00')">불꽃놀이</div>
+              <div class="event" style="grid-row: 9 / 10;" onclick="showPopup('스페셜 게스트', '21:00 ~ 22:00')">스페셜 게스트</div>
+          </div>
+      </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+      <div class="popup-content">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <h3 id="event-title"></h3>
+          <p id="event-time"></p>
+      </div>
+  </div>
 </body>
 </html>
