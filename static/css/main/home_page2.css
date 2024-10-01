@@ -1,0 +1,79 @@
+font-face {
+  font-family: Prata;
+}
+
+.blankTop {
+  margin-top: 12.5rem;
+}
+
+.piestaDates {
+  display: flex;
+  justify-content: space-evenly;
+  font-family: Prata;
+}
+
+.lineUp {
+  display: flex;
+  justify-content: center;
+  font-family: Prata;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.date {
+  margin: 1rem;
+  padding: 0.25rem;
+  background-color: #f5f5f5;
+  color: linear-gradient(#58437c, #e2959c);
+  size: 1.5rem;
+  border-radius: 50%;
+  box-shadow: 0rem 0rem 0.5rem 0.5rem white;
+  font-size: 1.25rem;
+}
+
+.date:hover {
+  background-color: #e2959c;
+}
+#bubble1,
+#bubble2 {
+  width: 10rem;
+  position: relative;
+  z-index: -1;
+}
+
+#bubble1 {
+  top: 10rem;
+  left: 20rem;
+}
+
+#bubble2 {
+  top: 20rem;
+}
+
+.lineupContainer {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.lineup {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.lineup.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.commingSoon {
+  width: 240px;
+  height: 330px;
+  background-color: #e2959c;
+  border-radius: 25%;
+}
