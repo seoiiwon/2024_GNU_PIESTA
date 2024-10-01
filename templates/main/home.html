@@ -27,14 +27,12 @@
         </div>
         <div class="announcementBoxContainer">
             <div class="announcementBox">
-                <div class="announcement1">
-                    <div class="announcementTitle">
-                        <div>[우천 안내]</div>
-                        <div>우천 시 공지사항</div>
-                    </div>
-                    <div class="announcementContent">
-                        <div>우천시 이벤트 부스 조기 마감 될 수도 있으니 어쩌고 저쩌고 어쩔저쩔 어쩔티비 감사합니다 감사핑</div>
-                    </div>
+                <div class="announcementTitle">
+                    <div>[우천 안내]</div>
+                    <div>우천 시 공지사항</div>
+                </div>
+                <div class="announcementContent">
+                    <div>우천시 이벤트 부스 조기 마감 될 </div>
                 </div>
             </div>
         </div>
@@ -44,51 +42,20 @@
         </div>
         <div>
             <div class="toggleBox">
-                <div class="toggleList1">
-                    <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                    <div class="campus" onclick="toggleList('busList1')">경상국립대학교 칠암캠퍼스</div>    
-                </div>
-
-                <div id="busList1">
-                    <div class="mapBox">지도</div>
-                    <span onclick="showModal('130', '130 버스입니다.')">130</span>
-                    <span onclick="showModal('131', '130 버스입니다.')">132</span>
-                    <span onclick="showModal('132', '130 버스입니다.')">133</span>
-                    <span onclick="showModal('133', '130 버스입니다.')">140</span>
-                    <span onclick="showModal('134', '130 버스입니다.')">141</span>
-                    <span onclick="showModal('135', '130 버스입니다.')">142</span>
-                    <span onclick="showModal('136', '130 버스입니다.')">143</span>
-                    <span onclick="showModal('137', '130 버스입니다.')">144</span>
-                    <span onclick="showModal('138', '130 버스입니다.')">145</span>
-                    <span onclick="showModal('139', '130 버스입니다.')">146</span>
-                    <span onclick="showModal('140', '130 버스입니다.')">171</span>
-                </div>
+                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
+                <div class="campus">경상국립대학교 칠암캠퍼스</div>
             </div>
             <hr class="dottedLine">
             <div class="toggleBox">
                 <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                <div class="campus" onclick="toggleList('busList2')">경상국립대학교 통영캠퍼스</div>
-                <div id="busList2">
-                    <span onclick="showModal()">경상국립대학교 왕복 셔틀버스</span>
-                </div>
+                <div class="campus">경상국립대학교 통영캠퍼스</div>
             </div>
             <hr class="dottedLine">
             <div class="toggleBox">
                 <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                <div class="campus" onclick="toggleList('busList3')">경상국립대학교 창원산학캠퍼스</div>
-                <div id="busList3">
-                    <span onclick="showModal()">경상국립대학교 왕복 셔틀버스</span>
-                </div>
+                <div class="campus">경상국립대학교 창원산학캠퍼스</div>
             </div>
             <hr class="dottedLine">
-
-            <div id="myModal" class="modal">
-                <div class="modalContent">
-                    <h2 id="modalTitle"></h2>
-                    <p id="modalContent"></p>
-                </div>
-            </div>
-            
         </div>
     </div>
 </body>
