@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/init.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/booth/booth_list.css') }}"
+    />
+    <script
+      src="{{ url_for('static', path='js/booth/booth_list.js') }}"
+      defer
+    ></script>
+    <title>2024 GNU FIESTA</title>
+  </head>
+  <body>
+    <div id="booth_info">
+      <!-- 로고 div -->
+      <div id="logoImg">
+        <img
+          src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}"
+          alt="logo"
+        />
+        <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+      </div>
+    </div>
+    <!-- 타이틀 영역 -->
+        <div class="title">BOOTH</div>
+      <!-- 지도 영역 -->
+    <div class="map-container">
+        <img src="지도이미지경로" alt="지도" style="width: 100%; height: 100%;">
+    </div>
+
+    <!-- 박스 목록 스크롤 영역 -->
+    <div class="box-container">
+        <div class="box">멋쟁이사자처럼</div>
+        <div class="box">멋쟁이호랑이처럼</div>
+        <div class="box">멋쟁이너구리처럼</div>
+        <div class="box">멋쟁이하츄핑처럼</div>
+        <!-- 필요하면 더 많은 박스 추가 -->
+    </div>
+</div>
+  </body>
+</html>
