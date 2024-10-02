@@ -52,19 +52,12 @@ button:hover {
   visibility: hidden; */
   transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
 }
-/* .logoDate {
-  text-align: center;
-  font-family: "Pretendard-Regular";
-  color: #afafaf;
-  font-size: 2.5vw;
-  letter-spacing: 0.5vw;
-} */
 .logo-visible {
   opacity: 1;
   visibility: visible;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   #comment-form {
     width: 100%;
     height: 8vh;
@@ -82,18 +75,22 @@ button:hover {
   }
 
   .comment {
-    width: 70vw;
+    width: 72vw;
+    top: 30%;
+    left: 5%;
+    position: relative;
   }
   #hambuger {
-    left: 90%;
-    position: relative;
+    left: 82%;
+    top: 4%;
+    position: fixed;
   }
 
   #comment-input {
     width: 70%;
     height: 7vh;
     margin: 0;
-    border-radius: 20px;
+    border-radius: 15px;
   }
   button {
     background-color: #ededed;
@@ -103,8 +100,8 @@ button:hover {
     cursor: pointer;
     width: 20vw;
     height: 7vh;
-    margin-left: 2vw;
-    font-size: 30px;
+    margin-left: 3vw;
+    font-size: 7vw;
   }
 
   .noticec {
@@ -134,10 +131,16 @@ button:hover {
 
 /* ------------------------------------------------------------------------------------------------- */
 
-@media (min-width: 1025px) {
+@media (min-width: 768px) {
   #comment-form {
     width: 100%;
     height: 10vh;
+  }
+  #hambuger {
+    left: 82%;
+    top: 4%;
+    position: fixed;
+    width: 8vw;
   }
   .text {
     padding: 15px;
@@ -156,9 +159,10 @@ button:hover {
     position: relative;
   }
   #comment-input {
-    width: 90%;
+    width: 82%;
     height: 10vh;
     border-radius: 20px;
+    font-size: 25px;
   }
 
   button {
@@ -168,16 +172,16 @@ button:hover {
     border-radius: 15px;
     cursor: pointer;
     margin-left: 1.5vw;
-    width: 6vw;
+    width: 13vw;
     height: 10vh;
     padding: 10px;
-    font-size: 30px;
+    font-size: 7vw;
   }
 
   .noticec {
     border: none;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
     width: 70vw;
     background-color: #6b6592;
     color: white;
@@ -187,8 +191,8 @@ button:hover {
   .notice {
     left: 10%;
     position: relative;
-    width: 70vw;
-    top: 17vw;
+    width: 72vw;
+    top: 20vw;
   }
 
   .noticetitle {
@@ -199,11 +203,13 @@ button:hover {
   }
   .comment {
     width: 70vw;
+    top: 30%;
+    position: relative;
   }
 }
 #comments-container {
   width: 70vw;
-  position: absolute;
+  position: fixed;
   left: 10%;
-  margin: 10px;
+  top: 30%;
 }
