@@ -127,9 +127,9 @@ function toggleList(listId) {
 }
 
 // 초기 상태 설정
-  document.getElementById("lineup16").classList.add("active");
-  document.getElementById("lineup16").style.display = "block";
-});
+document.getElementById("lineup16").classList.add("active");
+document.getElementById("lineup16").style.display = "block";
+
 
 
 // 토글 리스트 함수
