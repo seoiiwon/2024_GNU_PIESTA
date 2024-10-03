@@ -30,6 +30,7 @@ body {
 
   /* 제목 BOOTH */
   .title {
+    font-family: "Prata";
     font-size: 7vw;
     color: #ffffff;
     text-align: center;
@@ -68,11 +69,16 @@ body {
     background-color: #ffffff;
     color: #3b2862;
     padding: 5vw;
-    border-radius: 15px;
+    border-radius: 20px;
     text-align: center;
     font-size: 4vw;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     opacity: 0.5;
+    height: 15vw;
+    display: flex;
+    justify-content: center; /* 수평 중앙 정렬 */
+    align-items: center; /* 수직 중앙 정렬 */
+    flex-direction: column;
   }
   #hambuger {
     width: 50px; /* 너비를 50px로 설정 */
