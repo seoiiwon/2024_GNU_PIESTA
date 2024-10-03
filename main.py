@@ -12,6 +12,7 @@ from api.booth import booth_detail_router, booth_list_router
 from api.comment import comment_router
 from api.faq import faq_router
 from api.timetable import timetable_router
+from api.main import notice
 
 # from routers import
 
@@ -52,6 +53,7 @@ app.include_router(comment_router.router)
 app.include_router(faq_router.router)
 app.include_router(timetable_router.router)
 app.include_router(test.router)
+app.include_router(notice.router)
 
 
 # @app.get("/favicon.ico", include_in_schema=False)

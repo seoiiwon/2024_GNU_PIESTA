@@ -9,12 +9,39 @@
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page1.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page2.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page3.css') }}">
-    
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/hamberger.css') }}">
+    <script>
+        const jsonFilePath = "{{ url_for('static', path='json/bus_info.json') }}";
+    </script>
+    <script src="{{ url_for('static', path='js/main/modal.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/main/toggle.js') }}" defer></script>
     <script src="{{ url_for('static', path='js/main/home.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/main/hamberger.js') }}" defer></script>
     <title>2024 GNU FIESTA</title>
 </head>
 
 <body>
+    <a class="menu-trigger" href="#">
+        <span class="hambergerBread"></span>
+        <span class="hambergerCenter"></span>
+        <span class="hambergerBread"></span>
+    </a>
+    <div id="hambergerContents" class="hambergerContents">
+        <div id="navContainer">
+            <div id="hrefHOME" data-url="/home">HOME</div>
+            <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
+            <div id="hrefBOOTH" data-url="/">BOOTH</div>
+            <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
+            <div id="hrefFAQ" data-url="faq">FAQ</div>
+        </div>
+
+        <div id="piestaWebHost">
+            <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>
+            &nbsp;X&nbsp;
+            <a id="mutsa" href="https://www.instagram.com/likelion_gnu/">멋쟁이사자처럼</a>
+        </div>
+    </div>
+
     <!-- Page1 포스터&디데이 -->
     <div id="home_poster">
         <!-- 포스터 들어올 자리 -->
@@ -28,10 +55,15 @@
     <!-- Page2 라인업 -->
     <div id="home_lineup">
         <!-- 로고 div -->
-        <div id="logoImg">
-            <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
-            <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+        <div>
+            <div id="logoImg">
+                <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+                <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+            </div>
         </div>
+
+
+
         <div class="blankTop">
             <div class="lineUp">LINE UP</div>
             <div class="piestaDates">
@@ -54,12 +86,18 @@
             </div>
         </div>
     </div>
+
+
+
+
+
     <!-- Page3 공지&오시는길 -->
     <div id="home_info">
         <div class="announcement titleBox">
             <img class="icon" src="{{ url_for('static', path='icons/announcement_icon.svg')}}" alt="">
             <div class="title">공지사항</div>
         </div>
+
         <div class="announcementBoxContainer">
             <div class="announcementBox">
                 <div class="announcementTitle">
@@ -71,67 +109,189 @@
                 </div>
             </div>
         </div>
+        <!-- <div class="noticeContainer">
+            {% for notice in noticeAll %}
+            <div class="announcementBoxContainer"></div>
+                <div class="announcementBox">
+                    <div class="announcementTitle">
+                        <div>{{ notice.category }}</div>
+                        <div>{{ notice.title }}</div>
+                    </div>
+                    <div class="announcementContent">
+                        <div>{{ notice.content }}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div> -->
+        
+
+
+
         <div class="vehicle titleBox">
             <img class="icon" src="{{ url_for('static', path='icons/bus_icon.svg')}}" alt="">
-            <div class="title">오시는 길</div>
+            <div class="title">오시는 길 (버스)</div>
         </div>
+
+
         <div>
             <div class="toggleBox">
+
                 <div class="toggleList1">
                     <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
                     <div class="campus" onclick="toggleList('busList1')">경상국립대학교 칠암캠퍼스</div>
                 </div>
-
-                <div id="busList1">
-                    <div class="mapBox">지도</div>
-                    <span onclick="showBusModalChiram('130')">130</span>
-                    <span onclick="showModal('131', '130 버스입니다.')">132</span>
-                    <span onclick="showModal('132', '130 버스입니다.')">133</span>
-                    <span onclick="showModal('133', '130 버스입니다.')">140</span>
-                    <span onclick="showModal('134', '130 버스입니다.')">141</span>
-                    <span onclick="showModal('135', '130 버스입니다.')">142</span>
-                    <span onclick="showModal('136', '130 버스입니다.')">143</span>
-                    <span onclick="showModal('137', '130 버스입니다.')">144</span>
-                    <span onclick="showModal('138', '130 버스입니다.')">145</span>
-                    <span onclick="showModal('139', '130 버스입니다.')">146</span>
-                    <span onclick="showModal('140', '130 버스입니다.')">171</span>
+            
+                <div id="busList1" style="display: block;"> <!-- 기본적으로 숨기기 -->
+                    <div class="mapBox">
+                        <img src="{{ url_for('static', path='images/map_chilam.svg')}}" alt="">
+                    </div>
+                    <span onclick="showBusModalChilam('130')">130</span>
+                    <span onclick="showBusModalChilam('132')">132</span>
+                    <span onclick="showBusModalChilam('133')">133</span>
+                    <span onclick="showBusModalChilam('140')">140</span>
+                    <span onclick="showBusModalChilam('141')">141</span>
+                    <span onclick="showBusModalChilam('142')">142</span>
+                    <span onclick="showBusModalChilam('143')">143</span>
+                    <span onclick="showBusModalChilam('144')">144</span>
+                    <span onclick="showBusModalChilam('145')">145</span>
+                    <span onclick="showBusModalChilam('146')">146</span>
+                    <span onclick="showBusModalChilam('171')">171</span>
                 </div>
             </div>
-            <hr class="dottedLine">
-            <div class="toggleBox">
-                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                <div class="campus">경상국립대학교 통영캠퍼스</div>
-            </div>
-            <hr class="dottedLine">
-            <div class="toggleBox">
-                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                <div class="campus">경상국립대학교 창원산학캠퍼스</div>
-            </div>
-            <hr class="dottedLine">
 
-            <div id="myModal" class="modal">
-                <div class="modalContent">
-                    <h2 id="modalTitle"></h2>
-                    <p id="modalContent"></p>
+            <hr class="dottedLine">
+            
+            
+            <div class="toggleBox">
+                <div>
+                    <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
+                    <div class="campus" onclick="toggleList('busList2')">경상국립대학교 통영캠퍼스</div>
+                </div>
+            
+                <div id="busList2" style="display: none;"> <!-- display none 추가 -->
+                    <div class="mapBox">
+                        <img src="{{ url_for('static', path='images/map_tongyeong.svg')}}" alt="">
+                    </div>
+                    <div>
+                        <span>통영출발</span>
+                        <span onclick="showBusModalTYCW('15:50', '통영', '통영출발')">15:50</span>
+                        <span onclick="showBusModalTYCW('16:40', '통영', '통영출발')">16:40</span>
+                        <span onclick="showBusModalTYCW('17:30', '통영', '통영출발')">17:30</span>
+                        <span onclick="showBusModalTYCW('18:20', '통영', '통영출발')">18:20</span>
+                        <span onclick="showBusModalTYCW('19:10', '통영', '통영출발')">19:10</span>
+                    </div>
+                    <div>
+                        <span>진주출발</span>
+                        <span onclick="showBusModalTYCW('17:43', '통영', '진주출발')">17:43</span>
+                        <span onclick="showBusModalTYCW('18:33', '통영', '진주출발')">18:33</span>
+                        <span onclick="showBusModalTYCW('19:23', '통영', '진주출발')">19:23</span>
+                        <span onclick="showBusModalTYCW('20:23', '통영', '진주출발')">20:23</span>
+                        <span onclick="showBusModalTYCW('06:53', '통영', '진주출발')">06:53</span>
+                    </div>
                 </div>
             </div>
-            <div id="Modal" class="busModal">
+
+            <hr class="dottedLine">
+            
+            
+            <div class="toggleBox">
+                <div>
+                    <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
+                    <div class="campus" onclick="toggleList('busList3')">경상국립대학교 창원산학캠퍼스</div>
+                </div>
+            
+                <div id="busList3" style="display: none;"> <!-- display none 추가 -->
+                    <div class="mapBox">
+                        <img src="{{ url_for('static', path='images/map_tongyeong.svg')}}" alt="">
+                    </div>
+                    <div>
+                        <span>창원출발</span>
+                        <span onclick="showBusModalTYCW('16:50', '창원', '창원출발')">16:50</span>
+                        <span onclick="showBusModalTYCW('18:00', '창원', '창원출발')">18:00</span>
+                        <span onclick="showBusModalTYCW('18:30', '창원', '창원출발')">18:30</span>
+                        <span onclick="showBusModalTYCW('19:00', '창원', '창원출발')">19:00</span>
+                        <span onclick="showBusModalTYCW('21:00', '창원', '창원출발')">21:00</span>
+                    </div>
+                    <div>
+                        <span>진주출발</span>
+                        <span onclick="showBusModalTYCW('17:23', '창원', '진주출발')">17:23</span>
+                        <span onclick="showBusModalTYCW('18:33', '창원', '진주출발')">18:33</span>
+                        <span onclick="showBusModalTYCW('19:53', '창원', '진주출발')">19:53</span>
+                        <span onclick="showBusModalTYCW('22:43', '창원', '진주출발')">22:43</span>
+                        <span onclick="showBusModalTYCW('00:23', '창원', '진주출발')">00:23</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="dottedLine">
+
+
+
+
+            <div id="Modal1" class="busModal">
                 <div class="busModalContent">
-                    <div id="busModalTitle">
+                    <div class="busModalTitle">
                         <div id="busNumber"></div>
                         <div id="busChannel"></div>
                     </div>
-                    <div>
-                        <div>경상국립대학교 칠암캠퍼스 > 경상국립대학교 가좌캠퍼스</div>
-                        <div id="firstTimeFromStartPoint"></div>
-                        <div id="lastTimeFromStartPoint"></div>
-                        <div id="termsFromStartPoint"></div>
+                    <div class="busChannel1">
+                        <div class="subTitleBus">경상국립대학교 칠암캠퍼스 > 가좌캠퍼스</div>
+                        <div>
+                            <span class="subCategory">첫차</span>
+                            <span id="firstTimeFromStartPoint"></span>
+                        </div>
+                        <div>
+                            <span class="subCategory">막차</span>
+                            <span id="lastTimeFromStartPoint"></span>
+                        </div>
+                        <div>
+                            <span class="subCategory">배차</span>
+                            <span id="termsFromStartPoint"></span>
+                        </div>
+                    </div>
+                    <div class="busChannel2">
+                        <div class="subTitleBus">경상국립대학교 가좌캠퍼스 > 칠암캠퍼스</div>
+                        <div></div>
+                            <span class="subCategory">첫차</span>
+                            <span id="firstTimeFromEndPoint"></span>
+                        </div>
+                        <div>
+                            <span class="subCategory">막차</span>
+                            <span id="lastTimeFromEndPoint"></span>
+                        </div>
+                        <div>
+                            <span class="subCategory">배차</span>
+                            <span id="termsFromEndPoint"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="Modal2" class="busModal">
+                <div class="busModalContent">
+                    <div class="busModalTitle">
+                        <div id="busTime"></div>
+                        <div id="busChannel"></div>
                     </div>
                     <div>
-                        <div>경상국립대학교 가좌캠퍼스 > 경상국립대학교 칠암캠퍼스</div>
-                        <div id="firstTimeFromEndPoint"></div>
-                        <div id="lastTimeFromEndPoint"></div>
-                        <div id="termsFromEndPoint"></div>
+                        <div>
+                            <span class="subCategory">요금</span>
+                            <span id="busExpense"></span>
+                        </div>
+                        <div>
+                            <span class="subCategory">유형</span>
+                            <span id="busType"></span>
+                        </div>
+                        <div>
+                            <span class="subCategory">경유</span>
+                            <span id="busPath"></span>
+                        </div>
+                        <div>
+                            <span class="subCategory">배차</span>
+                            <span id="busCompany"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -139,6 +299,6 @@
 
         </div>
     </div>
-</body>
 
+</body>
 </html>
