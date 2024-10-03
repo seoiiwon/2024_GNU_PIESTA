@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timetable</title>
+    <link rel="stylesheet" href="/static/css/timetable/timetable.css" />
+    <script src="/static/js/timetable/timetable.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Time Table</h1>
+    </header>
+
+    <div class="timetable">
+      <div class="times">
+        <div class="time-slot" style="grid-row: 1 / 2"><span>14:00</span></div>
+        <div class="half-hour" style="grid-row: 2 / 3"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 3 / 4"><span>15:00</span></div>
+        <div class="half-hour" style="grid-row: 4 / 5"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 5 / 6"><span>16:00</span></div>
+        <div class="half-hour" style="grid-row: 6 / 7"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 7 / 8"><span>17:00</span></div>
+        <div class="half-hour" style="grid-row: 8 / 9"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 9 / 10"><span>18:00</span></div>
+        <div class="half-hour" style="grid-row: 10 / 11"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 11 / 12">
+          <span>19:00</span>
+        </div>
+        <div class="half-hour" style="grid-row: 12 / 13"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 13 / 14">
+          <span>20:00</span>
+        </div>
+        <div class="half-hour" style="grid-row: 14 / 15"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 15 / 16">
+          <span>21:00</span>
+        </div>
+        <div class="half-hour" style="grid-row: 16 / 17"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 17 / 18">
+          <span>22:00</span>
+        </div>
+      </div>
+
+      <!-- Day 1: OCT 16, WED -->
+      <div class="day-column">
+        <div class="day">OCT 16, WED</div>
+        <div class="events-day">
+          <div
+            class="event"
+            style="grid-row: 3 / 4"
+            onclick="showPopup('풍물', '15:30 ~ 16:00')"
+          >
+            풍물
+          </div>
+          <div
+            class="event"
+            style="grid-row: 4 / 5"
+            onclick="showPopup('소리울림', '16:00 ~ 17:00')"
+          >
+            소리울림
+          </div>
+          <div
+            class="event"
+            style="grid-row: 5 / 6"
+            onclick="showPopup('기라성', '17:00 ~ 18:00')"
+          >
+            기라성
+          </div>
+          <div
+            class="event"
+            style="grid-row: 6 / 7"
+            onclick="showPopup('남가람', '18:00 ~ 19:00')"
+          >
+            남가람
+          </div>
+          <div
+            class="event"
+            style="grid-row: 7 / 8"
+            onclick="showPopup('햇귀', '19:00 ~ 20:00')"
+          >
+            햇귀
+          </div>
+          <div
+            class="event"
+            style="grid-row: 8 / 9"
+            onclick="showPopup('토네이도', '20:00 ~ 20:30')"
+          >
+            토네이도
+          </div>
+          <div
+            class="event"
+            style="grid-row: 9 / 10"
+            onclick="showPopup('스페셜 게스트', '21:00 ~ 22:00')"
+          >
+            스페셜 게스트
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 2: OCT 17, THU -->
+      <div class="day-column">
+        <div class="day">OCT 17, THU</div>
+        <div class="events-day">
+          <div
+            class="event"
+            style="grid-row: 2 / 7"
+            onclick="showPopup('미스터 개척', '14:00 ~ 19:00')"
+          >
+            미스터 개척
+          </div>
+          <div
+            class="event"
+            style="grid-row: 9 / 10"
+            onclick="showPopup('스페셜 게스트', '21:00 ~ 22:00')"
+          >
+            스페셜 게스트
+          </div>
+        </div>
+      </div>
+
+      <!-- Day 3: OCT 18, FRI -->
+      <div class="day-column">
+        <div class="day">OCT 18, FRI</div>
+        <div class="events-day">
+          <div
+            class="event"
+            style="grid-row: 2 / 3"
+            onclick="showPopup('소울', '14:00 ~ 15:00')"
+          >
+            소울
+          </div>
+          <div
+            class="event"
+            style="grid-row: 4 / 5"
+            onclick="showPopup('다운타운', '15:30 ~ 16:30')"
+          >
+            다운타운
+          </div>
+          <div
+            class="event"
+            style="grid-row: 5 / 6"
+            onclick="showPopup('베이비 스트링스', '17:00 ~ 18:00')"
+          >
+            베이비 스트링스
+          </div>
+          <div
+            class="event"
+            style="grid-row: 7 / 8"
+            onclick="showPopup('불꽃놀이', '18:30 ~ 20:00')"
+          >
+            불꽃놀이
+          </div>
+          <div
+            class="event"
+            style="grid-row: 9 / 10"
+            onclick="showPopup('스페셜 게스트', '21:00 ~ 22:00')"
+          >
+            스페셜 게스트
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup
+  <div id="popup" class="popup">
+      <div class="popup-content">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <h3 id="event-title"></h3>
+          <p id="event-time"></p>
+      </div>
+  </div> -->
+
+    <!-- Modal Popup (모달 창) -->
+    <div id="event-modal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h3 id="modal-event-title"></h3>
+        <p id="modal-event-time"></p>
+      </div>
+    </div>
+
+    <script>
+      function showPopup(title, time) {
+        document.getElementById("modal-event-title").textContent = title;
+        document.getElementById("modal-event-time").textContent = time;
+        document.getElementById("event-modal").style.display = "block";
+      }
+
+      function closePopup() {
+        document.getElementById("event-modal").style.display = "none";
+      }
+
+      // X 버튼 클릭 시 모달 닫기
+      document
+        .querySelector(".close-modal")
+        .addEventListener("click"gi, closePopup);
+    </script>
+  </body>
+</html>

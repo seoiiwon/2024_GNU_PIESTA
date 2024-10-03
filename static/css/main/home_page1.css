@@ -1,0 +1,35 @@
+font-face {
+  font-family: Prata;
+}
+
+#home_poster {
+  position: relative;
+}
+
+.ddayTop {
+  margin-top: 40rem;
+  font-family: Prata;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  flex-direction: column;
+  z-index: 1;
+}
+
+#dday {
+  font-size: 3rem;
+  background: linear-gradient(to right top, #861657, #ffa69e);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 0.5px white;
+}
+
+#countdown {
+  z-index: 1;
+  color: white;
+  font-size: 10rem;
+  background: linear-gradient(to right top, #861657, #ffa69e);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 1px white;
+}

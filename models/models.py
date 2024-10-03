@@ -5,3 +5,13 @@ class Post(Base):
     __tablename__ = "posts"
 
     id = Column(Integer, primary_key=True)
+
+
+class Test(Base):
+    __tablename__ = "test"
+
+    id = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
+    title = Column(String, nullable=False)
+    time = Column(DateTime, nullable=False)
+
+

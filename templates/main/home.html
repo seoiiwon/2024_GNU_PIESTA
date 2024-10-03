@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/prata-2">
     <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page1.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page2.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page3.css') }}">
+    
     <script src="{{ url_for('static', path='js/main/home.js') }}" defer></script>
     <title>2024 GNU FIESTA</title>
 </head>
+
 <body>
     <!-- Page1 포스터&디데이 -->
-    <div id="home_poster"></div>
+    <div id="home_poster">
+        <!-- 포스터 들어올 자리 -->
+        <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" class="poster">
+        <div class="ddayTop">
+            <div id="dday">D -</div>
+            <div id="countdown"></div>
+        </div>
+
+    </div>
     <!-- Page2 라인업 -->
     <div id="home_lineup">
         <!-- 로고 div -->
         <div id="logoImg">
             <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
             <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+        </div>
+        <div class="blankTop">
+            <div class="lineUp">LINE UP</div>
+            <div class="piestaDates">
+                <div class="date" data-date="10/16">10/16</div>
+                <div class="date" data-date="10/17">10/17</div>
+                <div class="date" data-date="10/18">10/18</div>
+            </div>
+            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1">
+            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2">
+            <div class="lineupContainer">
+                <div class="lineUpList" id="lineup16">
+                    <div class="commingSoon">???</div>
+                </div>
+                <div class="lineUpList" id="lineup17">
+                    <div class="commingSoon">???</div>
+                </div>
+                <div class="lineUpList" id="lineup18">
+                    <div class="commingSoon">???</div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Page3 공지&오시는길 -->
@@ -42,8 +77,25 @@
         </div>
         <div>
             <div class="toggleBox">
-                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                <div class="campus">경상국립대학교 칠암캠퍼스</div>
+                <div class="toggleList1">
+                    <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
+                    <div class="campus" onclick="toggleList('busList1')">경상국립대학교 칠암캠퍼스</div>
+                </div>
+
+                <div id="busList1">
+                    <div class="mapBox">지도</div>
+                    <span onclick="showBusModalChiram('130')">130</span>
+                    <span onclick="showModal('131', '130 버스입니다.')">132</span>
+                    <span onclick="showModal('132', '130 버스입니다.')">133</span>
+                    <span onclick="showModal('133', '130 버스입니다.')">140</span>
+                    <span onclick="showModal('134', '130 버스입니다.')">141</span>
+                    <span onclick="showModal('135', '130 버스입니다.')">142</span>
+                    <span onclick="showModal('136', '130 버스입니다.')">143</span>
+                    <span onclick="showModal('137', '130 버스입니다.')">144</span>
+                    <span onclick="showModal('138', '130 버스입니다.')">145</span>
+                    <span onclick="showModal('139', '130 버스입니다.')">146</span>
+                    <span onclick="showModal('140', '130 버스입니다.')">171</span>
+                </div>
             </div>
             <hr class="dottedLine">
             <div class="toggleBox">
@@ -56,7 +108,37 @@
                 <div class="campus">경상국립대학교 창원산학캠퍼스</div>
             </div>
             <hr class="dottedLine">
+
+            <div id="myModal" class="modal">
+                <div class="modalContent">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalContent"></p>
+                </div>
+            </div>
+            <div id="Modal" class="busModal">
+                <div class="busModalContent">
+                    <div id="busModalTitle">
+                        <div id="busNumber"></div>
+                        <div id="busChannel"></div>
+                    </div>
+                    <div>
+                        <div>경상국립대학교 칠암캠퍼스 > 경상국립대학교 가좌캠퍼스</div>
+                        <div id="firstTimeFromStartPoint"></div>
+                        <div id="lastTimeFromStartPoint"></div>
+                        <div id="termsFromStartPoint"></div>
+                    </div>
+                    <div>
+                        <div>경상국립대학교 가좌캠퍼스 > 경상국립대학교 칠암캠퍼스</div>
+                        <div id="firstTimeFromEndPoint"></div>
+                        <div id="lastTimeFromEndPoint"></div>
+                        <div id="termsFromEndPoint"></div>
+                    </div>
+                </div>
+            </div>
+            
+
         </div>
     </div>
 </body>
+
 </html>
