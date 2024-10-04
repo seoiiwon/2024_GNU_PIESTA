@@ -12,6 +12,7 @@ body {
   width: 100%;
   margin: 0; /* 기본 여백 제거 */
   padding: 0;
+  overflow: hidden;
 }
 body {
   background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
@@ -63,6 +64,8 @@ body {
     padding: 0 5vw;
     position: relative; /* 박스 위치 고정 */
     margin-top: 10vw;
+    overflow-y: auto;
+    max-height: 50vh; /* 화면 높이의 절반으로 제한 */
   }
 
   .box {
