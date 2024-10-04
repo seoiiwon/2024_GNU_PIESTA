@@ -15,3 +15,9 @@ class Test(Base):
     time = Column(DateTime, nullable=False)
 
 
+
+class Comment(Base):
+    __tablename__ = "comment"
+
+    name = Column(Integer, nullable=False, primary_key=True, autoincrement=True)
+    text= Column(String, nullable=False)

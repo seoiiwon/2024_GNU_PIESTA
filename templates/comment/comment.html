@@ -17,7 +17,6 @@
       src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}"
       alt="logo"
     />
-    <!-- <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p> -->
     <div class="notice">
       <div class="noticetitle">💬 방명록</div>
       <div class="noticec">
@@ -37,7 +36,15 @@
           <button type="submit">💬</button>
         </div>
       </form>
-      <div id="comments-container"></div>
+      <div id="comments-container">
+        <!-- 서버에서 가져온 댓글 렌더링 -->
+        {% for comment in comments %}
+        <div class="comment">
+          <div class="name">{{ comment.name }}</div>
+          <div class="text">{{ comment.text }}</div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
     <script src="scripts.js"></script>
   </body>
