@@ -40,20 +40,14 @@ body {
   }
 
   /* 지도 영역 */
-  .map-container {
+  #map {
     width: 90vw;
-    height: auto;
+    height: 70vw;
     border-radius: 10px;
     overflow: hidden; /* 이 속성은 유지 */
     margin: 0 auto;
     margin-bottom: 5vw;
     margin-top: 5vw;
-  }
-
-  .map-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* 이미지에도 border-radius 적용 */
   }
 
   /* 박스 목록 */
