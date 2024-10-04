@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       logoImg.style.opacity = "0";
       setTimeout(() => {
         logoImg.style.visibility = "hidden";
-      }, 300);
+      }, 1500);
     }
   }
 
@@ -37,13 +37,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentSection < totalSections - 1) {
           currentSection++;
           scrollToSection(currentSection);
-          handleLogoPosition();
+          // handleLogoPosition();
         }
       } else {
         if (currentSection > 0) {
           currentSection--;
           scrollToSection(currentSection);
-          handleLogoPosition();
+          // handleLogoPosition();
         }
       }
       scrollThrottle = false;
@@ -52,10 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("resize", function () {
     scrollToSection(currentSection);
-    handleLogoPosition();
+    // handleLogoPosition();
   });
 
-  handleLogoPosition();
+  // handleLogoPosition();
 });
 
 // 날짜 카운트다운
