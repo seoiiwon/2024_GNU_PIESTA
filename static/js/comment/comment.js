@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
   fetch("/api/comments")
     .then((response) => response.json())
     .then((comments) => {
+      // 댓글 컨테이너 비우기
+      const commentsContainer = document.getElementById("comments-container");
+      commentsContainer.innerHTML = ""; // 기존 댓글 초기화
+      
       comments.forEach((comment) => {
         displayComment(comment.name, comment.text);
       });

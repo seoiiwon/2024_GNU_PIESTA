@@ -1,3 +1,5 @@
+from http.client import HTTPException
+from sqlite3 import IntegrityError
 from fastapi import APIRouter, Request, Depends
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
