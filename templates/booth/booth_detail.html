@@ -4,18 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet'><!-- BOOTH - Prata font 적용위해 -->
-    <link rel="stylesheet" href="/static/css/booth/booth_detail.css">
-    <script src="https://kit.fontawesome.com/c3566586b6.js" crossorigin="anonymous"></script>
-    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/booth/booth_detail.css') }}"
+    />
+    <script
+      src="{{ url_for('static', path='js/booth/booth_detail.js') }}"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/main/hamberger.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/main/logo.css') }}"
+    />
+    <script
+      src="{{ url_for('static', path='js/main/hamberger.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', path='js/main/logo.js') }}"
+      defer
+    ></script> 
+
+    <title>2024 GNU FIESTA</title>
 </head>
 <body>
-    <div id="logoImg">
-        <img src="/static/images/GNU_PIESTA_logo.svg">
-        <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+    <div id="booth_info">
+        <!-- 로고 -->
+    <div>
+      <div id="logoImg">
+          <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+          <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+      </div>
+  </div>
+
+  <!-- 햄버거 버튼 -->
+  <a class="menu-trigger" href="#">
+      <span class="hambergerBread"></span>
+      <span class="hambergerCenter"></span>
+      <span class="hambergerBread"></span>
+  </a>
+  <div id="hambergerContents" class="hambergerContents">
+      <div id="navContainer">
+          <div id="hrefHOME" data-url="/home">HOME</div>
+          <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
+          <div id="hrefBOOTH" data-url="/">BOOTH</div>
+          <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
+          <div id="hrefFAQ" data-url="faq">FAQ</div>
+      </div>
+      <div id="piestaWebHost">
+          <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>
+          &nbsp;X&nbsp;
+          <a id="mutsa" href="https://www.instagram.com/likelion_gnu/">멋쟁이사자처럼</a>
+      </div>
+  </div>
     </div>
-<div class="title">
-    <h3>BOOTH</h3> <!-- 어차피 윤성님이랑 통일 시켜야함 -->
-</div>
+<!-- 타이틀 영역 -->
+<div class="title">BOOTH</div>
 <div class="content_box scrollable">
     <div>
         <div class="ff sb booth_tt">

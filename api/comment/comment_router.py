@@ -31,18 +31,18 @@ async def get_comment_page(request: Request, db: Session = Depends(get_db)):
     )
 
 
-# 댓글 저장
-@router.post("/api/save-comment", response_model=CommentCreate)
-async def save_comment(comment: CommentCreate, db: Session = Depends(get_db)):
-    db_comment = CommentModel(name=comment.name, text=comment.text)
-    db.add(db_comment)
-    db.commit()
-    db.refresh(db_comment)
-    return db_comment
+# # 댓글 저장
+# @router.post("/api/save-comment", response_model=CommentCreate)
+# async def save_comment(comment: CommentCreate, db: Session = Depends(get_db)):
+#     db_comment = CommentModel(name=comment.name, text=comment.text)
+#     db.add(db_comment)
+#     db.commit()
+#     db.refresh(db_comment)
+#     return db_comment
 
 
-# 댓글 목록 불러오기
-@router.get("/api/comments", response_model=list[CommentCreate])
-async def read_comments(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-    comments = db.query(CommentModel).offset(skip).limit(limit).all()
-    return comments
+# # 댓글 목록 불러오기
+# @router.get("/api/comments", response_model=list[CommentCreate])
+# async def read_comments(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
+#     comments = db.query(CommentModel).offset(skip).limit(limit).all()
+#     return comments
