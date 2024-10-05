@@ -14,6 +14,7 @@
     font-size: 1rem;
     font-family: 'Felix Titling', sans-serif; /* Added font-family property */
     font-weight: 400; /* Regular font weight */
+    /* margin-top: 50px; */
   }
   
   .timetable {
@@ -22,7 +23,7 @@
     grid-template-rows: repeat(18, 40px); /* 시간과 이벤트 그리드의 행을 동일하게 설정 */
     gap: 7px;
     padding: 15px;
-}
+  }
 
   .times {
     display: grid;
@@ -30,7 +31,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: 7px;
-}
+  }
   
   .time-slot, .half-hour {
     height: 40px;
@@ -64,17 +65,17 @@
   .day-column:not(:first-child) {
     border-left: 2px solid #f39ac8; /* Vertical line between day-columns */
     padding-left: 0; /* Remove padding to center the line */
-}
+  }
 
   .day-column .day,
   .day-column .events-day {
     padding-left: 10px; /* Add padding to the content, not the column */
-}
+  }
 
   .day-column:not(:first-child) .day,
   .day-column:not(:first-child) .events-day {
     border-left: 2px solid transparent; /* No additional line here */
-}
+  }
 
   
   
@@ -85,20 +86,20 @@
     padding-bottom: 20px;
     font-size: 10px; /* 요일 및 날짜 글자 크기 */
     height: 40px;
-  }
+    }
   
   .events-day {
     display: grid;
-    grid-template-rows: repeat(10, 87px);
+    grid-template-rows: repeat(20, 40px);
     gap: 7px;
-  }
+    }
   
   .event {
     position: relative;
     background-color: #7d50d0;
     display: flex;
     align-items: center;
-    padding: 10px;
+    /* padding: 10px; */
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;

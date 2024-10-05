@@ -1,21 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Timetable</title>
-    <link rel="stylesheet" href="/static/css/timetable/timetable.css" />
-    <script src="/static/js/timetable/timetable.js"></script>
-  </head>
-  <body>
-    <header class="header">
-    <link rel="stylesheet" href="/timetable.css">
-    <script src="/timetable.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/timetable/timetable.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/logo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/hamberger.css') }}">
+    <script src="{{ url_for('static', path='js/timetable/timetable.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/main/hamberger.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/main/logo.js') }}" defer></script>
 </head>
 <body>
-  <header class="header">
+  <!-- 로고 -->
+  <div>
+    <div id="logoImg">
+        <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+        <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+    </div>
+  </div>
+
+<!-- 햄버거 버튼 -->
+  <a class="menu-trigger" href="#">
+    <span class="hambergerBread"></span>
+    <span class="hambergerCenter"></span>
+    <span class="hambergerBread"></span>
+  </a>
+  <div id="hambergerContents" class="hambergerContents">
+    <div id="navContainer">
+        <div id="hrefHOME" data-url="/home">HOME</div>
+        <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
+        <div id="hrefBOOTH" data-url="/">BOOTH</div>
+        <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
+        <div id="hrefFAQ" data-url="faq">FAQ</div>
+    </div>
+    <div id="piestaWebHost">
+        <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>
+        &nbsp;X&nbsp;
+        <a id="mutsa" href="https://www.instagram.com/likelion_gnu/">멋쟁이사자처럼</a>
+    </div>
+  </div>
+<!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 로고 및 햄버거 -->
+    <header class="header">
       <h1>Time Table</h1>
-    </header>
+     </header>
 
   <div class="timetable">
     <div class="times">
@@ -42,47 +70,16 @@
       <div class="day-column">
           <div class="day">OCT 16, WED</div>
           <div class="events-day">
-            <div class="event" id="day1" style="grid-row: 2 / 4;" onclick="showPopup('풍물', '15:00 ~ 16:00', '풍물의 곡 리스트')">
-                <span class="event-time">15:00 ~ 16:00</span> <!-- 시간 표시 -->
+            <div class="event" id="day1" style="grid-row: 10 / 13;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
+                <span class="event-time">18:30 ~ 20:00</span> <!-- 시간 표시 -->
                 <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
-                풍물 <!-- 이벤트 이름 -->
+                피지컬X & 비주얼 쇼 <!-- 이벤트 이름 -->
               </div>
-            <!-- <div class="event" id="day1" style="grid-row: 3 / 4;" onclick="showPopup('소리울림', '16:00 ~ 17:00')">
-                <span class="event-time">16:00 ~ 17:00</span> <!-- 시간 표시 -->
-                <!-- <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
-                <!-- 소리울림 이벤트 이름 -->
-              <!-- </div> --> 
-            <div class="event" id="day1" style="grid-row: 4 / 5;" onclick="showPopup('기라성', '17:00 ~ 18:00', '기라성의 곡 리스트')">
-                <span class="event-time">17:00 ~ 18:00</span> <!-- 시간 표시 -->
+            <div class="event" id="day1" style="grid-row: 13 / 14;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
+                <span class="event-time">18:30 ~ 20:00</span> <!-- 시간 표시 -->
                 <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
-                기라성 <!-- 이벤트 이름 -->
+                개회식 <!-- 이벤트 이름 -->
               </div>
-            <div class="event" id="day1" style="grid-row: 5 / 6;" onclick="showPopup('남가람', '18:00 ~ 19:00', '남가람의 곡 리스트')">
-                <span class="event-time">18:00 ~ 19:00</span> <!-- 시간 표시 -->
-                <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
-                남가람 <!-- 이벤트 이름 -->
-              </div>
-            <div class="event" id="day1" style="grid-row: 6 / 7;" onclick="showPopup('햇귀', '15:30 ~ 16:00', '햇귀의 곡 리스트')">
-                <span class="event-time">19:00 ~ 20:00</span> <!-- 시간 표시 -->
-                <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
-                햇귀 <!-- 이벤트 이름 -->
-              </div>
-            <div class="event" id="day1" style="grid-row: 7 / 8;" onclick="showPopup('토네이도', '15:30 ~ 16:00', '토네이도의 곡 리스트')">
-                <span class="event-time">20:00 ~ 21:00</span> <!-- 시간 표시 -->
-                <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
-                토네이도 <!-- 이벤트 이름 -->
-              </div>
-            <div class="event" id="day1" style="grid-row: 8 / 9;" onclick="showPopup('스페셜 게스트', '15:30 ~ 16:00')">
-                <span class="event-time">21:00 ~ 22:00</span> <!-- 시간 표시 -->
-                <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
-                스페셜 게스트 <!-- 이벤트 이름 -->
-              </div>
-              <!-- <div class="event" id="day1" style="grid-row: 4 / 5;" onclick="showPopup('소리울림', '16:00 ~ 17:00')">소리울림</div>
-              <div class="event" id="day1" style="grid-row: 5 / 6;" onclick="showPopup('기라성', '17:00 ~ 18:00')">기라성</div>
-              <div class="event" id="day1" style="grid-row: 6 / 7;" onclick="showPopup('남가람', '18:00 ~ 19:00')">남가람</div>
-              <div class="event" id="day1" style="grid-row: 7 / 8;" onclick="showPopup('햇귀', '19:00 ~ 20:00')">햇귀</div>
-              <div class="event" id="day1" style="grid-row: 8 / 9;" onclick="showPopup('토네이도', '20:00 ~ 20:30')">토네이도</div>
-              <div class="event" id="day1" style="grid-row: 9 / 10;" onclick="showPopup('스페셜 게스트', '21:00 ~ 22:00')">스페셜 게스트</div> -->
           </div>
       </div>
 
