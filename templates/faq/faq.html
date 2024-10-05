@@ -6,17 +6,43 @@
     <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/faq/faq.css') }}">
     <script src="{{ url_for('static', path='js/faq/faq.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/main/hamberger.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/main/logo.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/hamberger.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/logo.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet'>
 </head>
 <body>
     <div class="container">
-        <div id="home_lineup">
-            <!-- 로고 div -->
-           
-                <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
-                <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
-            
+    <!-- 로고 -->
+    <div>
+        <div id="logoImg">
+            <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+            <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
         </div>
+    </div>
+
+    <!-- 햄버거 버튼 -->
+    <a class="menu-trigger" href="#">
+        <span class="hambergerBread"></span>
+        <span class="hambergerCenter"></span>
+        <span class="hambergerBread"></span>
+    </a>
+    <div id="hambergerContents" class="hambergerContents">
+        <div id="navContainer">
+            <div id="hrefHOME" data-url="/home">HOME</div>
+            <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
+            <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
+            <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
+            <div id="hrefFAQ" data-url="faq">FAQ</div>
+        </div>
+        <div id="piestaWebHost">
+            <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>
+            &nbsp;X&nbsp;
+            <a id="mutsa" href="https://www.instagram.com/likelion_gnu/">멋쟁이사자처럼</a>
+        </div>
+    </div>
+        <!-- FAQ 섹션을 로고 바로 밑으로 배치 -->
         <section class="faq-section">
             <h2 class="FAQ">FAQ</h2>
             <div class="faq-item">
@@ -39,7 +65,5 @@
             </div>
         </section>
     </div>
-
-    <script src="1.js"></script>
 </body>
 </html>
