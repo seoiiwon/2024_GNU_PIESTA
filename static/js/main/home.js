@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function () {
   let scrollThrottle = false; // 스크롤 감도 조절을 위한 플래그
   const hamburger = document.getElementById("hamburger");
 
+  // 새로고침 시 처음 페이지로 이동하게 설정
+  scrollToSection(0);
+  // 버블 두번째 페이지에만 나타나도록
   function scrollToSection(sectionIndex) {
     if (sectionIndex == 0 || sectionIndex == 2) {
       bubble1.style.visibility = "hidden";

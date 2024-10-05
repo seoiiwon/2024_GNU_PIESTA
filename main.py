@@ -13,6 +13,7 @@ from api.comment import comment_router
 from api.faq import faq_router
 from api.timetable import timetable_router
 from api.main import notice
+from config.booth_data import init_db  
 
 # from routers import
 
@@ -35,8 +36,11 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
 # 데이터베이스 초기화
-Base.metadata.create_all(bind=engine)
-
+@app.on_event("startup")
+def startup_event():
+    Base.metadata.create_all(bind=engine)  # 데이터베이스 테이블 생성
+    init_db()  # 기본 데이터 삽입
+    
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
