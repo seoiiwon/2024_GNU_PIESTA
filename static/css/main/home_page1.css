@@ -2,22 +2,38 @@ font-face {
   font-family: Prata;
 }
 
-#home_poster {
-  position: relative;
+.blankTop1 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+}
+
+.posterContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+
+.poster {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35vh;
 }
 
 .ddayTop {
-  margin-top: 40rem;
-  font-family: Prata;
   display: flex;
   justify-content: end;
+  font-family: Prata;
   align-items: end;
   flex-direction: column;
   z-index: 1;
 }
 
 #dday {
-  font-size: 3rem;
+  font-size: 6vh;
   background: linear-gradient(to right top, #861657, #ffa69e);
   color: transparent;
   -webkit-background-clip: text;

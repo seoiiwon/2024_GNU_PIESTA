@@ -71,7 +71,7 @@ function countdown() {
   // 디데이가 지났을 때 어떻게 할지 물어보댜
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "D-Day";
+    document.getElementById("countdown").innerHTML = "Day";
   }
 }
 
@@ -83,27 +83,21 @@ document.addEventListener("DOMContentLoaded", function () {
   const dates = document.querySelectorAll(".date");
   const lineUpLists = document.querySelectorAll(".lineUpList");
 
+  function showLineup(date) {
+    lineUpLists.forEach((list) => {
+      if (list.id === `lineup/${date}`) {
+        list.style.display = "flex";
+      } else {
+        list.style.display = "none";
+      }
+    });
+  }
+
+  showLineup("16");
+
   dates.forEach((date) => {
     date.addEventListener("click", function () {
-      const selectedDate = date.getAttribute("data-date");
-      const selectedLineUp = document.getElementById(
-        "lineup" + selectedDate.split("/")[1]
-      );
-
-      lineUpLists.forEach((lineUp) => {
-        lineUp.classList.remove("active", "left", "right");
-
-        const lineUpDate = lineUp.getAttribute("id").replace("lineup", "");
-        const selectedDateNumber = selectedDate.split("/")[1];
-
-        if (lineUpDate < selectedDateNumber) {
-          lineUp.classList.add("left");
-        } else if (lineUpDate > selectedDateNumber) {
-          lineUp.classList.add("right");
-        } else {
-          lineUp.classList.add("active");
-        }
-      });
+      showLineup(this.getAttribute("data-date").split("/")[1]);
     });
   });
 });
