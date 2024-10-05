@@ -1,6 +1,7 @@
 from sqlalchemy import *
 from config.database import Base
 
+
 class Post(Base):
     __tablename__ = "posts"
 
@@ -14,6 +15,7 @@ class Test(Base):
     title = Column(String, nullable=False)
     time = Column(DateTime, nullable=False)
 
+
 class Notice(Base):
     __tablename__ = "notices"
 
@@ -22,3 +24,10 @@ class Notice(Base):
     title = Column(String[20], nullable=False)
     content = Column(String[300], nullable=False)
 
+
+class Comment(Base):
+    __tablename__ = "comment"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    name = Column(String, nullable=False)
+    text = Column(String, nullable=False)
