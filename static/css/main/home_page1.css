@@ -6,10 +6,6 @@ font-face {
   position: relative;
 }
 
-/* .poster{
-    
-} */
-
 .ddayTop {
   margin-top: 40rem;
   font-family: Prata;
@@ -17,6 +13,7 @@ font-face {
   justify-content: end;
   align-items: end;
   flex-direction: column;
+  z-index: 1;
 }
 
 #dday {
@@ -28,6 +25,7 @@ font-face {
 }
 
 #countdown {
+  z-index: 1;
   color: white;
   font-size: 10rem;
   background: linear-gradient(to right top, #861657, #ffa69e);

@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const totalSections = sections.length;
   const logoImg = document.getElementById("logoImg");
   let scrollThrottle = false; // 스크롤 감도 조절을 위한 플래그
+  const hamburger = document.getElementById("hamburger");
 
   function scrollToSection(sectionIndex) {
     window.scrollTo({
@@ -22,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       logoImg.style.opacity = "0";
       setTimeout(() => {
         logoImg.style.visibility = "hidden";
-      }, 300);
+      }, 1500);
     }
   }
 
@@ -36,25 +37,25 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentSection < totalSections - 1) {
           currentSection++;
           scrollToSection(currentSection);
-          handleLogoPosition();
+          // handleLogoPosition();
         }
       } else {
         if (currentSection > 0) {
           currentSection--;
           scrollToSection(currentSection);
-          handleLogoPosition();
+          // handleLogoPosition();
         }
       }
       scrollThrottle = false;
-    }, 1000);
+    }, 500);
   });
 
   window.addEventListener("resize", function () {
     scrollToSection(currentSection);
-    handleLogoPosition();
+    // handleLogoPosition();
   });
 
-  handleLogoPosition();
+  // handleLogoPosition();
 });
 
 // 날짜 카운트다운
@@ -78,54 +79,37 @@ function countdown() {
 const x = setInterval(countdown, 1000);
 countdown();
 
-// 라인업 표시
+// 라인업
 document.addEventListener("DOMContentLoaded", function () {
   const dates = document.querySelectorAll(".date");
-  const lineups = document.querySelectorAll(".lineup");
-  let currentActive = "10/16";
+  const lineUpLists = document.querySelectorAll(".lineUpList");
 
   dates.forEach((date) => {
     date.addEventListener("click", function () {
-      const selectedDate = this.getAttribute("data-date");
-      if (selectedDate !== currentActive) {
-        const currentLineup = document.getElementById(
-          `lineup-${currentActive.replace("/", "-")}`
-        );
-        const newLineup = document.getElementById(
-          `lineup-${selectedDate.replace("/", "-")}`
-        );
+      const selectedDate = date.getAttribute("data-date");
+      const selectedLineUp = document.getElementById(
+        "lineup" + selectedDate.split("/")[1]
+      );
 
-        // 방향에 따라 애니메이션 설정
-        if (selectedDate > currentActive) {
-          newLineup.style.display = "block";
-          newLineup.style.transform = "translateX(100%)";
-          setTimeout(() => {
-            currentLineup.style.transform = "translateX(-100%)";
-            newLineup.style.transform = "translateX(0)";
-          }, 10);
+      lineUpLists.forEach((lineUp) => {
+        lineUp.classList.remove("active", "left", "right");
+
+        const lineUpDate = lineUp.getAttribute("id").replace("lineup", "");
+        const selectedDateNumber = selectedDate.split("/")[1];
+
+        if (lineUpDate < selectedDateNumber) {
+          lineUp.classList.add("left");
+        } else if (lineUpDate > selectedDateNumber) {
+          lineUp.classList.add("right");
         } else {
-          newLineup.style.display = "block";
-          newLineup.style.transform = "translateX(-100%)";
-          setTimeout(() => {
-            currentLineup.style.transform = "translateX(100%)";
-            newLineup.style.transform = "translateX(0)";
-          }, 10);
+          lineUp.classList.add("active");
         }
-
-        // 이전 라인업 숨기기
-        setTimeout(() => {
-          currentLineup.style.display = "none";
-          currentLineup.style.transform = "translateX(0)";
-          currentLineup.classList.remove("active");
-        }, 500);
-
-        newLineup.classList.add("active");
-        currentActive = selectedDate;
-      }
+      });
     });
   });
-
-  // 초기 상태 설정
-  document.getElementById("lineup16").classList.add("active");
-  document.getElementById("lineup16").style.display = "block";
 });
+
+
+// 초기 상태 설정
+document.getElementById("lineup16").classList.add("active");
+document.getElementById("lineup16").style.display = "block";
