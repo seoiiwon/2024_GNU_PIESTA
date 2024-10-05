@@ -92,13 +92,36 @@
 
     <!-- Page3 공지&오시는길 -->
     <div id="home_info">
-        <div class="announcement titleBox">
+        <div class="notice titleBox">
             <img class="icon" src="{{ url_for('static', path='icons/announcement_icon.svg')}}" alt="">
             <div class="title">공지사항</div>
         </div>
 
+        <!-- 공지 리스트 -->
+        <ul id="noticeList">
+            {% for notice in noticeAll %}
+            <li onclick="showNoticeModal('{{ notice.category }}', '{{ notice.title }}', '{{ notice.content }}')">
+                <div>
+                    <div class="noticeCategory">[{{ notice.category }}]</div>
+                    <div class="noticeTitle">{{ notice.title }}</div>
+                    <div class="noticeBody">{{ notice.content }}</div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
 
-        
+        <!-- 공지 모달 -->
+        <div id="noticeModal" class="noticeModal">
+            <div class="noticeModalContainer">
+                <div class="noticeModalTitleBox">
+                    <div id="noticeModalCategory"></div>
+                    <div id="noticeModalTitle"></div>
+                </div>
+                <div id="noticeModalBody"></div>
+            </div>
+        </div>
+
+
         <!-- 오시는 길 title -->
         <div class="vehicle titleBox">
             <img class="icon" src="{{ url_for('static', path='icons/bus_icon.svg')}}" alt="">

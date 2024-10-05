@@ -5,17 +5,6 @@ from sqlalchemy.orm import Session
 from config.database import get_db
 from models.models import Notice
 
-
-
-# from fastapi import APIRouter, Request, Depends, status, HTTPException
-# from fastapi.responses import HTMLResponse
-# from fastapi.templating import Jinja2Templates
-# from pydantic import BaseModel
-# from sqlalchemy.orm import Session
-# from config.database import get_db
-# from models.models import Notice
-# from datetime import datetime
-
 router = APIRouter(tags=["메인 페이지"])
 
 templates = Jinja2Templates(directory="./templates/main")
