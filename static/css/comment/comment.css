@@ -5,36 +5,65 @@ font-face {
     format("woff");
 }
 
-html,
-body {
-  height: 100%; /* html과 body의 높이를 100%로 설정 */
+.header {
+  height: 50px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
   width: 100%;
-  margin: 0; /* 기본 여백 제거 */
-  padding: 0;
+  top: 0;
+  z-index: 1000;
 }
-
 body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Viewport height */
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
 }
 
 .comment-section {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-#comment-form {
-  display: flex;
-  align-items: center;
-  position: fixed;
+  position: fixed; /* 고정 위치 */
   bottom: 0;
   left: 0;
   right: 0;
   background: linear-gradient(to right bottom, #f0f0f0, #ffd0d0);
   padding: 10px;
-  border: 1px solid black;
-  width: 100vw;
-  height: 5vh;
+  border-top: 1px solid black;
   z-index: 1000;
+  width: 98vw;
+  display: flex;
+  align-items: center;
+}
+
+#comments-container {
+  width: 90%;
+  height: 60vh;
+  top: 30%;
+  left: 10%;
+  position: fixed;
+  overflow-y: scroll;
+}
+#comment-form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+#comment-input {
+  flex: 1;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+button {
+  background-color: #ededed;
+  color: white;
+  border: solid black 1px;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 button:hover {
@@ -60,7 +89,6 @@ button:hover {
 
   .comment {
     width: 72vw;
-    top: 30%;
     left: 5%;
     position: relative;
   }
@@ -71,7 +99,7 @@ button:hover {
   }
 
   #comment-input {
-    width: 70%;
+    width: 65%;
     height: 7vh;
     margin: 0;
     border-radius: 15px;
@@ -82,9 +110,10 @@ button:hover {
     border: solid black 1px;
     border-radius: 15px;
     cursor: pointer;
-    width: 20vw;
+    width: 15vw;
     height: 7vh;
     margin-left: 3vw;
+    margin-right: 3vw;
     font-size: 7vw;
   }
 
@@ -113,6 +142,11 @@ button:hover {
   }
 }
 
+.empty {
+  height: 20vh;
+  width: 100vw;
+  background-color: #a0c800;
+}
 /* ------------------------------------------------------------------------------------------------- */
 
 @media (min-width: 768px) {
@@ -156,6 +190,7 @@ button:hover {
     border-radius: 15px;
     cursor: pointer;
     margin-left: 1.5vw;
+    margin-right: 1.5vw;
     width: 13vw;
     height: 10vh;
     padding: 10px;
@@ -187,15 +222,8 @@ button:hover {
   }
   .comment {
     width: 70vw;
-    top: 30%;
     position: relative;
   }
-}
-#comments-container {
-  width: 70vw;
-  position: fixed;
-  left: 10%;
-  top: 30%;
 }
 
 /* Logo.css------------------------------------------------------------------------------------------------------------ */
@@ -350,7 +378,7 @@ hambuger.css--------------------------------------------------------------------
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
   transform: translateX(100%);
   opacity: 0;
-  z-index: 999;
+  z-index: 1001;
   overflow: hidden;
 }
 #navContainer {
