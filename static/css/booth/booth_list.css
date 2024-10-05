@@ -5,6 +5,13 @@ font-face {
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
     format("woff");
 }
+@font-face {
+  font-family: "Felixti"; /* 원하는 폰트 이름 */
+  src: url("static/font/Felixti.ttf") format("truetype"); /* .ttf 파일 경로 */
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 html,
 body {
@@ -12,6 +19,7 @@ body {
   width: 100%;
   margin: 0; /* 기본 여백 제거 */
   padding: 0;
+  overflow: hidden;
 }
 body {
   background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
@@ -30,29 +38,24 @@ body {
 
   /* 제목 BOOTH */
   .title {
-    font-family: "Prata";
+    font-family: "Felixti";
     font-size: 7vw;
-    color: #ffffff;
+    font-weight: 600;
     text-align: center;
     margin-top: 35vw; /* 여백 조정 */
     position: relative; /* 다른 요소들과 겹치지 않게 상대 위치 */
+    color: #ffffff;
   }
 
   /* 지도 영역 */
-  .map-container {
+  #map {
     width: 90vw;
-    height: auto;
+    height: 70vw;
     border-radius: 10px;
     overflow: hidden; /* 이 속성은 유지 */
     margin: 0 auto;
     margin-bottom: 5vw;
     margin-top: 5vw;
-  }
-
-  .map-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px; /* 이미지에도 border-radius 적용 */
   }
 
   /* 박스 목록 */
@@ -63,6 +66,8 @@ body {
     padding: 0 5vw;
     position: relative; /* 박스 위치 고정 */
     margin-top: 10vw;
+    overflow-y: auto;
+    max-height: 50vh; /* 화면 높이의 절반으로 제한 */
   }
 
   .box {

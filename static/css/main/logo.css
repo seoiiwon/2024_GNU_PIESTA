@@ -1,21 +1,3 @@
-/* PIESTA LOGO */
-/* #logoImg {
-    position: fixed;
-    width: 60vw;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
-}
-.logoDate {
-    text-align: center;
-    font-family: "Pretendard-Regular";
-    color: #afafaf;
-    font-size: 2.5vw;
-    letter-spacing: 0.5vw;
-} */
 font-face {
     font-weight: 400;
     font-family: "Pretendard-Regular";
@@ -41,10 +23,6 @@ font-face {
     font-size: 2.5vw;
     letter-spacing: 0.5vw;
 }
-
-
-
-
 
 
 @media(max-width: 768px) {

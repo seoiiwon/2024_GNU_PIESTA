@@ -56,34 +56,73 @@
     <!-- Page1 포스터&디데이 -->
     <div id="home_poster">
         <!-- 포스터 들어올 자리 -->
-        <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" class="poster">
-        <div class="ddayTop">
-            <div id="dday">D -</div>
-            <div id="countdown"></div>
+        <div class="blankTop1">
+            <div class="posterContainer">
+                <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" id="poster">
+            </div>
+            <div class="ddayTop">
+                <div class="dday">2024.10.16 WED</div>
+                <div class="countdownDay">
+                    <div class="dday">D - </div>
+                    <div id="countdown"></div>
+                </div>
+            </div>
         </div>
     </div>
 
 
     <!-- Page2 라인업 -->
     <div id="home_lineup">
-        <div class="blankTop">
+        <div class="blankTop2">
             <div class="lineUp">LINE UP</div>
             <div class="piestaDates">
                 <div class="date" data-date="10/16">10/16</div>
                 <div class="date" data-date="10/17">10/17</div>
                 <div class="date" data-date="10/18">10/18</div>
             </div>
-            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1">
-            <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2">
-            <div class="lineupContainer">
-                <div class="lineUpList" id="lineup16">
-                    <div class="commingSoon">???</div>
-                </div>
-                <div class="lineUpList" id="lineup17">
-                    <div class="commingSoon">???</div>
-                </div>
-                <div class="lineUpList" id="lineup18">
-                    <div class="commingSoon">???</div>
+            <div class="bubbles">
+                <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1" />
+                <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2" />
+                <div class="lineupContainer">
+                    <div class="lineUpList" id="lineup/16">
+                        <div id="RoyKim">
+                            <img src="{{ url_for('static', path='images/16_artist1.png')}}" class="artist" />
+                            <div class="artistName">ROY KIM</div>
+                        </div>
+                        <div id="Bol4">
+                            <img src="{{ url_for('static', path='images/16_artist2.png')}}" class="artist" />
+                            <div class="artistName">BOL 4</div>
+                        </div>
+                    </div>
+
+                    <div class="lineUpList" id="lineup/17">
+                        <div id="JoYuri">
+                            <img src="{{ url_for('static', path='images/17_artist1.png')}}" class="artist" />
+                            <div class="artistName">JO YURI</div>
+                        </div>
+                        <div id="TripleS">
+                            <img src="{{ url_for('static', path='images/17_artist2.jpg')}}" class="artist" />
+                            <div class="artistName">TRIPLE S</div>
+                        </div>
+                        <div id="Yena">
+                            <img src="{{ url_for('static', path='images/17_artist3.png')}}" class="artist" />
+                            <div class="artistName">YENA</div>
+                        </div>
+                        <div id="Unis">
+                            <img src="{{ url_for('static', path='images/17_artist4.jpg')}}" class="artist" />
+                            <div class="artistName">UNIS</div>
+                        </div>
+                    </div>
+                    <div class="lineUpList" id="lineup/18">
+                        <div id="BewhY">
+                            <img src="{{ url_for('static', path='images/18_artist1.jpeg')}}" class="artist" />
+                            <div class="artistName">BEWH Y</div>
+                        </div>
+                        <div id="AshIsland">
+                            <img src="{{ url_for('static', path='images/18_artist2.png')}}" class="artist" />
+                            <div class="artistName">ASH ISLAND</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -92,17 +131,44 @@
 
     <!-- Page3 공지&오시는길 -->
     <div id="home_info">
-        <div class="announcement titleBox">
+        <div class="notice titleBox">
             <img class="icon" src="{{ url_for('static', path='icons/announcement_icon.svg')}}" alt="">
             <div class="title">공지사항</div>
         </div>
 
+        <!-- 공지 리스트 -->
+        <ul id="noticeList">
+            {% for notice in noticeAll %}
+            <li onclick="showNoticeModal('{{ notice.category }}', '{{ notice.title }}', '{{ notice.content }}')">
+                <div>
+                    <div class="noticeCategory">[{{ notice.category }}]</div>
+                    <div class="noticeTitle">{{ notice.title }}</div>
+                    <div class="noticeBody">{{ notice.content }}</div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
 
-        
+        <!-- 공지 모달 -->
+        <div id="noticeModal" class="noticeModal">
+            <div class="noticeModalContainer">
+                <div class="noticeModalTitleBox">
+                    <div id="noticeModalCategory"></div>
+                    <div id="noticeModalTitle"></div>
+                </div>
+                <div id="noticeModalBody"></div>
+            </div>
+        </div>
+
+
         <!-- 오시는 길 title -->
         <div class="vehicle titleBox">
+            <<<<<<< HEAD <img class="icon" src="{{ url_for('static', path='icons/bus_icon.svg')}}" alt="" />
+            <div class="title">오시는 길</div>
+            =======
             <img class="icon" src="{{ url_for('static', path='icons/bus_icon.svg')}}" alt="">
             <div class="title">오시는 길 (버스)</div>
+            >>>>>>> main
         </div>
 
         <!-- 오시는 길 토글 -->
@@ -111,8 +177,10 @@
             <div class="toggleBox">
                 <!-- 칠암캠퍼스 버스 정보 title -->
                 <div class="toggleList1">
-                    <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                    <div class="campus" onclick="toggleList('busList1')">경상국립대학교 칠암캠퍼스</div>
+                    <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="" />
+                    <div class="campus" onclick="toggleList('busList1')">
+                        경상국립대학교 칠암캠퍼스
+                    </div>
                 </div>
                 <!-- 칠암캠퍼스 버스 정보 토글 -->
                 <div id="busList1" style="display: block;">
@@ -136,7 +204,7 @@
             </div>
 
             <hr class="dottedLine">
-            
+
             <!-- 통영캠퍼스 버스 정보 컨테이너 -->
             <div class="toggleBox">
                 <!-- 통영캠퍼스 버스 정보 title -->
@@ -171,7 +239,7 @@
             </div>
 
             <hr class="dottedLine">
-            
+
             <!-- 창원캠퍼스 버스 정보 컨테이너 -->
             <div class="toggleBox">
                 <!-- 창원캠퍼스 버스 정보 title -->
@@ -232,50 +300,51 @@
                     <div class="busChannel2">
                         <div class="subTitleBus">경상국립대학교 가좌캠퍼스 > 칠암캠퍼스</div>
                         <div></div>
-                            <span class="subCategory">첫차</span>
-                            <span id="firstTimeFromEndPoint"></span>
-                        </div>
-                        <div>
-                            <span class="subCategory">막차</span>
-                            <span id="lastTimeFromEndPoint"></span>
-                        </div>
-                        <div>
-                            <span class="subCategory">배차</span>
-                            <span id="termsFromEndPoint"></span>
-                        </div>
+                        <span class="subCategory">첫차</span>
+                        <span id="firstTimeFromEndPoint"></span>
+                    </div>
+                    <div>
+                        <span class="subCategory">막차</span>
+                        <span id="lastTimeFromEndPoint"></span>
+                    </div>
+                    <div>
+                        <span class="subCategory">배차</span>
+                        <span id="termsFromEndPoint"></span>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- 통영, 창원캠퍼스 버스 정보 모달 (시외버스) -->
-            <div id="Modal2" class="busModal">
-                <div class="busModalContent">
-                    <div class="busModalTitle">
-                        <div id="busTime"></div>
-                        <div id="busChannel"></div>
+        <!-- 통영, 창원캠퍼스 버스 정보 모달 (시외버스) -->
+        <div id="Modal2" class="busModal">
+            <div class="busModalContent">
+                <div class="busModalTitle">
+                    <div id="busTime"></div>
+                    <div id="busChannel"></div>
+                </div>
+                <div>
+                    <div>
+                        <span class="subCategory">요금</span>
+                        <span id="busExpense"></span>
                     </div>
                     <div>
-                        <div>
-                            <span class="subCategory">요금</span>
-                            <span id="busExpense"></span>
-                        </div>
-                        <div>
-                            <span class="subCategory">유형</span>
-                            <span id="busType"></span>
-                        </div>
-                        <div>
-                            <span class="subCategory">경유</span>
-                            <span id="busPath"></span>
-                        </div>
-                        <div>
-                            <span class="subCategory">배차</span>
-                            <span id="busCompany"></span>
-                        </div>
+                        <span class="subCategory">유형</span>
+                        <span id="busType"></span>
+                    </div>
+                    <div>
+                        <span class="subCategory">경유</span>
+                        <span id="busPath"></span>
+                    </div>
+                    <div>
+                        <span class="subCategory">배차</span>
+                        <span id="busCompany"></span>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
 </body>
+
 </html>
