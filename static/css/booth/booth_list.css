@@ -12,7 +12,6 @@ font-face {
   font-style: normal;
 }
 
-
 html,
 body {
   height: 100%; /* html과 body의 높이를 100%로 설정 */
@@ -57,7 +56,11 @@ body {
     margin-bottom: 5vw;
     margin-top: 5vw;
   }
-
+  .box-content {
+    display: flex;
+    flex-direction: column; /* 제목과 설명을 세로로 배치 */
+    margin-left: 5vw;
+  }
   /* 박스 목록 */
   .box-container {
     display: flex;
@@ -69,21 +72,36 @@ body {
     overflow-y: auto;
     max-height: 50vh; /* 화면 높이의 절반으로 제한 */
   }
+  .box-icon {
+    margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 조정 */
+    font-size: 5vw; /* 아이콘 크기 */
+  }
 
   .box {
     background-color: #ffffff;
+
     color: #3b2862;
     padding: 5vw;
     border-radius: 20px;
-    text-align: center;
+    text-align: left; /* 왼쪽 정렬 */
     font-size: 4vw;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    opacity: 0.5;
+    display: flex; /* 수평 정렬을 위한 flexbox 사용 */
+    align-items: center; /* 아이콘과 텍스트를 수직으로 정렬 */
     height: 15vw;
-    display: flex;
-    justify-content: center; /* 수평 중앙 정렬 */
-    align-items: center; /* 수직 중앙 정렬 */
-    flex-direction: column;
+    opacity: 0.5;
+  }
+  .box-title {
+    font-weight: bold;
+  }
+
+  .box-description {
+    font-size: 3.5vw;
+    color: #666666;
+  }
+  i {
+    font-size: 7vw;
+    margin-top: 1vw;
   }
   #hambuger {
     width: 50px; /* 너비를 50px로 설정 */
