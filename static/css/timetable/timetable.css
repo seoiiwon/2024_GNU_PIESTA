@@ -7,8 +7,6 @@
     margin: 0;
     padding: 0;
   }
-  
-
 
   .header {
     text-align: center;
@@ -18,13 +16,14 @@
     font-weight: 400; /* Regular font weight */
     /* margin-top: 50px; */
   }
-  
+
   .timetable {
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr 1fr; /* 첫 번째 열 크기 수정 */
     grid-template-rows: repeat(18, 40px); /* 시간과 이벤트 그리드의 행을 동일하게 설정 */
     gap: 7px;
     padding: 15px;
+    /* max-width: 100%; */
   }
 
   .times {
@@ -58,6 +57,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* width: auto; */
     /* width: 1fr; */
     
     /* border-left: 3px solid #f39ac8; 세로선 제거 */
@@ -222,8 +222,6 @@
     font-size: 0.9em;
     color: #e0e0e0;
   }
-  
- 
 }
 
 
