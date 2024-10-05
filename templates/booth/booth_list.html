@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/init.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/booth/booth_list.css') }}"
+    />
+    <script
+      src="{{ url_for('static', path='js/booth/booth_list.js') }}"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/main/hamberger.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/main/logo.css') }}"
+    />
+    <script
+      src="{{ url_for('static', path='js/main/hamberger.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', path='js/main/logo.js') }}"
+      defer
+    ></script> 
+
+    <title>2024 GNU FIESTA</title>
+  </head>
+  <body>
+    <div id="booth_info">
+        <!-- 로고 -->
+    <div>
+      <div id="logoImg">
+          <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+          <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+      </div>
+  </div>
+
+  <!-- 햄버거 버튼 -->
+  <a class="menu-trigger" href="#">
+      <span class="hambergerBread"></span>
+      <span class="hambergerCenter"></span>
+      <span class="hambergerBread"></span>
+  </a>
+  <div id="hambergerContents" class="hambergerContents">
+      <div id="navContainer">
+          <div id="hrefHOME" data-url="/home">HOME</div>
+          <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
+          <div id="hrefBOOTH" data-url="/">BOOTH</div>
+          <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
+          <div id="hrefFAQ" data-url="faq">FAQ</div>
+      </div>
+      <div id="piestaWebHost">
+          <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>
+          &nbsp;X&nbsp;
+          <a id="mutsa" href="https://www.instagram.com/likelion_gnu/">멋쟁이사자처럼</a>
+      </div>
+  </div>
+    </div>
+    <!-- 타이틀 영역 -->
+        <div class="title">BOOTH</div>
+      <!-- 지도 영역 -->
+      <div id="map"></div>
+      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c7453c7dcb82e068c822a2ebc0c84cc4"></script>
+      <script>
+        var container = document.getElementById('map');
+        var options = {
+          center: new kakao.maps.LatLng(35.152961, 128.101117),
+          level: 4
+        };
+    
+        var map = new kakao.maps.Map(container, options);
+      </script>
+    
+
+    <!-- 박스 목록 스크롤 영역 -->
+    <div class="box-container">
+        <div class="box">
+            <div class="box-icon">
+            </div>
+            <div class="box-content">
+                <p class="box-title">멋쟁이사자처럼</p>
+                <p class="box-description">음식 부스</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-icon">
+            </div>
+            <div class="box-content">
+                <p class="box-title">멋쟁이사자처럼</p>
+                <p class="box-description">음식 부스</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-icon">
+            </div>
+            <div class="box-content">
+                <p class="box-title">멋쟁이사자처럼</p>
+                <p class="box-description">음식 부스</p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-icon">
+            </div>
+            <div class="box-content">
+                <p class="box-title">멋쟁이사자처럼</p>
+                <p class="box-description">음식 부스</p>
+            </div>
+        </div>
+        <div class="box">
+          <div class="box-icon">
+          </div>
+          <div class="box-content">
+              <p class="box-title">멋쟁이사자처럼</p>
+              <p class="box-description">음식 부스</p>
+          </div>
+      </div>
+      <div class="box">
+        <div class="box-icon">
+        </div>
+        <div class="box-content">
+            <p class="box-title">멋쟁이사자처럼</p>
+            <p class="box-description">음식 부스</p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-icon">
+        </div>
+        <div class="box-content">
+            <p class="box-title">멋쟁이사자처럼</p>
+            <p class="box-description">음식 부스</p>
+        </div>
+      </div>
+    
+    
+        <!-- 필요하면 더 많은 박스 추가 -->
+    </div>
+</div>
+  </body>
+</html>

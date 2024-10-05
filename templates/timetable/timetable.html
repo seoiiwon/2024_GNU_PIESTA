@@ -14,23 +14,31 @@
 
     <div class="timetable">
       <div class="times">
-        <div class="time-slot"><span>14:00</span></div>
-        <div class="half-hour"><span>30</span></div>
-        <div class="time-slot"><span>15:00</span></div>
-        <div class="half-hour"><span>30</span></div>
-        <div class="time-slot"><span>16:00</span></div>
-        <div class="half-hour"><span>30</span></div>
-        <div class="time-slot"><span>17:00</span></div>
-        <div class="half-hour"><span>30</span></div>
-        <div class="time-slot"><span>18:00</span></div>
-        <div class="half-hour"><span>30</span></div>
-        <div class="time-slot"><span>19:00</span></div>
-        <div class="half-hour"><span>30</span></div>
-        <div class="time-slot"><span>20:00</span></div>
-        <div class="half-hour"><span>30</span></div>
-        <div class="time-slot"><span>21:00</span></div>
-        <div class="half-hour"><span>30</span></div>
-        <div class="time-slot"><span>22:00</span></div>
+        <div class="time-slot" style="grid-row: 1 / 2"><span>14:00</span></div>
+        <div class="half-hour" style="grid-row: 2 / 3"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 3 / 4"><span>15:00</span></div>
+        <div class="half-hour" style="grid-row: 4 / 5"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 5 / 6"><span>16:00</span></div>
+        <div class="half-hour" style="grid-row: 6 / 7"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 7 / 8"><span>17:00</span></div>
+        <div class="half-hour" style="grid-row: 8 / 9"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 9 / 10"><span>18:00</span></div>
+        <div class="half-hour" style="grid-row: 10 / 11"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 11 / 12">
+          <span>19:00</span>
+        </div>
+        <div class="half-hour" style="grid-row: 12 / 13"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 13 / 14">
+          <span>20:00</span>
+        </div>
+        <div class="half-hour" style="grid-row: 14 / 15"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 15 / 16">
+          <span>21:00</span>
+        </div>
+        <div class="half-hour" style="grid-row: 16 / 17"><span>30</span></div>
+        <div class="time-slot" style="grid-row: 17 / 18">
+          <span>22:00</span>
+        </div>
       </div>
 
       <!-- Day 1: OCT 16, WED -->
@@ -68,7 +76,7 @@
           <div
             class="event"
             style="grid-row: 7 / 8"
-            onclick="showPopup('헛귀', '19:00 ~ 20:00')"
+            onclick="showPopup('햇귀', '19:00 ~ 20:00')"
           >
             햇귀
           </div>
@@ -185,7 +193,7 @@
       // X 버튼 클릭 시 모달 닫기
       document
         .querySelector(".close-modal")
-        .addEventListener("click", closePopup);
+        .addEventListener("click"gi, closePopup);
     </script>
   </body>
 </html>
