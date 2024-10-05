@@ -7,10 +7,9 @@
     align-items: center; /* 수평 중앙 정렬 */
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
-    font-family: 'prata', sans-serif;
+    font-family: 'pretendard', sans-serif;
     background-color: #2b2355;
     color: white;
-    padding: 0;
   }
   
   .mainpage {
@@ -19,7 +18,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 120px;
   }
   
   .timetable {
@@ -28,6 +27,7 @@
     grid-template-rows: repeat(20, 40px);
     gap: 7px;
     padding: 15px;
+    padding-top: 0;
     margin: 0 auto; /* 수평 중앙 정렬 */
   }
   
@@ -61,6 +61,7 @@
   }
   
   .time-slot span {
+    font-weight: 700;
     font-size: 10px; /* 시간 글자 크기 */
     color: #E2959C;
   }
@@ -96,7 +97,7 @@
     grid-template-rows: repeat(20, 40px);
     gap: 7px;
     border-left: 2px solid #000000; /* 수직선 추가 */
-    padding-left: 10px; /* 수직선과 내용 사이의 간격 추가 */
+    padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
     }
