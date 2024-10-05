@@ -16,14 +16,11 @@ async def testRouter(request: Request):
 @router.get("/home", response_class=HTMLResponse, status_code=status.HTTP_200_OK)
 async def getHome(request: Request, db: Session=Depends(get_db)):
     notice = db.query(Notice).order_by(Notice.id.desc()).all()
-    if (notice):
-        try:
-            return templates.TemplateResponse(
-                name="home.html",
-                context={
-                    "request" : request,
-                    "noticeAll" : notice
-                    }
-                )
-        except:
-            raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    return templates.TemplateResponse(
+        name="home.html",
+        context={
+            "request" : request,
+            "noticeAll" : notice
+            }
+        )
+
