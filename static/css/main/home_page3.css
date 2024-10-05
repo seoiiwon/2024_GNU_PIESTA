@@ -12,16 +12,11 @@ body {
   overflow: hidden;
 }
 
-#home_poster, #home_lineup, #home_info {
+#home_poster,
+#home_lineup,
+#home_info {
   background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
 }
-
-
-
-
-
-
-
 
 /* 공지사항 */
 .notice {
@@ -45,9 +40,9 @@ body {
 
 /* 공지사항 컨테이너 */
 
-#noticeList { 
-  overflow-x : scroll;
-  display: flex; 
+#noticeList {
+  overflow-x: scroll;
+  display: flex;
   margin: 4vw 8vw;
   height: 12vh;
   scrollbar-width: none;
@@ -57,16 +52,15 @@ body {
   display: none; /* Chrome, Safari, Edge에서 스크롤바 숨기기 */
 }
 
-#noticeList > li { 
+#noticeList > li {
   width: 40vw;
   height: fit-content;
   background-color: rgba(217, 217, 217, 0.5);
   border-radius: 10px;
   margin-right: 4vw;
-  flex :  0  0 40vw;
+  flex: 0 0 40vw;
   padding: 2vw;
 }
-
 
 .noticeCategory {
   font-size: 1em;
@@ -88,7 +82,7 @@ body {
 
 .noticeBody {
   font-size: 0.8em;
-  color: #DFDFDF;
+  color: #dfdfdf;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -97,7 +91,6 @@ body {
   line-clamp: 2;
   white-space: normal;
 }
-
 
 /* 공지 모달 style */
 .noticeModal {
@@ -121,7 +114,7 @@ body {
   left: 50%;
   top: 50%;
 
-  padding: 20px;  
+  padding: 20px;
   border: none;
   border-radius: 10px;
 
@@ -132,7 +125,7 @@ body {
 }
 
 .noticeModalTitleBox {
-  color: #58437C;
+  color: #58437c;
   font-size: 1.4em;
   font-weight: bold;
   margin-bottom: 2.5vh;
@@ -140,10 +133,8 @@ body {
 
 .noticeModalBody {
   line-height: 1.6em;
-  color: #6D6D6D;
+  color: #6d6d6d;
 }
-
-
 
 /* 오시는 길 */
 .toggle {
@@ -203,9 +194,6 @@ body {
   margin: 0 2vw 1vw 2vw;
 }
 
-
-
-
 .busModal {
   display: none;
   position: fixed;
@@ -236,14 +224,16 @@ body {
 .busModalTitle {
   margin-bottom: 1em;
 }
-.busModalTitle > div{
+.busModalTitle > div {
   color: #58437c;
 }
-#busNumber, #busTime {
+#busNumber,
+#busTime {
   font-weight: bold;
   font-size: 1.6em;
 }
-#busChannel, #busChannel_ty {
+#busChannel,
+#busChannel_ty {
   font-size: 1.1em;
 }
 
@@ -257,12 +247,12 @@ body {
 }
 .subCategory {
   margin-right: 1em;
-  color: #6D6D6D;
+  color: #6d6d6d;
 }
-#firstTimeFromStartPoint, 
-#lastTimeFromStartPoint, 
-#termsFromStartPoint, 
-#firstTimeFromEndPoint, 
+#firstTimeFromStartPoint,
+#lastTimeFromStartPoint,
+#termsFromStartPoint,
+#firstTimeFromEndPoint,
 #lastTimeFromEndPoint,
 #termsFromEndPoint,
 #busExpense,
@@ -273,9 +263,8 @@ body {
   font-weight: bold;
 }
 
-
 /* 휴대폰 사이즈 */
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   #home_poster,
   #home_lineup,
   #home_info {
@@ -306,7 +295,6 @@ body {
     font-size: 1.5em;
   }
 
-
   /* 오시는 길 */
   .toggleBox {
     margin: 2vh 8vw 0 8vw;
@@ -333,8 +321,6 @@ body {
     margin-top: 1vh;
   }
 }
-
-
 
 /* 태블릿 사이즈 */
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -368,7 +354,6 @@ body {
     font-size: 1.8em;
   }
 
-
   /* 오시는 길 */
   .toggleBox {
     margin: 2vh 8vw 0 8vw;
@@ -397,11 +382,6 @@ body {
   }
 }
 
-
-
-
-
 /* PC 사이즈 */
 @media (min-width: 1025px) {
-  
 }
