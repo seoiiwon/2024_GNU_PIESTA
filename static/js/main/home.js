@@ -1,3 +1,6 @@
+const bubble1 = document.getElementById("bubble1");
+const bubble2 = document.getElementById("bubble2");
+
 document.addEventListener("DOMContentLoaded", function () {
   let currentSection = 0;
   const sections = document.querySelectorAll("div");
@@ -6,6 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
   let scrollThrottle = false; // 스크롤 감도 조절을 위한 플래그
 
   function scrollToSection(sectionIndex) {
+    if (sectionIndex == 0 || sectionIndex == 2) {
+      bubble1.style.visibility = "hidden";
+      bubble2.style.visibility = "hidden";
+    } else {
+      bubble1.style.visibility = "visible";
+      bubble2.style.visibility = "visible";
+    }
     window.scrollTo({
       top: window.innerHeight * sectionIndex,
       behavior: "smooth",
@@ -134,3 +144,4 @@ window.onclick = function (event) {
     modal.style.display = "none";
   }
 };
+

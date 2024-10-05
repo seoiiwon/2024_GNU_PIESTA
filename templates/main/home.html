@@ -2,13 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/prata-2">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page1.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page2.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page3.css') }}">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/prata-2" />
+    <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page1.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page2.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page3.css') }}" />
     <script src="{{ url_for('static', path='js/main/home.js') }}" defer></script>
     <title>2024 GNU FIESTA</title>
 </head>
@@ -19,11 +19,14 @@
         <!-- 포스터 들어올 자리 -->
         <div class="blankTop1">
             <div class="posterContainer">
-                <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" class="poster">
+                <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" id="poster">
             </div>
             <div class="ddayTop">
-                <div id="dday">D - </div>
-                <div id="countdown"></div>
+                <div class="dday">2024.10.16 WED</div>
+                <div class="countdownDay">
+                    <div class="dday">D - </div>
+                    <div id="countdown"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -31,7 +34,7 @@
     <div id="home_lineup">
         <!-- 로고 div -->
         <div id="logoImg">
-            <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+            <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo" />
             <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
         </div>
         <div class="blankTop2">
@@ -42,31 +45,56 @@
                 <div class="date" data-date="10/18">10/18</div>
             </div>
             <div class="bubbles">
-                <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1">
-                <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2">
-            </div>
-            <div class="lineupContainer">
-                <div class="lineUpList" id="lineup/16">
-                    <img src="{{ url_for('static', path='images/16_entertainer1.png')}}" id="RoyKim"
-                        class="entertainter">
-                    <img src="{{ url_for('static', path='images/16_entertainer2.png')}}" id="Bol4" class="entertainter">
-                </div>
-                <div class="lineUpList" id="lineup/17">
-                    <img src="{{ url_for('static', path='images/17_entertainer.png')}}" alt="???" id="17entertainer"
-                        class="entertainter">
-                </div>
-                <div class="lineUpList" id="lineup/18">
-                    <img src="{{ url_for('static', path='images/18_entertainer.png')}}" alt="???" id="18entertainer"
-                        class="entertainter">
-                </div>
+                <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble1" />
+                <img src="{{ url_for('static', path='images/bubble.svg')}}" alt="bubble" id="bubble2" />
+                <div class="lineupContainer">
+                    <div class="lineUpList" id="lineup/16">
+                        <div id="RoyKim">
+                            <img src="{{ url_for('static', path='images/16_artist1.png')}}" class="artist" />
+                            <div class="artistName">ROY KIM</div>
+                        </div>
+                        <div id="Bol4">
+                            <img src="{{ url_for('static', path='images/16_artist2.png')}}" class="artist" />
+                            <div class="artistName">BOL 4</div>
+                        </div>
+                    </div>
 
+                    <div class="lineUpList" id="lineup/17">
+                        <div id="JoYuri">
+                            <img src="{{ url_for('static', path='images/17_artist1.png')}}" class="artist" />
+                            <div class="artistName">JO YURI</div>
+                        </div>
+                        <div id="TripleS">
+                            <img src="{{ url_for('static', path='images/17_artist2.jpg')}}" class="artist" />
+                            <div class="artistName">TRIPLE S</div>
+                        </div>
+                        <div id="Yena">
+                            <img src="{{ url_for('static', path='images/17_artist3.png')}}" class="artist" />
+                            <div class="artistName">YENA</div>
+                        </div>
+                        <div id="Unis">
+                            <img src="{{ url_for('static', path='images/17_artist4.jpg')}}" class="artist" />
+                            <div class="artistName">UNIS</div>
+                        </div>
+                    </div>
+                    <div class="lineUpList" id="lineup/18">
+                        <div id="BewhY">
+                            <img src="{{ url_for('static', path='images/18_artist1.jpeg')}}" class="artist" />
+                            <div class="artistName">BEWH Y</div>
+                        </div>
+                        <div id="AshIsland">
+                            <img src="{{ url_for('static', path='images/18_artist2.png')}}" class="artist" />
+                            <div class="artistName">ASH ISLAND</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- Page3 공지&오시는길 -->
     <div id="home_info">
         <div class="announcement titleBox">
-            <img class="icon" src="{{ url_for('static', path='icons/announcement_icon.svg')}}" alt="">
+            <img class="icon" src="{{ url_for('static', path='icons/announcement_icon.svg')}}" alt="" />
             <div class="title">공지사항</div>
         </div>
         <div class="announcementBoxContainer">
@@ -76,19 +104,21 @@
                     <div>우천 시 공지사항</div>
                 </div>
                 <div class="announcementContent">
-                    <div>우천시 이벤트 부스 조기 마감 될 </div>
+                    <div>우천시 이벤트 부스 조기 마감 될</div>
                 </div>
             </div>
         </div>
         <div class="vehicle titleBox">
-            <img class="icon" src="{{ url_for('static', path='icons/bus_icon.svg')}}" alt="">
+            <img class="icon" src="{{ url_for('static', path='icons/bus_icon.svg')}}" alt="" />
             <div class="title">오시는 길</div>
         </div>
         <div>
             <div class="toggleBox">
                 <div class="toggleList1">
-                    <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
-                    <div class="campus" onclick="toggleList('busList1')">경상국립대학교 칠암캠퍼스</div>
+                    <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="" />
+                    <div class="campus" onclick="toggleList('busList1')">
+                        경상국립대학교 칠암캠퍼스
+                    </div>
                 </div>
 
                 <div id="busList1">
@@ -106,17 +136,17 @@
                     <span onclick="showModal('140', '130 버스입니다.')">171</span>
                 </div>
             </div>
-            <hr class="dottedLine">
+            <hr class="dottedLine" />
             <div class="toggleBox">
-                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
+                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="" />
                 <div class="campus">경상국립대학교 통영캠퍼스</div>
             </div>
-            <hr class="dottedLine">
+            <hr class="dottedLine" />
             <div class="toggleBox">
-                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="">
+                <img class="toggle" src="{{ url_for('static', path='icons/toggle_icon.svg')}}" alt="" />
                 <div class="campus">경상국립대학교 창원산학캠퍼스</div>
             </div>
-            <hr class="dottedLine">
+            <hr class="dottedLine" />
 
             <div id="myModal" class="modal">
                 <div class="modalContent">
@@ -124,7 +154,6 @@
                     <p id="modalContent"></p>
                 </div>
             </div>
-
         </div>
     </div>
 </body>

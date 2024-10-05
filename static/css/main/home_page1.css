@@ -16,36 +16,37 @@ font-face {
   margin-bottom: 5vh;
 }
 
-.poster {
+#poster {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 35vh;
+  border-radius: 10%;
 }
 
 .ddayTop {
   display: flex;
-  justify-content: end;
+  justify-content: center;
   font-family: Prata;
-  align-items: end;
+  align-items: center;
   flex-direction: column;
   z-index: 1;
+  font-size: 5vh;
+  color: #221959;
 }
 
-#dday {
-  font-size: 6vh;
-  background: linear-gradient(to right top, #861657, #ffa69e);
-  color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 0.5px white;
+/* .dday {
+  font-size: 5vh;
 }
 
 #countdown {
-  z-index: 1;
-  color: white;
-  font-size: 10rem;
-  background: linear-gradient(to right top, #861657, #ffa69e);
-  color: transparent;
-  -webkit-background-clip: text;
-  -webkit-text-stroke: 1px white;
+  font-size: 5vh;
+  color: #221959;
+} */
+
+.countdownDay {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 3vh;
 }

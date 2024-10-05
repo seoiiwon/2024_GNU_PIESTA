@@ -12,16 +12,10 @@ body {
   overflow: hidden;
 }
 
-#home_poster {
-  background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
-}
-
-#home_lineup {
-  background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
-}
-
+#home_poster,
+#home_lineup,
 #home_info {
-  background-color: #2c2f74;
+  background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
 }
 
 /* PIESTA LOGO */
