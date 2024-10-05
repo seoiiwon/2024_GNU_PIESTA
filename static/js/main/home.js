@@ -1,11 +1,22 @@
+const bubble1 = document.getElementById("bubble1");
+const bubble2 = document.getElementById("bubble2");
+
 document.addEventListener("DOMContentLoaded", function () {
   let currentSection = 0;
   const sections = document.querySelectorAll("div");
   const totalSections = sections.length;
   const logoImg = document.getElementById("logoImg");
   let scrollThrottle = false; // 스크롤 감도 조절을 위한 플래그
+  const hamburger = document.getElementById("hamburger");
 
   function scrollToSection(sectionIndex) {
+    if (sectionIndex == 0 || sectionIndex == 2) {
+      bubble1.style.visibility = "hidden";
+      bubble2.style.visibility = "hidden";
+    } else {
+      bubble1.style.visibility = "visible";
+      bubble2.style.visibility = "visible";
+    }
     window.scrollTo({
       top: window.innerHeight * sectionIndex,
       behavior: "smooth",
@@ -22,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
       logoImg.style.opacity = "0";
       setTimeout(() => {
         logoImg.style.visibility = "hidden";
-      }, 300);
+      }, 1500);
     }
   }
 
@@ -36,25 +47,25 @@ document.addEventListener("DOMContentLoaded", function () {
         if (currentSection < totalSections - 1) {
           currentSection++;
           scrollToSection(currentSection);
-          handleLogoPosition();
+          // handleLogoPosition();
         }
       } else {
         if (currentSection > 0) {
           currentSection--;
           scrollToSection(currentSection);
-          handleLogoPosition();
+          // handleLogoPosition();
         }
       }
       scrollThrottle = false;
-    }, 1000);
+    }, 500);
   });
 
   window.addEventListener("resize", function () {
     scrollToSection(currentSection);
-    handleLogoPosition();
+    // handleLogoPosition();
   });
 
-  handleLogoPosition();
+  // handleLogoPosition();
 });
 
 // 날짜 카운트다운
@@ -71,61 +82,37 @@ function countdown() {
   // 디데이가 지났을 때 어떻게 할지 물어보댜
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").innerHTML = "D-Day";
+    document.getElementById("countdown").innerHTML = "Day";
   }
 }
 
 const x = setInterval(countdown, 1000);
 countdown();
 
-// 라인업 표시
+// 라인업
 document.addEventListener("DOMContentLoaded", function () {
   const dates = document.querySelectorAll(".date");
-  const lineups = document.querySelectorAll(".lineup");
-  let currentActive = "10/16";
+  const lineUpLists = document.querySelectorAll(".lineUpList");
+
+  function showLineup(date) {
+    lineUpLists.forEach((list) => {
+      if (list.id === `lineup/${date}`) {
+        list.style.display = "flex";
+      } else {
+        list.style.display = "none";
+      }
+    });
+  }
+
+  showLineup("16");
 
   dates.forEach((date) => {
     date.addEventListener("click", function () {
-      const selectedDate = this.getAttribute("data-date");
-      if (selectedDate !== currentActive) {
-        const currentLineup = document.getElementById(
-          `lineup-${currentActive.replace("/", "-")}`
-        );
-        const newLineup = document.getElementById(
-          `lineup-${selectedDate.replace("/", "-")}`
-        );
-
-        // 방향에 따라 애니메이션 설정
-        if (selectedDate > currentActive) {
-          newLineup.style.display = "block";
-          newLineup.style.transform = "translateX(100%)";
-          setTimeout(() => {
-            currentLineup.style.transform = "translateX(-100%)";
-            newLineup.style.transform = "translateX(0)";
-          }, 10);
-        } else {
-          newLineup.style.display = "block";
-          newLineup.style.transform = "translateX(-100%)";
-          setTimeout(() => {
-            currentLineup.style.transform = "translateX(100%)";
-            newLineup.style.transform = "translateX(0)";
-          }, 10);
-        }
-
-        // 이전 라인업 숨기기
-        setTimeout(() => {
-          currentLineup.style.display = "none";
-          currentLineup.style.transform = "translateX(0)";
-          currentLineup.classList.remove("active");
-        }, 500);
-
-        newLineup.classList.add("active");
-        currentActive = selectedDate;
-      }
+      showLineup(this.getAttribute("data-date").split("/")[1]);
     });
   });
-
-  // 초기 상태 설정
-  document.getElementById("lineup16").classList.add("active");
-  document.getElementById("lineup16").style.display = "block";
 });
+
+// 초기 상태 설정
+document.getElementById("lineup16").classList.add("active");
+document.getElementById("lineup16").style.display = "block";

@@ -1,0 +1,194 @@
+@font-face {
+    font-weight: 400; /* 폰트의 두께 */
+    font-family: 'Felixti'; /* 폰트 이름 */
+    src: url('/static/font/Felixti.TTF') format('truetype');
+}
+
+/* 햄버거 기본 스타일 설정 */
+.menu-trigger {
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 9%;
+    left: 90%;
+    width: 7vw;
+    height: 6vw;
+    z-index: 1000;
+}
+
+.menu-trigger span {
+    position: absolute;
+    left: 0;
+    height: 0.8vw;
+    background: linear-gradient(to left, #E2959C, #58437C); /* 오른쪽에서 왼쪽으로 색 변화 */
+    border-radius: 0.8vw;
+}
+
+.hambergerCenter {
+    width: 50%;
+}
+
+.hambergerBread {
+    width: 100%;
+}
+
+.menu-trigger,
+.menu-trigger span {
+    display: inline-block;
+    transition: all 0.4s;
+    box-sizing: border-box;
+}
+
+.menu-trigger span:nth-of-type(1) {
+    top: 0;
+}
+
+.menu-trigger span:nth-of-type(2) {
+    top: 50%;
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
+
+.menu-trigger span:nth-of-type(3) {
+    bottom: 0;
+}
+
+/* 햄버거 메뉴 애니메이션 */
+.menu-trigger.active span:nth-of-type(1) {
+    transform: translateY(2.5vw) rotate(-45deg);
+    background: #FFFFFF;
+}
+
+.menu-trigger.active span:nth-of-type(2) {
+    opacity: 0;
+}
+
+.menu-trigger.active span:nth-of-type(3) {
+    transform: translateY(-2.5vw) rotate(45deg);
+    background: #FFFFFF;
+}
+
+
+
+
+
+
+/* hambergerContents 스타일 */
+.hambergerContents {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: #333333;
+    color: #FFFFFF;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 999;
+    overflow: hidden;
+}
+#navContainer {
+    margin-top: 30vh;
+}
+#navContainer > div {
+    display: flex;
+    justify-content: center;
+}
+
+.hambergerContents.active {
+    transform: translateX(0); 
+    opacity: 1;
+}
+
+.hambergerContents.inactive {
+    transform: translateX(100%); 
+    opacity: 0;
+}
+
+/* 메뉴 항목 스타일링 - nav */
+.hambergerContents div {
+    margin: 3vh 0;
+    cursor: pointer;
+
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.hambergerContents.active div {
+    opacity: 1;
+    transform: translateX(0); 
+}
+
+.hambergerContents.inactive div {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+#navContainer > div {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+#navContainer > div::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.4s ease-out;
+}
+
+#navContainer > div:hover::before {
+    width: 100%;
+}
+
+
+
+/* 오감 멋사 인스타 링크 부분 */
+#piestaWebHost {
+    margin-top: auto;
+    margin-bottom: 10vh;
+    font-family: 'Felixti';
+}
+#ohgam{
+    font-family: 'Felixti';
+}
+
+#ohgam:hover {
+    color: #1D276C;
+}
+
+#ohgam:active {
+    color: #1D276C;
+}
+
+#mutsa:hover {
+    color: #FF7711;
+}
+#mutsa:active {
+    color: #FF7711;
+}
+
+
+
+
+@media(max-width: 768px) {
+    .hambergerContents div {
+        font-size: 4vw;    
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hambergerContents div {
+        font-size: 3vw;    
+    }
+}

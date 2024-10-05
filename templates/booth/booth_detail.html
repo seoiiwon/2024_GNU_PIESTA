@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet'><!-- BOOTH - Prata font 적용위해 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/booth/booth_detail.css') }}"
+    />
+    <script
+      src="{{ url_for('static', path='js/booth/booth_detail.js') }}"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/main/hamberger.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/main/logo.css') }}"
+    />
+    <script
+      src="{{ url_for('static', path='js/main/hamberger.js') }}"
+      defer
+    ></script>
+    <script
+      src="{{ url_for('static', path='js/main/logo.js') }}"
+      defer
+    ></script> 
+
+    <title>2024 GNU FIESTA</title>
+</head>
+<body>
+    <div id="booth_info">
+        <!-- 로고 -->
+    <div>
+      <div id="logoImg">
+          <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+          <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+      </div>
+  </div>
+
+  <!-- 햄버거 버튼 -->
+  <a class="menu-trigger" href="#">
+      <span class="hambergerBread"></span>
+      <span class="hambergerCenter"></span>
+      <span class="hambergerBread"></span>
+  </a>
+  <div id="hambergerContents" class="hambergerContents">
+      <div id="navContainer">
+          <div id="hrefHOME" data-url="/home">HOME</div>
+          <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
+          <div id="hrefBOOTH" data-url="/">BOOTH</div>
+          <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
+          <div id="hrefFAQ" data-url="faq">FAQ</div>
+      </div>
+      <div id="piestaWebHost">
+          <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>
+          &nbsp;X&nbsp;
+          <a id="mutsa" href="https://www.instagram.com/likelion_gnu/">멋쟁이사자처럼</a>
+      </div>
+  </div>
+    </div>
+<!-- 타이틀 영역 -->
+<div class="title">BOOTH</div>
+<div class="content_box scrollable">
+    <div>
+        <div class="ff sb booth_tt">
+            <div class="booth_name">
+                <!-- <img src="" alt="booth_icon"> --><!-- fontawesome 아이콘이 더 나은가 싶기도 해서-->
+                <h3><i class="fa-solid fa-utensils"></i>식품공작소</h3>
+                <div class="booth_info">
+                    <p><i class="fa-solid fa-circle"></i><span>식품공학과</span>|<a href=""><i class="fa-brands fa-instagram"></i></a></p>
+                </div>
+            </div>
+            <div class="heart">
+                <img src="/static/images/heart_default.png" alt="">
+            </div>
+        </div>
+        
+    </div>
+    <section class="booth_detail booth_desc">
+        <div class="line-wrapper">
+            <h4>부스 소개</h4><div class="line"></div>
+        </div>
+        <p>식품공작소는 경상국립대 식품공학과 학생들이 직접 기획하고 운영하는 부스입니다. 사람과 동물을 위한 다양한 식품을 고민하고 연구하는 이곳에서, 이번 대동제를 맞아 소개하는 특별한 제품들을 만나보세요! 😄</p>
+    </section>
+    <section class="booth_detail booth_menu">
+        <div class="line-wrapper">
+            <h4>부스 메뉴</h4><div class="line"></div>
+        </div>
+        <div class="menu_box">
+            <p>소떡소떡</p>
+            <div class="separator"></div> <!-- 점선 구분선 추가 -->
+            <p>3,500원</p>
+        </div>
+        <div class="menu_box">
+            <p>소떡소떡</p>
+            <div class="separator"></div> <!-- 점선 구분선 추가 -->
+            <p>3,500원</p>
+        </div>
+        <div class="menu_box">
+            <p>소떡소떡</p>
+            <div class="separator"></div> <!-- 점선 구분선 추가 -->
+            <p>3,500원</p>
+        </div>
+    </section>
+    <section class="booth_detail booth_time">
+        <div class="line-wrapper">
+            <h4>위치 및 운영 시간</h4><div class="line"></div>
+        </div>
+        <p>    
+            <i class="fa-solid fa-circle"></i>
+            위치 : <span>452동과 교양동 사이 오르막</span>
+        </p>
+        <p>
+            <i class="fa-solid fa-circle"></i>
+            운영시간 : <span>11:00 ~ 16:00</span>
+        </p>
+    </section>
+</div>
+</body>
+</html>
