@@ -43,11 +43,11 @@
     </div>
   </div>
 <!-- ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ 로고 및 햄버거 -->
-  <div class="mainpage">
+<div class="mainpage">
 
   <header class="header">
-      <h1>Time Table</h1>
-     </header>
+    <h1>Time Table</h1>
+  </header>
 
   <div class="timetable">
     <div class="times">
@@ -70,59 +70,59 @@
         <div class="time-slot" style="grid-row: 17 / 18;"><span>22:00</span></div>
     </div>
 
-      <!-- Day 1: OCT 16, WED -->
-      <div class="day-column">
-          <div class="day">OCT 16, WED</div>
-          <div class="events-day">
-            <div class="event" id="day1" style="grid-row: 10 / 13;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
-                <span class="event-time">18:30 ~ 20:00</span> <!-- 시간 표시 -->
-                <img src="{{ url_for('static', path='images/타임테이블 아이콘/피지컬 X.png')}}" alt="icon">
-                피지컬X & 비주얼 쇼 <!-- 이벤트 이름 -->
-              </div>
-            <div class="event" id="day1" style="grid-row: 13 / 14;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
-                <span class="event-time">20:00 ~ 20:30</span> <!-- 시간 표시 -->
-                <img src="{{ url_for('static', path='images/타임테이블 아이콘/콘서트.png')}}" alt="icon">
-                개회식 <!-- 이벤트 이름 -->
-              </div>
-            <div class="event" id="day1" style="grid-row: 14 / 15;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
-                <span class="event-time"> 20:30 ~ 20:40</span> <!-- 시간 표시 -->
-                <img src="{{ url_for('static', path='images/타임테이블 아이콘/불꽃놀이.png')}}" alt="icon">
-                불꽃놀이 <!-- 이벤트 이름 -->
-              </div>
-            <div class="event" id="day1" style="grid-row: 15 / 17;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '10/16(수)21:00 로이킴21:30 볼사22:00 DJ 아나콘다22:30 DJ 허조교')">
-                <span class="event-time">21:00 ~ 22:00</span> <!-- 시간 표시 -->
-                <img src="{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}" alt="icon">
-                연예인 축하 공연 <!-- 이벤트 이름 -->
-              </div>
-            <div class="event" id="day1" style="grid-row: 17 / 19;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
-                <span class="event-time">22:00 ~ </span> <!-- 시간 표시 -->
-                <img src="{{ url_for('static', path='images/타임테이블 아이콘/DJ.png')}}" alt="icon">
-                DJ 페스티벌 <!-- 이벤트 이름 -->
-              </div>
-          </div>
-      </div>
-
-      <!-- Day 2: OCT 17, THU -->
-      <div class="day-column">
-          <div class="day">OCT 17, THU</div>
-          <div class="events-day">
-            <div class="event" id="day2" style="grid-row: 7 / 13;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
-              <span class="event-time">17:00 ~ 20:00</span> <!-- 시간 표시 -->
-              <img src="{{ url_for('static', path='images/타임테이블 아이콘/댄스.png')}}" alt="icon">
-              B.P.M & 민속무용학과 공연 <!-- 이벤트 이름 -->
+    <!-- Day 1: OCT 16, WED -->
+    <div class="day-column">
+        <div class="day">OCT 16, WED</div>
+        <div class="events-day">
+          <div class="event" id="day1" style="grid-row: 10 / 13;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
+              <span class="event-time">18:30 ~ 20:00</span> <!-- 시간 표시 -->
+              <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
+              피지컬X & 비주얼 쇼 <!-- 이벤트 이름 -->
             </div>
-            <div class="event" id="day2" style="grid-row: 13 / 17;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
-              <span class="event-time">20:00 ~ 22:00</span> <!-- 시간 표시 -->
-              <img src="{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}" alt="icon">
+          <div class="event" id="day1" style="grid-row: 13 / 14;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
+              <span class="event-time">20:00 ~ 20:30</span> <!-- 시간 표시 -->
+              <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
+              개회식 <!-- 이벤트 이름 -->
+            </div>
+          <div class="event" id="day1" style="grid-row: 14 / 15;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
+              <span class="event-time"> 20:30 ~ 20:40</span> <!-- 시간 표시 -->
+              <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
+              불꽃놀이 <!-- 이벤트 이름 -->
+            </div>
+          <div class="event" id="day1" style="grid-row: 15 / 17;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '10/16(수)21:00 로이킴21:30 볼사22:00 DJ 아나콘다22:30 DJ 허조교')">
+              <span class="event-time">21:00 ~ 22:00</span> <!-- 시간 표시 -->
+              <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
               연예인 축하 공연 <!-- 이벤트 이름 -->
             </div>
-            <div class="event" id="day2" style="grid-row: 17 / 19;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
+          <div class="event" id="day1" style="grid-row: 17 / 19;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
               <span class="event-time">22:00 ~ </span> <!-- 시간 표시 -->
               <img src="{{ url_for('static', path='images/타임테이블 아이콘/DJ.png')}}" alt="icon">
               DJ 페스티벌 <!-- 이벤트 이름 -->
             </div>
+        </div>
+    </div>
+
+      <!-- Day 2: OCT 17, THU -->
+    <div class="day-column">
+        <div class="day">OCT 17, THU</div>
+        <div class="events-day">
+          <div class="event" id="day2" style="grid-row: 7 / 13;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
+            <span class="event-time">17:00 ~ 20:00</span> <!-- 시간 표시 -->
+            <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
+            B.P.M & 민속무용학과 공연 <!-- 이벤트 이름 -->
           </div>
-      </div>
+          <div class="event" id="day2" style="grid-row: 13 / 17;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
+            <span class="event-time">20:00 ~ 22:00</span> <!-- 시간 표시 -->
+            <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
+            연예인 축하 공연 <!-- 이벤트 이름 -->
+          </div>
+          <div class="event" id="day2" style="grid-row: 17 / 19;" onclick="showPopup('피지컬X & 비주얼 쇼', '18:30 ~ 20:00', '오프닝')">
+            <span class="event-time">22:00 ~ </span> <!-- 시간 표시 -->
+            <img src="icon.png" alt="icon" class="icon"> <!-- 아이콘 추가 -->
+            DJ 페스티벌 <!-- 이벤트 이름 -->
+          </div>
+        </div>
+    </div>
 
       <!-- Day 3: OCT 18, FRI -->
       <div class="day-column">
@@ -156,7 +156,7 @@
           </div>
       </div>
   </div>
-  </div>
+</div>
 
           
 <!-- Popup -->
