@@ -5,6 +5,13 @@ font-face {
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
     format("woff");
 }
+@font-face {
+  font-family: "Felixti"; /* 원하는 폰트 이름 */
+  src: url("static/font/Felixti.ttf") format("truetype"); /* .ttf 파일 경로 */
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 html,
 body {
@@ -31,12 +38,13 @@ body {
 
   /* 제목 BOOTH */
   .title {
-    font-family: "Prata";
+    font-family: "Felixti";
     font-size: 7vw;
-    color: #ffffff;
+    font-weight: 600;
     text-align: center;
     margin-top: 35vw; /* 여백 조정 */
     position: relative; /* 다른 요소들과 겹치지 않게 상대 위치 */
+    color: #ffffff;
   }
 
   /* 지도 영역 */
