@@ -1,14 +1,38 @@
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ휴대폰 */
 @media (max-width: 1024px) {
   body {
-    font-family: 'prata', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 수직 중앙 정렬 */
+    align-items: center; /* 수평 중앙 정렬 */
+    min-height: 100vh; /* 전체 화면 높이 */
+    margin: 0;
+    font-family: 'pretendard', sans-serif;
     background-color: #2b2355;
     color: white;
-    margin: 0;
-    padding: 0;
   }
   
-
+  .mainpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 120px;
+  }
+  
+  .timetable {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(20, 40px);
+    gap: 7px;
+    padding: 15px;
+    padding-top: 0;
+    margin: 0 auto; /* 수평 중앙 정렬 */
+  }
+  
+  
+  
 
   .header {
     text-align: center;
@@ -18,18 +42,12 @@
     font-weight: 400; /* Regular font weight */
     /* margin-top: 50px; */
   }
-  
-  .timetable {
-    display: grid;
-    grid-template-columns: 0.3fr 1fr 1fr 1fr; /* 첫 번째 열 크기 수정 */
-    grid-template-rows: repeat(18, 40px); /* 시간과 이벤트 그리드의 행을 동일하게 설정 */
-    gap: 7px;
-    padding: 15px;
-  }
+
+
 
   .times {
     display: grid;
-    grid-template-rows: repeat(18, 40px); /* 시간도 동일한 행 크기를 공유 */
+    grid-template-rows: repeat(20, 40px); /* 시간도 동일한 행 크기를 공유 */
     align-items: center;
     justify-content: flex-end;
     gap: 7px;
@@ -45,6 +63,7 @@
   }
   
   .time-slot span {
+    font-weight: 700;
     font-size: 10px; /* 시간 글자 크기 */
     color: #E2959C;
   }
@@ -58,6 +77,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* width: auto; */
     /* width: 1fr; */
     
     /* border-left: 3px solid #f39ac8; 세로선 제거 */
@@ -80,22 +100,19 @@
     grid-template-rows: repeat(20, 40px);
     gap: 7px;
     border-left: 2px solid #000000; /* 수직선 추가 */
-    padding-left: 10px; /* 수직선과 내용 사이의 간격 추가 */
+    padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
     }
-    
-  .day-column:first-child .events-day {
-      border-left: none; /* 첫 번째 day-column의 수직선 제거 */
-      padding-left: 0; /* 첫 번째 요소의 패딩 제거 */
-  }
+
+
   .event {
     position: relative;
     background-color: #7d50d0;
     display: flex;
     align-items: center;
     padding: 10px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
     cursor: pointer;
     gap: 7px;
@@ -105,10 +122,10 @@
 
   .event-time {
     position: absolute;
-    top: 7px;
+    top: 2px;
     left: 7px;
-    font-size: 20px;
-    color: #FEE5C6;
+    font-size: 7px !important;
+    color: #FEE5C6 !important;
 }
 
   .icon {
@@ -222,8 +239,6 @@
     font-size: 0.9em;
     color: #e0e0e0;
   }
-  
- 
 }
 
 
