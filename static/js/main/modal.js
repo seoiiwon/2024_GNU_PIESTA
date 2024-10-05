@@ -1,3 +1,24 @@
+// 공지 모달 열기 
+function showNoticeModal(noticeCategory, noticeTitle, noticeBody) {
+  const noticeModal = document.getElementById('noticeModal');
+  const noticeModalCategory = document.getElementById('noticeModalCategory');
+  const noticeModalTitle = document.getElementById('noticeModalTitle');
+  const noticeModalBody = document.getElementById('noticeModalBody');
+  
+  if (noticeCategory && noticeTitle && noticeBody) {
+    noticeModalCategory.textContent = '[ ' + noticeCategory + ' ]';
+    noticeModalTitle.textContent = noticeTitle;
+    noticeModalBody.textContent = noticeBody;
+
+    noticeModal.style.display = 'block';
+  } else {
+    console.log('404 NOT FOUND');
+    
+  }
+}
+
+
+
 let busInfo_chilam = {};
 let busInfo_tongyeong = {};
 let busInfo_changwon = {};
@@ -96,11 +117,13 @@ function showBusModalTYCW(time, location, busFrom) {
 window.onclick = function(event) {
     const modal1 = document.getElementById('Modal1');
     const modal2 = document.getElementById('Modal2');
+    const noticeModal = document.getElementById('noticeModal');
     // const modal3 = document.getElementById('Modal3');
 
-    if (event.target == modal1 || event.target == modal2) {
+    if (event.target == modal1 || event.target == modal2 || event.target == noticeModal) {
         modal1.style.display = "none";
         modal2.style.display = "none";
+        noticeModal.style.display = "none";
         // modal3.style.display = "none";
     }
 }
