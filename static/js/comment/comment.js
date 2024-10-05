@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // 댓글 컨테이너 비우기
       const commentsContainer = document.getElementById("comments-container");
       commentsContainer.innerHTML = ""; // 기존 댓글 초기화
-      
+
       comments.forEach((comment) => {
         displayComment(comment.name, comment.text);
       });
@@ -65,7 +65,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     commentDiv.appendChild(nameDiv);
     commentDiv.appendChild(textDiv);
-    document.getElementById("comments-container").appendChild(commentDiv);
+
+    const commentsContainer = document.getElementById("comments-container");
+    commentsContainer.insertBefore(commentDiv, commentsContainer.firstChild);
   }
 });
 

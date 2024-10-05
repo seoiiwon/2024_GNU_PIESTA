@@ -5,36 +5,68 @@ font-face {
     format("woff");
 }
 
-html,
-body {
-  height: 100%; /* html과 body의 높이를 100%로 설정 */
+.header {
+  height: 50px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
   width: 100%;
-  margin: 0; /* 기본 여백 제거 */
-  padding: 0;
+  top: 0;
+  z-index: 1000;
 }
-
 body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Viewport height */
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
 }
 
 .comment-section {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-#comment-form {
-  display: flex;
-  align-items: center;
-  position: fixed;
+  position: fixed; /* 고정 위치 */
   bottom: 0;
   left: 0;
   right: 0;
   background: linear-gradient(to right bottom, #f0f0f0, #ffd0d0);
   padding: 10px;
-  border: 1px solid black;
-  width: 100vw;
-  height: 5vh;
+  border-top: 1px solid black;
   z-index: 1000;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex: 1; /* Takes up available space */
+  overflow-y: auto; /* Enables scrolling */
+}
+
+#comment-form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+#comment-input {
+  flex: 1;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+button {
+  background-color: #ededed;
+  color: white;
+  border: solid black 1px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+#comment-content {
+  flex: 1; /* 남은 공간을 모두 차지 */
+  overflow-y: scroll; /* 스크롤 가능 */
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
 }
 
 button:hover {
@@ -113,6 +145,11 @@ button:hover {
   }
 }
 
+.empty {
+  height: 20vh;
+  width: 100vw;
+  background-color: #a0c800;
+}
 /* ------------------------------------------------------------------------------------------------- */
 
 @media (min-width: 768px) {
@@ -350,7 +387,7 @@ hambuger.css--------------------------------------------------------------------
   transition: transform 0.5s ease-out, opacity 0.5s ease-out;
   transform: translateX(100%);
   opacity: 0;
-  z-index: 999;
+  z-index: 1001;
   overflow: hidden;
 }
 #navContainer {
