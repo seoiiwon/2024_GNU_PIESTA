@@ -42,6 +42,14 @@ body {
   overflow-y: auto; /* Enables scrolling */
 }
 
+#comments-container {
+  width: 90%;
+  height: 60vh;
+  top: 30%;
+  left: 10%;
+  position: fixed;
+  overflow-y: scroll;
+}
 #comment-form {
   display: flex;
   width: 100%;
@@ -60,13 +68,6 @@ button {
   border: solid black 1px;
   border-radius: 15px;
   cursor: pointer;
-}
-#comment-content {
-  flex: 1; /* 남은 공간을 모두 차지 */
-  overflow-y: scroll; /* 스크롤 가능 */
-  padding: 10px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
 }
 
 button:hover {
@@ -92,7 +93,6 @@ button:hover {
 
   .comment {
     width: 72vw;
-    top: 30%;
     left: 5%;
     position: relative;
   }
@@ -224,15 +224,8 @@ button:hover {
   }
   .comment {
     width: 70vw;
-    top: 30%;
     position: relative;
   }
-}
-#comments-container {
-  width: 70vw;
-  position: fixed;
-  left: 10%;
-  top: 30%;
 }
 
 /* Logo.css------------------------------------------------------------------------------------------------------------ */
