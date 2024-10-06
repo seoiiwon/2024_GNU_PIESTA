@@ -1,36 +1,25 @@
-// // 팝업 표시 함수
-// function showPopup(eventName, eventTime) {
-//   document.getElementById('event-title').innerText = eventName;
-//   document.getElementById('event-time').innerText = eventTime;
-
-//   // 팝업 보이기
-//   const popup = document.getElementById('popup');
-//   popup.style.display = 'flex';
-// }
-
-// // 팝업 닫기 함수
-// function closePopup() {
-//   const popup = document.getElementById('popup');
-//   popup.style.display = 'none';
-// }
-// -----------------------------------------------------------
 function showPopup(eventTitle, eventTime, eventDetail, eventImage) {
   const popup = document.getElementById("popup");
-  const popupLeft = document.querySelector('.popup-left');
+  const popupLeft = document.querySelector(".popup-left");
+  const popupTitle = document.getElementById("popup-title");
+  const popupDetail = document.getElementById("popup-detail");
 
-  //이미지 요소를 찾거나 생성 (클래스 기준)
-  const imgElement = popupLeft.querySelector('.event-icon');
+  // 이미지 요소를 찾거나 생성 (클래스 기준)
+  let imgElement = popupLeft.querySelector(".event-icon");
   if (!imgElement) {
-    const newImg = document.createElement('img');
-    newImg.classList.add('event-icon');
+    const newImg = document.createElement("img");
+    newImg.classList.add("event-icon");
     popupLeft.appendChild(newImg);
     imgElement = newImg;
   }
-  
+
   // 팝업 내용 채우기
-  document.getElementById("popup-title").innerText = eventTitle;
+  popupTitle.innerHTML = eventTitle.replace(/,/g, "<br>");
   document.getElementById("popup-time").innerText = eventTime;
-  document.getElementById("popup-detail").innerText = eventDetail;
+  popupDetail.innerHTML = eventDetail.replace(/,/g, "<br>");
+
+  // 이미지 경로 설정
+  imgElement.src = eventImage;
 
   // 팝업 애니메이션 추가
   popup.style.display = "flex"; // 팝업 표시
@@ -39,6 +28,7 @@ function showPopup(eventTitle, eventTime, eventDetail, eventImage) {
     popup.style.transform = "translateX(0)";
   }, 10);
 }
+
 
 function closePopup() {
   const popup = document.getElementById("popup");
@@ -52,39 +42,3 @@ function closePopup() {
     popup.style.display = "none";
   }, 400); // 애니메이션이 끝날 때까지 기다림
 }
-
-// function showPopup(title, time) {
-//   // 모달 창의 제목과 시간 설정
-//   document.getElementById("event-title").innerText = title;
-//   document.getElementById("event-time").innerText = time;
-
-//   // 모달 창과 배경 표시
-//   const popup = document.getElementById("popup");
-//   const bg = document.querySelector(".body-bg");
-//   popup.style.display = "block";
-//   bg.style.display = "block";
-
-//   // 배경 숨김
-//   const bg = document.querySelector(".body-bg");
-//   bg.style.display = "none";
-
-//   // 모달 애니메이션 추가
-//   setTimeout(() => {
-//     popup.style.visibility = "visible";
-//     popup.style.transform = "translateX(0)";
-//   }, 3);
-
-
-// function closePopup() {
-//   // 모달 애니메이션 제거
-//   const popup = document.getElementById("popup");
-//   popup.style.visibility = "hidden";
-//   popup.style.transform = "translateX(100%)";
-
-
-
-//   // 모달 숨기기
-//   setTimeout(() => {
-//     popup.style.display = "none";
-//   }, 400); // 애니메이션이 끝날 때까지 기다림
-// }

@@ -23,9 +23,11 @@
 
 .FAQ {
     text-align: center;
-    font-family: "Prata";
+    font-family: "Felixti";
+    font-size: 7vw;
+    font-weight: 500;
+    text-align: center;
     color: white;
-    font-size: 24px;
     letter-spacing: 0.5vw;
     padding-bottom: 50px;
 }
