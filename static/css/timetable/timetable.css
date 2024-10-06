@@ -158,9 +158,10 @@
   .popup {
     display: flex; /* 부모 요소에 flexbox 적용 */
     position: fixed;
-    z-index: 1000;
-    width: 100%;
+    z-index: 1500;
+    width: 180%;
     height: 100%;
+    bottom: 5%;
     /* background-color: rgba(0, 0, 0, 0.5); */
     justify-content: center;
     align-items: center;
@@ -172,14 +173,16 @@
 
   .popup-content {
     display: flex; 
-    width: 24rem; 
-    height: 15rem; 
+    width: 23rem; 
+    height: 16rem; 
     border-radius: 1.5rem; 
     overflow: hidden;
+    
+    backdrop-filter: blur(5px);
 }
   .popup-left {
     background-color: #6442A0;
-    padding: 20px;
+    padding: 1.2rem;
     text-align: right;
     color: white;
     width: 35%; 
@@ -190,33 +193,44 @@
   }
 
   .popup-left #popup-title {
-    font-size: 17px; /* 타이틀 폰트 크기 */
+    font-size: 16px; /* 타이틀 폰트 크기 */
   }
   .popup-left #popup-time {
-    font-size: 15px; /* 시간 폰트 크기 */
+    font-size: 14px; /* 시간 폰트 크기 */
   }
   
   .popup-right {
     background-color: #B18FEB; 
-    padding: 20px;
+    padding: 1.2rem;
     text-align: left;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.6;
     color: white;
     width: 65%; 
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 세로 중앙 정렬 */
     align-items: flex-start; /* 왼쪽 정렬 */
+
+    max-height: 15rem;
+    overflow-y: auto;
+     /* 스크롤바 스타일 변경 */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+       background: #6442A0; 
+       border-radius: 10px;
+      }
   }
 
    .close-btn {
-    position: absolute;
+    position: fixed;
     top: 0.3rem;
     right: 0.8rem;
     background: none;
     border: none;
-    font-size: 2em;
+    font-size: 3em;
     color: #FEE5C6;
     cursor: pointer;
   }
@@ -403,9 +417,10 @@
   .popup {
     display: flex; /* 부모 요소에 flexbox 적용 */
     position: fixed;
-    z-index: 1000;
-    width: 100%;
+    z-index: 1500;
+    width: 180%;
     height: 100%;
+    bottom: 5%;
     /* background-color: rgba(0, 0, 0, 0.5); */
     justify-content: center;
     align-items: center;
@@ -417,14 +432,16 @@
 
   .popup-content {
     display: flex; 
-    width: 24rem; 
-    height: 15rem; 
+    width: 23rem; 
+    height: 16rem; 
     border-radius: 1.5rem; 
     overflow: hidden;
+    
+    backdrop-filter: blur(5px);
 }
   .popup-left {
     background-color: #6442A0;
-    padding: 20px;
+    padding: 1.2rem;
     text-align: right;
     color: white;
     width: 35%; 
@@ -435,33 +452,44 @@
   }
 
   .popup-left #popup-title {
-    font-size: 17px; /* 타이틀 폰트 크기 */
+    font-size: 16px; /* 타이틀 폰트 크기 */
   }
   .popup-left #popup-time {
-    font-size: 15px; /* 시간 폰트 크기 */
+    font-size: 14px; /* 시간 폰트 크기 */
   }
   
   .popup-right {
     background-color: #B18FEB; 
-    padding: 20px;
+    padding: 1.2rem;
     text-align: left;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.6;
     color: white;
     width: 65%; 
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 세로 중앙 정렬 */
     align-items: flex-start; /* 왼쪽 정렬 */
+
+    max-height: 15rem;
+    overflow-y: auto;
+     /* 스크롤바 스타일 변경 */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+       background: #6442A0; 
+       border-radius: 10px;
+      }
   }
 
    .close-btn {
-    position: absolute;
+    position: fixed;
     top: 0.3rem;
     right: 0.8rem;
     background: none;
     border: none;
-    font-size: 2em;
+    font-size: 3em;
     color: #FEE5C6;
     cursor: pointer;
   }
@@ -486,6 +514,5 @@
     font-size: 0.9em;
     color: #e0e0e0;
   }
- 
 } 
 
