@@ -2,21 +2,23 @@ font-face {
   font-family: Prata;
 }
 
-.blankTop {
-  margin-top: 12.5rem;
+.blankTop2 {
+  margin-top: 18vh;
 }
 
 .piestaDates {
   display: flex;
   justify-content: space-evenly;
   font-family: Prata;
+  margin: 1vh;
 }
 
 .lineUp {
   display: flex;
   justify-content: center;
+  margin: 1vh;
   font-family: Prata;
-  font-size: 1.5rem;
+  font-size: 3vh;
   color: white;
 }
 
@@ -24,56 +26,100 @@ font-face {
   margin: 1rem;
   padding: 0.25rem;
   background-color: #f5f5f5;
-  color: linear-gradient(#58437c, #e2959c);
   size: 1.5rem;
   border-radius: 50%;
-  box-shadow: 0rem 0rem 0.5rem 0.5rem white;
-  font-size: 1.25rem;
+  box-shadow: 0rem 0rem 0.5rem 0.5rem #f5f5f5;
+  font-size: 2vh;
 }
 
 .date:hover {
-  background-color: #e2959c;
+  background-color: #dddddd;
+  box-shadow: 0rem 0rem 0.5rem 0.5rem #dddddd;
 }
+
 #bubble1,
 #bubble2 {
-  width: 10rem;
-  position: relative;
-  z-index: -1;
+  width: 50vh;
+  position: fixed;
+  z-index: 3;
 }
 
 #bubble1 {
-  top: 10rem;
-  left: 20rem;
+  top: 60vh;
+  right: 30vh;
 }
 
 #bubble2 {
-  top: 20rem;
+  left: 30vh;
+  bottom: 30vh;
 }
-
+/* 
 .lineupContainer {
   position: relative;
   width: 100%;
-  overflow: hidden;
-}
-
-.lineup {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-
-.lineup.active {
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.commingSoon {
-  width: 240px;
-  height: 330px;
-  background-color: #e2959c;
-  border-radius: 25%;
+.lineUpList {
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  overflow: auto;
+  white-space: nowrap;
+}
+
+.artist {
+  margin: 1vh;
+  width: 100%;
+  max-width: 35vh;
+  min-width: 35vh;
+  border-radius: 10%;
+}
+
+.artistName {
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 2vh;
+  font-family: Prata;
+}
+
+.lineUpList::-webkit-scrollbar {
+  display: none;
+} */
+
+.lineUpContainer {
+  padding: 0 15vw;
+  margin-top: 5vh;
+}
+
+.lineUpList {
+  padding: 0 15vw;
+  overflow-x: scroll;
+  display: flex;
+}
+
+.lineUpList::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge에서 스크롤바 숨기기 */
+}
+
+.artistContainer {
+  flex: 0 0 70vw;
+  padding-right: 20px;
+}
+
+.artist {
+  margin: 1vh;
+  width: 100%;
+
+  border-radius: 10%;
+}
+
+.artistName {
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 2vh;
+  font-family: Prata;
 }

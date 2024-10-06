@@ -5,66 +5,72 @@ font-face {
     format("woff");
 }
 
-html,
-body {
-  height: 100%; /* html과 body의 높이를 100%로 설정 */
+.header {
+  height: 50px;
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
   width: 100%;
-  margin: 0; /* 기본 여백 제거 */
-  padding: 0;
+  top: 0;
+  z-index: 1000;
 }
-
 body {
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Viewport height */
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
 }
 
 .comment-section {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-#comment-form {
-  display: flex;
-  align-items: center;
-  position: fixed;
+  position: fixed; /* 고정 위치 */
   bottom: 0;
   left: 0;
   right: 0;
   background: linear-gradient(to right bottom, #f0f0f0, #ffd0d0);
   padding: 10px;
-  border: 1px solid black;
-  width: 100vw;
-  height: 5vh;
+  border-top: 1px solid black;
   z-index: 1000;
+  width: 98vw;
+  display: flex;
+  align-items: center;
+}
+
+#comments-container {
+  width: 90%;
+  height: 60vh;
+  top: 30%;
+  left: 10%;
+  position: fixed;
+  overflow-y: scroll;
+}
+#comment-form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+#comment-input {
+  flex: 1;
+  margin-right: 10px;
+  border-radius: 15px;
+}
+
+button {
+  background-color: #ededed;
+  color: white;
+  border: solid black 1px;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 button:hover {
   background-color: #6b6592;
 }
 
-.logo {
-  position: fixed;
-  width: 60vw;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  /* opacity: 0;
-  visibility: hidden; */
-  transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
-}
-/* .logoDate {
-  text-align: center;
-  font-family: "Pretendard-Regular";
-  color: #afafaf;
-  font-size: 2.5vw;
-  letter-spacing: 0.5vw;
-} */
-.logo-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-@media (max-width: 1024px) {
+@media (max-width: 767px) {
   #comment-form {
     width: 100%;
     height: 8vh;
@@ -82,18 +88,21 @@ button:hover {
   }
 
   .comment {
-    width: 70vw;
+    width: 72vw;
+    left: 5%;
+    position: relative;
   }
   #hambuger {
-    left: 90%;
-    position: relative;
+    left: 82%;
+    top: 4%;
+    position: fixed;
   }
 
   #comment-input {
-    width: 70%;
+    width: 65%;
     height: 7vh;
     margin: 0;
-    border-radius: 20px;
+    border-radius: 15px;
   }
   button {
     background-color: #ededed;
@@ -101,10 +110,11 @@ button:hover {
     border: solid black 1px;
     border-radius: 15px;
     cursor: pointer;
-    width: 20vw;
+    width: 15vw;
     height: 7vh;
-    margin-left: 2vw;
-    font-size: 30px;
+    margin-left: 3vw;
+    margin-right: 3vw;
+    font-size: 7vw;
   }
 
   .noticec {
@@ -132,12 +142,23 @@ button:hover {
   }
 }
 
+.empty {
+  height: 20vh;
+  width: 100vw;
+  background-color: #a0c800;
+}
 /* ------------------------------------------------------------------------------------------------- */
 
-@media (min-width: 1025px) {
+@media (min-width: 768px) {
   #comment-form {
     width: 100%;
     height: 10vh;
+  }
+  #hambuger {
+    left: 82%;
+    top: 4%;
+    position: fixed;
+    width: 8vw;
   }
   .text {
     padding: 15px;
@@ -156,9 +177,10 @@ button:hover {
     position: relative;
   }
   #comment-input {
-    width: 90%;
+    width: 82%;
     height: 10vh;
     border-radius: 20px;
+    font-size: 25px;
   }
 
   button {
@@ -168,16 +190,17 @@ button:hover {
     border-radius: 15px;
     cursor: pointer;
     margin-left: 1.5vw;
-    width: 6vw;
+    margin-right: 1.5vw;
+    width: 13vw;
     height: 10vh;
     padding: 10px;
-    font-size: 30px;
+    font-size: 7vw;
   }
 
   .noticec {
     border: none;
     border-radius: 10px;
-    padding: 10px;
+    padding: 15px;
     width: 70vw;
     background-color: #6b6592;
     color: white;
@@ -187,8 +210,8 @@ button:hover {
   .notice {
     left: 10%;
     position: relative;
-    width: 70vw;
-    top: 17vw;
+    width: 72vw;
+    top: 20vw;
   }
 
   .noticetitle {
@@ -199,11 +222,245 @@ button:hover {
   }
   .comment {
     width: 70vw;
+    position: relative;
   }
 }
-#comments-container {
-  width: 70vw;
+
+/* Logo.css------------------------------------------------------------------------------------------------------------ */
+
+/* PIESTA LOGO */
+/* #logoImg {
+    position: fixed;
+    width: 60vw;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+.logoDate {
+    text-align: center;
+    font-family: "Pretendard-Regular";
+    color: #afafaf;
+    font-size: 2.5vw;
+    letter-spacing: 0.5vw;
+} */
+font-face {
+  font-weight: 400;
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+}
+
+#logoImg {
+  text-align: center;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  /* opacity: 0; */
+  /* visibility: hidden; */
+  /* transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; */
+}
+
+.logoDate {
+  text-align: center;
+  font-family: "Pretendard-Regular";
+  color: #afafaf;
+  font-size: 2.5vw;
+  letter-spacing: 0.5vw;
+}
+
+@media (max-width: 768px) {
+  #logoImg {
+    width: 60vw;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  #logoImg {
+    width: 50%;
+  }
+}
+
+/* 
+hambuger.css------------------------------------------------------------------------------------------------------------------ */
+@font-face {
+  font-weight: 400; /* 폰트의 두께 */
+  font-family: "Felixti"; /* 폰트 이름 */
+  src: url("/static/font/Felixti.TTF") format("truetype");
+}
+
+/* 햄버거 기본 스타일 설정 */
+.menu-trigger {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 9%;
+  left: 90%;
+  width: 7vw;
+  height: 6vw;
+  z-index: 1000;
+}
+
+.menu-trigger span {
   position: absolute;
-  left: 10%;
-  margin: 10px;
+  left: 0;
+  height: 0.8vw;
+  background: linear-gradient(
+    to left,
+    #e2959c,
+    #58437c
+  ); /* 오른쪽에서 왼쪽으로 색 변화 */
+  border-radius: 0.8vw;
+}
+
+.hambergerCenter {
+  width: 50%;
+}
+
+.hambergerBread {
+  width: 100%;
+}
+
+.menu-trigger,
+.menu-trigger span {
+  display: inline-block;
+  transition: all 0.4s;
+  box-sizing: border-box;
+}
+
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+
+.menu-trigger span:nth-of-type(2) {
+  top: 50%;
+  left: 100%;
+  transform: translate(-100%, -50%);
+}
+
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+
+/* 햄버거 메뉴 애니메이션 */
+.menu-trigger.active span:nth-of-type(1) {
+  transform: translateY(2.5vw) rotate(-45deg);
+  background: #ffffff;
+}
+
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.menu-trigger.active span:nth-of-type(3) {
+  transform: translateY(-2.5vw) rotate(45deg);
+  background: #ffffff;
+}
+
+/* hambergerContents 스타일 */
+.hambergerContents {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 100vw;
+  height: 100%;
+  background-color: #333333;
+  color: #ffffff;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 1001;
+  overflow: hidden;
+}
+#navContainer {
+  margin-top: 30vh;
+}
+#navContainer > div {
+  display: flex;
+  justify-content: center;
+}
+
+.hambergerContents.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.hambergerContents.inactive {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+/* 메뉴 항목 스타일링 - nav */
+.hambergerContents div {
+  margin: 3vh 0;
+  font-size: 3vw;
+  cursor: pointer;
+
+  transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hambergerContents.active div {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.hambergerContents.inactive div {
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+#navContainer > div {
+  position: relative;
+  padding-bottom: 5px;
+}
+
+#navContainer > div::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.4s ease-out;
+}
+
+#navContainer > div:hover::before {
+  width: 100%;
+}
+
+/* 오감 멋사 인스타 링크 부분 */
+#piestaWebHost {
+  margin-top: auto;
+  margin-bottom: 10vh;
+  font-family: "Felixti";
+}
+#ohgam {
+  font-family: "Felixti";
+}
+
+#ohgam:hover {
+  color: #1d276c;
+}
+
+#ohgam:active {
+  color: #1d276c;
+}
+
+#mutsa:hover {
+  color: #ff7711;
+}
+#mutsa:active {
+  color: #ff7711;
 }
