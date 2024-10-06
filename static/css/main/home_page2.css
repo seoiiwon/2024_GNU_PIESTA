@@ -53,32 +53,71 @@ font-face {
   left: 30vh;
   bottom: 30vh;
 }
-
+/* 
 .lineupContainer {
   position: relative;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  overflow-x: scroll;
 }
 
 .lineUpList {
+  position: relative;
   flex-direction: row;
-  justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 300px;
+  overflow: auto;
+  white-space: nowrap;
 }
 
 .artist {
-  margin-left: 10px;
-  margin-right: 10px;
+  margin: 1vh;
+  width: 100%;
+  max-width: 35vh;
+  min-width: 35vh;
+  border-radius: 10%;
 }
 
 .artistName {
-  position: inherit;
-  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: white;
+  font-size: 2vh;
+  font-family: Prata;
+}
+
+.lineUpList::-webkit-scrollbar {
+  display: none;
+} */
+
+.lineUpContainer {
+  padding: 0 15vw;
+  margin-top: 5vh;
+}
+
+.lineUpList {
+  padding: 0 15vw;
+  overflow-x: scroll;
+  display: flex;
+}
+
+.lineUpList::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge에서 스크롤바 숨기기 */
+}
+
+.artistContainer {
+  flex: 0 0 70vw;
+  padding-right: 20px;
+}
+
+.artist {
+  margin: 1vh;
+  width: 100%;
+
+  border-radius: 10%;
+}
+
+.artistName {
+  text-align: center;
   align-items: center;
   color: white;
   font-size: 2vh;

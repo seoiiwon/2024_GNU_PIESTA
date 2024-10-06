@@ -1,7 +1,6 @@
 from sqlalchemy import *
 from config.database import Base
 from sqlalchemy.orm import relationship
-from enum import Enum as PyEnum
 
 class Post(Base):
     __tablename__ = "posts"
@@ -33,12 +32,6 @@ class Comment(Base):
     name = Column(String, nullable=False)
     text = Column(String, nullable=False)
 
-class BoothCategory(PyEnum):
-    FOOD = "먹거리"
-    EXPERIENCE = "체험"
-    OTHER = "기타"
-
-
 class Booth(Base):
     __tablename__ = "booths"
 
@@ -49,7 +42,7 @@ class Booth(Base):
     booth_description = Column(Text, nullable=False)
     location_description = Column(String(255), nullable=False)
     operation_hours = Column(String(100), nullable=False)
-    booth_category = Column(Enum(BoothCategory), nullable=False)
+    booth_category = Column(String(20), nullable=False)  # 문자열로 변경
 
     # One-to-Many relationship with BoothMenu
     menus = relationship("BoothMenu", back_populates="booth")
