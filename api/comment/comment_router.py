@@ -42,7 +42,7 @@ async def save_comment(comment: CommentCreate, db: Session = Depends(get_db)):
 
 
 # 댓글 목록 불러오기
-@router.get("/api/comments", response_model=list[CommentCreate])
-async def read_comments(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-    comments = db.query(CommentModel).offset(skip).limit(limit).all()
-    return comments
+# @router.get("/api/comments", response_model=list[CommentCreate])
+# async def read_comments(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
+#     comments = db.query(CommentModel).offset(skip).limit(limit).all()
+#     return comments
