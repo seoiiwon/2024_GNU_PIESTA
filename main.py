@@ -67,7 +67,7 @@ app.include_router(notice.router)
 
 
 
-HOST = "127.0.0.1"
+HOST = "0.0.0.0"
 # HOST = "172.30.1.11"
 PORT = 8000
 
