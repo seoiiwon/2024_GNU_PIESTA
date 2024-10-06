@@ -190,6 +190,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    gap: 5px;
   }
 
   .popup-left #popup-title {
@@ -230,7 +231,7 @@
     right: 0.8rem;
     background: none;
     border: none;
-    font-size: 3em;
+    font-size: 2em;
     color: #FEE5C6;
     cursor: pointer;
   }
@@ -489,7 +490,7 @@
     right: 0.8rem;
     background: none;
     border: none;
-    font-size: 3em;
+    font-size: 2em;
     color: #FEE5C6;
     cursor: pointer;
   }
