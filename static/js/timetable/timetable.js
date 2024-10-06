@@ -4,8 +4,8 @@ function showPopup(eventTitle, eventTime, eventDetail, eventImage) {
   const popupTitle = document.getElementById("popup-title");
   const popupDetail = document.getElementById("popup-detail");
 
-  //이미지 요소를 찾거나 생성 (클래스 기준)
-  const imgElement = popupLeft.querySelector(".event-icon");
+  // 이미지 요소를 찾거나 생성 (클래스 기준)
+  let imgElement = popupLeft.querySelector(".event-icon");
   if (!imgElement) {
     const newImg = document.createElement("img");
     newImg.classList.add("event-icon");
@@ -18,6 +18,9 @@ function showPopup(eventTitle, eventTime, eventDetail, eventImage) {
   document.getElementById("popup-time").innerText = eventTime;
   popupDetail.innerHTML = eventDetail.replace(/,/g, "<br>");
 
+  // 이미지 경로 설정
+  imgElement.src = eventImage;
+
   // 팝업 애니메이션 추가
   popup.style.display = "flex"; // 팝업 표시
   setTimeout(() => {
@@ -25,6 +28,7 @@ function showPopup(eventTitle, eventTime, eventDetail, eventImage) {
     popup.style.transform = "translateX(0)";
   }, 10);
 }
+
 
 function closePopup() {
   const popup = document.getElementById("popup");
