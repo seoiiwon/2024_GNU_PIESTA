@@ -1,5 +1,5 @@
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ휴대폰 */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   body {
     display: flex;
     flex-direction: column;
@@ -63,13 +63,14 @@
   }
   
   .time-slot span {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 10px; /* 시간 글자 크기 */
     color: #E2959C;
   }
   
   .half-hour span {
     font-size: 7px; /* '30' 글자 크기 */
+    font-weight: 600;
     color: #E2959C;
   }
   
@@ -113,7 +114,7 @@
     align-items: center;
     padding: 10px;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
     gap: 7px;
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
@@ -133,7 +134,10 @@
     height: 16px;
     margin-right: 8px;
 }
-  
+  img[alt="icon"] {
+  width: 17px;
+  height: 17px;
+}
   #day1 {
     background-color: rgba(174, 111, 255, 0.53); /* 53% 불투명도 */
   }
