@@ -1,17 +1,3 @@
-/* 공통으로 적용되는 부분 */
-font-face {
-    font-weight: 400;
-    font-family: "Pretendard-Regular";
-    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-      format("woff");
-  }
-  @font-face {
-    font-family: "Felixti"; /* 원하는 폰트 이름 */
-    src: url("static/font/Felixti.ttf") format("truetype"); /* .ttf 파일 경로 */
-    font-weight: normal;
-    font-style: normal;
-  }
-  
 * {
     margin: 0;
     padding: 0;
@@ -38,8 +24,10 @@ font-face {
 .FAQ {
     text-align: center;
     font-family: "Felixti";
+    font-size: 7vw;
+    font-weight: 500;
+    text-align: center;
     color: white;
-    font-size: 24px;
     letter-spacing: 0.5vw;
     padding-bottom: 50px;
 }
