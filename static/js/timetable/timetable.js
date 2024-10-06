@@ -1,19 +1,3 @@
-// // 팝업 표시 함수
-// function showPopup(eventName, eventTime) {
-//   document.getElementById('event-title').innerText = eventName;
-//   document.getElementById('event-time').innerText = eventTime;
-
-//   // 팝업 보이기
-//   const popup = document.getElementById('popup');
-//   popup.style.display = 'flex';
-// }
-
-// // 팝업 닫기 함수
-// function closePopup() {
-//   const popup = document.getElementById('popup');
-//   popup.style.display = 'none';
-// }
-// -----------------------------------------------------------
 function showPopup(eventTitle, eventTime, eventDetail, eventImage) {
   const popup = document.getElementById("popup");
   const popupLeft = document.querySelector(".popup-left");
