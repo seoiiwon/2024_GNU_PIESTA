@@ -61,13 +61,14 @@
   }
   
   .time-slot span {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 10px; /* 시간 글자 크기 */
     color: #E2959C;
   }
   
   .half-hour span {
     font-size: 7px; /* '30' 글자 크기 */
+    font-weight: 600;
     color: #E2959C;
   }
   
@@ -110,7 +111,7 @@
     align-items: center;
     padding: 10px;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
     gap: 7px;
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
@@ -263,8 +264,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: 120px;
+    width: 70%;
+    margin-top: 180px;
   }
   
   .timetable {
@@ -307,13 +308,14 @@
   }
   
   .time-slot span {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 10px; /* 시간 글자 크기 */
     color: #E2959C;
   }
   
   .half-hour span {
     font-size: 7px; /* '30' 글자 크기 */
+    font-weight: 600;
     color: #E2959C;
   }
   
@@ -356,7 +358,7 @@
     align-items: center;
     padding: 10px;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
     gap: 7px;
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
