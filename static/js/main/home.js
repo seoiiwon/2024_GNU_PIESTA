@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
       scrollThrottle = false;
-    }, 500);
+    }, 4000);
   });
 
   window.addEventListener("resize", function () {
