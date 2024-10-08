@@ -11,13 +11,11 @@ router = APIRouter(tags=["BOOTH"])
 templates = Jinja2Templates(directory="./templates/booth")
 
 
-@router.get("/booth/detail", response_class=HTMLResponse)
+@router.get("/booth/detail/{booth_name}", response_class=HTMLResponse, name="get_booth_detail")
 async def get_booth_detail(booth_name: str, request: Request, db: Session = Depends(get_db)):
-    # 데이터베이스에서 부스 이름으로 부스 정보를 조회
     booth = db.query(Booth).filter(Booth.booth_name == booth_name).first()
 
     if not booth:
         return HTMLResponse(content="부스를 찾을 수 없습니다.", status_code=404)
 
-    # booth_detail.html 템플릿을 렌더링하면서 부스 데이터를 전달
     return templates.TemplateResponse("booth_detail.html", {"request": request, "booth": booth})
