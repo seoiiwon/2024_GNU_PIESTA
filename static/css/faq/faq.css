@@ -50,7 +50,7 @@ font-face {
 
     .container {
         width: 380px;
-        border-radius: 20px;
+        border-radius: 10px;
         padding: 20px;
         position: relative;
         margin-top: 20%;
@@ -63,10 +63,9 @@ font-face {
     .faq-item {
         margin-bottom: 40px;
         background-color: white;
-        border-radius: 20px;
+        border-radius: 10px;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
-        max-height: 60px;
         padding: 15px;
     }
 
@@ -141,7 +140,7 @@ font-face {
 
     .container {
         width: 380px;
-        border-radius: 20px;
+        border-radius: 15px;
         padding: 20px;
         position: relative;
         margin-top: 20%;
@@ -155,10 +154,9 @@ font-face {
         width: 190%; /* 부모 너비 100%로 설정 */
         margin-bottom: 40px;
         background-color: white;
-        border-radius: 20px;
+        border-radius: 15px;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
-        max-height: 60px;
         padding: 20px;
         margin-left: -180px;
     }
