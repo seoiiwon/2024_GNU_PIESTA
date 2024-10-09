@@ -1,5 +1,5 @@
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ휴대폰 */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   body {
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
     font-family: 'pretendard', sans-serif;
-    background-color: #2b2355;
+    background: linear-gradient(to bottom, #2b2355, #4f4677);
     color: white;
   }
   
@@ -63,13 +63,14 @@
   }
   
   .time-slot span {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 10px; /* 시간 글자 크기 */
     color: #E2959C;
   }
   
   .half-hour span {
     font-size: 7px; /* '30' 글자 크기 */
+    font-weight: 600;
     color: #E2959C;
   }
   
@@ -113,11 +114,12 @@
     align-items: center;
     padding: 10px;
     font-size: 10px;
-    font-weight: 600;
+    font-weight: bold;
     cursor: pointer;
     gap: 7px;
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
+    border-radius: 10px
 }
 
   .event-time {
@@ -133,7 +135,10 @@
     height: 16px;
     margin-right: 8px;
 }
-  
+  img[alt="icon"] {
+  width: 17px;
+  height: 17px;
+}
   #day1 {
     background-color: rgba(174, 111, 255, 0.53); /* 53% 불투명도 */
   }
@@ -153,12 +158,11 @@
   /* Popup */
   .popup {
     display: flex; /* 부모 요소에 flexbox 적용 */
-    position: absolute;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
+    position: fixed;
+    z-index: 1500;
+    width: 180%;
     height: 100%;
+    bottom: 5%;
     /* background-color: rgba(0, 0, 0, 0.5); */
     justify-content: center;
     align-items: center;
@@ -170,14 +174,16 @@
 
   .popup-content {
     display: flex; 
-    width: 24rem; 
-    height: 15rem; 
+    width: 23rem; 
+    height: 16rem; 
     border-radius: 1.5rem; 
     overflow: hidden;
+    
+    backdrop-filter: blur(5px);
 }
   .popup-left {
     background-color: #6442A0;
-    padding: 20px;
+    padding: 1.2rem;
     text-align: right;
     color: white;
     width: 35%; 
@@ -185,31 +191,43 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    gap: 5px;
   }
 
   .popup-left #popup-title {
-    font-size: 17px; /* 타이틀 폰트 크기 */
+    font-size: 16px; /* 타이틀 폰트 크기 */
   }
   .popup-left #popup-time {
-    font-size: 15px; /* 시간 폰트 크기 */
+    font-size: 14px; /* 시간 폰트 크기 */
   }
   
   .popup-right {
     background-color: #B18FEB; 
-    padding: 20px;
+    padding: 1.2rem;
     text-align: left;
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.6;
     color: white;
     width: 65%; 
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 세로 중앙 정렬 */
     align-items: flex-start; /* 왼쪽 정렬 */
+
+    max-height: 15rem;
+    overflow-y: auto;
+     /* 스크롤바 스타일 변경 */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+       background: #6442A0; 
+       border-radius: 10px;
+      }
   }
 
    .close-btn {
-    position: absolute;
+    position: fixed;
     top: 0.3rem;
     right: 0.8rem;
     background: none;
@@ -245,14 +263,259 @@
 
 
  /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ여기서부턴 큰화면  */
- @media (min-width: 1025px) {
-  .div1 {
-      width: 49vw;
-      height: 50vw;
+ @media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 수직 중앙 정렬 */
+    align-items: center; /* 수평 중앙 정렬 */
+    min-height: 100vh; /* 전체 화면 높이 */
+    margin: 0;
+    font-family: 'pretendard', sans-serif;
+    background: linear-gradient(to bottom, #2b2355, #4f4677);
+    color: white;
   }
-  .div2 {
-      width: 49vw;
-      height: 50vw;
+  
+  .mainpage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    margin-top: 180px;
+  }
+  
+  .timetable {
+    display: grid;
+    grid-template-columns: 0.3fr 1fr 1fr 1fr;
+    grid-template-rows: repeat(20, 40px);
+    gap: 7px;
+    padding: 15px;
+    padding-top: 0;
+    margin: 0 auto; /* 수평 중앙 정렬 */
+  }
+  
+  
+
+  .header {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    font-family: 'Felix Titling', sans-serif; /* Added font-family property */
+    font-weight: 400; /* Regular font weight */
+    /* margin-top: 50px; */
+  }
+  
+
+  .times {
+    display: grid;
+    grid-template-rows: repeat(20, 40px); /* 시간도 동일한 행 크기를 공유 */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+  }
+  
+  .time-slot, .half-hour {
+    height: 40px;
+    display: flex;
+    justify-content: flex-end; /* 시간 텍스트를 아래로 정렬 */
+    align-items: flex-end; /* 세로로 텍스트를 아래로 내림 */
+    padding-right: 5px; /* 텍스트와 경계선 사이 간격 조절 */
+    /* border-bottom: 2px solid #f39ac8; */
+  }
+  
+  .time-slot span {
+    font-weight: 600;
+    font-size: 10px; /* 시간 글자 크기 */
+    color: #E2959C;
+  }
+  
+  .half-hour span {
+    font-size: 7px; /* '30' 글자 크기 */
+    font-weight: 600;
+    color: #E2959C;
+  }
+  
+  .day-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 1fr; */
+    
+    /* border-left: 3px solid #f39ac8; 세로선 제거 */
+  }
+  
+
+  
+  
+  .day {
+    text-align: center;
+    font-weight: bold;
+    color: #E2959C;
+    padding-bottom: 20px;
+    font-size: 10px; /* 요일 및 날짜 글자 크기 */
+    height: 40px;
+    }
+  
+  .events-day {
+    display: grid;
+    grid-template-rows: repeat(20, 40px);
+    gap: 7px;
+    border-left: 2px solid #000000; /* 수직선 추가 */
+    padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
+    width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
+    box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
+    }
+
+
+  .event {
+    position: relative;
+    background-color: #7d50d0;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    gap: 7px;
+    width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
+    box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
+    border-radius: 7px
+}
+
+  .event-time {
+    position: absolute;
+    top: 2px;
+    left: 7px;
+    font-size: 7px !important;
+    color: #FEE5C6 !important;
+}
+
+  .icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+  img[alt="icon"] {
+  width: 17px;
+  height: 17px;
+}
+  #day1 {
+    background-color: rgba(174, 111, 255, 0.53); /* 53% 불투명도 */
+  }
+
+  .event#day2 {
+    background-color: #351C69;
+  }
+
+  .event#day3 {
+    background-color: #8E7BAE;
+  }
+
+  .event:hover {
+    background-color: #9a76d7;
+  }
+  
+  /* Popup */
+  .popup {
+    display: flex; /* 부모 요소에 flexbox 적용 */
+    position: fixed;
+    z-index: 1500;
+    width: 180%;
+    height: 100%;
+    bottom: 5%;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    transform: translateX(100%); /* 오른쪽으로 이동 */
+    transition: transform 0.4s ease, visibility 0.4s ease;
+  }
+
+
+  .popup-content {
+    display: flex; 
+    width: 23rem; 
+    height: 16rem; 
+    border-radius: 1.5rem; 
+    overflow: hidden;
+    
+    backdrop-filter: blur(5px);
+}
+  .popup-left {
+    background-color: #6442A0;
+    padding: 1.2rem;
+    text-align: right;
+    color: white;
+    width: 35%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .popup-left #popup-title {
+    font-size: 16px; /* 타이틀 폰트 크기 */
+  }
+  .popup-left #popup-time {
+    font-size: 14px; /* 시간 폰트 크기 */
+  }
+  
+  .popup-right {
+    background-color: #B18FEB; 
+    padding: 1.2rem;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
+    color: white;
+    width: 65%; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* 왼쪽 정렬 */
+
+    max-height: 15rem;
+    overflow-y: auto;
+     /* 스크롤바 스타일 변경 */
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+       background: #6442A0; 
+       border-radius: 10px;
+      }
+  }
+
+   .close-btn {
+    position: fixed;
+    top: 0.3rem;
+    right: 0.8rem;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #FEE5C6;
+    cursor: pointer;
+  }
+
+  .popup .event {
+    display: flex;
+    align-items: center;
+  }
+  
+  .event-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .event-name {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+  .event-time {
+    font-size: 0.9em;
+    color: #e0e0e0;
   }
 } 
 
