@@ -26,20 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // 첫 번째 페이지 로고 숨기기
-  function handleLogoPosition() {
-    if (currentSection === 1 || currentSection === 2) {
-      logoImg.style.position = "fixed";
-      logoImg.style.visibility = "visible";
-      logoImg.style.opacity = "1";
-    } else if (currentSection === 0) {
-      logoImg.style.opacity = "0";
-      setTimeout(() => {
-        logoImg.style.visibility = "hidden";
-      }, 1500);
-    }
-  }
-
   // 스크롤 이벤트
   window.addEventListener("wheel", function (event) {
     if (scrollThrottle) return; // 스크롤이 일어나지 않도록 중복 방지
@@ -60,7 +46,29 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
       scrollThrottle = false;
-    }, 4000);
+    }, 300);
+  });
+
+  window.addEventListener("touchmove", function (event) {
+    if (scrollThrottle) return; // 스크롤이 일어나지 않도록 중복 방지
+    scrollThrottle = true; // 스크롤을 시작하면 플래그 활성화
+
+    setTimeout(() => {
+      if (event.deltaY > 0) {
+        if (currentSection < totalSections - 1) {
+          currentSection++;
+          scrollToSection(currentSection);
+          // handleLogoPosition();
+        }
+      } else {
+        if (currentSection > 0) {
+          currentSection--;
+          scrollToSection(currentSection);
+          // handleLogoPosition();
+        }
+      }
+      scrollThrottle = false;
+    }, 300);
   });
 
   window.addEventListener("resize", function () {
