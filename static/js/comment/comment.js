@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // JSON 파일에서 이름 목록 가져오기
-  fetch("/static/json/names_json")
+  fetch("/static/json/names.json")
     .then((response) => response.json())
     .then((data) => {
       const names = data.names; // JSON 파일에서 불러온 이름 목록
