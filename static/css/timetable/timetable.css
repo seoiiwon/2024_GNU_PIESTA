@@ -8,7 +8,7 @@
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
     font-family: 'pretendard', sans-serif;
-    background-color: #2b2355;
+    background: linear-gradient(to bottom, #2b2355, #4f4677);
     color: white;
   }
   
@@ -119,6 +119,7 @@
     gap: 7px;
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
+    border-radius: 10px
 }
 
   .event-time {
@@ -139,15 +140,15 @@
   height: 17px;
 }
   #day1 {
-    background-color: rgba(174, 111, 255, 0.53); /* 53% 불투명도 */
+    background-color: #BBB6D8; /* 53% 불투명도 */
   }
 
   .event#day2 {
-    background-color: #351C69;
+    background-color: #FEA4CD;
   }
 
   .event#day3 {
-    background-color: #8E7BAE;
+    background-color: #FFF2B8;
   }
 
   .event:hover {
@@ -271,7 +272,7 @@
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
     font-family: 'pretendard', sans-serif;
-    background-color: #2b2355;
+    background: linear-gradient(to bottom, #2b2355, #4f4677);
     color: white;
   }
   
@@ -379,6 +380,7 @@
     gap: 7px;
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
+    border-radius: 7px
 }
 
   .event-time {
@@ -399,15 +401,15 @@
   height: 17px;
 }
   #day1 {
-    background-color: rgba(174, 111, 255, 0.53); /* 53% 불투명도 */
+    background-color: #BBB6D8; /* 53% 불투명도 */
   }
 
   .event#day2 {
-    background-color: #351C69;
+    background-color: #FEA4CD;
   }
 
   .event#day3 {
-    background-color: #8E7BAE;
+    background-color: #FFF2B8;
   }
 
   .event:hover {

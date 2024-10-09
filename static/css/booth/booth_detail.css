@@ -94,7 +94,7 @@ font-face {
 .booth_name>h3
 {
     color: #282828;
-    border-bottom:1.7px solid #ADADAD;
+    /* border-bottom:1.7px solid #ADADAD; */
     padding-bottom: 1.0vw !important;
 }
 .content_box
@@ -323,7 +323,7 @@ font-face {
     }
     .booth_name>h3
     {
-        border-bottom:3.5px solid #ADADAD;
+        /* border-bottom:3.5px solid #ADADAD; */
     
     }
   

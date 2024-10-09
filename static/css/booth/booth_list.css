@@ -12,6 +12,28 @@ font-face {
   font-style: normal;
 }
 
+.filter-buttons input[type="radio"] {
+  display: none;
+}
+
+.filter-buttons label {
+  padding: 10px 20px;
+  background-color: lightgray;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.filter-buttons input[type="radio"]:checked + label {
+  background-color: #3b2862;
+  font-weight: bold;
+  color: white;
+}
+
+.box {
+  display: none;
+}
+
 html,
 body {
   height: 100%; /* html과 body의 높이를 100%로 설정 */
@@ -39,7 +61,7 @@ body {
   .title {
     font-family: "Felixti";
     font-size: 7vw;
-    font-weight: 600;
+    font-weight: 500;
     text-align: center;
     margin-top: 35vw; /* 여백 조정 */
     position: relative; /* 다른 요소들과 겹치지 않게 상대 위치 */

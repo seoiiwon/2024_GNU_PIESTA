@@ -10,7 +10,6 @@ router = APIRouter(tags=["BOOTH"])
 
 templates = Jinja2Templates(directory="./templates/booth")
 
-
 @router.get("/booth/detail/{booth_name}", response_class=HTMLResponse, name="get_booth_detail")
 async def get_booth_detail(booth_name: str, request: Request, db: Session = Depends(get_db)):
     booth = db.query(Booth).filter(Booth.booth_name == booth_name).first()
