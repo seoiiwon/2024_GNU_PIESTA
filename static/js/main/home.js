@@ -5,124 +5,79 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentSection = 0;
   const sections = document.querySelectorAll("div");
   const totalSections = sections.length;
-  const logoImg = document.getElementById("logoImg");
+  const scrollThrottleDuration = 300; // 스크롤 조절을 위한 시간 설정
   let scrollThrottle = false; // 스크롤 감도 조절을 위한 플래그
-  const hamburger = document.getElementById("hamburger");
-  // let scrollThrottle = false; // 스크롤 중복 방지 플래그
-  // let currentSection = 0; // 현재 섹션을 추적하는 변수
-  // const totalSections = document.querySelectorAll('.section').length; // 섹션의 총 개수
-
+  let startY = null; // 터치 시작 Y좌표 저장
 
   // 새로고침 시 처음 페이지로 이동하게 설정
   scrollToSection(0);
-  // 버블 두번째 페이지에만 나타나도록
+
+  // 섹션 스크롤 함수
   function scrollToSection(sectionIndex) {
-    if (sectionIndex == 0 || sectionIndex == 2) {
-      bubble1.style.visibility = "hidden";
-      bubble2.style.visibility = "hidden";
-    } else {
-      bubble1.style.visibility = "visible";
-      bubble2.style.visibility = "visible";
+    const section = sections[sectionIndex];
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
     }
-    window.scrollTo({
-      top: window.innerHeight * sectionIndex,
-      behavior: "smooth",
-    });
-  }
-
-
-  // 스크롤 이동 함수
-  function scrollToSection(sectionIndex) {
-      const section = document.querySelector(`.section:nth-of-type(${sectionIndex + 1})`);
-      if (section) {
-          section.scrollIntoView({ behavior: 'smooth' });
-      }
   }
 
   // 휠 이벤트 리스너
-  window.addEventListener("wheel", function (event) {
-      if (scrollThrottle) return; // 스크롤 중복 방지
-      scrollThrottle = true; // 플래그 활성화
-
-      setTimeout(() => {
-          if (event.deltaY > 0) {
-              if (currentSection < totalSections - 1) {
-                  currentSection++;
-                  scrollToSection(currentSection);
-              }
-          } else {
-              if (currentSection > 0) {
-                  currentSection--;
-                  scrollToSection(currentSection);
-              }
-          }
-          scrollThrottle = false; // 스크롤 플래그 비활성화
-      }, 300);
-  });
-
-
-  let startY = null; 
-
-  window.addEventListener("touchstart", function (event) {
-      startY = event.touches[0].clientY; 
-  });
-
-  window.addEventListener("touchmove", function (event) {
-      if (scrollThrottle || startY === null) return;
-
-      const deltaY = event.touches[0].clientY - startY; 
-      if (Math.abs(deltaY) > 50) { 
-          scrollThrottle = true; 
-
-          setTimeout(() => {
-              if (deltaY > 0) {
-                  if (currentSection > 0) {
-                      currentSection--;
-                      scrollToSection(currentSection);
-                  }
-              } else {
-                  if (currentSection < totalSections - 1) {
-                      currentSection++;
-                      scrollToSection(currentSection);
-                  }
-              }
-              scrollThrottle = false;
-              startY = null; 
-          }, 300);
-      }
-  });
-
-  // 스크롤 이벤트
-  window.addEventListener("wheel", function (event) {
-    if (scrollThrottle) return; // 스크롤이 일어나지 않도록 중복 방지
-    scrollThrottle = true; // 스크롤을 시작하면 플래그 활성화
+  function handleWheelScroll(event) {
+    if (scrollThrottle) return; // 스크롤 중복 방지
+    scrollThrottle = true; // 플래그 활성화
 
     setTimeout(() => {
       if (event.deltaY > 0) {
         if (currentSection < totalSections - 1) {
           currentSection++;
           scrollToSection(currentSection);
-          // handleLogoPosition();
         }
       } else {
         if (currentSection > 0) {
           currentSection--;
           scrollToSection(currentSection);
-          // handleLogoPosition();
         }
       }
-      scrollThrottle = false;
-    }, 300);
+      scrollThrottle = false; // 스크롤 플래그 비활성화
+    }, scrollThrottleDuration);
+  }
+
+  // 터치 이벤트 리스너
+  function handleTouchMove(event) {
+    if (scrollThrottle || startY === null) return;
+
+    const deltaY = event.touches[0].clientY - startY;
+    if (Math.abs(deltaY) > 50) { // 스크롤 감지
+      scrollThrottle = true;
+
+      setTimeout(() => {
+        if (deltaY > 0) {
+          if (currentSection > 0) {
+            currentSection--;
+            scrollToSection(currentSection);
+          }
+        } else {
+          if (currentSection < totalSections - 1) {
+            currentSection++;
+            scrollToSection(currentSection);
+          }
+        }
+        scrollThrottle = false;
+        startY = null; // Y좌표 초기화
+      }, scrollThrottleDuration);
+    }
+  }
+
+  // 휠 및 터치 이벤트 리스너 등록
+  window.addEventListener("wheel", handleWheelScroll);
+  window.addEventListener("touchstart", function (event) {
+    startY = event.touches[0].clientY; // 터치 시작 Y좌표 저장
   });
+  window.addEventListener("touchmove", handleTouchMove);
 
-  
-
+  // 창 크기 변경 시 현재 섹션으로 스크롤
   window.addEventListener("resize", function () {
     scrollToSection(currentSection);
-    // handleLogoPosition();
   });
-
-  // handleLogoPosition();
 });
 
 // 날짜 카운트다운
