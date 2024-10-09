@@ -155,18 +155,7 @@
         <a
           href="{{ url_for('get_booth_detail', booth_name=booth.booth_name) }}"
         >
-      <div
-        class="box"
-        data-date="{% if booth.is_operating_on_16th %}10.16{% endif %}{% if booth.is_operating_on_17th %}10.17{% endif %}{% if booth.is_operating_on_18th %}10.18{% endif %}"
-      >
-        <a
-          href="{{ url_for('get_booth_detail', booth_name=booth.booth_name) }}"
-        >
           <div class="box-icon">
-            <i
-              class="{% if booth.booth_category == '먹거리 판매 부스' %}fa-solid fa-utensils {% elif booth.booth_category == '플리마켓 부스' %}fa-solid fa-shop {% elif booth.booth_category == '체험 부스' %}fa-solid fa-gamepad {% elif booth.booth_category == '홍보 부스' %}fa-solid fa-bullhorn {% elif booth.booth_category == '잡화 판매 부스' %}fa-solid fa-gift {% else %}fa-solid fa-question{% endif %}"
-            >
-            </i>
             <i
               class="{% if booth.booth_category == '먹거리 판매 부스' %}fa-solid fa-utensils {% elif booth.booth_category == '플리마켓 부스' %}fa-solid fa-shop {% elif booth.booth_category == '체험 부스' %}fa-solid fa-gamepad {% elif booth.booth_category == '홍보 부스' %}fa-solid fa-bullhorn {% elif booth.booth_category == '잡화 판매 부스' %}fa-solid fa-gift {% else %}fa-solid fa-question{% endif %}"
             >
@@ -179,7 +168,6 @@
         </a>
       </div>
       {% endfor %}
-    </div>
     </div>
     </body>
     </html>
