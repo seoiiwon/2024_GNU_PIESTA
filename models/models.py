@@ -1,4 +1,5 @@
 from sqlalchemy import *
+from sqlalchemy.orm import relationship
 from config.database import Base
 from sqlalchemy.orm import relationship
 
@@ -37,12 +38,15 @@ class Booth(Base):
 
     booth_id = Column(Integer, primary_key=True, autoincrement=True)
     booth_name = Column(String(100), nullable=False)
-    organizer = Column(String(100), nullable=False)
-    instagram_id = Column(String(100), nullable=True)
     booth_description = Column(Text, nullable=False)
     location_description = Column(String(255), nullable=False)
     operation_hours = Column(String(100), nullable=False)
-    booth_category = Column(String(20), nullable=False)  # 문자열로 변경
+    booth_category = Column(String(20), nullable=False)
+
+    # 날짜별 운영 여부
+    is_operating_on_16th = Column(Boolean, nullable=False, default=False)
+    is_operating_on_17th = Column(Boolean, nullable=False, default=False)
+    is_operating_on_18th = Column(Boolean, nullable=False, default=False)
 
     # One-to-Many relationship with BoothMenu
     menus = relationship("BoothMenu", back_populates="booth")

@@ -1,8 +1,20 @@
-const boxes = document.querySelectorAll(".box");
+// 기본적으로 10월 16일에 맞는 부스 리스트만 보이도록 설정
+window.onload = function() {
+    document.querySelector('input[name="date"]:checked').dispatchEvent(new Event('change'));
+  }
 
-// 각 .box 요소에 클릭 이벤트 리스너를 추가합니다.
-boxes.forEach(function (box) {
-  box.addEventListener("click", function () {
-    window.location.href = "/booth/detail";
+  document.addEventListener('change', function (event) {
+    if (event.target.name === 'date') {
+      const selectedDate = event.target.value;
+      const boxes = document.querySelectorAll('.box');
+
+      boxes.forEach(box => {
+        const boxDate = box.getAttribute('data-date');
+        if (boxDate.includes(selectedDate)) {
+          box.style.display = 'flex';
+        } else {
+          box.style.display = 'none';
+        }
+      });
+    }
   });
-});
