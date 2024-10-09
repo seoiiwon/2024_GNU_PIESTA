@@ -35,7 +35,6 @@ async def get_comment_page(request: Request, db: Session = Depends(get_db)):
     )
 
 
-#댓글 저장
 @router.post("/api/save-comment", response_model=CommentCreate)
 async def save_comment(comment: CommentCreate, db: Session = Depends(get_db)):
     db_comment = CommentModel(name=comment.name, text=comment.text)

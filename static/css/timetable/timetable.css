@@ -27,7 +27,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 70%;
     margin-top: 120px;
   }
   
@@ -35,10 +35,11 @@
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr 1fr;
     grid-template-rows: repeat(20, 40px);
-    gap: 7px;
+    /* gap: 7px; */
     padding: 15px;
     padding-top: 0;
     margin: 0 auto; /* 수평 중앙 정렬 */
+    width: 100%;
   }
   
   
@@ -108,9 +109,8 @@
   .events-day {
     display: grid;
     grid-template-rows: repeat(20, 40px);
-    gap: 7px;
-    border-left: 2px solid #BCBCBC; /* 수직선 추가 */
-    padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
+    gap: 0px;
+    padding-left: 0px; /* 수직선과 내용 사이의 간격 추가 */
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
     }
@@ -395,7 +395,7 @@
     display: grid;
     grid-template-rows: repeat(20, 40px);
     gap: 7px;
-    border-left: 2px solid #bcbcbc; /* 수직선 추가 */
+
     padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
