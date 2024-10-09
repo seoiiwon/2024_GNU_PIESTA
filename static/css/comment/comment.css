@@ -97,6 +97,7 @@ button:hover {
     word-wrap: break-word; /* 긴 단어가 줄을 넘지 않도록 줄바꿈 처리 */
     padding: 8px; /* 텍스트 주변에 여백 추가 */
   }
+  
   #hambuger {
     left: 82%;
     top: 4%;
