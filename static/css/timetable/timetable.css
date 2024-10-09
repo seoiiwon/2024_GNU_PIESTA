@@ -100,10 +100,37 @@
     display: grid;
     grid-template-rows: repeat(20, 40px);
     gap: 7px;
-    border-left: 2px solid #000000; /* 수직선 추가 */
+    border-left: 2px solid #BCBCBC; /* 수직선 추가 */
     padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
+    }
+
+    .events-day::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: black;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .events-day > div {
+      position: relative;
+    }
+    
+    /* 각 그리드 행 위에 수평선을 추가 */
+    .events-day > div::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3px; /* 선의 두께 */
+      background-color: #BCBCBC; /* 선의 색상 */
+      position: absolute;
+      top: -7px; /* 수평선이 그려질 위치 (조정 가능) */
+      left: 0;
     }
 
 
@@ -361,11 +388,12 @@
     display: grid;
     grid-template-rows: repeat(20, 40px);
     gap: 7px;
-    border-left: 2px solid #000000; /* 수직선 추가 */
+    border-left: 2px solid #bcbcbc; /* 수직선 추가 */
     padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
     }
+  
 
 
   .event {
