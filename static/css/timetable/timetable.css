@@ -108,74 +108,52 @@
 
     }
   
-  .events-day {
-    display: grid;
-    grid-template-rows: repeat(20, 40px);
-    gap: 0px;
-    padding-left: 0px; /* 수직선과 내용 사이의 간격 추가 */
-    width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
-    box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
-    }
-
-    .events-day::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 1px;
-      background-color: black;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    
-    .events-day > div {
-      position: relative;
-    }
-    
-    /* 각 그리드 행 위에 수평선을 추가 */
-    .events-day > div::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 3px; /* 선의 두께 */
-      background-color: #BCBCBC; /* 선의 색상 */
-      position: absolute;
-      top: -0px; /* 수평선이 그려질 위치 (조정 가능) */
-      left: 0;
-    }
-
-
+    .events-day {
+      display: grid;
+      grid-template-rows: repeat(20, 40px);
+      gap: 0px; /* 이벤트 사이 간격 제거 */
+      padding-left: 0px; /* 수직선과 내용 사이의 간격 제거 */
+      width: 100%; /* 부모 요소 너비와 맞춤 */
+      box-sizing: border-box; /* 패딩 포함 너비 계산 */
+  }
+  
+  /* 첫 번째 요소가 아닌 모든 div에 상단 테두리 적용 */
+  .events-day > div:not(:first-child) {
+      border-top: 3px solid #BCBCBC; /* 상단에 3px 두께의 회색 수평선 추가 */
+  }
+  
   .event {
-    position: relative;
-    background-color: #7d50d0;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    font-size: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    gap: 7px;
-    width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
-    box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
-    border-radius: 10px
-}
+      flex-direction: column;
+      position: relative;
+      display: flex;
+      align-items: center; /* 내용 수직 중앙 정렬 */
+      justify-content: center; /* 내용 수평 중앙 정렬 */
+      padding: 10px; /* 내부 패딩 */
+      font-size: 10px; /* 폰트 크기 */
+      font-weight: bold; /* 폰트 두께 */
+      cursor: pointer; /* 커서 스타일 */
+      gap: 7px; /* 요소들 사이의 간격 */
+      width: 100%; /* 전체 너비 */
+      box-sizing: border-box; /* 패딩 포함 너비 계산 */
+      /* border-radius: 10px; */
+      color: #000000;
+  }
+  
 
   .event-time {
-    position: absolute;
-    top: 2px;
-    left: 7px;
+    position: relative;
     font-size: 7px !important;
-    color: #FEE5C6 !important;
+    color: #000000 !important;
 }
 
-  .icon {
+  /* .icon {
     width: 16px;
     height: 16px;
     margin-right: 8px;
-}
-  img[alt="icon"] {
+} */
+  /* img[alt="icon"] {
   width: 17px;
-  height: 17px;
+  height: 17px; */
 }
   #day1 {
     background-color: #BBB6D8; /* 53% 불투명도 */
