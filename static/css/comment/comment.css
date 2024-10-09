@@ -31,21 +31,12 @@ body {
   right: 0;
   background: linear-gradient(to right bottom, #f0f0f0, #ffd0d0);
   padding: 10px;
-  border-top: 1px solid black;
   z-index: 1000;
   width: 98vw;
   display: flex;
   align-items: center;
 }
 
-#comments-container {
-  width: 90%;
-  height: 60vh;
-  top: 30%;
-  left: 10%;
-  position: fixed;
-  overflow-y: scroll;
-}
 #comment-form {
   display: flex;
   width: 100%;
@@ -63,7 +54,7 @@ body {
 button {
   background-color: #ededed;
   color: white;
-  border: solid black 1px;
+  border: solid rgb(111, 111, 111) 1px;
   border-radius: 15px;
   cursor: pointer;
 }
@@ -113,7 +104,7 @@ button:hover {
   button {
     background-color: #ededed;
     color: white;
-    border: solid black 1px;
+    border: solid rgb(86, 86, 86) 1px;
     border-radius: 15px;
     cursor: pointer;
     width: 15vw;
@@ -146,6 +137,20 @@ button:hover {
     font-size: 20px;
     margin-bottom: 1%;
   }
+
+  #comments-container {
+    width: 90%;
+    height: 60vh;
+    top: 30%;
+    left: 10%;
+    position: fixed;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* .empty {
@@ -156,6 +161,16 @@ button:hover {
 /* ------------------------------------------------------------------------------------------------- */
 
 @media (min-width: 768px) {
+  #logoImg {
+    width: 50%; /* 로고의 부모 요소에 대한 너비 설정 */
+  }
+
+  #logoImg img {
+    width: 100%; /* 내부의 img 태그에 너비 100% 설정 */
+    height: auto; /* 비율 유지하면서 크기 조정 */
+    margin-top: 15px;
+  }
+
   #comment-form {
     width: 100%;
     height: 10vh;
@@ -184,21 +199,22 @@ button:hover {
   }
   #comment-input {
     width: 82%;
-    height: 10vh;
+    height: 8vh;
     border-radius: 20px;
-    font-size: 25px;
+    font-size: 40px;
+    overflow: hidden;
   }
 
   button {
     background-color: #ededed;
     color: white;
     border: solid black 1px;
-    border-radius: 15px;
+    border-radius: 25px;
     cursor: pointer;
     margin-left: 1.5vw;
     margin-right: 1.5vw;
     width: 13vw;
-    height: 10vh;
+    height: 8vh;
     padding: 10px;
     font-size: 7vw;
   }
@@ -207,23 +223,23 @@ button:hover {
     border: none;
     border-radius: 10px;
     padding: 15px;
-    width: 70vw;
+    width: 75vw;
     background-color: #6b6592;
     color: white;
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 200;
   }
   .notice {
     left: 10%;
     position: relative;
     width: 72vw;
-    top: 20vw;
+    top: 25vw;
   }
 
   .noticetitle {
     color: white;
     font-weight: 200;
-    font-size: 20px;
+    font-size: 50px;
     margin-bottom: 1%;
   }
   .comment {
@@ -232,7 +248,28 @@ button:hover {
     max-width: 70vw; /* 최대 너비를 설정하여 화면의 70%를 넘지 않도록 제한 */
     position: relative;
     word-wrap: break-word; /* 긴 단어가 줄을 넘지 않도록 줄바꿈 처리 */
-    padding: 8px; /* 텍스트 주변에 여백 추가 */
+    padding: 30px; /* 텍스트 주변에 여백 추가 */
+    font-size: 40px;
+    /* letter-spacing: 0.3vw; */
   }
-}
 
+  #comments-container {
+    width: 90%;
+    height: 53vh;
+    top: 38%;
+    left: 7%;
+    position: fixed;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  .text {
+    padding: 30px;
+  }
+  /* .comment-section {
+    border-top: 3px solid black;
+  } */
+}
