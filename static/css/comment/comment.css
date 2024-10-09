@@ -56,6 +56,8 @@ body {
   flex: 1;
   margin-right: 10px;
   border-radius: 15px;
+  padding-top: 5px;
+  padding-left: 2px;
 }
 
 button {
@@ -88,9 +90,12 @@ button:hover {
   }
 
   .comment {
-    width: 72vw;
-    left: 5%;
+    display: block; /* 요소를 블록으로 설정하여 세로로 나열 */
+    width: fit-content; /* 내용에 맞게 너비 조정 */
+    max-width: 70vw; /* 최대 너비를 설정하여 화면의 70%를 넘지 않도록 제한 */
     position: relative;
+    word-wrap: break-word; /* 긴 단어가 줄을 넘지 않도록 줄바꿈 처리 */
+    padding: 8px; /* 텍스트 주변에 여백 추가 */
   }
   #hambuger {
     left: 82%;
@@ -221,8 +226,12 @@ button:hover {
     margin-bottom: 1%;
   }
   .comment {
-    width: 70vw;
+    display: block; /* 요소를 블록으로 설정하여 세로로 나열 */
+    width: fit-content; /* 내용에 맞게 너비 조정 */
+    max-width: 70vw; /* 최대 너비를 설정하여 화면의 70%를 넘지 않도록 제한 */
     position: relative;
+    word-wrap: break-word; /* 긴 단어가 줄을 넘지 않도록 줄바꿈 처리 */
+    padding: 8px; /* 텍스트 주변에 여백 추가 */
   }
 }
 
