@@ -42,16 +42,29 @@ font-face {
   width: 50vh;
   position: fixed;
   z-index: 3;
+  pointer-events: none;
 }
 
 #bubble1 {
-  top: 60vh;
+  top: 50vh;
   right: 30vh;
 }
 
 #bubble2 {
   left: 30vh;
-  bottom: 30vh;
+  bottom: 35vh;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  #bubble1 {
+    right: 60vh;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  #bubble2 {
+    left: 60vh;
+  }
 }
 /* 
 .lineupContainer {
@@ -98,21 +111,32 @@ font-face {
   padding: 0 15vw;
   overflow-x: scroll;
   display: flex;
+  scroll-behavior: smooth;
+  transition: 1s;
+  scroll-snap-type: x mandatory;
 }
 
 .lineUpList::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge에서 스크롤바 숨기기 */
+  display: none;
 }
 
 .artistContainer {
   flex: 0 0 70vw;
   padding-right: 20px;
+  scroll-snap-align: center;
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .artistContainer {
+    flex: 0 0 50vw;
+    padding-left: 25px;
+    padding-right: 25px;
+  }
 }
 
 .artist {
   margin: 1vh;
   width: 100%;
-
   border-radius: 10%;
 }
 
