@@ -238,20 +238,24 @@ button:hover {
 /* Logo.css------------------------------------------------------------------------------------------------------------ */
 
 /* PIESTA LOGO */
-/* #logoImg {
-    position: fixed;
-    width: 60vw;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+#logoImg {
+  position: fixed;
+  width: 60vw;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }
 .logoDate {
-    text-align: center;
-    font-family: "Pretendard-Regular";
-    color: #afafaf;
-    font-size: 2.5vw;
-    letter-spacing: 0.5vw;
-} */
+  text-align: center;
+  font-family: "Pretendard-Regular";
+  color: #afafaf;
+  font-size: 2.5vw;
+  letter-spacing: 0.5vw;
+}
+
+#logolmg img {
+  width: 100%;
+  height: auto;
+  margin-top: 15px;
+}
