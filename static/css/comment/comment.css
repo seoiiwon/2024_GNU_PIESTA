@@ -51,14 +51,6 @@ body {
   padding-left: 2px;
 }
 
-button {
-  background-color: #ededed;
-  color: white;
-  border: solid rgb(111, 111, 111) 1px;
-  border-radius: 15px;
-  cursor: pointer;
-}
-
 button:hover {
   background-color: #6b6592;
 }
@@ -88,7 +80,7 @@ button:hover {
     word-wrap: break-word; /* 긴 단어가 줄을 넘지 않도록 줄바꿈 처리 */
     padding: 8px; /* 텍스트 주변에 여백 추가 */
   }
-  
+
   #hambuger {
     left: 82%;
     top: 4%;
@@ -112,6 +104,7 @@ button:hover {
     margin-left: 3vw;
     margin-right: 3vw;
     font-size: 7vw;
+    text-align: center;
   }
 
   .noticec {
@@ -152,13 +145,6 @@ button:hover {
     display: none;
   }
 }
-
-/* .empty {
-  height: 20vh;
-  width: 100vw;
-  background-color: #a0c800;
-} */
-/* ------------------------------------------------------------------------------------------------- */
 
 @media (min-width: 768px) {
   #logoImg {
@@ -217,6 +203,7 @@ button:hover {
     height: 8vh;
     padding: 10px;
     font-size: 7vw;
+    text-align: center;
   }
 
   .noticec {
