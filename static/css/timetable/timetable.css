@@ -140,15 +140,15 @@
   height: 17px;
 }
   #day1 {
-    background-color: rgba(174, 111, 255, 0.53); /* 53% 불투명도 */
+    background-color: #BBB6D8; /* 53% 불투명도 */
   }
 
   .event#day2 {
-    background-color: #351C69;
+    background-color: #FEA4CD;
   }
 
   .event#day3 {
-    background-color: #8E7BAE;
+    background-color: #FFF2B8;
   }
 
   .event:hover {
@@ -401,15 +401,15 @@
   height: 17px;
 }
   #day1 {
-    background-color: rgba(174, 111, 255, 0.53); /* 53% 불투명도 */
+    background-color: #BBB6D8; /* 53% 불투명도 */
   }
 
   .event#day2 {
-    background-color: #351C69;
+    background-color: #FEA4CD;
   }
 
   .event#day3 {
-    background-color: #8E7BAE;
+    background-color: #FFF2B8;
   }
 
   .event:hover {
