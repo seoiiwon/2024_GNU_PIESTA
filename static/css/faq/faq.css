@@ -37,6 +37,11 @@ font-face {
 }
 
 @media (max-width: 768px) {
+    #logoImg {
+        width: 60vw;
+    }
+
+@media (max-width: 768px) {
     .FAQ {
         text-align: center;
         font-family: "Felixti";

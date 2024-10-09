@@ -1,4 +1,5 @@
 from sqlalchemy import *
+from sqlalchemy.orm import relationship
 from config.database import Base
 from sqlalchemy.orm import relationship
 

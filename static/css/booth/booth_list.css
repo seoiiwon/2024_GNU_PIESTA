@@ -12,26 +12,50 @@ font-face {
   font-style: normal;
 }
 
+.filter-buttons
+{
+  width: 70%;
+  display: flex;
+  /* border: 1px solid black; */
+  margin: 3.5vh auto;
+  justify-content: space-between;
+}
+
 .filter-buttons input[type="radio"] {
   display: none;
 }
 
 .filter-buttons label {
-  padding: 10px 20px;
-  background-color: lightgray;
-  border-radius: 5px;
-  margin-right: 10px;
+  font-family: 'Felixti';
+  margin: 1rem;
+  padding: 0.3rem 0.5rem;
+  size: 1.5rem;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0rem 0rem 0.5rem 0.5rem #3b2862;
+  background-color: #3b2862;
+  border-radius: 20px;
+  margin: 0 0.1vw 0 0.1vw;
   cursor: pointer;
+  
 }
 
-.filter-buttons input[type="radio"]:checked + label {
-  background-color: #3b2862;
+.filter-buttons input[type="radio"]:checked + label 
+{
+  box-shadow: 0rem 0rem 0.5rem 0.5rem #f5f5f5;
+  background-color: #f5f5f5;
   font-weight: bold;
-  color: white;
+  color: black;
 }
 
 .box {
   display: none;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* 부드러운 전환 효과 */
+}
+.box:hover
+{
+  background-color: white;
+  opacity: 1;
 }
 
 html,
@@ -45,7 +69,15 @@ body {
 body {
   background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
 }
-
+.box a
+{
+  align-self: center;
+  text-decoration: none;
+  display: flex;
+}
+.box a:visited 
+{ color: #3b2862; 
+}
 /* 모바일 디바이스에서 적용되는 css -> 가로 해상도가 1024px(아이패드 프로) 보다 작은 화면에 적용  */
 @media (max-width: 767px) {
   /* 상단 로고 */
@@ -80,6 +112,7 @@ body {
   }
   .box-content {
     display: flex;
+    align-self: center;
     flex-direction: column; /* 제목과 설명을 세로로 배치 */
     margin-left: 5vw;
   }
@@ -90,7 +123,7 @@ body {
     gap: 4vw;
     padding: 0 5vw;
     position: relative; /* 박스 위치 고정 */
-    margin-top: 10vw;
+    margin-top: 8vw;
     overflow-y: auto;
     max-height: 50vh; /* 화면 높이의 절반으로 제한 */
   }
@@ -100,8 +133,7 @@ body {
   }
 
   .box {
-    background-color: #ffffff;
-
+    background-color: rgba(255, 255, 255, 0.5);
     color: #3b2862;
     padding: 5vw;
     border-radius: 20px;
@@ -111,7 +143,7 @@ body {
     display: flex; /* 수평 정렬을 위한 flexbox 사용 */
     align-items: center; /* 아이콘과 텍스트를 수직으로 정렬 */
     height: 15vw;
-    opacity: 0.5;
+    
   }
   .box-title {
     font-weight: bold;
@@ -154,78 +186,6 @@ body {
     top: 4%;
     position: fixed;
     width: 8vw;
-  }
-  .title {
-    font-family: "Felixti";
-    font-size: 7vw;
-    font-weight: 600;
-    text-align: center;
-    margin-top: 25vw; /* 여백 조정 */
-    position: relative; /* 다른 요소들과 겹치지 않게 상대 위치 */
-    color: #ffffff;
-  }
-  #map {
-    width: 85vw;
-    height: 55vw;
-    border-radius: 10px;
-    overflow: hidden; /* 이 속성은 유지 */
-    margin: 0 auto;
-    margin-bottom: 5vw;
-    margin-top: 5vw;
-  }
-  .box-content {
-    display: flex;
-    flex-direction: column; /* 제목과 설명을 세로로 배치 */
-    margin-left: 5vw;
-  }
-  /* 박스 목록 */
-  .box-container {
-    display: flex;
-    flex-direction: column;
-    gap: 4vw;
-    padding: 0 5vw;
-    position: relative; /* 박스 위치 고정 */
-    margin-top: 10vw;
-    overflow-y: auto;
-    max-height: 50vh; /* 화면 높이의 절반으로 제한 */
-  }
-  .box-icon {
-    margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 조정 */
-    font-size: 5vw; /* 아이콘 크기 */
-  }
-
-  .box {
-    background-color: #ffffff;
-
-    color: #3b2862;
-    padding: 5vw;
-    border-radius: 20px;
-    text-align: left; /* 왼쪽 정렬 */
-    font-size: 4vw;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: flex; /* 수평 정렬을 위한 flexbox 사용 */
-    align-items: center; /* 아이콘과 텍스트를 수직으로 정렬 */
-    height: 15vw;
-    opacity: 0.5;
-  }
-  .box-title {
-    font-weight: bold;
-  }
-
-  .box-description {
-    font-size: 3vw;
-    color: #666666;
-  }
-  i {
-    font-size: 7vw;
-    margin-top: 1vw;
-  }
-  #hambuger {
-    width: 50px; /* 너비를 50px로 설정 */
-    height: 50px; /* 높이를 50px로 설정 */
-    position: fixed; /* 위치 고정 */
-    top: 6%; /* 상단에서 10px 떨어짐 */
-    left: 85%; /* 좌측에서 10px 떨어짐 */
   }
 }
 
