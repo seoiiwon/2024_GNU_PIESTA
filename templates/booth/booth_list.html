@@ -123,13 +123,13 @@ for (var i = 0; i < positions.length; i ++) {
     
     <div class="filter-buttons">
       <input type="radio" id="date-16" name="date" value="10.16" checked>
-      <label for="date-16">10월 16일</label>
+      <label for="date-16">10.16</label>
       
       <input type="radio" id="date-17" name="date" value="10.17">
-      <label for="date-17">10월 17일</label>
+      <label for="date-17">10.17</label>
       
       <input type="radio" id="date-18" name="date" value="10.18">
-      <label for="date-18">10월 18일</label>
+      <label for="date-18">10.18</label>
     </div>
     
     <div class="box-container" id="booth-list">
@@ -148,26 +148,4 @@ for (var i = 0; i < positions.length; i ++) {
       {% endfor %}
     </div>
     
-    
-    <script>
-      // 기본적으로 10월 16일에 맞는 부스 리스트만 보이도록 설정
-      window.onload = function() {
-        document.querySelector('input[name="date"]:checked').dispatchEvent(new Event('change'));
-      }
-    
-      document.addEventListener('change', function (event) {
-        if (event.target.name === 'date') {
-          const selectedDate = event.target.value;
-          const boxes = document.querySelectorAll('.box');
-    
-          boxes.forEach(box => {
-            const boxDate = box.getAttribute('data-date');
-            if (boxDate.includes(selectedDate)) {
-              box.style.display = 'block';
-            } else {
-              box.style.display = 'none';
-            }
-          });
-        }
-      });
-    </script>
+  

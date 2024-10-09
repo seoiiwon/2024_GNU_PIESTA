@@ -1,12 +1,19 @@
 from sqlalchemy.orm import Session
+from sqlalchemy import inspect
 from config.database import engine, SessionLocal, Base
 from models.models import Booth
 
 def init_db():
-    # 데이터베이스 테이블 생성
-    Base.metadata.create_all(engine)
-    
-    # 데이터베이스 세션 생성 및 기본 데이터 삽입
+    inspector = inspect(engine)
+
+    # 테이블이 존재하지 않을 때만 생성
+    if not inspector.has_table("booths"):
+        print("테이블 생성 중...")
+        Base.metadata.create_all(engine)
+    else:
+        print("테이블이 이미 존재합니다. 생성하지 않습니다.")
+
+    # 기본 데이터 삽입
     with SessionLocal() as session:
         try:
             insert_default_booths(session)
