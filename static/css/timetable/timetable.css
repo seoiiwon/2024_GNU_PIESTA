@@ -1,3 +1,13 @@
+@font-face {
+  font-weight: 400; /* 폰트의 두께 */
+  font-family: 'Felixti'; /* 폰트 이름 */
+  src: url('/static/font/Felixti.TTF') format('truetype');
+}
+@font-face {
+  font-weight: 400;
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+}
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ휴대폰 */
 @media (max-width: 768px) {
   body {
@@ -30,7 +40,6 @@
     padding-top: 0;
     margin: 0 auto; /* 수평 중앙 정렬 */
   }
-  
   
   
 
@@ -100,10 +109,37 @@
     display: grid;
     grid-template-rows: repeat(20, 40px);
     gap: 7px;
-    border-left: 2px solid #000000; /* 수직선 추가 */
+    border-left: 2px solid #BCBCBC; /* 수직선 추가 */
     padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
+    }
+
+    .events-day::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: black;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .events-day > div {
+      position: relative;
+    }
+    
+    /* 각 그리드 행 위에 수평선을 추가 */
+    .events-day > div::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3px; /* 선의 두께 */
+      background-color: #BCBCBC; /* 선의 색상 */
+      position: absolute;
+      top: -7px; /* 수평선이 그려질 위치 (조정 가능) */
+      left: 0;
     }
 
 
@@ -140,15 +176,15 @@
   height: 17px;
 }
   #day1 {
-    background-color: rgba(174, 111, 255, 0.53); /* 53% 불투명도 */
+    background-color: #BBB6D8; /* 53% 불투명도 */
   }
 
   .event#day2 {
-    background-color: #351C69;
+    background-color: #FEA4CD;
   }
 
   .event#day3 {
-    background-color: #8E7BAE;
+    background-color: #FFF2B8;
   }
 
   .event:hover {
@@ -295,8 +331,6 @@
     margin: 0 auto; /* 수평 중앙 정렬 */
   }
   
-  
-
   .header {
     text-align: center;
     padding: 20px 0;
@@ -361,12 +395,39 @@
     display: grid;
     grid-template-rows: repeat(20, 40px);
     gap: 7px;
-    border-left: 2px solid #000000; /* 수직선 추가 */
+    border-left: 2px solid #bcbcbc; /* 수직선 추가 */
     padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
     width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
     box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
     }
+  
 
+    .events-day::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: black;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    
+    .events-day > div {
+      position: relative;
+    }
+    
+    /* 각 그리드 행 위에 수평선을 추가 */
+    .events-day > div::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 3px; /* 선의 두께 */
+      background-color: #e0e0e0; /* 선의 색상 */
+      position: absolute;
+      top: 0px; /* 수평선이 그려질 위치 (조정 가능) */
+      left: 0;
+    }
 
   .event {
     position: relative;
@@ -401,15 +462,15 @@
   height: 17px;
 }
   #day1 {
-    background-color: rgba(174, 111, 255, 0.53); /* 53% 불투명도 */
+    background-color: #BBB6D8; /* 53% 불투명도 */
   }
 
   .event#day2 {
-    background-color: #351C69;
+    background-color: #FEA4CD;
   }
 
   .event#day3 {
-    background-color: #8E7BAE;
+    background-color: #FFF2B8;
   }
 
   .event:hover {
