@@ -67,7 +67,7 @@ app.include_router(notice.router)
 
 HOST = "0.0.0.0"
 # HOST = "172.30.1.11"
-PORT = 8080
+PORT = 8081
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host=HOST, port=PORT, reload=True)
