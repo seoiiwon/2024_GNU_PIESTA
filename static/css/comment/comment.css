@@ -61,7 +61,7 @@ button:hover {
     height: 8vh;
   }
   .text {
-    padding: 15px;
+    padding: 12px;
     border: 1px solid black;
     border-radius: 0px 30px 30px 30px;
     margin-bottom: 10px;
@@ -79,6 +79,7 @@ button:hover {
     position: relative;
     word-wrap: break-word; /* 긴 단어가 줄을 넘지 않도록 줄바꿈 처리 */
     padding: 8px; /* 텍스트 주변에 여백 추가 */
+    font-size: 15px;
   }
 
   #hambuger {
@@ -110,8 +111,8 @@ button:hover {
   .noticec {
     border: none;
     border-radius: 10px;
-    padding: 20px;
-    width: 70vw;
+    padding: 10px;
+    width: 75vw;
     background-color: #6b6592;
     color: white;
     font-weight: 200;
@@ -212,17 +213,17 @@ button:hover {
     border: none;
     border-radius: 10px;
     padding: 15px;
-    width: 75vw;
+    width: 80vw;
     background-color: #6b6592;
     color: white;
-    font-size: 30px;
-    font-weight: 200;
+    font-size: 20px;
+    font-weight: 100;
   }
   .notice {
     left: 9%;
     position: fixed;
     width: 72vw;
-    top: 13em;
+    top: 17vh;
     z-index: 3;
   }
 
@@ -239,7 +240,7 @@ button:hover {
     position: relative;
     word-wrap: break-word; /* 긴 단어가 줄을 넘지 않도록 줄바꿈 처리 */
     padding: 20px; /* 텍스트 주변에 여백 추가 */
-    font-size: 30px;
+    font-size: 20px;
     /* letter-spacing: 0.3vw; */
   }
 
