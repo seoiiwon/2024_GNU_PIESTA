@@ -1,10 +1,14 @@
-function showPopup(eventTitle, eventTime, eventDetail, eventImage) {
+function showPopup(day ,eventTitle, eventTime, eventDetail, eventImage) {
   const popup = document.getElementById("popup");
   const popupLeft = document.querySelector(".popup-left");
+  const popupRight = document.querySelector(".popup-right");
   const popupTitle = document.getElementById("popup-title");
   const popupDetail = document.getElementById("popup-detail");
 
-  // 이미지 요소를 찾거나 생성 (클래스 기준)
+  let day1Background = 'rgba(187, 182, 216';
+  let day2Background = 'rgba(229, 164, 208';
+  let day3Background = 'rgba(247, 230, 149';
+
   let imgElement = popupLeft.querySelector(".event-icon");
   if (!imgElement) {
     const newImg = document.createElement("img");
@@ -17,28 +21,47 @@ function showPopup(eventTitle, eventTime, eventDetail, eventImage) {
   popupTitle.innerHTML = eventTitle.replace(/,/g, "<br>");
   document.getElementById("popup-time").innerText = eventTime;
   popupDetail.innerHTML = eventDetail.replace(/,/g, "<br>");
-
-  // 이미지 경로 설정
   imgElement.src = eventImage;
 
-  // 팝업 애니메이션 추가
-  popup.style.display = "flex"; // 팝업 표시
+  if (day == 1) {
+    popupLeft.style.backgroundColor = day1Background;
+    popupRight.style.backgroundColor = day1Background + ', 0.8)';
+  } else if (day == 2) {
+    popupLeft.style.backgroundColor = day2Background;
+    popupRight.style.backgroundColor = day2Background + ', 0.8)';
+  } else if (day == 3) {
+    popupLeft.style.backgroundColor = day3Background + ')';
+    popupRight.style.backgroundColor = day3Background + ', 0.8)';
+  }
+
+  popup.style.display = "flex"; 
   setTimeout(() => {
     popup.style.visibility = "visible";
     popup.style.transform = "translateX(0)";
   }, 10);
 }
 
+// function closePopup() {
+//   const popup = document.getElementById("popup");
 
-function closePopup() {
+//   popup.style.visibility = "hidden";
+//   popup.style.transform = "translateX(100%)";
+
+//   setTimeout(() => {
+//     popup.style.display = "none";
+//   }, 400); 
+// }
+
+
+// 모달 밖에 클릭시 팝업 닫기
+window.onclick = function(event) {
   const popup = document.getElementById("popup");
 
-  // 팝업 애니메이션 제거
-  popup.style.visibility = "hidden";
-  popup.style.transform = "translateX(100%)";
-
-  // 팝업 숨기기
-  setTimeout(() => {
-    popup.style.display = "none";
-  }, 400); // 애니메이션이 끝날 때까지 기다림
+  if (event.target == popup) {
+    popup.style.visibility = "hidden";
+    popup.style.transform = "translateX(100%)";
+    setTimeout(() => {
+      popup.style.display = "none";
+    })
+  }
 }
