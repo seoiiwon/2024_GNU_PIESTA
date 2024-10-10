@@ -111,6 +111,10 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
 
+      document.addEventListener("DOMContentLoaded", function () {
+        scrollToBottom();
+      });
+
       function displayComment(name, text) {
         const commentDiv = document.createElement("div");
         commentDiv.className = "comment";
@@ -127,10 +131,15 @@ document.addEventListener("DOMContentLoaded", function () {
         commentDiv.appendChild(textDiv);
 
         const commentsContainer = document.getElementById("comments-container");
-        commentsContainer.insertBefore(
-          commentDiv,
-          commentsContainer.firstChild
-        );
+        commentsContainer.appendChild(commentDiv);
+
+        // 새로운 댓글이 추가될 때마다 스크롤을 맨 아래로 이동
+        scrollToBottom();
+      }
+
+      function scrollToBottom() {
+        const commentsContainer = document.getElementById("comments-container");
+        commentsContainer.scrollTop = commentsContainer.scrollHeight;
       }
     })
     .catch((error) => {
