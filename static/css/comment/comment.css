@@ -61,7 +61,7 @@ button:hover {
     height: 8vh;
   }
   .text {
-    padding: 15px;
+    padding: 12px;
     border: 1px solid black;
     border-radius: 0px 30px 30px 30px;
     margin-bottom: 10px;
@@ -79,6 +79,7 @@ button:hover {
     position: relative;
     word-wrap: break-word; /* 긴 단어가 줄을 넘지 않도록 줄바꿈 처리 */
     padding: 8px; /* 텍스트 주변에 여백 추가 */
+    font-size: 15px;
   }
 
   #hambuger {
@@ -111,17 +112,18 @@ button:hover {
     border: none;
     border-radius: 10px;
     padding: 10px;
-    width: 70vw;
+    width: 75vw;
     background-color: #6b6592;
     color: white;
     font-weight: 200;
-    font-size: small;
+    font-size: 15px;
   }
   .notice {
-    left: 12vw;
-    position: relative;
-    width: 70vw;
+    position: fixed;
+    width: 75vw;
     top: 17vh;
+    z-index: 3;
+    left: 11vw;
   }
 
   .noticetitle {
@@ -133,12 +135,13 @@ button:hover {
 
   #comments-container {
     width: 90%;
-    height: 60vh;
-    top: 30%;
+    height: 57vh;
+    bottom: 13vh;
     left: 10%;
     position: fixed;
     overflow-y: scroll;
     -ms-overflow-style: none;
+    z-index: 1;
   }
 
   ::-webkit-scrollbar {
@@ -187,7 +190,7 @@ button:hover {
     width: 82%;
     height: 8vh;
     border-radius: 20px;
-    font-size: 40px;
+    font-size: 20px;
     overflow: hidden;
   }
 
@@ -210,23 +213,24 @@ button:hover {
     border: none;
     border-radius: 10px;
     padding: 15px;
-    width: 75vw;
+    width: 80vw;
     background-color: #6b6592;
     color: white;
-    font-size: 40px;
-    font-weight: 200;
+    font-size: 20px;
+    font-weight: 100;
   }
   .notice {
-    left: 10%;
-    position: relative;
+    left: 9%;
+    position: fixed;
     width: 72vw;
-    top: 25vw;
+    top: 17vh;
+    z-index: 3;
   }
 
   .noticetitle {
     color: white;
     font-weight: 200;
-    font-size: 50px;
+    font-size: 30px;
     margin-bottom: 1%;
   }
   .comment {
@@ -235,27 +239,29 @@ button:hover {
     max-width: 70vw; /* 최대 너비를 설정하여 화면의 70%를 넘지 않도록 제한 */
     position: relative;
     word-wrap: break-word; /* 긴 단어가 줄을 넘지 않도록 줄바꿈 처리 */
-    padding: 30px; /* 텍스트 주변에 여백 추가 */
-    font-size: 40px;
+    padding: 20px; /* 텍스트 주변에 여백 추가 */
+    font-size: 20px;
     /* letter-spacing: 0.3vw; */
   }
 
   #comments-container {
     width: 90%;
-    height: 53vh;
-    top: 38%;
+    height: 57vh;
+    bottom: 14vh;
     left: 7%;
     position: fixed;
     overflow-y: scroll;
     -ms-overflow-style: none;
+    z-index: 1;
   }
 
   ::-webkit-scrollbar {
     display: none;
   }
   .text {
-    padding: 30px;
+    padding: 20px;
   }
+
   /* .comment-section {
     border-top: 3px solid black;
   } */

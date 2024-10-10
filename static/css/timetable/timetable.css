@@ -13,12 +13,12 @@
   body {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 수직 중앙 정렬 */
+    /* justify-content: center; 수직 중앙 정렬 */
     align-items: center; /* 수평 중앙 정렬 */
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
     font-family: 'pretendard', sans-serif;
-    background: linear-gradient(to bottom, #2b2355, #4f4677);
+    background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
     color: white;
     height: 100%;
     overflow: hidden;
@@ -30,8 +30,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    margin-top: 5vh;
+    width: 84%;
+    /* margin-top: 16vh; */
   }
   
   .timetable {
@@ -44,8 +44,12 @@
     padding-left: 0;
     margin: 0 auto; /* 수평 중앙 정렬 */
     width: 100%;
+    height: 64vh;
     overflow: scroll;
-    height: 60vh;
+    -ms-overflow-style: none;
+  }
+  .timetable::-webkit-scrollbar{
+    display:none;
   }
   
   
@@ -55,10 +59,10 @@
     text-align: center;
     padding: 20px 0;
 
-    font-size: 1rem;
+    font-size: 2.4em;
     font-family: 'Felix Titling', sans-serif; /* Added font-family property */
     font-weight: 400; /* Regular font weight */
-    /* margin-top: 50px; */
+    margin-top: 16vh;
   }
 
 
@@ -83,13 +87,13 @@
   .time-slot span {
     font-weight: 600;
     font-size: 10px; /* 시간 글자 크기 */
-    color: #E2959C;
+    color: #BCBCBC;
   }
   
   .half-hour span {
     font-size: 7px; /* '30' 글자 크기 */
     font-weight: 600;
-    color: #E2959C;
+    color: #BCBCBC;
   }
   
   .day-column {
@@ -108,7 +112,7 @@
   .day {
     text-align: center;
     font-weight: bold;
-    color: #E2959C;
+    color: #BCBCBC;
     padding-bottom: 20px;
     font-size: 10px; /* 요일 및 날짜 글자 크기 */
     height: 40px;
@@ -117,7 +121,7 @@
   
     .events-day {
       display: grid;
-      grid-template-rows: repeat(20, 40px);
+      grid-template-rows: repeat(16, 40px);
       gap: 0px; /* 이벤트 사이 간격 제거 */
       padding-left: 0px; /* 수직선과 내용 사이의 간격 제거 */
       width: 100%; /* 부모 요소 너비와 맞춤 */
@@ -143,25 +147,16 @@
       width: 100%; /* 전체 너비 */
       box-sizing: border-box; /* 패딩 포함 너비 계산 */
       /* border-radius: 10px; */
-      color: #000000;
+      color: #121212;
   }
   
 
   .event-time {
     position: relative;
     font-size: 7px !important;
-    color: #000000 !important;
+    color: #121212 !important;
 }
 
-  /* .icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-} */
-  /* img[alt="icon"] {
-  width: 17px;
-  height: 17px; */
-/* } */
   #day1 {
     background-color: #BBB6D8; /* 53% 불투명도 */
   }
@@ -198,17 +193,17 @@
   .popup-content {
     display: flex; 
     width: 23rem; 
-    height: 16rem; 
+    /* height: 16rem;  */
     border-radius: 1.5rem; 
     overflow: hidden;
     
     backdrop-filter: blur(5px);
 }
   .popup-left {
-    background-color: #6442A0;
+    /* background-color: #6442A0; */
     padding: 1.2rem;
     text-align: right;
-    color: white;
+    color: #121212;
     width: 35%; 
     display: flex;
     flex-direction: column;
@@ -225,12 +220,12 @@
   }
   
   .popup-right {
-    background-color: #B18FEB; 
+    /* background-color: #B18FEB;  */
     padding: 1.2rem;
     text-align: left;
     font-size: 14px;
     line-height: 1.6;
-    color: white;
+    color: #121212;
     width: 65%; 
     position: relative;
     display: flex;
@@ -238,15 +233,18 @@
     align-items: flex-start; /* 왼쪽 정렬 */
 
     max-height: 15rem;
-    overflow-y: auto;
-     /* 스크롤바 스타일 변경 */
+    overflow-y: scroll;
+    -ms-overflow-style: none;
     &::-webkit-scrollbar {
       width: 5px;
     }
     &::-webkit-scrollbar-thumb {
-       background: #6442A0; 
+       /* background: #6442A0;  */
        border-radius: 10px;
       }
+  }
+  .popup-right::-webkit-scrollbar{
+    display:none;
   }
 
    .close-btn {
@@ -361,13 +359,13 @@
   .time-slot span {
     font-weight: 600;
     font-size: 10px; /* 시간 글자 크기 */
-    color: #E2959C;
+    color: #BCBCBC;
   }
   
   .half-hour span {
     font-size: 7px; /* '30' 글자 크기 */
     font-weight: 600;
-    color: #E2959C;
+    color: #BCBCBC;
   }
   
   .day-column {
@@ -385,7 +383,7 @@
   .day {
     text-align: center;
     font-weight: bold;
-    color: #E2959C;
+    color: #BCBCBC;
     padding-bottom: 20px;
     font-size: 10px; /* 요일 및 날짜 글자 크기 */
     height: 40px;
@@ -429,15 +427,6 @@
     color: #000000 !important;
 }
 
-  /* .icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-}
-  img[alt="icon"] {
-  width: 17px;
-  height: 17px;
-} */
   #day1 {
     background-color: #BBB6D8; /* 53% 불투명도 */
   }
@@ -481,7 +470,7 @@
     backdrop-filter: blur(5px);
 }
   .popup-left {
-    background-color: #6442A0;
+    /* background-color: #6442A0; */
     padding: 1.2rem;
     text-align: right;
     color: white;
@@ -500,7 +489,7 @@
   }
   
   .popup-right {
-    background-color: #B18FEB; 
+    /* background-color: #B18FEB;  */
     padding: 1.2rem;
     text-align: left;
     font-size: 14px;
@@ -519,7 +508,7 @@
       width: 5px;
     }
     &::-webkit-scrollbar-thumb {
-       background: #6442A0; 
+       /* background: #6442A0;  */
        border-radius: 10px;
       }
   }

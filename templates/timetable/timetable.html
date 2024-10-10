@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Timetable</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
   <link rel="stylesheet" href="/static/css/timetable/timetable.css">
   <link rel="stylesheet" href="{{ url_for('static', path='css/timetable/timetable.css') }}">
   <link rel="stylesheet" href="{{ url_for('static', path='css/main/logo.css') }}">
@@ -36,7 +37,7 @@
       <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
       <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
       <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
-      <div id="hrefFAQ" data-url="faq">FAQ</div>
+      <div id="hrefFAQ" data-url="/faq">FAQ</div>
     </div>
     <div id="piestaWebHost">
       <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>
@@ -77,34 +78,34 @@
         <div class="day">OCT 16, WED</div>
         <div class="events-day">
           <div class="event" id="day1" style="grid-row: 8 / 11;"
-            onclick="showPopup('피지컬X ,& 비주얼 쇼', '18:30 ~ 20:00', '오프닝,참가자 입장 및 소개,규정포즈 심사,중간 심사 및 이벤트,2차 비교심사,최종심사(3명),심사 결과 집계 및 이벤트, 심사발표 및 단체촬영', '{{ url_for('static', path='images/타임테이블 아이콘/쇼2.png')}}' )">
+            onclick="showPopup(1, '피지컬X ,& 비주얼 쇼', '18:30 ~ 20:00', '오프닝,참가자 입장 및 소개,규정포즈 심사,중간 심사 및 이벤트,2차 비교심사,최종심사(3명),심사 결과 집계 및 이벤트, 심사발표 및 단체촬영', '{{ url_for('static', path='images/타임테이블 아이콘/쇼2.png')}}' )">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/쇼2.png')}}" alt="icon"> -->
             피지컬X & <br> 비주얼 쇼 <!-- 이벤트 이름 -->
             <span class="event-time">18:30 ~ 20:00</span> <!-- 시간 표시 -->
 
           </div>
           <div class="event" id="day1" style="grid-row: 11 / 12;"
-            onclick="showPopup('개회식', '20:00 ~ 20:30', '개회식', '{{ url_for('static', path='images/타임테이블 아이콘/개회식.png')}}')">
+            onclick="showPopup(1, '개회식', '20:00 ~ 20:30', '개회식', '{{ url_for('static', path='images/타임테이블 아이콘/개회식.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/개회식.png')}}" alt="icon"> -->
             개회식 <!-- 이벤트 이름 -->
             <span class="event-time">20:00 ~ 20:30</span> <!-- 시간 표시 -->
 
           </div>
           <div class="event" id="day1" style="grid-row: 12 / 13;"
-            onclick="showPopup('불꽃놀이', '20:30 ~ 20:40', '불꽃놀이', '{{ url_for('static', path='images/타임테이블 아이콘/불꽃놀이.png')}}')">
+            onclick="showPopup(1, '불꽃놀이', '20:30 ~ 20:40', '불꽃놀이', '{{ url_for('static', path='images/타임테이블 아이콘/불꽃놀이.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/불꽃놀이.png')}}" alt="icon"> -->
             불꽃놀이 <!-- 이벤트 이름 -->
             <span class="event-time"> 20:30 ~ 20:40</span> <!-- 시간 표시 -->
           </div>
           <div class="event" id="day1" style="grid-row: 13 / 15;"
-            onclick="showPopup('연예인 축하 공연', '21:00 ~ 22:00', '10/16(수),,21:00 로이킴,21:30 볼사', '{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}')">
+            onclick="showPopup(1, '연예인 축하 공연', '21:00 ~ 22:00', '10/16(수),,21:00 로이킴,21:30 볼사', '{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}" alt="icon"> -->
             연예인 축하 공연 <!-- 이벤트 이름 -->
             <span class="event-time">21:00 ~ 22:00</span> <!-- 시간 표시 -->
 
           </div>
           <div class="event" id="day1" style="grid-row: 15 / 17;"
-            onclick="showPopup('DJ 페스티벌', '22:00 ~', '10/16(수),,22:00 DJ 아나콘다,22:30 DJ 허조교', '{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}')">
+            onclick="showPopup(2, 'DJ 페스티벌', '22:00 ~', '10/16(수),,22:00 DJ 아나콘다,22:30 DJ 허조교', '{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/DJ.png')}}" alt="icon"> -->
             DJ 페스티벌 <!-- 이벤트 이름 -->
             <span class="event-time">22:00 ~ </span> <!-- 시간 표시 -->
@@ -122,20 +123,20 @@
         <div class="day">OCT 17, THU</div>
         <div class="events-day">
           <div class="event" id="day2" style="grid-row: 5 / 11;"
-            onclick="showPopup('B.P.M ,& 민속무용학과 공연', '17:00 ~ 20:00', '오프닝,,아가미,배재영,마지막,WITH너무 떨리조,소울 장채연,준수한 준수,이우리,Llee 이현정,경상대 다비치,킨더조이,정원정,BHC,505,강현점,민속무용학과,,B.P.M 시상식', '{{ url_for('static', path='images/타임테이블 아이콘/쇼2.png')}}')">
+            onclick="showPopup(2, 'B.P.M ,& 민속무용학과 공연', '17:00 ~ 20:00', '오프닝,,아가미,배재영,마지막,WITH너무 떨리조,소울 장채연,준수한 준수,이우리,Llee 이현정,경상대 다비치,킨더조이,정원정,BHC,505,강현점,민속무용학과,,B.P.M 시상식', '{{ url_for('static', path='images/타임테이블 아이콘/쇼2.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/쇼2.png')}}" alt="icon"> -->
             B.P.M & <br> 민속무용학과 공연 <!-- 이벤트 이름 -->
             <span class="event-time">17:00 ~ 20:00</span> <!-- 시간 표시 -->
 
           </div>
           <div class="event" id="day2" style="grid-row: 11 / 15;"
-            onclick="showPopup('연예인 축하 공연', '20:00 ~ 22:00', '10/17(목),,20:00 유니스,20:30 트리플에스,21:00 조유리,21:30 최예나', '{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}')">
+            onclick="showPopup(2, '연예인 축하 공연', '20:00 ~ 22:00', '10/17(목),,20:00 유니스,20:30 트리플에스,21:00 조유리,21:30 최예나', '{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}" alt="icon"> -->
             연예인 축하 공연 <!-- 이벤트 이름 -->
             <span class="event-time">20:00 ~ 22:00</span> <!-- 시간 표시 -->
           </div>
           <div class="event" id="day2" style="grid-row: 15/ 17;"
-            onclick="showPopup('DJ 페스티벌', '22:00 ~', '10/17(목),,DJ 지지', '{{ url_for('static', path='images/타임테이블 아이콘/DJ.png')}}')">
+            onclick="showPopup(2, 'DJ 페스티벌', '22:00 ~', '10/17(목),,DJ 지지', '{{ url_for('static', path='images/타임테이블 아이콘/DJ.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/DJ.png')}}" alt="icon"> -->
             DJ 페스티벌 <!-- 이벤트 이름 -->
             <span class="event-time">22:00 ~ </span> <!-- 시간 표시 -->
@@ -153,35 +154,35 @@
         <div class="day">OCT 18, FRI</div>
         <div class="events-day">
           <div class="event" id="day3" style="grid-row: 2 / 11;"
-            onclick="showPopup('동아리 공연', '15:30 ~ 20:00', '15:40 ~ 16:00  바로크,16:00 ~ 16:20  남가람,16:20 ~ 16:40  베이비스트링스,16:40 ~ 17:00  다운타운,17:00 ~ 17:20  소리울림,17:20 ~ 17:40  빛소리,17:40 ~ 18:00  햇귀,18:00 ~ 18:20  메아리,18:20 ~ 18:40  파랑새,18:40 ~ 19:00  기라성,19:00 ~ 19:20  도비,19:20 ~ 19:40  퍼포먼스,19:40 ~ 20:00  토네이도', '{{ url_for('static', path='images/타임테이블 아이콘/콘서트.png')}}')">
+            onclick="showPopup(3, '동아리 공연', '15:30 ~ 20:00', '15:40 ~ 16:00  바로크,16:00 ~ 16:20  남가람,16:20 ~ 16:40  베이비스트링스,16:40 ~ 17:00  다운타운,17:00 ~ 17:20  소리울림,17:20 ~ 17:40  빛소리,17:40 ~ 18:00  햇귀,18:00 ~ 18:20  메아리,18:20 ~ 18:40  파랑새,18:40 ~ 19:00  기라성,19:00 ~ 19:20  도비,19:20 ~ 19:40  퍼포먼스,19:40 ~ 20:00  토네이도', '{{ url_for('static', path='images/타임테이블 아이콘/콘서트.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/콘서트.png')}}" alt="icon"> -->
             동아리 공연 <!-- 이벤트 이름 -->
             <span class="event-time">15:30 ~ 20:00</span> <!-- 시간 표시 -->
 
           </div>
           <div class="event" id="day3" style="grid-row: 11 / 12;"
-            onclick="showPopup('폐회식', '20:00 ~ 20:30', '폐회식', '{{ url_for('static', path='images/타임테이블 아이콘/폐회식.png')}}')">
+            onclick="showPopup(3, '폐회식', '20:00 ~ 20:30', '폐회식', '{{ url_for('static', path='images/타임테이블 아이콘/폐회식.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/폐회식.png')}}" alt="icon"> -->
             폐회식 <!-- 이벤트 이름 -->
             <span class="event-time">20:00 ~ 20:30</span> <!-- 시간 표시 -->
 
           </div>
           <div class="event" id="day3" style="grid-row: 12 / 13;"
-            onclick="showPopup('불꽃놀이', '20:30 ~ 20:40', '불꽃놀이', '{{ url_for('static', path='images/타임테이블 아이콘/불꽃놀이.png')}}')">
+            onclick="showPopup(3, '사회자 이벤트', '20:30 ~ 20:40', '사회자 이벤트', '{{ url_for('static', path='images/타임테이블 아이콘/불꽃놀이.png')}}')">
             
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/불꽃놀이.png')}}" alt="icon"> -->
-            불꽃놀이 <!-- 이벤트 이름 -->
+            사회자 이벤트 <!-- 이벤트 이름 -->
             <span class="event-time">20:30 ~ 20:40</span> <!-- 시간 표시 -->
           </div>
           <div class="event" id="day3" style="grid-row: 13 / 15;"
-            onclick="showPopup('연예인 축하 공연', '21:00 ~ 22:00', '10/18(금),,21:00 비와이,21:30 애쉬 아일랜드', '{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}')">
+            onclick="showPopup(3, '연예인 축하 공연', '21:00 ~ 22:00', '10/18(금),,21:00 비와이,21:30 애쉬 아일랜드', '{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/노래.png')}}" alt="icon"> -->
             연예인 축하 공연 <!-- 이벤트 이름 -->
             <span class="event-time">21:00 ~ 22:00</span> <!-- 시간 표시 -->
 
           </div>
           <div class="event" id="day3" style="grid-row: 15 / 17;"
-            onclick="showPopup('DJ 페스티벌', '22:00 ~', '10/18(금),,DJ 아나콘다,DJ 세포', '{{ url_for('static', path='images/타임테이블 아이콘/DJ.png')}}')">
+            onclick="showPopup(3, 'DJ 페스티벌', '22:00 ~', '10/18(금),,DJ 아나콘다,DJ 세포', '{{ url_for('static', path='images/타임테이블 아이콘/DJ.png')}}')">
             <!-- <img src="{{ url_for('static', path='images/타임테이블 아이콘/DJ.png')}}" alt="icon"> -->
             DJ 페스티벌 <!-- 이벤트 이름 -->
             <span class="event-time">22:00 ~ </span> <!-- 시간 표시 -->
@@ -204,7 +205,7 @@
       </div>
       <div class="popup-right">
         <span id="popup-detail"></span>
-        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <!-- <span class="close-btn" onclick="closePopup()">&times;</span> -->
       </div>
     </div>
   </div>

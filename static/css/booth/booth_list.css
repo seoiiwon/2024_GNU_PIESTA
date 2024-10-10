@@ -193,7 +193,6 @@ body {
   transform: translate(-50%, -50%);
   transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
 }
-
 .logoDate {
   text-align: center;
   font-family: "Pretendard-Regular";
