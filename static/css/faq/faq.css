@@ -94,7 +94,6 @@ font-face {
         padding-top: 7px;
         display: none;
         color: #413978;
-        height: 0;
         overflow: hidden;
         transition: height 0.3s ease-out;
         line-height: 1.6;
@@ -182,7 +181,6 @@ font-face {
         padding-top: 7px;
         display: none;
         color: #413978;
-        height: 0;
         overflow: hidden;
         transition: height 0.3s ease-out;
         line-height: 1.6;
