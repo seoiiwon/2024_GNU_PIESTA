@@ -1,11 +1,30 @@
 {
-  "names":["ESFJ 호빵", "ENTP 고양이", "ENTP 여우", "ISTP 초코우유", "INFJ 딸기우유", "ISFP 사막여우", "ENTP 생크림 케이크", "ESTP 강아지", "ENTP 테니스왕", "ISTJ 딸기 케이크", "ESTP 아기염소",
-"INFJ 연꽃", "ISFP 고양이", "ISFP 단감", "ENTJ 새싹", "ENTJ 고구마", "ISFP 튤립", "ESFP 김밥", "ESFP 허브차", "INFP 보리", "ENFJ 벚꽃", "INFP 아기수달",
-"ISFP 축구", "ESFP 배드민턴왕", "ENTP 고양이", "ESFP 강아지", "ENTP 여우", "ISFP 딸기", "INTP 햇님", "INTJ 봉숭아", "ENFJ 포도나무", "ESFJ 해바라기", "INFJ 강아지",
+  "names":["ESFJ 호빵", "ENTP 고양이", "ENTP 여우", "ISTP 초코우유", "INFJ 딸기우유", "ISFP 사막여우", "ENTP 생크림 케이크", "ESTP 강아지", "ENTP 카스테라", "ISTJ 딸기 케이크", "ESTP 말차라떼",
+"INFJ 자몽허니블랙티", "ISFP 고양이", "ISFP 푸딩", "ENTJ 새싹", "ENTJ 고구마", "ISFP 말차푸딩", "ESFP 초코푸딩", "ESFP 초코쿠키", "INFP 말차쿠키", "ENFJ 벚꽃", "INFP 아기수달",
+"ISFP 축구왕", "ESFP 농구왕", "ENTP 고양이", "ESFP 강아지", "ENTP 여우", "ISFP 딸기", "INTP 아기사자", "INTJ 복숭아요거트", "ENFJ 포도젤리", "ESFJ 해바라기", "INFJ 강아지",
 "INTJ 구름이", "ESFJ 문어", "ESTP 달리기", "ENTJ 군밤", "ENTP 자몽", "ENTP 햄찌", "ISFJ 고양이", "ISFJ 새싹", "ENTP 알로에", "ESFJ 나비", "ENFP 떡볶이",
-"ENFP 바나나", "ENFJ 여우", "ENFP 배구왕", "ISFJ 햄버거", "INTJ 귤나무", "ENTP 고양이", "ISFJ 고양이", "INTJ 새싹", "ENTP 구름", "ISTP 나비", "ENTP 앵무새", 
+"ENFP 바나나", "ENFJ 여우", "ENFP 배구왕", "ISFJ 로제파스타", "INTJ 귤나무", "ENTP 고양이", "ISFJ 고양이", "INTJ 새싹", "ENTP 구름", "ISTP 나비", "ENTP 앵무새", 
 "ESFJ 다람쥐", "ENTJ 강아지", "INTP 살구꽃", "ISFP 바나나우유", "INFP 라벤더", "ENTJ 코스모스","ISTJ 햄찌",
- "INTP 감귤나무", "ESFP 녹차라떼", "ESTJ 햇님", "ESFP 수국", "ESTJ 병아리", "ISFP 고구마라떼", "INFJ 귤젤리", "ESTJ 반달가슴곰", "ESFJ 나비", "ESFJ 아이스크림", "ISTJ 햄찌", "INFJ 기타리스트", "ESFP 아기곰",
- "ESTJ 탕수육", "ISFJ 고양이", "INTP 감나무", "INFJ 초코 프라푸치노", "ENTJ 고구마", "ENTJ 새싹", "ESFP 강아지", "ESFP 찐빵", "ESTJ 펭귄"
+ "INTP 감귤나무", "ESFP 녹차라떼", "ESTJ 햇님", "ESFP 카라멜", "ESTJ 병아리", "ISFP 고구마라떼", "INFJ 귤젤리", "ESTJ 반달가슴곰", "ESFJ 나비", "ESFJ 아이스크림", "ISTJ 햄찌", "INFJ 너구리", "ESFP 아기곰",
+ "ESTJ 호랑이", "ISFJ 고양이", "INTP 감나무", "INFJ 초코 프라푸치노", "ENTJ 고구마", "ENTJ 새싹", "ESFP 강아지", "ESFP 찐빵", "ESTJ 펭귄","ESFJ 바닐라라떼", "INTP 녹차프라푸치노", "ENFJ 아메리카노", "ENFJ 카페라떼", "ESTP 티라미수",
+"ENTJ 바닐라라떼", "ISFP 카페라떼", "ENFJ 바닐라라떼", "INFJ 녹차프라푸치노", "INFJ 초코머핀",
+"ISTP 티라미수", "INFJ 아메리카노", "ISTP 초코머핀", "INFJ 치즈케이크", "ENFJ 치즈케이크",
+"ISTP 카페라떼", "ISTP 카라멜마끼아또", "INFJ 카라멜마끼아또", "ISFP 초코머핀", "INTP 크로와상",
+"ISFP 치즈케이크", "ISTP 바닐라라떼", "INTP 치즈케이크", "ESTP 녹차프라푸치노", "ENFJ 녹차프라푸치노",
+"ISFP 녹차프라푸치노", "ISFP 티라미수", "INTP 마카롱", "ENTJ 티라미수", "ENTJ 크로와상",
+"ESTP 아메리카노", "ENTJ 카라멜마끼아또", "ISTP 치즈케이크", "ESFJ 녹차프라푸치노", "INFJ 티라미수",
+"INFJ 바닐라라떼", "INFJ 크로와상", "ISFP 크로와상", "ENFJ 티라미수", "ISTP 마카롱",
+"ENFJ 마카롱", "INTP 티라미수", "ENTJ 치즈케이크", "ESTP 바닐라라떼", "ENTJ 카페라떼",
+"ESTP 마카롱", "ENFJ 초코머핀", "ISFP 마카롱", "INTP 카라멜마끼아또", "INFJ 마카롱","ENTJ 레반도프스키", "ESFJ 포그바", "ENFJ 아자르", "ESFJ 더브라위너", "ISFP 살라",
+"INFJ 카세미루", "ISFP 음바페", "ESFJ 케인", "ENFJ 포그바", "INFJ 케인",
+"INFJ 베일", "ENFJ 알리송", "ESFJ 베일", "ENFJ 더브라위너", "ESFJ 아자르",
+"ENTJ 메시", "ESTP 호날두", "INFJ 살라", "INTP 살라", "INFJ 알리송",
+"ISTP 호날두", "INTP 레반도프스키", "INFJ 레반도프스키", "ENFJ 음바페", "INFJ 아자르",
+"ISFP 베일", "ISFP 네이마르", "ENTJ 아자르", "ENTJ 카세미루", "ENFJ 네이마르",
+"ENTJ 음바페", "ENFJ 호날두", "ESFJ 카세미루", "ISTP 포그바", "INFJ 메시",
+"INTP 베일", "ENTJ 호날두", "ISTP 케인", "INTP 네이마르", "ISFP 더브라위너",
+"ENFJ 카세미루", "ENFJ 살라", "ENFJ 라모스", "ISTP 카세미루", "ISTP 메시",
+"ISTP 마르셀루", "ISFP 알리송", "ISTP 라모스", "ISFP 메시", "ENTJ 더브라위너"
+
  ]
 }
