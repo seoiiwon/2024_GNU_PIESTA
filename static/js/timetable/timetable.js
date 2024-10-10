@@ -5,9 +5,10 @@ function showPopup(day ,eventTitle, eventTime, eventDetail, eventImage) {
   const popupTitle = document.getElementById("popup-title");
   const popupDetail = document.getElementById("popup-detail");
 
-  let day1Background = 'rgba(187, 182, 216';
-  let day2Background = 'rgba(229, 164, 208';
-  let day3Background = 'rgba(247, 230, 149';
+  let day1Background = '#BBB6D8';
+  let day2Background = '#E5A4D0';
+  let day3Background = '#F7E695';
+  let popupRightColor = '#EFEFEF';
 
   let imgElement = popupLeft.querySelector(".event-icon");
   if (!imgElement) {
@@ -25,13 +26,13 @@ function showPopup(day ,eventTitle, eventTime, eventDetail, eventImage) {
 
   if (day == 1) {
     popupLeft.style.backgroundColor = day1Background;
-    popupRight.style.backgroundColor = day1Background + ', 0.8)';
+    popupRight.style.backgroundColor = popupRightColor;
   } else if (day == 2) {
     popupLeft.style.backgroundColor = day2Background;
-    popupRight.style.backgroundColor = day2Background + ', 0.8)';
+    popupRight.style.backgroundColor = popupRightColor;
   } else if (day == 3) {
-    popupLeft.style.backgroundColor = day3Background + ')';
-    popupRight.style.backgroundColor = day3Background + ', 0.8)';
+    popupLeft.style.backgroundColor = day3Background;
+    popupRight.style.backgroundColor = popupRightColor;
   }
 
   popup.style.display = "flex"; 
