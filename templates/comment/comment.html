@@ -71,15 +71,15 @@
           <br/>
           방명록을 작성하고 기대감을 마음껏 표현하세요!
         </div>
-      </div>
-      <div id="comments-container">
-        <!-- 서버에서 가져온 댓글 렌더링 -->
-        {% for comment in comments %}
-        <div class="comment">
-          <div class="name">{{ comment.name }}</div>
-          <div class="text">{{ comment.text }}</div>
+        <div id="comments-container">
+          <!-- 서버에서 가져온 댓글 렌더링 -->
+          {% for comment in comments %}
+          <div class="comment">
+            <div class="name">{{ comment.name }}</div>
+            <div class="text">{{ comment.text }}</div>
+          </div>
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
     </div>
 

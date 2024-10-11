@@ -119,7 +119,7 @@ button:hover {
     font-size: 15px;
   }
   .notice {
-    position: fixed;
+    position: absolute;
     width: 75vw;
     top: 17vh;
     z-index: 3;
@@ -136,9 +136,10 @@ button:hover {
   #comments-container {
     width: 90%;
     height: 57vh;
-    bottom: 13vh;
-    left: 10%;
-    position: fixed;
+    bottom: 4vh;
+    top: 2vh;
+    left: 1vw;
+    position: relative;
     overflow-y: scroll;
     -ms-overflow-style: none;
     z-index: 1;
@@ -204,7 +205,7 @@ button:hover {
     margin-right: 1.5vw;
     width: 13vw;
     height: 8vh;
-    padding: 10px;
+    /* padding: 10px; */
     font-size: 7vw;
     text-align: center;
   }
@@ -221,9 +222,11 @@ button:hover {
   }
   .notice {
     left: 9%;
-    position: fixed;
-    width: 72vw;
-    top: 17vh;
+    position: absolute;
+    width: 70vw;
+    height: 30vh;
+    top: 15vh;
+    bottom: 2vh;
     z-index: 3;
   }
 
@@ -245,11 +248,10 @@ button:hover {
   }
 
   #comments-container {
-    width: 90%;
+    width: 70vw;
     height: 57vh;
-    bottom: 14vh;
-    left: 7%;
-    position: fixed;
+    top: 3em;
+    position: relative;
     overflow-y: scroll;
     -ms-overflow-style: none;
     z-index: 1;
