@@ -8,6 +8,12 @@
   font-family: 'Pretendard-Regular';
   src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
 }
+@font-face {
+  font-weight: 700;
+  font-family: "Pretendard-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+      format("woff");
+}
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ휴대폰 */
 @media (max-width: 768px) {
   body {
@@ -178,7 +184,7 @@
     display: flex; /* 부모 요소에 flexbox 적용 */
     position: fixed;
     z-index: 1500;
-    width: 180%;
+    width: 170%;
     height: 100%;
     bottom: 5%;
     /* background-color: rgba(0, 0, 0, 0.5); */
@@ -192,39 +198,42 @@
 
   .popup-content {
     display: flex; 
-    width: 23rem; 
-    /* height: 16rem;  */
-    border-radius: 1.5rem; 
+    width: 22rem; 
+    height: 12rem;
+    border-radius: 1rem; 
     overflow: hidden;
     
     backdrop-filter: blur(5px);
 }
   .popup-left {
     /* background-color: #6442A0; */
-    padding: 1.2rem;
-    text-align: right;
+    padding: 1rem;
+    /*text-align: right;
+    align-items: flex-end; 
+    justify-content: center;*/
     color: #121212;
     width: 35%; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+    
     gap: 5px;
   }
 
   .popup-left #popup-title {
-    font-size: 16px; /* 타이틀 폰트 크기 */
+    font-size: 12px; /* 타이틀 폰트 크기 */
+    font-family: "Pretendard-Bold";
   }
   .popup-left #popup-time {
-    font-size: 14px; /* 시간 폰트 크기 */
+    font-size: 12px; /* 시간 폰트 크기 */
+    font-family: "Pretendard-Bold";
   }
   
   .popup-right {
     /* background-color: #B18FEB;  */
-    padding: 1.2rem;
+    padding: 1rem 1.2rem 1.2rem; /* 위, 좌우, 아래*/
     text-align: left;
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 11px;
+    line-height: 1.8;
     color: #121212;
     width: 65%; 
     position: relative;
@@ -232,20 +241,20 @@
     flex-direction: column;
     align-items: flex-start; /* 왼쪽 정렬 */
 
+    /* 스크롤 설정 */
     max-height: 15rem;
-    overflow-y: scroll;
+    overflow-y: auto;
     -ms-overflow-style: none;
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
-    &::-webkit-scrollbar-thumb {
-       /* background: #6442A0;  */
-       border-radius: 10px;
-      }
   }
-  .popup-right::-webkit-scrollbar{
-    display:none;
+
+  /*.popup-right::-webkit-scrollbar {
+    width: 5px;
   }
+  
+  .popup-right::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 10px;
+  }*/
 
    .close-btn {
     position: fixed;
@@ -443,14 +452,14 @@
     background-color: #9a76d7;
   }
   
-  /* Popup */
+  /* Popup  패드 버전으로 수정; 크기및 폰트 키움*/
   .popup {
     display: flex; /* 부모 요소에 flexbox 적용 */
     position: fixed;
     z-index: 1500;
-    width: 180%;
+    width: 170%;
     height: 100%;
-    bottom: 5%;
+    top: 5%;
     /* background-color: rgba(0, 0, 0, 0.5); */
     justify-content: center;
     align-items: center;
@@ -462,67 +471,64 @@
 
   .popup-content {
     display: flex; 
-    width: 23rem; 
-    height: 16rem; 
-    border-radius: 1.5rem; 
+    width: 25rem; 
+    height: 15rem;
+    border-radius: 1rem; 
     overflow: hidden;
     
     backdrop-filter: blur(5px);
 }
   .popup-left {
     /* background-color: #6442A0; */
-    padding: 1.2rem;
-    text-align: right;
-    color: white;
+    padding: 1rem;
+    /*text-align: right;
+    align-items: flex-end; 
+    justify-content: center;*/
+    color: #121212;
     width: 35%; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+    
+    gap: 5px;
   }
 
   .popup-left #popup-title {
-    font-size: 16px; /* 타이틀 폰트 크기 */
+    font-size: 14px; /* 타이틀 폰트 크기 */
+    font-family: "Pretendard-Bold";
   }
   .popup-left #popup-time {
     font-size: 14px; /* 시간 폰트 크기 */
+    font-family: "Pretendard-Bold";
   }
   
   .popup-right {
     /* background-color: #B18FEB;  */
-    padding: 1.2rem;
+    padding: 1rem 1.4rem 1.2rem; /* 위, 좌우, 아래*/
     text-align: left;
-    font-size: 14px;
-    line-height: 1.6;
-    color: white;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #121212;
     width: 65%; 
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* 왼쪽 정렬 */
 
-    max-height: 15rem;
+    /* 스크롤 설정 */
+    max-height: 17rem;
     overflow-y: auto;
-     /* 스크롤바 스타일 변경 */
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
-    &::-webkit-scrollbar-thumb {
-       /* background: #6442A0;  */
-       border-radius: 10px;
-      }
+    -ms-overflow-style: none;
   }
 
-   .close-btn {
-    position: fixed;
-    top: 0.3rem;
-    right: 0.8rem;
-    background: none;
-    border: none;
-    font-size: 2em;
-    color: #FEE5C6;
-    cursor: pointer;
+  popup-right::-webkit-scrollbar {
+    width: 5px;
   }
+  
+  .popup-right::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 10px;
+  }
+
 
   .popup .event {
     display: flex;
@@ -544,5 +550,4 @@
     font-size: 0.9em;
     color: #e0e0e0;
   }
-} 
-
+}
