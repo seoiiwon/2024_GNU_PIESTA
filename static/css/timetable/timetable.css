@@ -155,9 +155,12 @@
       cursor: pointer; /* 커서 스타일 */
       gap: 7px; /* 요소들 사이의 간격 */
       width: 100%; /* 전체 너비 */
-      box-sizing: border-box; /* 패딩 포함 너비 계산 */
+      box-sizing:border-box ; /* 패딩 포함 너비 계산 */
       /* border-radius: 10px; */
-      color: #121212;
+      color: #000000;
+      text-align: center;
+      word-break: keep-all;  /* 어절 단위로 줄바꿈 */
+      overflow-y: auto;
   }
   
 
@@ -453,11 +456,9 @@
       color: #000000;
       text-align: center;
       word-break: keep-all;  /* 어절 단위로 줄바꿈 */
+      overflow-y: auto;
   }
 
-  .space {
-    gap: 0;
-  }
   
 
   .event-time {
