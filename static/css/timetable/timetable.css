@@ -23,7 +23,7 @@
     align-items: center; /* 수평 중앙 정렬 */
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
-    font-family: 'pretendard', sans-serif;
+    font-family: 'Pretendard-Regular';
     background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
     color: white;
     height: 100%;
@@ -66,7 +66,7 @@
     padding: 20px 0;
 
     font-size: 2.4em;
-    font-family: 'Felix Titling', sans-serif; /* Added font-family property */
+    font-family: 'Felixti'; /* Added font-family property */
     font-weight: 400; /* Regular font weight */
     margin-top: 16vh;
   }
@@ -310,8 +310,8 @@
     align-items: center; /* 수평 중앙 정렬 */
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
-    font-family: 'pretendard', sans-serif;
-    background: linear-gradient(to bottom, #2b2355, #4f4677);
+    font-family: 'Pretendard-Regular';
+    background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
     color: white;
     overflow: hidden;
   }
@@ -342,7 +342,7 @@
     text-align: center;
     padding: 20px 0;
     font-size: 1rem;
-    font-family: 'Felix Titling', sans-serif; /* Added font-family property */
+    font-family: 'Felixti'; /* Added font-family property */
     font-weight: 400; /* Regular font weight */
     /* margin-top: 50px; */
   }
