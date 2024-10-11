@@ -133,7 +133,6 @@
       }
     </script>
 
-
     <div class="filter-buttons">
       <input type="radio" id="date-16" name="date" value="10.16" checked />
       <label for="date-16">10.16</label>
@@ -145,7 +144,6 @@
       <label for="date-18">10.18</label>
     </div>
 
-
     <div class="box-container" id="booth-list">
       {% for booth in booths %}
       <div
@@ -153,7 +151,7 @@
         data-date="{% if booth.is_operating_on_16th %}10.16{% endif %}{% if booth.is_operating_on_17th %}10.17{% endif %}{% if booth.is_operating_on_18th %}10.18{% endif %}"
       >
         <a
-          href="{{ url_for('get_booth_detail', booth_name=booth.booth_name) }}"
+          href="{{ url_for('get_booth_detail', booth_name=booth.booth_name | urlencode) }}"
         >
           <div class="box-icon">
             <i
