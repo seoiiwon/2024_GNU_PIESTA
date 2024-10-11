@@ -117,17 +117,34 @@ function showBusModalTYCW(time, location, busFrom) {
 
 
 // 모달 닫기
-function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
-    document.getElementById('home_info').classList.remove('blur-background');
-}
+// function closeModal(modalId) {
+//     document.getElementById(modalId).style.display = 'none';
+//     document.getElementById('home_info').classList.remove('blur-background');
+// }
   
-window.onclick = function(event) {
-const noticeModal = document.getElementById('noticeModal');
-const busModal1 = document.getElementById('busModal1');
-const busModal2 = document.getElementById('busModal2');
+// window.onclick = function(event) {
+//   const noticeModal = document.getElementById('noticeModal');
+//   const busModal1 = document.getElementById('busModal1');
+//   const busModal2 = document.getElementById('busModal2');
 
-if (event.target == noticeModal || event.target == busModal1 || event.target == busModal2) {
-    closeModal(event.target.id);
+//   if (event.target == noticeModal || event.target == busModal1 || event.target == busModal2) {
+//       closeModal(event.target.id);
+//   }
+// }
+function closeModal(modalId) {
+  document.getElementById(modalId).style.display = 'none';
+  document.getElementById('home_info').classList.remove('blur-background');
 }
+
+function handleModalClose(event) {
+  const noticeModal = document.getElementById('noticeModal');
+  const busModal1 = document.getElementById('busModal1');
+  const busModal2 = document.getElementById('busModal2');
+
+  if (event.target == noticeModal || event.target == busModal1 || event.target == busModal2) {
+      closeModal(event.target.id);
+  }
 }
+
+window.onclick = handleModalClose;
+window.addEventListener('touchend', handleModalClose);
