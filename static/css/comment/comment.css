@@ -144,6 +144,7 @@ button:hover {
     overflow-y: scroll;
     -ms-overflow-style: none;
     z-index: 1;
+    margin-top: 20vh;
   }
 
   ::-webkit-scrollbar {
