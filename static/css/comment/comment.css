@@ -137,14 +137,13 @@ button:hover {
 
   #comments-container {
     width: 80%;
-    height: 57vh;
-    bottom: 13vh;
+    height: 53vh;
+    bottom: 10vh;
     left: 10%;
     position: fixed;
     overflow-y: scroll;
     -ms-overflow-style: none;
     z-index: 1;
-    margin-top: 20vh;
   }
 
   ::-webkit-scrollbar {
