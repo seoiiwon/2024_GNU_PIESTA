@@ -98,7 +98,7 @@ body {
   /* 지도 영역 */
   #map {
     width: 90vw;
-    height: 70vw;
+    height: 55vw;
     border-radius: 10px;
     overflow: hidden; /* 이 속성은 유지 */
     margin: 0 auto;
@@ -121,6 +121,7 @@ body {
     margin-top: 8vw;
     overflow-y: auto;
     max-height: 50vh; /* 화면 높이의 절반으로 제한 */
+    padding-bottom: 23vh;
   }
   .box-icon {
     margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 조정 */
