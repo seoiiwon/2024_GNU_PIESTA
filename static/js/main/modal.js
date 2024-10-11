@@ -115,7 +115,7 @@ function showBusModalTYCW(time, location, busFrom) {
 
 // 모달 바깥을 클릭하면 닫기
 window.addEventListener('click', handleModalClose);
-window.addEventListener('touchend', handleModalClose); 
+window.addEventListener('touchstart', handleModalClose); 
 
 function handleModalClose(event) {
     const modal1 = document.getElementById('Modal1');
@@ -128,3 +128,7 @@ function handleModalClose(event) {
         noticeModal.style.display = "none";
     }
 }
+
+document.addEventListener('touchmove', function(event) {
+    event.preventDefault(); // 터치 이동 시 기본 동작 방지 
+}, { passive: false }); 
