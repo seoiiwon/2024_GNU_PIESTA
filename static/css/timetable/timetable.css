@@ -1,21 +1,24 @@
-@font-face {
-  font-weight: 400; /* 폰트의 두께 */
-  font-family: 'Felixti'; /* 폰트 이름 */
-  src: url('/static/font/Felixti.TTF') format('truetype');
-}
-@font-face {
-  font-weight: 400;
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-}
-@font-face {
-  font-weight: 700;
-  font-family: "Pretendard-Bold";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
-      format("woff");
-}
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ휴대폰 */
 @media (max-width: 768px) {
+  @font-face {
+    font-weight: 400; /* 폰트의 두께 */
+    font-family: 'Felixti'; /* 폰트 이름 */
+    src: url('/static/font/Felixti.TTF') format('truetype');
+  }
+  
+  @font-face {
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  }
+  @font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+        format("woff");
+  }
+
   body {
     display: flex;
     flex-direction: column;
@@ -23,7 +26,7 @@
     align-items: center; /* 수평 중앙 정렬 */
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
-    font-family: 'pretendard', sans-serif;
+    font-family: 'Pretendard-Regular';
     background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
     color: white;
     height: 100%;
@@ -66,7 +69,7 @@
     padding: 20px 0;
 
     font-size: 2.4em;
-    font-family: 'Felix Titling', sans-serif; /* Added font-family property */
+    font-family: 'Felixti'; /* Added font-family property */
     font-weight: 400; /* Regular font weight */
     margin-top: 16vh;
   }
@@ -106,6 +109,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     /* width: auto; */
     /* width: 1fr; */
     
@@ -151,9 +155,12 @@
       cursor: pointer; /* 커서 스타일 */
       gap: 7px; /* 요소들 사이의 간격 */
       width: 100%; /* 전체 너비 */
-      box-sizing: border-box; /* 패딩 포함 너비 계산 */
+      box-sizing:border-box ; /* 패딩 포함 너비 계산 */
       /* border-radius: 10px; */
-      color: #121212;
+      color: #000000;
+      text-align: center;
+      word-break: keep-all;  /* 어절 단위로 줄바꿈 */
+      overflow-y: auto;
   }
   
 
@@ -294,6 +301,25 @@
 
  /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ여기서부턴 큰화면  */
  @media (min-width: 768px) {
+
+  @font-face {
+    font-weight: 400; /* 폰트의 두께 */
+    font-family: 'Felixti'; /* 폰트 이름 */
+    src: url('/static/font/Felixti.TTF') format('truetype');
+  }
+  
+  @font-face {
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  }
+  @font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+        format("woff");
+  }
+
   #logoImg {
     width: 50%; /* 로고의 부모 요소에 대한 너비 설정 */
 }
@@ -310,8 +336,8 @@
     align-items: center; /* 수평 중앙 정렬 */
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
-    font-family: 'pretendard', sans-serif;
-    background: linear-gradient(to bottom, #2b2355, #4f4677);
+    font-family: 'Pretendard-Regular';
+    background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
     color: white;
     overflow: hidden;
   }
@@ -342,7 +368,7 @@
     text-align: center;
     padding: 20px 0;
     font-size: 1rem;
-    font-family: 'Felix Titling', sans-serif; /* Added font-family property */
+    font-family: 'Felixti'; /* Added font-family property */
     font-weight: 400; /* Regular font weight */
     /* margin-top: 50px; */
   }
@@ -381,6 +407,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     /* width: 1fr; */
     
     /* border-left: 3px solid #f39ac8; 세로선 제거 */
@@ -424,10 +451,14 @@
       cursor: pointer; /* 커서 스타일 */
       gap: 7px; /* 요소들 사이의 간격 */
       width: 100%; /* 전체 너비 */
-      box-sizing: border-box; /* 패딩 포함 너비 계산 */
+      box-sizing:border-box ; /* 패딩 포함 너비 계산 */
       /* border-radius: 10px; */
       color: #000000;
+      text-align: center;
+      word-break: keep-all;  /* 어절 단위로 줄바꿈 */
+      overflow-y: auto;
   }
+
   
 
   .event-time {
