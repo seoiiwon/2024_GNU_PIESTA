@@ -6,11 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let currentSection = 0;
   const sections = document.querySelectorAll("#home_poster, #home_lineup, #home_info");
   const totalSections = sections.length;
-  const scrollThrottleDuration = 500;
+  const scrollThrottleDuration = 1000;
   let isScrolling = false;
-  let startY = 0; // 터치 시작 Y좌표
+  let startY = 0; 
 
-  // 섹션 스크롤 함수
   function scrollToSection(sectionIndex) {
     const section = sections[sectionIndex];
     if (section) {
@@ -18,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 휠 이벤트 리스너
   function handleWheelScroll(event) {
     event.preventDefault();
     if (isScrolling) return;
@@ -37,15 +35,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 터치 이벤트 리스너
   function handleTouchStart(event) {
-    startY = event.touches[0].clientY; // 터치 시작 Y좌표 저장
+    startY = event.touches[0].clientY; 
   }
 
   function handleTouchEnd(event) {
     if (isScrolling) return;
 
-    const endY = event.changedTouches[0].clientY; // 터치 끝 Y좌표 저장
-    const deltaY = startY - endY; // 터치 이동 양 계산
-    const threshold = 50; // 스크롤 감지 임계값
+    const endY = event.changedTouches[0].clientY; 
+    const deltaY = startY - endY; 
+    const threshold = 50; 
 
     if (Math.abs(deltaY) > threshold) {
       isScrolling = true;
@@ -61,12 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // 휠 및 터치 이벤트 리스너 등록
   window.addEventListener("wheel", handleWheelScroll, { passive: false });
   window.addEventListener("touchstart", handleTouchStart, { passive: false });
   window.addEventListener("touchend", handleTouchEnd, { passive: false });
 
-  // 새로고침 시 처음 페이지로 이동
   scrollToSection(currentSection);
 });
 
