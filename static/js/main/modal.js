@@ -114,16 +114,18 @@ function showBusModalTYCW(time, location, busFrom) {
 }
 
 // 모달 바깥을 클릭하면 닫기
-window.onclick = function(event) {
+// 클릭 또는 터치 이벤트를 모두 처리하도록 수정
+window.addEventListener('click', handleModalClose);
+window.addEventListener('touchend', handleModalClose);
+
+function handleModalClose(event) {
     const modal1 = document.getElementById('Modal1');
     const modal2 = document.getElementById('Modal2');
     const noticeModal = document.getElementById('noticeModal');
-    // const modal3 = document.getElementById('Modal3');
 
     if (event.target == modal1 || event.target == modal2 || event.target == noticeModal) {
         modal1.style.display = "none";
         modal2.style.display = "none";
         noticeModal.style.display = "none";
-        // modal3.style.display = "none";
     }
 }
