@@ -11,7 +11,7 @@ font-face {
   padding: 10px;
   border-bottom: 1px solid #ccc;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   top: 0;
   z-index: 10;
 }
@@ -19,9 +19,11 @@ body {
   margin: 0;
   padding: 0;
   height: 100vh; /* Viewport height */
+  width: 100vw;
   display: flex;
   flex-direction: column;
   background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
+  overflow: hidden;
 }
 
 .comment-section {
@@ -32,7 +34,7 @@ body {
   background: linear-gradient(to right bottom, #f0f0f0, #ffd0d0);
   padding: 10px;
   z-index: 990;
-  width: 98vw;
+  width: 100vw;
   display: flex;
   align-items: center;
 }
@@ -45,7 +47,7 @@ body {
 
 #comment-input {
   flex: 1;
-  margin-right: 10px;
+  /* margin-right: 10px; */
   border-radius: 15px;
   padding-top: 5px;
   padding-left: 2px;
@@ -57,7 +59,7 @@ button:hover {
 
 @media (max-width: 768px) {
   #comment-form {
-    width: 100%;
+    width: 98%;
     height: 8vh;
   }
   .text {
@@ -89,7 +91,7 @@ button:hover {
   }
 
   #comment-input {
-    width: 65%;
+    width: 60vw;
     height: 7vh;
     margin: 0;
     border-radius: 15px;
@@ -119,7 +121,7 @@ button:hover {
     font-size: 15px;
   }
   .notice {
-    position: absolute;
+    position: fixed;
     width: 75vw;
     top: 17vh;
     z-index: 3;
@@ -134,12 +136,11 @@ button:hover {
   }
 
   #comments-container {
-    width: 90%;
+    width: 80%;
     height: 57vh;
-    bottom: 4vh;
-    top: 2vh;
-    left: 1vw;
-    position: relative;
+    bottom: 13vh;
+    left: 10%;
+    position: fixed;
     overflow-y: scroll;
     -ms-overflow-style: none;
     z-index: 1;
@@ -162,7 +163,7 @@ button:hover {
   }
 
   #comment-form {
-    width: 100%;
+    width: 98vw;
     height: 10vh;
   }
   #hambuger {
@@ -222,7 +223,7 @@ button:hover {
   }
   .notice {
     left: 9%;
-    position: absolute;
+    position: fixed;
     width: 70vw;
     height: 30vh;
     top: 15vh;
@@ -250,11 +251,12 @@ button:hover {
   #comments-container {
     width: 70vw;
     height: 57vh;
-    top: 3em;
-    position: relative;
+    bottom: 13vh;
+    position: fixed;
     overflow-y: scroll;
     -ms-overflow-style: none;
     z-index: 1;
+    left: 9%;
   }
 
   ::-webkit-scrollbar {
