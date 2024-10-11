@@ -61,9 +61,9 @@
         <div id="navContainer">
           <div id="hrefHOME" data-url="/home">HOME</div>
           <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
-          <div id="hrefBOOTH" data-url="/">BOOTH</div>
+          <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
           <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
-          <div id="hrefFAQ" data-url="faq">FAQ</div>
+          <div id="hrefFAQ" data-url="/faq">FAQ</div>
         </div>
         <div id="piestaWebHost">
           <a id="ohgam" href="https://www.instagram.com/gnu_5gam/"
@@ -133,14 +133,15 @@
       }
     </script>
 
+
     <div class="filter-buttons">
-      <input type="radio" id="date-16" name="date" value="10.16" checked>
+      <input type="radio" id="date-16" name="date" value="10.16" checked />
       <label for="date-16">10.16</label>
-      
-      <input type="radio" id="date-17" name="date" value="10.17">
+
+      <input type="radio" id="date-17" name="date" value="10.17" />
       <label for="date-17">10.17</label>
-      
-      <input type="radio" id="date-18" name="date" value="10.18">
+
+      <input type="radio" id="date-18" name="date" value="10.18" />
       <label for="date-18">10.18</label>
     </div>
 
@@ -154,18 +155,7 @@
         <a
           href="{{ url_for('get_booth_detail', booth_name=booth.booth_name) }}"
         >
-      <div
-        class="box"
-        data-date="{% if booth.is_operating_on_16th %}10.16{% endif %}{% if booth.is_operating_on_17th %}10.17{% endif %}{% if booth.is_operating_on_18th %}10.18{% endif %}"
-      >
-        <a
-          href="{{ url_for('get_booth_detail', booth_name=booth.booth_name) }}"
-        >
           <div class="box-icon">
-            <i
-              class="{% if booth.booth_category == '먹거리 판매 부스' %}fa-solid fa-utensils {% elif booth.booth_category == '플리마켓 부스' %}fa-solid fa-shop {% elif booth.booth_category == '체험 부스' %}fa-solid fa-gamepad {% elif booth.booth_category == '홍보 부스' %}fa-solid fa-bullhorn {% elif booth.booth_category == '잡화 판매 부스' %}fa-solid fa-gift {% else %}fa-solid fa-question{% endif %}"
-            >
-            </i>
             <i
               class="{% if booth.booth_category == '먹거리 판매 부스' %}fa-solid fa-utensils {% elif booth.booth_category == '플리마켓 부스' %}fa-solid fa-shop {% elif booth.booth_category == '체험 부스' %}fa-solid fa-gamepad {% elif booth.booth_category == '홍보 부스' %}fa-solid fa-bullhorn {% elif booth.booth_category == '잡화 판매 부스' %}fa-solid fa-gift {% else %}fa-solid fa-question{% endif %}"
             >
@@ -179,7 +169,5 @@
       </div>
       {% endfor %}
     </div>
-    
-  </div>
   </body>
-  </html>
+</html>

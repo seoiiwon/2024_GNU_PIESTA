@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python,visualstudiocode,venv,dotenv,macos,windows
 # Edit at https://www.toptal.com/developers/gitignore?templates=python,visualstudiocode,venv,dotenv,macos,windows
 
+2024_GNU_PIESTA.db
+migrations/versions/
+
 ### dotenv ###
 .env
 
