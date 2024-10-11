@@ -91,7 +91,7 @@ button:hover {
   }
 
   #comment-input {
-    width: 60vw;
+    width: 70vw;
     height: 7vh;
     margin: 0;
     border-radius: 15px;
@@ -105,7 +105,7 @@ button:hover {
     width: 15vw;
     height: 7vh;
     margin-left: 3vw;
-    margin-right: 3vw;
+
     font-size: 7vw;
     text-align: center;
   }
