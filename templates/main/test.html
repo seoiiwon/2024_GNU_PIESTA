@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TEST</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/test.css') }}">
+    <script src="{{ url_for('static', path='js/main/test.js') }}" defer></script>
+
 </head>
 <body>
-    {% for yaho in nameForHTML %}
-    <div>{{ yaho.title }}</div>
-    <div>{{ yaho.time }}</div>
-    {% endfor %}
+    <div id="background"></div>
 </body>
 </html>
