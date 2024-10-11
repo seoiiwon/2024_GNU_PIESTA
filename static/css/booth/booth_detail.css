@@ -112,7 +112,7 @@ font-face {
     height: 70vh; /* 자동으로 높이를 설정해 줍니다 */ /* 최대 높이를 설정하고 초과할 경우 스크롤 */
     overflow-y: auto !important; /* 내용이 넘칠 경우 스크롤 가능하도록 설정 */
     padding-top: 4.8vh;
-    padding-bottom: 13vh;
+    padding-bottom: 24vh;
 }
 
 .fa-circle
@@ -225,6 +225,15 @@ font-face {
     font-size: 6vw;
 }
 
+@media(max-width: 389px) 
+{
+    .content_box
+    {
+        top: 30% !important;
+        padding-bottom: 30vh;
+    }
+}
+
 @media(max-width: 768px) 
 {
 
@@ -235,7 +244,7 @@ font-face {
 
     .content_box
     {height: auto;
-        top: 23%; /* 타이틀 아래 위치 */
+        top: 24%; /* 타이틀 아래 위치 */
         width: 93vw; /* 반응형 너비 설정 */
     }
    /* 제목 BOOTH */
