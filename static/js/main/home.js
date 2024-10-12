@@ -1,34 +1,29 @@
+let currentSection = 0;
+const sections = document.querySelectorAll(
+  "#home_poster, #home_lineup, #home_info"
+);
+const totalSections = sections.length;
+const scrollThrottleDuration = 1000;
+let isScrolling = false;
+let startY = 0;
+
 const bubble1 = document.getElementById("bubble1");
 const bubble2 = document.getElementById("bubble2");
-// 버블 두번째 페이지에만 나타나도록
-function scrollToSection(sectionIndex) {
-  if (sectionIndex == 2) {
-    bubble1.style.visibility = "hidden";
-    bubble2.style.visibility = "hidden";
-  } else {
-    bubble1.style.visibility = "visible";
-    bubble2.style.visibility = "visible";
-  }
-  window.scrollTo({
-    top: window.innerHeight * sectionIndex,
-    behavior: "smooth",
-  });
-}
 
 document.addEventListener("DOMContentLoaded", function () {
-  let currentSection = 0;
-  const sections = document.querySelectorAll(
-    "#home_poster, #home_lineup, #home_info"
-  );
-  const totalSections = sections.length;
-  const scrollThrottleDuration = 1000;
-  let isScrolling = false;
-  let startY = 0;
-
   function scrollToSection(sectionIndex) {
     const section = sections[sectionIndex];
+    console.log("Scrolling to section:", sectionIndex);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+    }
+    // 버블버블
+    if (sectionIndex >= 2) {
+      bubble1.style.visibility = "hidden";
+      bubble2.style.visibility = "hidden";
+    } else {
+      bubble1.style.visibility = "visible";
+      bubble2.style.visibility = "visible";
     }
   }
 
@@ -132,4 +127,4 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // 초기 상태 설정
-document.getElementById("lineup16").classList.add("active");
+document.getElementById("lineup/16").classList.add("active");
