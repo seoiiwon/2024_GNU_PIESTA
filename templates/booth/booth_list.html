@@ -91,7 +91,7 @@
     <script>
       var container = document.getElementById("map");
       var options = {
-        center: new kakao.maps.LatLng(35.152961, 128.101117),
+        center: new kakao.maps.LatLng(35.1549465, 128.1026520),
         level: 4,
       };
 
@@ -419,8 +419,15 @@
         kakao.maps.event.addListener(
           marker,
           "click",
-          (function (overlay, content) {
+          (function (overlay, content, markerPosition) {
             return function () {
+              // 지도 중심 계산하는거 추가햇슴
+              var newCenterPosition = new kakao.maps.LatLng(
+                markerPosition.getLat() + 0.0012, 
+                markerPosition.getLng()
+              );
+              map.setCenter(newCenterPosition);
+
               overlays.forEach(function (item) {
                 var updatedContent = item.content.replace(
                   'style="display:block;"',
@@ -436,7 +443,7 @@
               );
               overlay.setContent(updatedContent);
             };
-          })(overlay, content)
+          })(overlay, content, marker.getPosition()) // 여기도 getPosition 추가했슴
         );
       }
 

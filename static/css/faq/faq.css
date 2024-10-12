@@ -5,10 +5,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    min-height: 100vh; /* 최소 높이를 100vh로 설정 */
+    min-height: 100vh;
     padding-top: 40px;
-    overflow-x: hidden; /* 가로 스크롤 방지 */
-    overflow-y: auto; /* 세로 스크롤 허용 */
+    overflow-x: hidden;
+    overflow-y: hidden; /* 전체 페이지 스크롤 방지 */
+}
+
+#menuTrigger {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 1001; /* 햄버거 메뉴는 상단에 고정된 상태로 유지 */
 }
 
 #header {
@@ -19,7 +26,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 50; /* 햄버거 메뉴보다 낮게 설정 */
     transition: z-index 0.3s;
 }
 
@@ -30,25 +37,6 @@ font-face {
       format("woff");
 }
 
-#logoImg {
-    position: relative;
-    z-index: 1;
-}
-
-.logoDate {
-    margin-top: 2px;
-    text-align: center;
-    font-family: "Pretendard-Regular";
-    color: #afafaf;
-    font-size: 2.5vw;
-    letter-spacing: 0.5vw;
-}
-
-@media (max-width: 768px) {
-    #logoImg {
-        width: 60vw;
-    }
-}
 
 @media (max-width: 768px) {
     .FAQ {
@@ -73,13 +61,14 @@ font-face {
         flex-direction: column; /* 세로 방향으로 정렬 */
         align-items: center; /* 가로 중앙 정렬 */
         justify-content: center; /* 세로 중앙 정렬 */
+        z-index: 1;
     }
 
     .faq-section {
-        position: relative; /* faq 섹션도 페이지 흐름에 따라 배치 */
-        z-index: 10; /* faq 섹션이 로고 부분을 덮을 수 있도록 z-index를 높게 설정 */
-        margin-top: 10px;
-        overflow: visible;
+        position: relative;
+        overflow-y: auto; /* FAQ 섹션에만 스크롤 적용 */
+        height: 80vh; /* 페이지 높이를 조정해서 섹션만 스크롤 가능하게 */
+        z-index: 1;
     }
 
     .faq-item {
@@ -171,10 +160,10 @@ font-face {
     }
 
     .faq-section {
-        position: relative; /* faq 섹션도 페이지 흐름에 따라 배치 */
-        z-index: 10; /* faq 섹션이 로고 부분을 덮을 수 있도록 z-index를 높게 설정 */
-        margin-top: 20px;
-        overflow: visible;
+        position: relative;
+        overflow-y: auto; /* FAQ 섹션에만 스크롤 적용 */
+        height: 80vh; /* 페이지 높이를 조정해서 섹션만 스크롤 가능하게 */
+        z-index: 1;
     }
 
     .faq-item {

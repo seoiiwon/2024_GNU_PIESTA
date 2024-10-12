@@ -5,60 +5,61 @@ font-face {
     format("woff");
 }
 
-.header {
-  height: 50px;
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-bottom: 1px solid #ccc;
-  position: fixed;
-  width: 100vw;
-  top: 0;
-  z-index: 10;
-}
 
-body {
-  margin: 0;
-  padding: 0;
-  height: 100vh; /* Viewport height */
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
-  overflow: hidden;
-}
+@media (max-width: 767px) {
+  .header {
+    height: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 10;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Viewport height */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
+    overflow: hidden;
+  }
+  
+  .comment-section {
+    position: fixed; /* 고정 위치 */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right bottom, #f0f0f0, #ffd0d0);
+    padding: 10px;
+    z-index: 990;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+  }
+  
+  #comment-form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  
+  #comment-input {
+    flex: 1;
+    /* margin-right: 10px; */
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-left: 2px;
+  }
+  
+  button:hover {
+    background-color: #6b6592;
+  }
 
-.comment-section {
-  position: fixed; /* 고정 위치 */
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(to right bottom, #f0f0f0, #ffd0d0);
-  padding: 10px;
-  z-index: 990;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-}
-
-#comment-form {
-  display: flex;
-  width: 100%;
-  align-items: center;
-}
-
-#comment-input {
-  flex: 1;
-  /* margin-right: 10px; */
-  border-radius: 15px;
-  padding-top: 5px;
-  padding-left: 2px;
-}
-
-button:hover {
-  background-color: #6b6592;
-}
-
-@media (max-width: 768px) {
   #comment-form {
     width: 98%;
     height: 8vh;
@@ -152,7 +153,63 @@ button:hover {
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  .header {
+    height: 50px;
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    z-index: 10;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Viewport height */
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
+    overflow: hidden;
+  }
+  
+  .comment-section {
+    position: fixed; /* 고정 위치 */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right bottom, #f0f0f0, #ffd0d0);
+    padding: 10px;
+    z-index: 990;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+  }
+  
+  #comment-form {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  
+  #comment-input {
+    flex: 1;
+    /* margin-right: 10px; */
+    border-radius: 15px;
+    padding-top: 5px;
+    padding-left: 2px;
+  }
+  
+  button:hover {
+    background-color: #6b6592;
+  }
+
+
+
   #logoImg {
     width: 50%; /* 로고의 부모 요소에 대한 너비 설정 */
   }
@@ -270,4 +327,19 @@ button:hover {
   /* .comment-section {
     border-top: 3px solid black;
   } */
+}
+
+
+
+/* PC 사이즈 */
+@media (min-width: 1025px) {
+  .content,
+  .logoContainer,
+  .menu-trigger,
+  .hambergerContents,
+  .notice,
+  #comments-container,
+  .comment-section{
+    display: none;
+  }
 }
