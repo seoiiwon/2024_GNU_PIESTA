@@ -151,35 +151,43 @@
       align-items: center; /* 내용 수직 중앙 정렬 */
       justify-content: center; /* 내용 수평 중앙 정렬 */
       padding: 10px; /* 내부 패딩 */
-      font-size: 10px; /* 폰트 크기 */
+      font-size: 0.86em; /* 폰트 크기 */
       font-weight: bold; /* 폰트 두께 */
       cursor: pointer; /* 커서 스타일 */
-      gap: 7px; /* 요소들 사이의 간격 */
       width: 100%; /* 전체 너비 */
       box-sizing:border-box ; /* 패딩 포함 너비 계산 */
       /* border-radius: 10px; */
       color: #000000;
       text-align: center;
       word-break: keep-all;  /* 어절 단위로 줄바꿈 */
+      line-height: 1.1;
+      gap: 4px;
   }
   
 
   .event-time {
     position: relative;
     font-size: 7px !important;
-    color: #121212 !important;
+    color: #000 !important;
 }
 
   #day1 {
-    background-color: #BBB6D8; /* 53% 불투명도 */
+    background-color: #DCD6FF; /* 53% 불투명도 */
+    border-left: 0.8em solid #BCB1FF;
+    color: #4C3CA8;
   }
 
   .event#day2 {
-    background-color: #E5A4D0;
+    background-color: #FFC0EB;
+    border-left: 0.8em solid #FFA0E0;
+    color: #F23782;
+
   }
 
   .event#day3 {
-    background-color: #F7E695;
+    background-color: #FFF0A7;    
+    border-left: 0.8em solid #FFD260;
+    color: #FFA136;
   }
 
   .event:hover {
@@ -433,7 +441,7 @@
     }
   
   .events-day {
-      display: grid;
+      display: grid ;
       grid-template-rows: repeat(20, 40px);
       gap: 0px; /* 이벤트 사이 간격 제거 */
       padding-left: 0px; /* 수직선과 내용 사이의 간격 제거 */
@@ -456,7 +464,7 @@
       font-size: 10px; /* 폰트 크기 */
       font-weight: bold; /* 폰트 두께 */
       cursor: pointer; /* 커서 스타일 */
-      gap: 7px; /* 요소들 사이의 간격 */
+      gap: 7px!; /* 요소들 사이의 간격 */
       width: 100%; /* 전체 너비 */
       box-sizing:border-box ; /* 패딩 포함 너비 계산 */
       /* border-radius: 10px; */
@@ -474,16 +482,23 @@
 }
 
   #day1 {
-    background-color: #BBB6D8; /* 53% 불투명도 */
-  }
+  background-color: #DCD6FF; /* 53% 불투명도 */
+  border-left: 0.8em solid #BCB1FF;
+  color: #4C3CA8;
+}
 
   .event#day2 {
-    background-color: #E5A4D0;
-  }
+  background-color: #FFC0EB;
+  border-left: 0.8em solid #FFA0E0;
+  color: #F23782;
+
+}
 
   .event#day3 {
-    background-color: #F7E695;
-  }
+  background-color: #FFF0A7;    
+  border-left: 0.8em solid #FFD260;
+  color: #FFA136;
+}
 
   .event:hover {
     background-color: #9a76d7;

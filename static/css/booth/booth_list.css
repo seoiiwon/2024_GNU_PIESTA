@@ -86,6 +86,7 @@ body {
     color: #ffffff;
   }
 
+  
   /* 지도 영역 */
   #map {
     width: 90vw;
@@ -156,11 +157,6 @@ body {
     margin: 0 auto;
     margin-top: 7.5vw;
   }
-  .heart {
-    position: absolute;
-    margin-left: 72vw;
-    margin-top: 2vw;
-  }
 }
 
 /* PC에서 적용되는 css -> 가로 해상도가 1025px 보다 작은 화면에 적용  */
@@ -182,7 +178,7 @@ body {
     position: relative; /* 다른 요소들과 겹치지 않게 상대 위치 */
     color: #ffffff;
   }
-
+  
   /* 지도 영역 */
   #map {
     width: 90vw;
@@ -259,6 +255,8 @@ img.close-img {
   width: auto; /* 이 이미지에만 100% 규칙을 적용하지 않음 */
   height: auto; /* 필요에 따라 height도 설정 */
 }
+
+
 
 @media (min-width: 1025px) {
   #booth_info, .title, .content_box {
