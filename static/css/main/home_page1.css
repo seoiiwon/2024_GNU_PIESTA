@@ -30,15 +30,15 @@ font-face {
 }
 
 .ddayTop {
-  margin-top: 10vh;
+  margin-top: 11vh;
   display: flex;
   justify-content: center;
   font-family: Prata;
   align-items: center;
   flex-direction: column;
   z-index: 1;
-  font-size: 5vw;
-  color: #221959;
+  font-size: 2vh;
+  color: #ffffff;
 }
 
 /* .dday {

@@ -1,5 +1,19 @@
 const bubble1 = document.getElementById("bubble1");
 const bubble2 = document.getElementById("bubble2");
+// 버블 두번째 페이지에만 나타나도록
+function scrollToSection(sectionIndex) {
+  if (sectionIndex == 2) {
+    bubble1.style.visibility = "hidden";
+    bubble2.style.visibility = "hidden";
+  } else {
+    bubble1.style.visibility = "visible";
+    bubble2.style.visibility = "visible";
+  }
+  window.scrollTo({
+    top: window.innerHeight * sectionIndex,
+    behavior: "smooth",
+  });
+}
 
 document.addEventListener("DOMContentLoaded", function () {
   let currentSection = 0;
@@ -11,20 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // 새로고침 시 처음 페이지로 이동하게 설정
   scrollToSection(0);
-  // 버블 두번째 페이지에만 나타나도록
-  function scrollToSection(sectionIndex) {
-    if (sectionIndex == 0 || sectionIndex == 2) {
-      bubble1.style.visibility = "hidden";
-      bubble2.style.visibility = "hidden";
-    } else {
-      bubble1.style.visibility = "visible";
-      bubble2.style.visibility = "visible";
-    }
-    window.scrollTo({
-      top: window.innerHeight * sectionIndex,
-      behavior: "smooth",
-    });
-  }
 
   // 첫 번째 페이지 로고 숨기기
   function handleLogoPosition() {
@@ -71,26 +71,31 @@ document.addEventListener("DOMContentLoaded", function () {
   // handleLogoPosition();
 });
 
+function getKSTDate() {
+  const utc = new Date().getTime() + new Date().getTimezoneOffset() * 60000;
+  const kstOffset = 9 * 60;
+  return new Date(utc + kstOffset * 60000);
+}
+
 // 날짜 카운트다운
-const dDay = new Date("2024-10-16T00:00:00").getTime();
+const dDayDate = new Date(2024, 9, 16); //10월 16일
 
 function countdown() {
-  const now = new Date().getTime();
-  const distance = dDay - now;
+  const now = new Date();
+  now.setHours(0, 0, 0, 0);
 
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const distance = dDayDate - now;
 
-  document.getElementById("countdown").innerHTML = days;
-
-  // 디데이가 지났을 때 어떻게 할지 물어보댜
-  if (distance < 0) {
-    clearInterval(x);
+  if (distance <= 0) {
     document.getElementById("countdown").innerHTML = "Day";
+  } else {
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerHTML = days;
   }
 }
 
-const x = setInterval(countdown, 1000);
-countdown();
+countdown(); // 페이지 로드 시 초기 계산
+setInterval(countdown, 1000 * 60 * 60 * 24); // 매일 자정에 갱신
 
 // 라인업
 document.addEventListener("DOMContentLoaded", function () {
@@ -118,4 +123,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 초기 상태 설정
 document.getElementById("lineup16").classList.add("active");
-document.getElementById("lineup16").style.display = "block";

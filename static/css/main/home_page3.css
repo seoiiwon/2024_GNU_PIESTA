@@ -15,7 +15,14 @@ body {
 #home_poster,
 #home_lineup,
 #home_info {
-  background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
+  background: linear-gradient(#3b2862, #2c2f74 25%, #cbbce3);
+  /*background: linear-gradient(
+    #7e727d,
+    #484176 12%,
+    #39317a 70%,
+    #939390 92%,
+    #fcfbff
+  );*/
 }
 
 /* 공지사항 */
