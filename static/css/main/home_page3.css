@@ -12,266 +12,8 @@ body {
   overflow: hidden;
 }
 
-#home_poster,
-#home_lineup,
-#home_info {
-  background: linear-gradient(#3b2862, #2c2f74 25%, #cbbce3);
-  /*background: linear-gradient(
-    #7e727d,
-    #484176 12%,
-    #39317a 70%,
-    #939390 92%,
-    #fcfbff
-  );*/
-}
-
-/* 공지사항 */
-.notice {
-  display: flex;
-  position: relative;
-}
-/* 오시는 길 */
-.vehicle {
-  display: flex;
-  position: relative;
-}
-.title {
-  font-weight: bold;
-  background: linear-gradient(to bottom, #ffffff, #ffe2bc);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  text-shadow: 0px 2px 4px rgba(255, 226, 188, 0.5);
-}
-
-/* 공지사항 컨테이너 */
-
-#noticeList {
-  overflow-x: scroll;
-  display: flex;
-  margin: 4vw 8vw;
-  height: 12vh;
-  scrollbar-width: none;
-}
-
-#noticeList::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Edge에서 스크롤바 숨기기 */
-}
-
-#noticeList > li {
-  width: 40vw;
-  height: fit-content;
-  background-color: rgba(217, 217, 217, 0.5);
-  border-radius: 10px;
-  margin-right: 4vw;
-  flex: 0 0 40vw;
-  padding: 2vw;
-}
-
-.noticeCategory {
-  font-size: 1em;
-  font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: #ffffff;
-}
-
-.noticeTitle {
-  font-size: 1.1em;
-  font-weight: bold;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  color: #ffffff;
-}
-
-.noticeBody {
-  font-size: 0.8em;
-  color: #dfdfdf;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  white-space: normal;
-}
-
-/* 공지 모달 style */
-.noticeModal {
-  display: none;
-  position: fixed;
-  z-index: 200;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.05);
-}
-
-.noticeModalContainer {
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(5px);
-
-  position: relative;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-
-  padding: 20px;
-  border: none;
-  border-radius: 10px;
-
-  width: 80%;
-  height: fit-content;
-  max-height: 70vh;
-  overflow-y: scroll;
-}
-
-.noticeModalTitleBox {
-  color: #58437c;
-  font-size: 1.4em;
-  font-weight: bold;
-  margin-bottom: 2.5vh;
-}
-
-.noticeModalBody {
-  line-height: 1.6em;
-  color: #6d6d6d;
-}
-
-/* 오시는 길 */
-.toggle {
-  width: fit-content;
-  display: inline-block;
-}
-.campus {
-  color: #ffffff;
-}
-
-.clear {
-  clear: both;
-  display: block;
-}
-
-/* 구분선 */
-.dottedLine {
-  border: none;
-  border-top: 2px dotted #dfdfdf;
-}
-
-/* 토글 디자인 */
-#busList1,
-#busList2,
-#busList3 {
-  margin: 3vw 3vw 0 3vw;
-  transition: max-height 0.3s ease-out;
-}
-#busList1 > span {
-  color: #dfdfdf;
-  margin: 0 2vw 1vw 2vw;
-}
-#busList2 > div > span {
-  color: #dfdfdf;
-  margin: 0 1vw 1vw 1vw;
-}
-#busList3 > div > span {
-  color: #dfdfdf;
-  margin: 0 1vw 1vw 1vw;
-}
-.mapBox {
-  background-color: white;
-  height: 53vw;
-  margin-bottom: 1em;
-  position: relative;
-  border-radius: 20px;
-}
-.mapBox > img {
-  object-fit: cover;
-}
-#busList2 > span {
-  color: #dfdfdf;
-  margin: 0 2vw 1vw 2vw;
-}
-#busList3 > span {
-  color: #dfdfdf;
-  margin: 0 2vw 1vw 2vw;
-}
-
-.busModal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.05);
-}
-.busModalContent {
-  background-color: rgba(255, 255, 255, 0.6); /* 60% 투명도 */
-  backdrop-filter: blur(5px); /* 배경 블러 효과 */
-
-  position: relative;
-  transform: translate(-50%, -50%);
-  left: 50%;
-  top: 50%;
-
-  padding: 20px;
-  border: none;
-  border-radius: 10px;
-
-  width: 80%;
-  max-width: 500px;
-}
-.busModalTitle {
-  margin-bottom: 1em;
-}
-.busModalTitle > div {
-  color: #58437c;
-}
-#busNumber,
-#busTime {
-  font-weight: bold;
-  font-size: 1.6em;
-}
-#busChannel,
-#busChannel_ty {
-  font-size: 1.1em;
-}
-
-.subTitleBus {
-  color: #221959;
-  font-weight: bold;
-  margin-bottom: 1em;
-}
-.busChannel1 {
-  margin-bottom: 1em;
-}
-.subCategory {
-  margin-right: 1em;
-  color: #6d6d6d;
-}
-#firstTimeFromStartPoint,
-#lastTimeFromStartPoint,
-#termsFromStartPoint,
-#firstTimeFromEndPoint,
-#lastTimeFromEndPoint,
-#termsFromEndPoint,
-#busExpense,
-#busType,
-#busPath,
-#busCompany {
-  color: #221959;
-  font-weight: bold;
-}
-
 /* 휴대폰 사이즈 */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #home_poster,
   #home_lineup,
   #home_info {
@@ -279,18 +21,14 @@ body {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
   }
 
+  /* 하위 카테고리 타이틀 */
   .titleBox {
     display: flex;
     align-items: center;
-  }
-  .notice {
-    margin-top: 18vh;
-    margin-left: 8vw;
-  }
-  .vehicle {
-    margin-top: 2vh;
+    position: relative;
     margin-left: 8vw;
   }
   .icon {
@@ -298,34 +36,237 @@ body {
     width: auto;
     margin-right: 4vw;
   }
+  .notice {
+    margin-top: 18vh;
+  }
+  .vehicle {
+    margin-top: 2vh;
+  }
   .title {
     font-size: 1.5em;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #ffffff, #ffe2bc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 0px 2px 4px rgba(255, 226, 188, 0.5);
+  }
+
+  /* 공지사항 리스트 */
+  #noticeList {
+    overflow-x: scroll;
+    display: flex;
+    margin: 4vw 8vw;
+    height: 12vh;
+    scrollbar-width: none;
+  }
+
+  #noticeList::-webkit-scrollbar {
+    display: none;
+  }
+
+  #noticeList > li {
+    width: 40vw;
+    height: fit-content;
+    background-color: rgba(217, 217, 217, 0.5);
+    border-radius: 10px;
+    margin-right: 4vw;
+    flex: 0 0 40vw;
+    padding: 2vw;
+  }
+
+  .noticeCategory {
+    font-size: 1em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ffffff;
+  }
+
+  .noticeTitle {
+    font-size: 1.1em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ffffff;
+  }
+
+  .noticeBody {
+    font-size: 0.8em;
+    color: #dfdfdf;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    white-space: normal;
   }
 
   /* 오시는 길 */
-  .toggleBox {
-    margin: 2vh 8vw 0 8vw;
-    /* display: flex;  */
+  #selectCampus {
+    display: flex;
     align-items: center;
-  }
-  .toggleList1 {
-    display: flex; /* 자식 요소들을 수평으로 정렬 */
-    align-items: center;
-  }
-  .toggle {
-    height: 1.2em;
-    display: inline-block;
-  }
-  .campus {
-    font-size: 1.2em;
-    display: inline-block;
-    margin-left: 3vw;
+    justify-content: space-between;
+    width: 80vw;
+    overflow: hidden;
+    margin: 0 auto;
   }
 
-  /* 구분선 */
-  .dottedLine {
-    width: 85vw;
-    margin-top: 1vh;
+  #campusContainer {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .campus {
+    min-width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 1.2em;
+  }
+
+  #leftArrow,
+  #rightArrow {
+    width: 5vw;
+    cursor: pointer;
+  }
+
+  .busInfo {
+    height: fit-content;
+    width: 80vw;
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+  }
+  .mapContainer {
+    height: 53vw;
+    width: 100%;
+  }
+  .mapContainer > img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .busInfoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+  }
+  .busInfoContainer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .busInfoContainer > div > span {
+    text-align: center;
+    display: inline-block;
+    min-width: 10vw;
+    color: #ffffff;
+  }
+
+  .busInfoContainer > div span:last-child {
+    max-width: 10vw;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  /* 모달 */
+  .noticeModal,
+  .busModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .noticeModalContainer,
+  .busModalContent {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-height: 70vh;
+    overflow-y: auto;
+    z-index: 1010;
+  }
+
+  .noticeModalTitleBox {
+    color: #58437c;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 2.5vh;
+  }
+
+  .noticeModalBody {
+    line-height: 1.6em;
+    color: #6d6d6d;
+  }
+
+  .busModalTitle {
+    margin-bottom: 1em;
+  }
+  .busModalTitle > div {
+    color: #58437c;
+  }
+  #busNumber,
+  #busTime {
+    font-weight: bold;
+    font-size: 1.6em;
+  }
+  #busChannel,
+  #busChannel_ty {
+    font-size: 1.1em;
+  }
+
+  .subTitleBus {
+    color: #221959;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  .busChannel1 {
+    margin-bottom: 1em;
+  }
+  .subCategory {
+    margin-right: 1em;
+    color: #6d6d6d;
+  }
+  #firstTimeFromStartPoint,
+  #lastTimeFromStartPoint,
+  #termsFromStartPoint,
+  #firstTimeFromEndPoint,
+  #lastTimeFromEndPoint,
+  #termsFromEndPoint,
+  #busExpense,
+  #busType,
+  #busPath,
+  #busCompany {
+    color: #221959;
+    font-weight: bold;
+  }
+
+  .blur-background {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
   }
 }
 
@@ -338,18 +279,14 @@ body {
     flex-direction: column;
     width: 100vw;
     height: 100vh;
+    background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
   }
 
+  /* 하위 카테고리 타이틀 */
   .titleBox {
     display: flex;
     align-items: center;
-  }
-  .notice {
-    margin-top: 18vh;
-    margin-left: 8vw;
-  }
-  .vehicle {
-    margin-top: 4vh;
+    position: relative;
     margin-left: 8vw;
   }
   .icon {
@@ -357,38 +294,251 @@ body {
     width: auto;
     margin-right: 4vw;
   }
+  .notice {
+    margin-top: 18vh;
+  }
+  .vehicle {
+    margin-top: 2vh;
+  }
   .title {
-    font-size: 1.8em;
+    font-size: 2em;
+    font-weight: bold;
+    background: linear-gradient(to bottom, #ffffff, #ffe2bc);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 0px 2px 4px rgba(255, 226, 188, 0.5);
+  }
+
+  /* 공지사항 리스트 */
+  #noticeList {
+    overflow-x: scroll;
+    display: flex;
+    margin: 1vw 8vw;
+    height: 10vh;
+    scrollbar-width: none;
+  }
+
+  #noticeList::-webkit-scrollbar {
+    display: none;
+  }
+
+  #noticeList > li {
+    width: 40vw;
+    height: fit-content;
+    background-color: rgba(217, 217, 217, 0.5);
+    border-radius: 10px;
+    margin-right: 4vw;
+    flex: 0 0 40vw;
+    padding: 2vw;
+  }
+
+  .noticeCategory {
+    font-size: 1em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ffffff;
+  }
+
+  .noticeTitle {
+    font-size: 1.1em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ffffff;
+  }
+
+  .noticeBody {
+    font-size: 0.8em;
+    color: #dfdfdf;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    white-space: normal;
   }
 
   /* 오시는 길 */
-  .toggleBox {
-    margin: 2vh 8vw 0 8vw;
-    /* display: flex;  */
+  #selectCampus {
+    display: flex;
     align-items: center;
-  }
-  .toggleList1 {
-    display: flex; /* 자식 요소들을 수평으로 정렬 */
-    align-items: center;
-  }
-  .toggle {
-    height: 1.2em;
-    display: inline-block;
-  }
-  .campus {
-    font-size: 1.2em;
-    display: inline-block;
-    margin-left: 3vw;
+    justify-content: space-between;
+    width: 80vw;
+    overflow: hidden;
+    margin: 0 auto;
   }
 
-  /* 구분선 */
-  .dottedLine {
-    width: 90vw;
-    margin-top: 2vh;
-    /* margin: 2vh 8vw;  */
+  #campusContainer {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  .campus {
+    min-width: 100%;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 1.6em;
+  }
+
+  #leftArrow,
+  #rightArrow {
+    width: 4vw;
+    cursor: pointer;
+    margin: 0 5vw;
+  }
+
+  .busInfo {
+    height: fit-content;
+    width: 80vw;
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+  }
+  .mapContainer {
+    height: 53vw;
+    width: 100%;
+  }
+  .mapContainer > img {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+  }
+  .busInfoContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    margin-bottom: 2vw;
+    margin-top: 2vw;
+  }
+  .busInfoContainer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .busInfoContainer > div > span {
+    text-align: center;
+    display: inline-block;
+    min-width: 10vw;
+    color: #ffffff;
+    font-size: 1.2em;
+  }
+
+  .busInfoContainer > div span:last-child {
+    max-width: 10vw;
+  }
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  /* 모달 */
+  .noticeModal,
+  .busModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .noticeModalContainer,
+  .busModalContent {
+    background-color: rgba(255, 255, 255, 1);
+    padding: 20px;
+    border-radius: 10px;
+    width: 50%;
+    max-height: 70vh;
+    overflow-y: auto;
+    z-index: 1010;
+  }
+
+  .noticeModalTitleBox {
+    color: #58437c;
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 2.5vh;
+  }
+
+  .noticeModalBody {
+    line-height: 1.6em;
+    color: #6d6d6d;
+  }
+
+  .busModalTitle {
+    margin-bottom: 1em;
+  }
+  .busModalTitle > div {
+    color: #58437c;
+  }
+  #busNumber,
+  #busTime {
+    font-weight: bold;
+    font-size: 1.6em;
+  }
+  #busChannel,
+  #busChannel_ty {
+    font-size: 1.1em;
+  }
+
+  .subTitleBus {
+    color: #221959;
+    font-weight: bold;
+    margin-bottom: 1em;
+  }
+  .busChannel1 {
+    margin-bottom: 1em;
+  }
+  .subCategory {
+    margin-right: 1em;
+    color: #6d6d6d;
+  }
+  #firstTimeFromStartPoint,
+  #lastTimeFromStartPoint,
+  #termsFromStartPoint,
+  #firstTimeFromEndPoint,
+  #lastTimeFromEndPoint,
+  #termsFromEndPoint,
+  #busExpense,
+  #busType,
+  #busPath,
+  #busCompany {
+    color: #221959;
+    font-weight: bold;
+  }
+
+  .blur-background {
+    filter: blur(5px);
+    transition: filter 0.3s ease;
   }
 }
 
 /* PC 사이즈 */
 @media (min-width: 1025px) {
+  .logoContainer,
+  .menu-trigger,
+  .hambergerContents,
+  #home_poster,
+  #home_lineup,
+  #home_info,
+  .busModal {
+    display: none;
+  }
 }

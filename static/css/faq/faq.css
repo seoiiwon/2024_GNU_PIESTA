@@ -40,6 +40,7 @@ font-face {
     #logoImg {
         width: 60vw;
     }
+}
 
 @media (max-width: 768px) {
     .FAQ {
@@ -71,7 +72,6 @@ font-face {
         border-radius: 20px;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
-        max-height: 60px;
         padding: 15px;
     }
 
@@ -94,7 +94,6 @@ font-face {
         padding-top: 7px;
         display: none;
         color: #413978;
-        height: 0;
         overflow: hidden;
         transition: height 0.3s ease-out;
         line-height: 1.6;
@@ -103,10 +102,6 @@ font-face {
     .faq-answer.active {
         display: block;
         height: auto;
-    }
-
-    .faq-item.active {
-        max-height: 200px;
     }
 
     .faq-item.active .faq-question {
@@ -163,7 +158,6 @@ font-face {
         border-radius: 20px;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
-        max-height: 60px;
         padding: 20px;
         margin-left: -180px;
     }
@@ -187,7 +181,6 @@ font-face {
         padding-top: 7px;
         display: none;
         color: #413978;
-        height: 0;
         overflow: hidden;
         transition: height 0.3s ease-out;
         line-height: 1.6;
@@ -196,10 +189,6 @@ font-face {
     .faq-answer.active {
         display: block;
         height: auto;
-    }
-
-    .faq-item.active {
-        max-height: 200px;
     }
 
     .faq-item.active .faq-question {

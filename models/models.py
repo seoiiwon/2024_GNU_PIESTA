@@ -42,6 +42,7 @@ class Booth(Base):
     location_description = Column(String(255), nullable=False)
     operation_hours = Column(String(100), nullable=False)
     booth_category = Column(String(20), nullable=False)
+    booth_poster= Column(String(100), nullable=True)
 
     # 날짜별 운영 여부
     is_operating_on_16th = Column(Boolean, nullable=False, default=False)

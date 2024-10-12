@@ -1,55 +1,78 @@
-@font-face {
-  font-weight: 400; /* 폰트의 두께 */
-  font-family: 'Felixti'; /* 폰트 이름 */
-  src: url('/static/font/Felixti.TTF') format('truetype');
-}
-@font-face {
-  font-weight: 400;
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
-}
+
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ휴대폰 */
 @media (max-width: 768px) {
+  @font-face {
+    font-weight: 400; /* 폰트의 두께 */
+    font-family: 'Felixti'; /* 폰트 이름 */
+    src: url('/static/font/Felixti.TTF') format('truetype');
+  }
+  
+  @font-face {
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  }
+  @font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+        format("woff");
+  }
+
   body {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 수직 중앙 정렬 */
+    /* justify-content: center; 수직 중앙 정렬 */
     align-items: center; /* 수평 중앙 정렬 */
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
-    font-family: 'pretendard', sans-serif;
-    background: linear-gradient(to bottom, #2b2355, #4f4677);
+    font-family: 'Pretendard-Regular';
+    background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
     color: white;
+    height: 100%;
+    overflow: hidden;
   }
+  
   
   .mainpage {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    margin-top: 120px;
+    width: 84%;
+    /* margin-top: 16vh; */
   }
   
   .timetable {
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr 1fr;
-    grid-template-rows: repeat(20, 40px);
-    gap: 7px;
+    grid-template-rows: repeat(16, 40px);
+    /* gap: 7px; */
     padding: 15px;
     padding-top: 0;
+    padding-left: 0;
     margin: 0 auto; /* 수평 중앙 정렬 */
+    width: 100%;
+    height: 64vh;
+    overflow: scroll;
+    -ms-overflow-style: none;
+
+  }
+  .timetable::-webkit-scrollbar{
+    display:none;
   }
   
   
 
   .header {
+    
     text-align: center;
     padding: 20px 0;
-    font-size: 1rem;
-    font-family: 'Felix Titling', sans-serif; /* Added font-family property */
+
+    font-size: 2.4em;
+    font-family: 'Felixti'; /* Added font-family property */
     font-weight: 400; /* Regular font weight */
-    /* margin-top: 50px; */
+    margin-top: 16vh;
   }
 
 
@@ -59,7 +82,7 @@
     grid-template-rows: repeat(20, 40px); /* 시간도 동일한 행 크기를 공유 */
     align-items: center;
     justify-content: flex-end;
-    gap: 7px;
+    gap: 0px;
   }
   
   .time-slot, .half-hour {
@@ -74,19 +97,20 @@
   .time-slot span {
     font-weight: 600;
     font-size: 10px; /* 시간 글자 크기 */
-    color: #E2959C;
+    color: #BCBCBC;
   }
   
   .half-hour span {
     font-size: 7px; /* '30' 글자 크기 */
     font-weight: 600;
-    color: #E2959C;
+    color: #BCBCBC;
   }
   
   .day-column {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     /* width: auto; */
     /* width: 1fr; */
     
@@ -99,92 +123,63 @@
   .day {
     text-align: center;
     font-weight: bold;
-    color: #E2959C;
+    color: #BCBCBC;
     padding-bottom: 20px;
     font-size: 10px; /* 요일 및 날짜 글자 크기 */
     height: 40px;
+
     }
   
-  .events-day {
-    display: grid;
-    grid-template-rows: repeat(20, 40px);
-    gap: 7px;
-    border-left: 2px solid #BCBCBC; /* 수직선 추가 */
-    padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
-    width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
-    box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
-    }
-
-    .events-day::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 1px;
-      background-color: black;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    
-    .events-day > div {
-      position: relative;
-    }
-    
-    /* 각 그리드 행 위에 수평선을 추가 */
-    .events-day > div::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 3px; /* 선의 두께 */
-      background-color: #BCBCBC; /* 선의 색상 */
-      position: absolute;
-      top: -7px; /* 수평선이 그려질 위치 (조정 가능) */
-      left: 0;
-    }
-
-
+    .events-day {
+      display: grid;
+      grid-template-rows: repeat(16, 40px);
+      gap: 0px; /* 이벤트 사이 간격 제거 */
+      padding-left: 0px; /* 수직선과 내용 사이의 간격 제거 */
+      width: 100%; /* 부모 요소 너비와 맞춤 */
+      box-sizing: border-box; /* 패딩 포함 너비 계산 */
+  }
+  
+  /* 첫 번째 요소가 아닌 모든 div에 상단 테두리 적용 */
+  .events-day > div:not(:first-child) {
+      border-top: 3px solid #BCBCBC; /* 상단에 3px 두께의 회색 수평선 추가 */
+  }
+  
   .event {
-    position: relative;
-    background-color: #7d50d0;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    font-size: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    gap: 7px;
-    width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
-    box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
-    border-radius: 10px
-}
+      flex-direction: column;
+      position: relative;
+      display: flex;
+      align-items: center; /* 내용 수직 중앙 정렬 */
+      justify-content: center; /* 내용 수평 중앙 정렬 */
+      padding: 10px; /* 내부 패딩 */
+      font-size: 10px; /* 폰트 크기 */
+      font-weight: bold; /* 폰트 두께 */
+      cursor: pointer; /* 커서 스타일 */
+      gap: 7px; /* 요소들 사이의 간격 */
+      width: 100%; /* 전체 너비 */
+      box-sizing:border-box ; /* 패딩 포함 너비 계산 */
+      /* border-radius: 10px; */
+      color: #000000;
+      text-align: center;
+      word-break: keep-all;  /* 어절 단위로 줄바꿈 */
+  }
+  
 
   .event-time {
-    position: absolute;
-    top: 2px;
-    left: 7px;
+    position: relative;
     font-size: 7px !important;
-    color: #FEE5C6 !important;
+    color: #121212 !important;
 }
 
-  .icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-}
-  img[alt="icon"] {
-  width: 17px;
-  height: 17px;
-}
   #day1 {
     background-color: #BBB6D8; /* 53% 불투명도 */
   }
 
   .event#day2 {
-    background-color: #FEA4CD;
+    background-color: #E5A4D0;
   }
 
   .event#day3 {
-    background-color: #FFF2B8;
+    background-color: #F7E695;
   }
 
   .event:hover {
@@ -196,7 +191,7 @@
     display: flex; /* 부모 요소에 flexbox 적용 */
     position: fixed;
     z-index: 1500;
-    width: 180%;
+    width: 170%;
     height: 100%;
     bottom: 5%;
     /* background-color: rgba(0, 0, 0, 0.5); */
@@ -210,57 +205,63 @@
 
   .popup-content {
     display: flex; 
-    width: 23rem; 
-    height: 16rem; 
-    border-radius: 1.5rem; 
+    width: 22rem; 
+    height: 12rem;
+    border-radius: 1rem; 
     overflow: hidden;
     
     backdrop-filter: blur(5px);
 }
   .popup-left {
-    background-color: #6442A0;
-    padding: 1.2rem;
-    text-align: right;
-    color: white;
+    /* background-color: #6442A0; */
+    padding: 1rem;
+    /*text-align: right;
+    align-items: flex-end; 
+    justify-content: center;*/
+    color: #121212;
     width: 35%; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+    
     gap: 5px;
   }
 
   .popup-left #popup-title {
-    font-size: 16px; /* 타이틀 폰트 크기 */
+    font-size: 12px; /* 타이틀 폰트 크기 */
+    font-family: "Pretendard-Bold";
   }
   .popup-left #popup-time {
-    font-size: 14px; /* 시간 폰트 크기 */
+    font-size: 12px; /* 시간 폰트 크기 */
+    font-family: "Pretendard-Bold";
   }
   
   .popup-right {
-    background-color: #B18FEB; 
-    padding: 1.2rem;
+    /* background-color: #B18FEB;  */
+    padding: 1rem 1.2rem 1.2rem; /* 위, 좌우, 아래*/
     text-align: left;
-    font-size: 14px;
-    line-height: 1.6;
-    color: white;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #121212;
     width: 65%; 
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* 왼쪽 정렬 */
 
+    /* 스크롤 설정 */
     max-height: 15rem;
     overflow-y: auto;
-     /* 스크롤바 스타일 변경 */
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
-    &::-webkit-scrollbar-thumb {
-       background: #6442A0; 
-       border-radius: 10px;
-      }
+    -ms-overflow-style: none;
   }
+
+  /*.popup-right::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  .popup-right::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 10px;
+  }*/
 
    .close-btn {
     position: fixed;
@@ -293,13 +294,46 @@
     font-size: 0.9em;
     color: #e0e0e0;
   }
+
+  .scroll-end-space {
+    height: 20vh; /* 스크롤 끝에 60px의 여유 공간 */
+    flex-shrink: 0; /* 공간이 줄어들지 않도록 설정 */
+  }
 }
 
-
+ 
 
 
  /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ여기서부턴 큰화면  */
- @media (min-width: 768px) and (max-width: 1024px) {
+ @media (min-width: 768px) {
+
+  @font-face {
+    font-weight: 400; /* 폰트의 두께 */
+    font-family: 'Felixti'; /* 폰트 이름 */
+    src: url('/static/font/Felixti.TTF') format('truetype');
+  }
+  
+  @font-face {
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  }
+  @font-face {
+    font-weight: 700;
+    font-family: "Pretendard-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff")
+        format("woff");
+  }
+
+  #logoImg {
+    width: 50%; /* 로고의 부모 요소에 대한 너비 설정 */
+}
+
+  #logoImg img {
+    width: 100%; /* 내부의 img 태그에 너비 100% 설정 */
+    height: auto; /* 비율 유지하면서 크기 조정 */
+    margin-top: 15px;
+}
   body {
     display: flex;
     flex-direction: column;
@@ -307,9 +341,10 @@
     align-items: center; /* 수평 중앙 정렬 */
     min-height: 100vh; /* 전체 화면 높이 */
     margin: 0;
-    font-family: 'pretendard', sans-serif;
-    background: linear-gradient(to bottom, #2b2355, #4f4677);
+    font-family: 'Pretendard-Regular';
+    background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
     color: white;
+    overflow: hidden;
   }
   
   .mainpage {
@@ -318,24 +353,29 @@
     justify-content: center;
     align-items: center;
     width: 70%;
-    margin-top: 180px;
+    margin-top: 10vh;
   }
   
   .timetable {
     display: grid;
     grid-template-columns: 0.3fr 1fr 1fr 1fr;
     grid-template-rows: repeat(20, 40px);
-    gap: 7px;
+    /* gap: 0px; */
     padding: 15px;
     padding-top: 0;
+    padding-left: 0;
     margin: 0 auto; /* 수평 중앙 정렬 */
+    width: 35vw;
+    height: 60vh;
+    overflow: scroll;
+
   }
   
   .header {
     text-align: center;
     padding: 20px 0;
     font-size: 1rem;
-    font-family: 'Felix Titling', sans-serif; /* Added font-family property */
+    font-family: 'Felixti'; /* Added font-family property */
     font-weight: 400; /* Regular font weight */
     /* margin-top: 50px; */
   }
@@ -346,7 +386,7 @@
     grid-template-rows: repeat(20, 40px); /* 시간도 동일한 행 크기를 공유 */
     align-items: center;
     justify-content: flex-end;
-    gap: 7px;
+    gap: 0px;
   }
   
   .time-slot, .half-hour {
@@ -361,130 +401,102 @@
   .time-slot span {
     font-weight: 600;
     font-size: 10px; /* 시간 글자 크기 */
-    color: #E2959C;
+    color: #BCBCBC;
   }
   
   .half-hour span {
     font-size: 7px; /* '30' 글자 크기 */
     font-weight: 600;
-    color: #E2959C;
+    color: #BCBCBC;
   }
   
   .day-column {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
     /* width: 1fr; */
     
     /* border-left: 3px solid #f39ac8; 세로선 제거 */
   }
   
-
+  
   
   
   .day {
     text-align: center;
     font-weight: bold;
-    color: #E2959C;
+    color: #BCBCBC;
     padding-bottom: 20px;
     font-size: 10px; /* 요일 및 날짜 글자 크기 */
     height: 40px;
     }
   
   .events-day {
-    display: grid;
-    grid-template-rows: repeat(20, 40px);
-    gap: 7px;
-    border-left: 2px solid #bcbcbc; /* 수직선 추가 */
-    padding-left: 7px; /* 수직선과 내용 사이의 간격 추가 */
-    width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
-    box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
-    }
+      display: grid;
+      grid-template-rows: repeat(20, 40px);
+      gap: 0px; /* 이벤트 사이 간격 제거 */
+      padding-left: 0px; /* 수직선과 내용 사이의 간격 제거 */
+      width: 100%; /* 부모 요소 너비와 맞춤 */
+      box-sizing: border-box; /* 패딩 포함 너비 계산 */
+  }
+  
+  /* 첫 번째 요소가 아닌 모든 div에 상단 테두리 적용 */
+  .events-day > div:not(:first-child) {
+      border-top: 3px solid #BCBCBC; /* 상단에 3px 두께의 회색 수평선 추가 */
+  }
+  
+  .event {
+      flex-direction: column;
+      position: relative;
+      display: flex;
+      align-items: center; /* 내용 수직 중앙 정렬 */
+      justify-content: center; /* 내용 수평 중앙 정렬 */
+      padding: 10px; /* 내부 패딩 */
+      font-size: 10px; /* 폰트 크기 */
+      font-weight: bold; /* 폰트 두께 */
+      cursor: pointer; /* 커서 스타일 */
+      gap: 7px; /* 요소들 사이의 간격 */
+      width: 100%; /* 전체 너비 */
+      box-sizing:border-box ; /* 패딩 포함 너비 계산 */
+      /* border-radius: 10px; */
+      color: #000000;
+      text-align: center;
+      word-break: keep-all;  /* 어절 단위로 줄바꿈 */
+  }
+
   
 
-    .events-day::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 1px;
-      background-color: black;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    
-    .events-day > div {
-      position: relative;
-    }
-    
-    /* 각 그리드 행 위에 수평선을 추가 */
-    .events-day > div::before {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 3px; /* 선의 두께 */
-      background-color: #e0e0e0; /* 선의 색상 */
-      position: absolute;
-      top: 0px; /* 수평선이 그려질 위치 (조정 가능) */
-      left: 0;
-    }
-
-  .event {
-    position: relative;
-    background-color: #7d50d0;
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    font-size: 10px;
-    font-weight: bold;
-    cursor: pointer;
-    gap: 7px;
-    width: 100%; /* 부모 요소인 events-day의 너비와 맞춤 */
-    box-sizing: border-box; /* padding을 포함하여 너비를 계산 */
-    border-radius: 7px
-}
-
   .event-time {
-    position: absolute;
-    top: 2px;
-    left: 7px;
+    position: relative;
     font-size: 7px !important;
-    color: #FEE5C6 !important;
+    color: #000000 !important;
 }
 
-  .icon {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
-}
-  img[alt="icon"] {
-  width: 17px;
-  height: 17px;
-}
   #day1 {
     background-color: #BBB6D8; /* 53% 불투명도 */
   }
 
   .event#day2 {
-    background-color: #FEA4CD;
+    background-color: #E5A4D0;
   }
 
   .event#day3 {
-    background-color: #FFF2B8;
+    background-color: #F7E695;
   }
 
   .event:hover {
     background-color: #9a76d7;
   }
   
-  /* Popup */
+  /* Popup  패드 버전으로 수정; 크기및 폰트 키움*/
   .popup {
     display: flex; /* 부모 요소에 flexbox 적용 */
     position: fixed;
     z-index: 1500;
-    width: 180%;
+    width: 170%;
     height: 100%;
-    bottom: 5%;
+    top: 5%;
     /* background-color: rgba(0, 0, 0, 0.5); */
     justify-content: center;
     align-items: center;
@@ -496,67 +508,64 @@
 
   .popup-content {
     display: flex; 
-    width: 23rem; 
-    height: 16rem; 
-    border-radius: 1.5rem; 
+    width: 25rem; 
+    height: 15rem;
+    border-radius: 1rem; 
     overflow: hidden;
     
     backdrop-filter: blur(5px);
 }
   .popup-left {
-    background-color: #6442A0;
-    padding: 1.2rem;
-    text-align: right;
-    color: white;
+    /* background-color: #6442A0; */
+    padding: 1rem;
+    /*text-align: right;
+    align-items: flex-end; 
+    justify-content: center;*/
+    color: #121212;
     width: 35%; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
+    
+    gap: 5px;
   }
 
   .popup-left #popup-title {
-    font-size: 16px; /* 타이틀 폰트 크기 */
+    font-size: 14px; /* 타이틀 폰트 크기 */
+    font-family: "Pretendard-Bold";
   }
   .popup-left #popup-time {
     font-size: 14px; /* 시간 폰트 크기 */
+    font-family: "Pretendard-Bold";
   }
   
   .popup-right {
-    background-color: #B18FEB; 
-    padding: 1.2rem;
+    /* background-color: #B18FEB;  */
+    padding: 1rem 1.4rem 1.2rem; /* 위, 좌우, 아래*/
     text-align: left;
-    font-size: 14px;
-    line-height: 1.6;
-    color: white;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #121212;
     width: 65%; 
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start; /* 왼쪽 정렬 */
 
-    max-height: 15rem;
+    /* 스크롤 설정 */
+    max-height: 17rem;
     overflow-y: auto;
-     /* 스크롤바 스타일 변경 */
-    &::-webkit-scrollbar {
-      width: 5px;
-    }
-    &::-webkit-scrollbar-thumb {
-       background: #6442A0; 
-       border-radius: 10px;
-      }
+    -ms-overflow-style: none;
   }
 
-   .close-btn {
-    position: fixed;
-    top: 0.3rem;
-    right: 0.8rem;
-    background: none;
-    border: none;
-    font-size: 2em;
-    color: #FEE5C6;
-    cursor: pointer;
+  popup-right::-webkit-scrollbar {
+    width: 5px;
   }
+  
+  .popup-right::-webkit-scrollbar-thumb {
+    background: #ccc; 
+    border-radius: 10px;
+  }
+
 
   .popup .event {
     display: flex;
@@ -578,5 +587,4 @@
     font-size: 0.9em;
     color: #e0e0e0;
   }
-} 
-
+}

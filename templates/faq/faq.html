@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/faq/faq.css') }}">
     <script src="{{ url_for('static', path='js/faq/faq.js') }}" defer></script>
     <script src="{{ url_for('static', path='js/main/hamberger.js') }}" defer></script>
@@ -34,7 +35,7 @@
             <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
             <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
             <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
-            <div id="hrefFAQ" data-url="faq">FAQ</div>
+            <div id="hrefFAQ" data-url="/faq">FAQ</div>
         </div>
         <div id="piestaWebHost">
             <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>

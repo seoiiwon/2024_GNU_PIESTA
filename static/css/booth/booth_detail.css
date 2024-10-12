@@ -112,7 +112,7 @@ font-face {
     height: 70vh; /* 자동으로 높이를 설정해 줍니다 */ /* 최대 높이를 설정하고 초과할 경우 스크롤 */
     overflow-y: auto !important; /* 내용이 넘칠 경우 스크롤 가능하도록 설정 */
     padding-top: 4.8vh;
-    padding-bottom: 10vw;
+    padding-bottom: 24vh;
 }
 
 .fa-circle
@@ -214,8 +214,9 @@ font-face {
 
 .heart img
 {
-    width: 8.5vw;
+    width: 13vw;
     height: auto;
+    padding-top: 1vh;
     padding-right: 4vw;
     margin-bottom: 4.8vw;
 }
@@ -224,12 +225,26 @@ font-face {
     font-size: 6vw;
 }
 
+@media(max-width: 389px) 
+{
+    .content_box
+    {
+        top: 30% !important;
+        padding-bottom: 30vh;
+    }
+}
+
 @media(max-width: 768px) 
 {
 
+    .booth_poster img
+    {
+        margin-top: 2vh;
+    }
+
     .content_box
     {height: auto;
-        top: 23%; /* 타이틀 아래 위치 */
+        top: 24%; /* 타이틀 아래 위치 */
         width: 93vw; /* 반응형 너비 설정 */
     }
    /* 제목 BOOTH */
@@ -264,7 +279,7 @@ font-face {
 
     .booth_tt
     {
-        margin: 0 7vw 4vh auto;
+        margin: 0 7vw 3vh auto;
     }
 
     .booth_detail p 
@@ -312,14 +327,14 @@ font-face {
         left: 50%;
         transform: translateX(-50%); /* 수평 가운데 정렬 */
         width: 85vw; /* 반응형 너비 설정 */
-        height: 90vh; /* 반응형 높이 설정 */
-        background-color: rgba(255, 255, 255, 0.082);
+        height: 70vh; /* 반응형 높이 설정 */
+        background-color: rgba(255, 255, 255, 0.812);
         border-radius: 20px;
         border: 1px solid gray;
         box-sizing: border-box;
         overflow-y: auto !important; /* 내용만 스크롤 가능 */
         padding-top: 10vw;
-        padding-bottom: 10vw;
+        padding-bottom: 10vh;
     }
     .booth_name>h3
     {
