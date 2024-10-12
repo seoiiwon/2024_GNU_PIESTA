@@ -56,6 +56,7 @@
     height: 64vh;
     overflow: scroll;
     -ms-overflow-style: none;
+
   }
   .timetable::-webkit-scrollbar{
     display:none;
@@ -160,7 +161,6 @@
       color: #000000;
       text-align: center;
       word-break: keep-all;  /* 어절 단위로 줄바꿈 */
-      overflow-y: auto;
   }
   
 
@@ -294,9 +294,14 @@
     font-size: 0.9em;
     color: #e0e0e0;
   }
+
+  .scroll-end-space {
+    height: 20vh; /* 스크롤 끝에 60px의 여유 공간 */
+    flex-shrink: 0; /* 공간이 줄어들지 않도록 설정 */
+  }
 }
 
-
+ 
 
 
  /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ여기서부턴 큰화면  */
@@ -362,6 +367,8 @@
     margin: 0 auto; /* 수평 중앙 정렬 */
     width: 35vw;
     height: 60vh;
+    overflow: scroll;
+
   }
   
   .header {
@@ -456,7 +463,6 @@
       color: #000000;
       text-align: center;
       word-break: keep-all;  /* 어절 단위로 줄바꿈 */
-      overflow-y: auto;
   }
 
   
