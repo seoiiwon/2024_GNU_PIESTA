@@ -24,7 +24,7 @@ button {border: none;}
 * {box-sizing: border-box;}
 
 /* 반응형 */
-/* video,img {width: 100%;} */
+video,img {width: 100%;}
 
 /* clearfix */
 /* .clearfix{*zoom:1;}
