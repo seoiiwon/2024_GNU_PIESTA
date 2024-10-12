@@ -440,7 +440,7 @@
     }
   
   .events-day {
-      display: grid;
+      display: grid ;
       grid-template-rows: repeat(20, 40px);
       gap: 0px; /* 이벤트 사이 간격 제거 */
       padding-left: 0px; /* 수직선과 내용 사이의 간격 제거 */
@@ -496,6 +496,7 @@
     border-left: 0.8em solid #FFD260;
     color: #FFA136;
   }
+
 
   .event:hover {
     background-color: #9a76d7;
