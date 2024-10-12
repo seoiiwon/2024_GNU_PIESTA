@@ -12,7 +12,6 @@ body {
   overflow: hidden;
 }
 
-
 /* 휴대폰 사이즈 */
 @media (max-width: 767px) {
   #home_poster,
@@ -24,8 +23,6 @@ body {
     height: 100vh;
     background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
   }
-
-
 
   /* 하위 카테고리 타이틀 */
   .titleBox {
@@ -56,8 +53,6 @@ body {
     text-shadow: 0px 2px 4px rgba(255, 226, 188, 0.5);
   }
 
-
-
   /* 공지사항 리스트 */
   #noticeList {
     overflow-x: scroll;
@@ -66,11 +61,11 @@ body {
     height: 12vh;
     scrollbar-width: none;
   }
-  
+
   #noticeList::-webkit-scrollbar {
     display: none;
   }
-  
+
   #noticeList > li {
     width: 40vw;
     height: fit-content;
@@ -80,7 +75,7 @@ body {
     flex: 0 0 40vw;
     padding: 2vw;
   }
-  
+
   .noticeCategory {
     font-size: 1em;
     font-weight: bold;
@@ -89,7 +84,7 @@ body {
     white-space: nowrap;
     color: #ffffff;
   }
-  
+
   .noticeTitle {
     font-size: 1.1em;
     font-weight: bold;
@@ -98,7 +93,7 @@ body {
     white-space: nowrap;
     color: #ffffff;
   }
-  
+
   .noticeBody {
     font-size: 0.8em;
     color: #dfdfdf;
@@ -110,8 +105,6 @@ body {
     line-clamp: 2;
     white-space: normal;
   }
-
-
 
   /* 오시는 길 */
   #selectCampus {
@@ -138,7 +131,8 @@ body {
     font-size: 1.2em;
   }
 
-  #leftArrow, #rightArrow {
+  #leftArrow,
+  #rightArrow {
     width: 5vw;
     cursor: pointer;
   }
@@ -161,43 +155,43 @@ body {
     border-radius: 5px;
   }
   .busInfoContainer {
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     gap: 1vw;
     margin-bottom: 2vw;
     margin-top: 2vw;
   }
   .busInfoContainer > div {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   .busInfoContainer > div > span {
-    text-align: center; 
-    display: inline-block; 
-    min-width: 10vw; 
-    color: #FFFFFF; 
+    text-align: center;
+    display: inline-block;
+    min-width: 10vw;
+    color: #ffffff;
   }
 
   .busInfoContainer > div span:last-child {
-    max-width: 10vw; 
+    max-width: 10vw;
   }
 
   .spacer {
-    flex-grow: 1; 
+    flex-grow: 1;
   }
 
-
   /* 모달 */
-  .noticeModal, .busModal {
-    display: none; 
+  .noticeModal,
+  .busModal {
+    display: none;
     position: fixed;
     z-index: 1000;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
     top: 50%;
@@ -205,14 +199,15 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  .noticeModalContainer, .busModalContent {
-    background-color: rgba(255, 255, 255, 1); 
+  .noticeModalContainer,
+  .busModalContent {
+    background-color: rgba(255, 255, 255, 1);
     padding: 20px;
     border-radius: 10px;
     width: 80%;
     max-height: 70vh;
     overflow-y: auto;
-    z-index: 1010; 
+    z-index: 1010;
   }
 
   .noticeModalTitleBox {
@@ -222,9 +217,15 @@ body {
     margin-bottom: 2.5vh;
   }
 
-  .noticeModalBody {
+  #noticeModalBody {
     line-height: 1.6em;
     color: #6d6d6d;
+    max-height: 30vh;
+    overflow: scroll;
+  }
+    
+  #noticeModalBody::-webkit-scrollbar {
+    display: none;
   }
 
   .busModalTitle {
@@ -275,13 +276,9 @@ body {
   }
 }
 
-
-
-
-
 /* 태블릿 사이즈 */
 @media (min-width: 768px) and (max-width: 1024px) {
-    #home_poster,
+  #home_poster,
   #home_lineup,
   #home_info {
     display: flex;
@@ -290,8 +287,6 @@ body {
     height: 100vh;
     background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
   }
-
-
 
   /* 하위 카테고리 타이틀 */
   .titleBox {
@@ -322,8 +317,6 @@ body {
     text-shadow: 0px 2px 4px rgba(255, 226, 188, 0.5);
   }
 
-
-
   /* 공지사항 리스트 */
   #noticeList {
     overflow-x: scroll;
@@ -332,11 +325,11 @@ body {
     height: 10vh;
     scrollbar-width: none;
   }
-  
+
   #noticeList::-webkit-scrollbar {
     display: none;
   }
-  
+
   #noticeList > li {
     width: 40vw;
     height: fit-content;
@@ -346,7 +339,7 @@ body {
     flex: 0 0 40vw;
     padding: 2vw;
   }
-  
+
   .noticeCategory {
     font-size: 1em;
     font-weight: bold;
@@ -355,7 +348,7 @@ body {
     white-space: nowrap;
     color: #ffffff;
   }
-  
+
   .noticeTitle {
     font-size: 1.1em;
     font-weight: bold;
@@ -364,7 +357,7 @@ body {
     white-space: nowrap;
     color: #ffffff;
   }
-  
+
   .noticeBody {
     font-size: 0.8em;
     color: #dfdfdf;
@@ -376,8 +369,6 @@ body {
     line-clamp: 2;
     white-space: normal;
   }
-
-
 
   /* 오시는 길 */
   #selectCampus {
@@ -404,7 +395,8 @@ body {
     font-size: 1.6em;
   }
 
-  #leftArrow, #rightArrow {
+  #leftArrow,
+  #rightArrow {
     width: 4vw;
     cursor: pointer;
     margin: 0 5vw;
@@ -428,44 +420,44 @@ body {
     border-radius: 5px;
   }
   .busInfoContainer {
-    display: flex; 
-    flex-direction: column; 
+    display: flex;
+    flex-direction: column;
     gap: 1vw;
     margin-bottom: 2vw;
     margin-top: 2vw;
   }
   .busInfoContainer > div {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 
   .busInfoContainer > div > span {
-    text-align: center; 
-    display: inline-block; 
-    min-width: 10vw; 
-    color: #FFFFFF; 
+    text-align: center;
+    display: inline-block;
+    min-width: 10vw;
+    color: #ffffff;
     font-size: 1.2em;
   }
 
   .busInfoContainer > div span:last-child {
-    max-width: 10vw; 
+    max-width: 10vw;
   }
 
   .spacer {
-    flex-grow: 1; 
+    flex-grow: 1;
   }
 
-
   /* 모달 */
-  .noticeModal, .busModal {
-    display: none; 
+  .noticeModal,
+  .busModal {
+    display: none;
     position: fixed;
     z-index: 1000;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.5);
     justify-content: center;
     align-items: center;
     top: 50%;
@@ -473,14 +465,15 @@ body {
     transform: translate(-50%, -50%);
   }
 
-  .noticeModalContainer, .busModalContent {
-    background-color: rgba(255, 255, 255, 1); 
+  .noticeModalContainer,
+  .busModalContent {
+    background-color: rgba(255, 255, 255, 1);
     padding: 20px;
     border-radius: 10px;
     width: 50%;
     max-height: 70vh;
     overflow-y: auto;
-    z-index: 1010; 
+    z-index: 1010;
   }
 
   .noticeModalTitleBox {
@@ -490,9 +483,15 @@ body {
     margin-bottom: 2.5vh;
   }
 
-  .noticeModalBody {
+  #noticeModalBody {
     line-height: 1.6em;
     color: #6d6d6d;
+    max-height: 30vh;
+    overflow: scroll;
+  }
+    
+  #noticeModalBody::-webkit-scrollbar {
+    display: none;
   }
 
   .busModalTitle {
@@ -545,7 +544,13 @@ body {
 
 /* PC 사이즈 */
 @media (min-width: 1025px) {
-  .logoContainer, .menu-trigger, .hambergerContents, #home_poster, #home_lineup, #home_info, .busModal{
+  .logoContainer,
+  .menu-trigger,
+  .hambergerContents,
+  #home_poster,
+  #home_lineup,
+  #home_info,
+  .busModal {
     display: none;
   }
 }

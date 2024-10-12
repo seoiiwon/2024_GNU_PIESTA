@@ -5,7 +5,11 @@ from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from config.database import get_db
 from models.models import Notice
-from datetime import datetime
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD")
 
 router = APIRouter(tags=["공지"])
 
@@ -33,3 +37,14 @@ async def postNotice(postNoticeSchema : NoticePost, db : Session=Depends(get_db)
     except:
         db.rollback()
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+# @router.get("/admin/notice", response_class=HTMLResponse, status_code=status.HTTP_200_OK)
+# async def getHome(request: Request):
+#     return templates.TemplateResponse(name="notice.html", request=request)
+ 
+
+# /admin/notice 경로 보호
+@router.get("/admin/notice", response_class=HTMLResponse, status_code=status.HTTP_200_OK)
+async def get_notice(request: Request, password=ADMIN_PASSWORD):
+    return templates.TemplateResponse(name="notice.html", context={"request" : request, "password" : password})
