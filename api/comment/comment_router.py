@@ -35,34 +35,34 @@ async def get_comment_page(request: Request, db: Session = Depends(get_db)):
     )
 
 
-# @router.post("/api/save-comment", response_model=CommentCreate)
-# async def save_comment(comment: CommentCreate, db: Session = Depends(get_db)):
-#     db_comment = CommentModel(name=comment.name, text=comment.text)
-#     db.add(db_comment)
-#     db.commit()
-#     db.refresh(db_comment)
-#     return db_comment
+@router.post("/api/save-comment", response_model=CommentCreate)
+async def save_comment(comment: CommentCreate, db: Session = Depends(get_db)):
+    db_comment = CommentModel(name=comment.name, text=comment.text)
+    db.add(db_comment)
+    db.commit()
+    db.refresh(db_comment)
+    return db_comment
 
 
 # 댓글 목록 불러오기
-# @router.get("/api/comments", response_model=list[CommentCreate])
-# async def read_comments(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-#     comments = db.query(CommentModel).offset(skip).limit(limit).all()
-#     return comments
+@router.get("/api/comments", response_model=list[CommentCreate])
+async def read_comments(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
+    comments = db.query(CommentModel).offset(skip).limit(limit).all()
+    return comments
 
 
 from fastapi import HTTPException
 
 
 # 댓글 삭제 엔드포인트
-# @router.post("/api/delete-comment")
-# async def delete_comment(comment: CommentDelete, db: Session = Depends(get_db)):
-#     db_comment = (
-#         db.query(CommentModel).filter(CommentModel.text == comment.text).first()
-#     )
-#     if db_comment:
-#         db.delete(db_comment)
-#         db.commit()
-#         return {"success": True}
-#     else:
-#         raise HTTPException(status_code=404, detail="Comment not found")
+@router.post("/api/delete-comment")
+async def delete_comment(comment: CommentDelete, db: Session = Depends(get_db)):
+    db_comment = (
+        db.query(CommentModel).filter(CommentModel.text == comment.text).first()
+    )
+    if db_comment:
+        db.delete(db_comment)
+        db.commit()
+        return {"success": True}
+    else:
+        raise HTTPException(status_code=404, detail="Comment not found")
