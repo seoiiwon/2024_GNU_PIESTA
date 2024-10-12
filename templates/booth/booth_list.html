@@ -462,6 +462,7 @@
       <input type="radio" id="date-18" name="date" value="10.18" />
       <label for="date-18">10.18</label>
     </div>
+
     <div class="box-container" id="booth-list">
       {% for booth in booths %}
       <div
@@ -483,10 +484,10 @@
         </a>
         <div
           class="heart"
-          onclick="toggleHeart('{{ booth.booth_name | urlencode }}')"
+          onclick="toggleHeart('{{ booth.booth_id | urlencode }}')"
         >
           <img
-            id="heartImage_{{ booth.booth_name | urlencode }}"
+            id="heartImage_{{ booth.booth_id | urlencode }}"
             src="/static/images/heart_default.png"
             alt=""
           />
