@@ -78,6 +78,7 @@
         border-radius: 15px;
         overflow: hidden;
         padding: 10px;
+        width: 84vw;
     }    
 
     .faq-question {
@@ -96,7 +97,7 @@
         background-color: white;
         padding: 10px;
         font-size: 15px;
-        padding-top: 7px;
+        padding-top: 1vh;
         color: #413978;
         overflow: hidden;
         max-height: 0; /* 기본 상태에서 높이를 0으로 설정 */
@@ -184,8 +185,9 @@
         border-radius: 20px;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
-        padding: 15px;
-        width: 700px;
+        /* padding: 15px; */
+        padding: 0 3vw;
+        width: 60vw;
     }    
 
     .faq-question {
@@ -196,14 +198,14 @@
         padding: 7px;
         margin-top: 14px;
         cursor: pointer;
-        font-size: 30px;
+        font-size: 2em;
         text-align: left;
     }
 
     .faq-answer {
         background-color: white;
         padding: 10px;
-        font-size: 30px;
+        font-size: 1.8em;
         padding-top: 7px;
         color: #413978;
         overflow: hidden;

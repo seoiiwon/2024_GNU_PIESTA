@@ -48,42 +48,16 @@
      </header>
         <h2 class="FAQ">FAQ</h2>
         <section class="faq-section" id="faqSection">
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleAnswer(1)">Q1. 부스 참여하려면 미리 예약해야 하나요?</button>
-                <div class="faq-answer" id="answer-1">
-                    개당 120g으로 1개로 충분합니다. 더욱 풍성한 개거품을 원하실 경우 1개 정도 더 이용하셔도 좋습니다!
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleAnswer(2)">Q2. 재학생존 입장 시간은 언제인가요?</button>
-                <div class="faq-answer" id="answer-2">
-                    개당 120g으로 1개로 충분합니다. 더욱 풍성한 개거품을 원하실 경우 1개 정도 더 이용하셔도 좋습니다!
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleAnswer(3)">Q3. 부스 운영 시간은 어디에서 확인할 수 있나요?</button>
-                <div class="faq-answer" id="answer-3">
-                    개당 120g으로 1개로 충분합니다. 더욱 풍성한 개거품을 원하실 경우 1개 정도 더 이용하셔도 좋습니다!
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleAnswer(4)">Q4. 부스 참여하려면 미리 예약해야 하나요?</button>
-                <div class="faq-answer" id="answer-4">
-                    개당 120g으로 1개로 충분합니다. 더욱 풍성한 개거품을 원하실 경우 1개 정도 더 이용하셔도 좋습니다!
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleAnswer(5)">Q5. 부스 참여하려면 미리 예약해야 하나요?</button>
-                <div class="faq-answer" id="answer-5">
-                    개당 120g으로 1개로 충분합니다. 더욱 풍성한 개거품을 원하실 경우 1개 정도 더 이용하셔도 좋습니다!
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleAnswer(6)">Q6. 부스 참여하려면 미리 예약해야 하나요?</button>
-                <div class="faq-answer" id="answer-6">
-                    개당 120g으로 1개로 충분합니다. 더욱 풍성한 개거품을 원하실 경우 1개 정도 더 이용하셔도 좋습니다!
-                </div>
-            </div>
+            <ul>
+                {% for faq in faqAll %}
+                <li class="faq-item">
+                    <div class="faq-question" onclick="toggleAnswer('{{ loop.index }}')">Q{{ loop.index }}. {{ faq.question }}</div>
+                    <div class="faq-answer" id="answer-{{ loop.index }}" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease;">
+                        {{ faq.answer }}
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
         </section>
     </div>
 
