@@ -234,7 +234,7 @@ font-face {
     }
 }
 
-@media(max-width: 768px) 
+@media(max-width: 767px) 
 {
 
     .booth_poster img
@@ -303,12 +303,10 @@ font-face {
 {
  /* 제목 BOOTH */
  .title {
-    font-family: "Prata";
     font-size: 7vw;
-    
     text-align: center;
-    margin-top: 35vw; /* 여백 조정 */
-    position: relative; /* 다른 요소들과 겹치지 않게 상대 위치 */
+    margin-top: 9vh;
+    position: relative; 
   }
 
 

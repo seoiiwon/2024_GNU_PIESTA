@@ -1,0 +1,23 @@
+#noticeCategory {
+    width: 30vw;
+    height: 5vh;
+    display: block;
+}
+
+#noticeTitle {
+    width: 50vw;
+    height: 5vh;
+    display: block;
+}
+
+#noticeBody {
+    width: 70vw;
+    height: 50vh;
+    display: block;
+}
+
+#submitBtn {
+    width: 10vw;
+    height: 3vh;
+    display: block;
+}

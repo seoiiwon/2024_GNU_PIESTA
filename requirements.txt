@@ -3,3 +3,4 @@ uvicorn[standard]
 sqlalchemy
 alembic
 jinja2
+python-dotenv

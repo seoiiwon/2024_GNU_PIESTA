@@ -217,9 +217,15 @@ body {
     margin-bottom: 2.5vh;
   }
 
-  .noticeModalBody {
+  #noticeModalBody {
     line-height: 1.6em;
     color: #6d6d6d;
+    max-height: 30vh;
+    overflow: scroll;
+  }
+    
+  #noticeModalBody::-webkit-scrollbar {
+    display: none;
   }
 
   .busModalTitle {
@@ -477,9 +483,15 @@ body {
     margin-bottom: 2.5vh;
   }
 
-  .noticeModalBody {
+  #noticeModalBody {
     line-height: 1.6em;
     color: #6d6d6d;
+    max-height: 30vh;
+    overflow: scroll;
+  }
+    
+  #noticeModalBody::-webkit-scrollbar {
+    display: none;
   }
 
   .busModalTitle {

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/home_page3.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/hamberger.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/logo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
     <script>
         const jsonFilePath = "{{ url_for('static', path='json/bus_info.json') }}";
     </script>
@@ -185,7 +186,7 @@
         <div id="campusInfo">
             <div id="busInfo1" class="busInfo">
                 <div class="mapContainer">
-                    <img class="map" src="{{ url_for('static', path='images/map_tongyeong.svg')}}" alt="" />
+                    <img class="map" src="{{ url_for('static', path='images/map_campus1.svg')}}" alt="" />
                 </div>
                 <div class="busInfoContainer">
                     <div>
@@ -208,7 +209,7 @@
             </div>
             <div id="busInfo2" class="busInfo">
                 <div class="mapContainer">
-                    <img class="map" src="{{ url_for('static', path='images/map_tongyeong.svg')}}" alt="" />
+                    <img class="map" src="{{ url_for('static', path='images/map_campus3.svg')}}" alt="" />
                 </div>
                 <div class="busInfoContainer">
                     <div>
@@ -231,7 +232,7 @@
             </div>
             <div id="busInfo3" class="busInfo">
                 <div class="mapContainer">
-                    <img class="map" src="{{ url_for('static', path='images/map_tongyeong.svg')}}" alt="" />
+                    <img class="map" src="{{ url_for('static', path='images/map_campus2.svg')}}" alt="" />
                 </div>
                 <div class="busInfoContainer">
                     <div>
@@ -320,6 +321,36 @@
                     <span id="busCompany"></span>
                 </div>
             </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div id="pcVer">
+        <div id="piestaInfo" class="introContainer">
+            <div id="introLogo">
+                <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+            </div>
+            <div id="introContentContainer">
+                <div class="intro">PIONEER & FESTA</div>
+                <div class="intro">2024 대동제; PIESTA</div>
+                <div class="intro">2024.10.16 WED ~ 10.18 FRI</div>
+            </div>
+            <div id="qrContainer">
+                <div id="QRimg" class="qr">
+                    <img src="{{ url_for('static', path='images/piesta_QR.jpg')}}" id="QR">
+                </div>
+                <div class="qr">QR로 웹사이트 바로가기</div>
+            </div>
+        </div>
+
+        <div id="piestaPoster" class="introContainer">
+            <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" id="poster">
         </div>
     </div>
 </body>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/notice.css') }}">
+    <script>
+            const correctPassword = "{{ password }}";
+    </script>
+    <script src="{{ url_for('static', path='js/main/notice.js') }}" defer></script>
+</head>
+<body>
+    <form id="noticeForm" action="/notice" method="POST">
+        <input id="noticeCategory" type="text" placeholder="카테고리를 입력해주세요" maxlength="10" disabled>
+        <input id="noticeTitle" type="text" placeholder="제목을 입력해주세요" maxlength="20" disabled>
+        <textarea id="noticeBody" placeholder="공지사항을 입력해주세요" maxlength="300" disabled></textarea>
+        <input type="button" id="submitBtn" value="저장" disabled>
+    </form>
+</body>
+</html>
