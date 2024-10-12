@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', path='css/faq/postFAQ.css') }}"> -->
+    <script>
+            const correctPassword = "{{ password }}";
+    </script>
+    <script src="{{ url_for('static', path='js/faq/postFAQ.js') }}" defer></script>
+</head>
+<body>
+    <form id="faqForm" action="/postfaq" method="POST">
+        <input id="question" type="text" placeholder="질문을 입력해주세요" maxlength="30" disabled>
+        <textarea id="answer" placeholder="답변을 입력해주세요" maxlength="300" disabled></textarea>
+        <input type="button" id="submitBtn" value="저장" disabled>
+    </form>
+</body>
+</html>
