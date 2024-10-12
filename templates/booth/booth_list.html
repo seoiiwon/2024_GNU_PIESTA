@@ -11,6 +11,10 @@
       rel="stylesheet"
       href="{{ url_for('static', path='css/booth/booth_list.css') }}"
     />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', path='css/booth/map.css') }}"
+    />
     <script
       src="{{ url_for('static', path='js/booth/booth_list.js') }}"
       defer
@@ -61,9 +65,9 @@
         <div id="navContainer">
           <div id="hrefHOME" data-url="/home">HOME</div>
           <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
-          <div id="hrefBOOTH" data-url="/">BOOTH</div>
+          <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
           <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
-          <div id="hrefFAQ" data-url="faq">FAQ</div>
+          <div id="hrefFAQ" data-url="/faq">FAQ</div>
         </div>
         <div id="piestaWebHost">
           <a id="ohgam" href="https://www.instagram.com/gnu_5gam/"
@@ -95,8 +99,9 @@
 
       var positions = [
         {
-          title: "부스1",
+          title: "BOB!/먹거리 판매 부스",
           latlng: new kakao.maps.LatLng(35.153016, 128.098656),
+          sub: "먹거리 먹거리"
         },
         {
           title: "부스2",
@@ -112,23 +117,93 @@
         },
       ];
 
-      // 마커 이미지의 이미지 주소입니다
-      var imageSrc =
-        "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+      // for (var i = 0; i < positions.length; i++) {
+      //   // 마커를 생성합니다
+      //   var marker = new kakao.maps.Marker({
+      //     map: map, // 마커를 표시할 지도
+      //     position: positions[i].latlng,
+      //     title: positions[i].title,
+      //     clickable: true, // 마커의 위치
+      //   });
+      var overlays = []; // 오버레이 배열
 
+      // 마커와 오버레이 생성
+      // 마커와 오버레이 생성
       for (var i = 0; i < positions.length; i++) {
-        // 마커 이미지의 이미지 크기 입니다
-        var imageSize = new kakao.maps.Size(16, 23);
-
-        // 마커 이미지를 생성합니다
-        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
-
-        // 마커를 생성합니다
         var marker = new kakao.maps.Marker({
           map: map, // 마커를 표시할 지도
-          position: positions[i].latlng, // 마커를 표시할 위치
-          title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-          image: markerImage, // 마커 이미지
+          position: positions[i].latlng,
+          title: positions[i].title,
+          clickable: true, // 마커의 위치
+        });
+
+        // 커스텀 오버레이에 표시할 콘텐츠
+        var content =
+          '<div class="wrap" style="display:none;">' + // 처음에 display를 none으로 설정
+          '    <div class="info">' +
+          '        <div class="title">' +
+          "            카카오 스페이스닷원" +
+          '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' +
+          "        </div>" +
+          '        <div class="body">' +
+          '            <div class="img">' +
+          '                <img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/thumnail.png" width="73" height="70">' +
+          "           </div>" +
+          '            <div class="desc">' +
+          '                <div class="ellipsis">제주특별자치도 제주시 첨단로 242</div>' +
+          '                <div class="jibun ellipsis">(우) 63309 (지번) 영평동 2181</div>' +
+          '                <div><a href="https://www.kakaocorp.com/main" target="_blank" class="link">홈페이지</a></div>' +
+          "            </div>" +
+          "        </div>" +
+          "    </div>" +
+          "</div>";
+
+        // 마커 위에 커스텀 오버레이를 표시합니다
+        var overlay = new kakao.maps.CustomOverlay({
+          content: content,
+          map: map,
+          position: marker.getPosition(),
+        });
+
+        overlays.push({ overlay: overlay, content: content }); // 오버레이와 콘텐츠를 배열에 저장
+
+        // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+        kakao.maps.event.addListener(
+          marker,
+          "click",
+          (function (overlay, content) {
+            return function () {
+              // 모든 오버레이 숨기기
+              overlays.forEach(function (item) {
+                // 현재 보이는 오버레이를 숨깁니다.
+                var updatedContent = item.content.replace(
+                  'style="display:block;"',
+                  'style="display:none;"'
+                );
+                item.overlay.setContent(updatedContent); // 오버레이의 내용을 업데이트
+                item.content = updatedContent; // 배열의 content 업데이트
+              });
+
+              // 클릭된 마커의 오버레이만 보이기
+              var updatedContent = content.replace(
+                'style="display:none;"',
+                'style="display:block;"'
+              );
+              overlay.setContent(updatedContent); // 클릭된 오버레이의 내용을 업데이트
+            };
+          })(overlay, content)
+        );
+      }
+
+      // 커스텀 오버레이를 닫기 위해 호출되는 함수입니다
+      function closeOverlay() {
+        overlays.forEach(function (item) {
+          var updatedContent = item.content.replace(
+            'style="display:block;"',
+            'style="display:none;"'
+          );
+          item.overlay.setContent(updatedContent); // 오버레이의 내용을 업데이트
+          item.content = updatedContent; // 배열의 content 업데이트
         });
       }
     </script>
@@ -151,7 +226,7 @@
         data-date="{% if booth.is_operating_on_16th %}10.16{% endif %}{% if booth.is_operating_on_17th %}10.17{% endif %}{% if booth.is_operating_on_18th %}10.18{% endif %}"
       >
         <a
-          href="{{ url_for('get_booth_detail', booth_name=booth.booth_name) }}"
+          href="{{ url_for('get_booth_detail', booth_name=booth.booth_name | urlencode) }}"
         >
           <div class="box-icon">
             <i
@@ -162,6 +237,13 @@
           <div class="box-content">
             <p class="box-title">{{ booth.booth_name }}</p>
             <p class="box-description">{{ booth.booth_category }}</p>
+          </div>
+          <div class="heart" onclick="toggleHeart()">
+            <img
+              id="heartImage"
+              src="/static/images/heart_default.png"
+              alt=""
+            />
           </div>
         </a>
       </div>

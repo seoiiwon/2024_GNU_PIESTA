@@ -1,44 +1,47 @@
-function showPopup(eventTitle, eventTime, eventDetail, eventImage) {
+function showPopup(day, eventTitle, eventTime, eventDetail) {
   const popup = document.getElementById("popup");
   const popupLeft = document.querySelector(".popup-left");
+  const popupRight = document.querySelector(".popup-right");
   const popupTitle = document.getElementById("popup-title");
   const popupDetail = document.getElementById("popup-detail");
 
-  // 이미지 요소를 찾거나 생성 (클래스 기준)
-  let imgElement = popupLeft.querySelector(".event-icon");
-  if (!imgElement) {
-    const newImg = document.createElement("img");
-    newImg.classList.add("event-icon");
-    popupLeft.appendChild(newImg);
-    imgElement = newImg;
-  }
+  let day1Background = "#BBB6D8";
+  let day2Background = "#E5A4D0";
+  let day3Background = "#F7E695";
+  let popupRightColor = "#EFEFEF";
 
   // 팝업 내용 채우기
   popupTitle.innerHTML = eventTitle.replace(/,/g, "<br>");
   document.getElementById("popup-time").innerText = eventTime;
   popupDetail.innerHTML = eventDetail.replace(/,/g, "<br>");
 
-  // 이미지 경로 설정
-  imgElement.src = eventImage;
+  if (day == 1) {
+    popupLeft.style.backgroundColor = day1Background;
+    popupRight.style.backgroundColor = popupRightColor;
+  } else if (day == 2) {
+    popupLeft.style.backgroundColor = day2Background;
+    popupRight.style.backgroundColor = popupRightColor;
+  } else if (day == 3) {
+    popupLeft.style.backgroundColor = day3Background;
+    popupRight.style.backgroundColor = popupRightColor;
+  }
 
-  // 팝업 애니메이션 추가
-  popup.style.display = "flex"; // 팝업 표시
+  popup.style.display = "flex";
   setTimeout(() => {
     popup.style.visibility = "visible";
     popup.style.transform = "translateX(0)";
   }, 10);
 }
 
-
-function closePopup() {
+// 모달 밖에 클릭시 팝업 닫기
+window.onclick = function (event) {
   const popup = document.getElementById("popup");
 
-  // 팝업 애니메이션 제거
-  popup.style.visibility = "hidden";
-  popup.style.transform = "translateX(100%)";
-
-  // 팝업 숨기기
-  setTimeout(() => {
-    popup.style.display = "none";
-  }, 400); // 애니메이션이 끝날 때까지 기다림
-}
+  if (event.target == popup) {
+    popup.style.visibility = "hidden";
+    popup.style.transform = "translateX(100%)";
+    setTimeout(() => {
+      popup.style.display = "none";
+    });
+  }
+};

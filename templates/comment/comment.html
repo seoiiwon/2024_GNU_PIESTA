@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
     <link
       rel="stylesheet"
       href="{{ url_for('static', path='css/comment/comment.css') }}"
@@ -49,9 +50,9 @@
         <div id="navContainer">
           <div id="hrefHOME" data-url="/home">HOME</div>
           <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
-          <div id="hrefBOOTH" data-url="/">BOOTH</div>
+          <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
           <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
-          <div id="hrefFAQ" data-url="faq">FAQ</div>
+          <div id="hrefFAQ" data-url="/faq">FAQ</div>
         </div>
         <div id="piestaWebHost">
           <a id="ohgam" href="https://www.instagram.com/gnu_5gam/"
@@ -67,22 +68,20 @@
         <div class="noticetitle">💬 &nbsp;방명록</div>
         <div class="noticec">
           오늘 축제에서 무엇을 기대하고 있나요?
-          <br />
+          <br/>
           방명록을 작성하고 기대감을 마음껏 표현하세요!
         </div>
       </div>
-      <div id="comments-container">
-        <!-- 서버에서 가져온 댓글 렌더링 -->
-        {% for comment in comments %}
-        <div class="comment">
-          <div class="name">{{ comment.name }}</div>
-          <div class="text">{{ comment.text }}</div>
-        </div>
-        {% endfor %}
-        <div class="empty"></div>
-      </div>
     </div>
-
+    <div id="comments-container">
+      <!-- 서버에서 가져온 댓글 렌더링 -->
+      {% for comment in comments %}
+      <div class="comment">
+        <div class="name">{{ comment.name }}</div>
+        <div class="text">{{ comment.text }}</div>
+      </div>
+      {% endfor %}
+    </div>
     <div class="comment-section">
       <form id="comment-form">
         <textarea
@@ -98,4 +97,3 @@
 
     <script src="scripts.js"></script>
   </body>
-</html>

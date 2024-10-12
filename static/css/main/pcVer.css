@@ -1,0 +1,91 @@
+@media (max-width: 1024px) {
+    #pcVer {
+        display: none;
+    }
+}
+
+@media (min-width: 1025px) {
+    @font-face {
+        font-weight: 400; /* 폰트의 두께 */
+        font-family: 'Felixti'; /* 폰트 이름 */
+        src: url('/static/font/Felixti.TTF') format('truetype');
+    }
+    font-face {
+        font-weight: 400;
+        font-family: "Pretendard-Regular";
+        src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+          format("woff");
+      }
+
+    #pcVer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(
+            to bottom,
+            #7E727D 0%,
+            #484176 12%,
+            #39317A 55%,
+            #544E7F 74%,
+            #939390 92%,
+            #fcfbff9e 100%
+        );
+    }
+
+    #piestaInfo {
+        height: 60vh;
+        padding-right: 10vw;
+    }
+    #introLogo {
+        width: 36vw;
+        margin-bottom: 5vh;
+    }
+    #introLogo img {
+        object-fit: cover;    
+    }
+    #introContentContainer {
+        padding-left: 1.5vw;
+        font-family: 'Felixti';
+        margin-bottom: 4vh;
+    }
+    .intro {
+        font-size: 2em;
+        letter-spacing: 0.3em;
+        color: #BCBCBC;
+        margin-bottom: 2vh;
+    }
+    .introContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+
+    #qrContainer {
+        height: 7vw;
+    }
+    .qr {
+        font-family: 'Pretendard-Regular';
+        font-size: 1.2em;
+        color: #F8F8F8;
+        margin-left: 1.5vw;
+        display: inline-block;
+    }
+    #QRimg > img {
+        width: 6vw;
+        height: 6vw;
+    }
+
+
+
+    #piestaPoster {
+        height: 60vh;
+        width: 40vh;
+    }
+    #piestaPoster img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
