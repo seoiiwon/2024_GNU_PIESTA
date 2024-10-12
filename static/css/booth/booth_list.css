@@ -259,3 +259,9 @@ img.close-img {
   width: auto; /* 이 이미지에만 100% 규칙을 적용하지 않음 */
   height: auto; /* 필요에 따라 height도 설정 */
 }
+
+@media (min-width: 1025px) {
+  #booth_info, .title, .content_box {
+    display: none;
+  }
+}

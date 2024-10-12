@@ -66,6 +66,7 @@ font-face {
     left: 60vh;
   }
 }
+
 /* 
 .lineupContainer {
   position: relative;
@@ -122,7 +123,7 @@ font-face {
 
 .artistContainer {
   flex: 0 0 70vw;
-  padding-right: 20px;
+  padding: 0 1vh 0 1vh;
   scroll-snap-align: center;
 }
 
