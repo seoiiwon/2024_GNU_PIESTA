@@ -1,6 +1,6 @@
 
 /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ휴대폰 */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   @font-face {
     font-weight: 400; /* 폰트의 두께 */
     font-family: 'Felixti'; /* 폰트 이름 */
@@ -256,7 +256,6 @@
     flex-direction: column;
     align-items: flex-start; /* 왼쪽 정렬 */
 
-    /* 스크롤 설정 */
     max-height: 15rem;
     overflow-y: auto;
     -ms-overflow-style: none;
@@ -313,7 +312,7 @@
 
 
  /* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ여기서부턴 큰화면  */
- @media (min-width: 768px) {
+ @media (min-width: 768px) and (max-width: 1024px) {
 
   @font-face {
     font-weight: 400; /* 폰트의 두께 */
@@ -382,7 +381,7 @@
   .header {
     text-align: center;
     padding: 20px 0;
-    font-size: 1rem;
+    font-size: 3.5em;
     font-family: 'Felixti'; /* Added font-family property */
     font-weight: 400; /* Regular font weight */
     /* margin-top: 50px; */
@@ -461,10 +460,9 @@
       align-items: center; /* 내용 수직 중앙 정렬 */
       justify-content: center; /* 내용 수평 중앙 정렬 */
       padding: 10px; /* 내부 패딩 */
-      font-size: 10px; /* 폰트 크기 */
+      font-size: 1.5em; /* 폰트 크기 */
       font-weight: bold; /* 폰트 두께 */
       cursor: pointer; /* 커서 스타일 */
-      gap: 7px; /* 요소들 사이의 간격 */
       width: 100%; /* 전체 너비 */
       box-sizing:border-box ; /* 패딩 포함 너비 계산 */
       /* border-radius: 10px; */
@@ -477,20 +475,26 @@
 
   .event-time {
     position: relative;
-    font-size: 7px !important;
+    font-size: 0.6em !important;
     color: #000000 !important;
 }
 
   #day1 {
-    background-color: #BBB6D8; /* 53% 불투명도 */
+    background-color: #DCD6FF;
+    border-left: 0.8em solid #BCB1FF;
+    color: #4C3CA8;
   }
 
   .event#day2 {
-    background-color: #E5A4D0;
+    background-color: #FFC0EB;
+    border-left: 0.8em solid #FFA0E0;
+    color: #F23782;
   }
 
   .event#day3 {
-    background-color: #F7E695;
+    background-color: #FFF0A7;
+    border-left: 0.8em solid #FFD260;
+    color: #FFA136;
   }
 
   .event:hover {
@@ -564,15 +568,18 @@
     overflow-y: auto;
     -ms-overflow-style: none;
   }
+  .popup-right::-webkit-scrollbar{
+    display:none;
+  }
 
-  popup-right::-webkit-scrollbar {
+  /* popup-right::-webkit-scrollbar {
     width: 5px;
   }
   
   .popup-right::-webkit-scrollbar-thumb {
     background: #ccc; 
     border-radius: 10px;
-  }
+  } */
 
 
   .popup .event {
@@ -594,5 +601,21 @@
   .event-time {
     font-size: 0.9em;
     color: #e0e0e0;
+  }
+
+  .timetable::-webkit-scrollbar{
+    display:none;
+  }
+}
+
+
+/* PC 사이즈 */
+@media (min-width: 1025px) {
+  .logoContainer,
+  .menu-trigger,
+  .hambergerContents,
+  .mainpage,
+  .popup{
+    display: none;
   }
 }

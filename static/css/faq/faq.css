@@ -30,31 +30,12 @@ font-face {
       format("woff");
 }
 
-#logoImg {
-    position: relative;
-    z-index: 1;
-}
-
-.logoDate {
-    margin-top: 2px;
-    text-align: center;
-    font-family: "Pretendard-Regular";
-    color: #afafaf;
-    font-size: 2.5vw;
-    letter-spacing: 0.5vw;
-}
-
-@media (max-width: 768px) {
-    #logoImg {
-        width: 60vw;
-    }
-}
 
 @media (max-width: 768px) {
     .FAQ {
         text-align: center;
         font-family: "Felixti";
-        font-size: 7vw;
+        font-size: 3.5em;
         font-weight: 500;
         color: white;
         letter-spacing: 0.5vw;
