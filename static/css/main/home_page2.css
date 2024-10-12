@@ -43,6 +43,21 @@ font-face {
   position: fixed;
   z-index: 3;
   pointer-events: none;
+  opacity: 0.5;
+  animation: float 3s ease-in-out infinite, fadeInFloat 1.5s ease-in-out;;
+  transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 #bubble1 {
