@@ -42,12 +42,11 @@ font-face {
     .FAQ {
         text-align: center;
         font-family: "Felixti";
-        font-size: 3.5em;
+        font-size: 7vw;
         font-weight: 500;
         color: white;
         letter-spacing: 0.5vw;
         padding-bottom: 20px;
-        z-index: 100; /* 햄버거 메뉴보다 낮게 설정 */
     }
 
     .container {
