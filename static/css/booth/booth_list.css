@@ -90,7 +90,7 @@ body {
   /* 지도 영역 */
   #map {
     width: 90vw;
-    height: 55vw;
+    height: 50vw;
     border-radius: 10px;
     overflow: hidden; /* 이 속성은 유지 */
     margin: 0 auto;
@@ -182,7 +182,7 @@ body {
   /* 지도 영역 */
   #map {
     width: 90vw;
-    height: 55vw;
+    height: 45vw;
     border-radius: 10px;
     overflow: hidden; /* 이 속성은 유지 */
     margin: 0 auto;

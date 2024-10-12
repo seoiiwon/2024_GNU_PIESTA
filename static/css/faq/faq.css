@@ -1,44 +1,41 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
-    color: #cbbce3;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    padding-top: 40px;
-    overflow-x: hidden;
-    overflow-y: hidden; /* 전체 페이지 스크롤 방지 */
-}
-
-#menuTrigger {
-    position: fixed;
-    right: 10px;
-    top: 10px;
-    z-index: 1001; /* 햄버거 메뉴는 상단에 고정된 상태로 유지 */
-}
-
-#header {
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 50; /* 햄버거 메뉴보다 낮게 설정 */
-    transition: z-index 0.3s;
-}
-
-font-face {
+@font-face {
     font-weight: 400;
     font-family: "Pretendard-Regular";
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
       format("woff");
 }
+@font-face {
+    font-weight: 400; /* 폰트의 두께 */
+    font-family: 'Felixti'; /* 폰트 이름 */
+    src: url('/static/font/Felixti.TTF') format('truetype');
+}
 
+@media (max-width: 767px) {
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
+        color: #cbbce3;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding-top: 40px;
+        overflow-x: hidden;
+        overflow-y: hidden; /* 전체 페이지 스크롤 방지 */
+    }
+    
+    #header {
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50; /* 햄버거 메뉴보다 낮게 설정 */
+        transition: z-index 0.3s;
+    }
 
-@media (max-width: 768px) {
     .FAQ {
         text-align: center;
         font-family: "Felixti";
@@ -69,7 +66,11 @@ font-face {
         overflow-y: auto; /* FAQ 섹션에만 스크롤 적용 */
         height: 80vh; /* 페이지 높이를 조정해서 섹션만 스크롤 가능하게 */
         z-index: 1;
+        padding-bottom: 25vh;
     }
+    .faq-section::-webkit-scrollbar{
+        display:none;
+      }
 
     .faq-item {
         margin-bottom: 20px;
@@ -113,25 +114,32 @@ font-face {
     .faq-item.active .faq-question {
         border-bottom: 1px solid #423B78;
     }
-
-    #hambuger {
-        width: 50px; /* 너비를 50px로 설정 */
-        height: 50px; /* 높이를 50px로 설정 */
-        position: fixed; /* 위치 고정 */
-        top: 6%; /* 상단에서 10px 떨어짐 */
-        left: 85%; /* 좌측에서 10px 떨어짐 */
-    }
 }
 
-@media (min-width: 768px) {
-    #logoImg {
-        width: 50%; /* 로고의 부모 요소에 대한 너비 설정 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
+        color: #cbbce3;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding-top: 40px;
+        overflow-x: hidden;
+        overflow-y: hidden; /* 전체 페이지 스크롤 방지 */
     }
-
-    #logoImg img {
-        width: 100%; /* 내부의 img 태그에 너비 100% 설정 */
-        height: auto; /* 비율 유지하면서 크기 조정 */
-        margin-top: 15px;
+    
+    #header {
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50; /* 햄버거 메뉴보다 낮게 설정 */
+        transition: z-index 0.3s;
     }
 
     .FAQ {
@@ -164,7 +172,11 @@ font-face {
         overflow-y: auto; /* FAQ 섹션에만 스크롤 적용 */
         height: 80vh; /* 페이지 높이를 조정해서 섹션만 스크롤 가능하게 */
         z-index: 1;
+        padding-bottom: 25vh;
     }
+    .faq-section::-webkit-scrollbar{
+        display:none;
+      }
 
     .faq-item {
         margin-bottom: 30px;
@@ -210,11 +222,18 @@ font-face {
     .faq-item.active .faq-question {
         border-bottom: 1px solid #423B78;
     }
-
-    #hambuger {
-        left: 82%;
-        top: 4%;
-        position: fixed;
-        width: 8vw;
-    }
 }
+
+
+
+
+/* PC 사이즈 */
+@media (min-width: 1025px) {
+    .logoContainer,
+    .menu-trigger,
+    .hambergerContents,
+    .container{
+      display: none;
+    }
+  }
+  

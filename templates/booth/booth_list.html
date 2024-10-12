@@ -92,7 +92,7 @@
       var container = document.getElementById("map");
       var options = {
         center: new kakao.maps.LatLng(35.1549465, 128.1026520),
-        level: 4,
+        level: 3,
       };
 
       var map = new kakao.maps.Map(container, options);
@@ -412,6 +412,8 @@
           content: content,
           map: map,
           position: marker.getPosition(),
+          zIndex: 500, 
+
         });
 
         overlays.push({ overlay: overlay, content: content });
@@ -423,7 +425,7 @@
             return function () {
               // 지도 중심 계산하는거 추가햇슴
               var newCenterPosition = new kakao.maps.LatLng(
-                markerPosition.getLat() + 0.0012, 
+                markerPosition.getLat() + 0.00025, 
                 markerPosition.getLng()
               );
               map.setCenter(newCenterPosition);
