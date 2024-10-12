@@ -2,96 +2,81 @@
   position: absolute;
   left: 0;
   bottom: 40px;
-  width: 288px;
-  height: 132px;
-  margin-left: -144px;
+  width: 240px; /* 너비를 줄임 */
+  height: auto;
+  margin-left: -120px; /* 너비의 절반으로 변경 */
   text-align: left;
   overflow: hidden;
   font-size: 12px;
   font-family: "Malgun Gothic", dotum, "돋움", sans-serif;
   line-height: 1.5;
   display: none;
+  z-index: 9999;
 }
+
 .wrap * {
   padding: 0;
   margin: 0;
 }
+
 .wrap .info {
-  width: 286px;
-  height: 120px;
+  width: 238px; /* 너비를 줄임 */
+  height: auto;
   border-radius: 5px;
   border-bottom: 2px solid #ccc;
   border-right: 1px solid #ccc;
   overflow: hidden;
-  background: #fff;
+  background: #FFFFFF;
 }
+
 .wrap .info:nth-child(1) {
   border: 0;
   box-shadow: 0px 1px 2px #888;
 }
-.wrap .info .title {
-  color: #000000; /* 원하는 색상 코드로 변경 */
-}
+
+/* 제목 영역 CSS */
 .info .title {
-  padding: 5px 0 0 10px;
-  height: 30px;
-  background: #eee;
-  border-bottom: 1px solid #ddd;
+  color: #4C3CA8;
+  padding: 5px 15px; /* padding 줄임 */
+  height: auto;
+  background: #DCD6FF;
   font-size: 18px;
   font-weight: bold;
+  word-break: break-word;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  line-height: 1.2em;
 }
+
+/* 닫기 버튼 */
 .info .close {
   position: absolute;
   top: 10px;
   right: 10px;
   color: #888;
-  width: 17px;
-  height: 17px;
-  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png");
+  width: 10px; /* 너비를 10px로 유지 */
+  height: 10px; /* 높이를 10px로 유지 */
+  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png") no-repeat center;
+  background-size: 10px 10px;
 }
+
 .info .close:hover {
   cursor: pointer;
 }
+
+/* 본문 */
 .info .body {
-  display: flex; /* 플렉스 박스 */
-  flex-direction: column; /* 세로 방향으로 정렬 */
-  align-items: center; /* 중앙 정렬 */
-  margin-top: 10px; /* 위쪽 여백 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
 }
+
 .info .desc {
-  text-align: center; /* 중앙 정렬 */
-    margin: 10px 0; /* 위 아래 여백 */
-}
-.desc .ellipsis {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.desc .jibun {
-  font-size: 11px;
-  color: #888;
-  margin-top: -2px;
-}
-.info .img {
-  position: absolute;
-  top: 6px;
-  left: 5px;
-  width: 73px;
-  height: 71px;
-  border: 1px solid #ddd;
-  color: #888;
-  overflow: hidden;
-}
-.info:after {
-  content: "";
-  position: absolute;
-  margin-left: -12px;
-  left: 50%;
-  bottom: 0;
-  width: 22px;
-  height: 12px;
-  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png");
-}
-.info .link {
-  color: #5085bb;
+  text-align: center;
+  margin: 10px 0;
+  color: #BCB1FF;
+  font-size: 1.1em;
+  font-weight: bold;
 }
