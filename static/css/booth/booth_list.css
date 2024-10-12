@@ -34,7 +34,7 @@ font-face {
   box-shadow: 0rem 0rem 0.5rem 0.5rem #3b2862;
   background-color: #3b2862;
   border-radius: 20px;
-  margin: 0 0.1vw 0 0.1vw;
+  margin: 0 0.1vw -2vw 0.1vw;
   cursor: pointer;
 }
 
