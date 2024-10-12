@@ -10,7 +10,7 @@ function showNoticeModal(noticeCategory, noticeTitle, noticeBody) {
     noticeModalTitle.textContent = noticeTitle;
     noticeModalBody.textContent = noticeBody;
 
-    document.getElementById('home_info').classList.add('blur-background');
+    // document.getElementById('home_info').classList.add('blur-background');
     noticeModal.style.display = 'flex';
   } else {
     console.log('404 NOT FOUND');
@@ -66,7 +66,7 @@ function showBusModalChilam(busNumber) {
         document.getElementById('lastTimeFromEndPoint').textContent = lastBusFromEndPoint;
         document.getElementById('termsFromEndPoint').textContent = termFromEndPoint;
 
-        document.getElementById('home_info').classList.add('blur-background');
+        // document.getElementById('home_info').classList.add('blur-background');
         document.getElementById("busModal1").style.display = "flex";
     } else {
         alert('해당 버스 정보를 찾을 수 없습니다.'); 
@@ -106,8 +106,8 @@ function showBusModalTYCW(time, location, busFrom) {
     document.getElementById("busPath").textContent = path;
     document.getElementById("busCompany").textContent = company;
 
-    document.getElementById('home_info').classList.add('blur-background');
-    document.getElementById("busModal2").classList.add('modal-active');
+    // document.getElementById('home_info').classList.add('blur-background');
+    // document.getElementById("busModal2").classList.add('modal-active');
 
     document.getElementById("busModal2").style.display = "flex";
   } else {
