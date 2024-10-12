@@ -20,7 +20,7 @@ font-face {
     font-style: normal;
 }
 /* PIESTA LOGO */
-#logoImg img
+/* #logoImg img
 {
     width: 100%;
 }
@@ -38,7 +38,7 @@ font-face {
     color: #afafaf;
     font-size: 2.5vw;
     letter-spacing: 0.5vw;
-  }
+  } */
 .logo p
 {
     color: #AFAFAF;
@@ -305,23 +305,23 @@ font-face {
  .title {
     font-size: 7vw;
     text-align: center;
-    margin-top: 9vh;
+    margin-top: 20vh;
     position: relative; 
   }
 
 
 /* 상단 로고 */
-  #logoImg {
+  /* #logoImg {
     position: relative;
     width: 80vw;
-    top: 5vw; /* 상단 여백 */
+    top: 5vw; 
     left: 50%;
     transform: translateX(-50%);
-  }
+  } */
     .content_box
     {
         position: absolute;
-        top: 35%; /* 타이틀 아래 위치 */
+        top: 30%; /* 타이틀 아래 위치 */
         left: 50%;
         transform: translateX(-50%); /* 수평 가운데 정렬 */
         width: 85vw; /* 반응형 너비 설정 */
