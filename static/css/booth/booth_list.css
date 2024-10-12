@@ -171,10 +171,10 @@ body {
   /* 제목 BOOTH */
   .title {
     font-family: "Felixti";
-    font-size: 7vw;
+    font-size: 3.5em;
     font-weight: 500;
     text-align: center;
-    margin-top: 35vw; /* 여백 조정 */
+    margin-top: 20vh; /* 여백 조정 */
     position: relative; /* 다른 요소들과 겹치지 않게 상대 위치 */
     color: #ffffff;
   }
