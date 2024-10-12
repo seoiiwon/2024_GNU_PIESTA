@@ -5,9 +5,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    height: 100vh;
+    min-height: 100vh; /* 높이 대신 min-height를 사용하여 동적 성장을 허용 */
     padding-top: 40px;
-    overflow: hidden;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+    overflow-y: auto; /* 내용이 넘칠 경우 세로 스크롤 허용 */
 }
 
 font-face {
@@ -56,15 +57,19 @@ font-face {
     }
 
     .container {
-        width: 380px;
+        width: 100%; /* 전체 너비를 사용하도록 설정 */
+        max-width: 380px; /* 반응형 디자인을 위한 최대 너비 설정 */
         border-radius: 20px;
         padding: 20px;
         position: relative;
         margin-top: 20%;
+        overflow-y: auto; /* FAQ 항목이 많을 경우 세로 스크롤 허용 */
+        max-height: 80vh;
     }
 
     .faq-section {
         margin-top: 20px;
+        overflow: visible;
     }
 
     .faq-item {
@@ -74,7 +79,7 @@ font-face {
         overflow: hidden;
         transition: max-height 0.4s ease-out;
         padding: 15px;
-    }
+    }    
 
     .faq-question {
         width: 100%;
@@ -95,15 +100,14 @@ font-face {
         padding-top: 7px;
         display: none;
         color: #413978;
-        height: 0;
         overflow: hidden;
-        transition: height 0.3s ease-out;
+        transition: max-height 0.3s ease-out; /* 부드러운 전환 효과 */
         line-height: 1.6;
     }
-
+    
     .faq-answer.active {
         display: block;
-        height: auto;
+        max-height: 500px; /* 충분히 큰 높이로 설정 */
     }
 
     .faq-item.active .faq-question {
@@ -142,27 +146,34 @@ font-face {
     }
 
     .container {
-        width: 380px;
+        width: 100%;
+        max-width: 800px;
         border-radius: 20px;
         padding: 20px;
         position: relative;
         margin-top: 20%;
+        overflow-y: auto;
+        max-height: 80vh;
+        display: flex;
+        flex-direction: column; /* 세로 방향으로 정렬 */
+        align-items: center; /* 가로 중앙 정렬 */
+        justify-content: center; /* 세로 중앙 정렬 */
     }
 
     .faq-section {
         margin-top: 20px;
+        overflow: visible;
     }
 
     .faq-item {
-        width: 190%; /* 부모 너비 100%로 설정 */
         margin-bottom: 40px;
         background-color: white;
         border-radius: 20px;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
-        padding: 20px;
-        margin-left: -180px;
-    }
+        padding: 15px;
+        width: 600px;
+    }    
 
     .faq-question {
         width: 100%;
@@ -183,7 +194,6 @@ font-face {
         padding-top: 7px;
         display: none;
         color: #413978;
-        height: 0;
         overflow: hidden;
         transition: height 0.3s ease-out;
         line-height: 1.6;
@@ -191,7 +201,7 @@ font-face {
 
     .faq-answer.active {
         display: block;
-        height: auto;
+        max-height: 500px;
     }
 
     .faq-item.active .faq-question {
