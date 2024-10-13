@@ -22,6 +22,8 @@
     <script src="{{ url_for('static', path='js/main/logo.js') }}" defer></script>
     <script src="{{ url_for('static', path='js/main/lineupScroll.js') }}" defer></script>
     <script src="{{ url_for('static', path='js/main/selectCampus.js') }}" defer></script>
+    <script src="{{ url_for('static', path='js/main/stars.js') }}" defer></script>
+
     <title>2024 GNU FIESTA</title>
 </head>
 
@@ -57,7 +59,8 @@
 
 
     <!-- Page1 포스터&디데이 -->
-    <div id="home_poster">
+    <div id="home_poster" class="background">
+        <canvas class="starCanvas"></canvas>
         <!-- 포스터 들어올 자리 -->
         <div class="blankTop1">
             <div class="posterContainer">
@@ -75,7 +78,7 @@
 
 
     <!-- Page2 라인업 -->
-    <div id="home_lineup">
+    <div id="home_lineup" class="background">
         <div class="blankTop2">
             <div class="lineUp">LINE UP</div>
             <div class="piestaDates">
@@ -136,7 +139,7 @@
 
 
     <!-- Page3 공지&오시는길 -->
-    <div id="home_info">
+    <div id="home_info" class="background">
         <div class="notice titleBox">
             <img class="icon" src="{{ url_for('static', path='icons/announcement_icon.svg')}}" alt="">
             <div class="title">공지사항</div>
@@ -158,6 +161,7 @@
         <!-- 공지 모달 -->
         <div id="noticeModal" class="noticeModal">
             <div class="noticeModalContainer">
+                <span class="closeButton" onclick="closeModal('noticeModal')">&times;</span>
                 <div class="noticeModalTitleBox">
                     <div id="noticeModalCategory"></div>
                     <div id="noticeModalTitle"></div>
@@ -258,6 +262,7 @@
     <!-- 칠암캠퍼스 버스 정보 모달 (시내버스) -->
     <div id="busModal1" class="busModal">
         <div class="busModalContent">
+            <span class="closeButton" onclick="closeModal('busModal1')">&times;</span>
             <div class="busModalTitle">
                 <div id="busNumber"></div>
                 <div id="busChannel"></div>
@@ -299,6 +304,7 @@
     <!-- 통영, 창원캠퍼스 버스 정보 모달 (시외버스) -->
     <div id="busModal2" class="busModal">
         <div class="busModalContent">
+            <span class="closeButton" onclick="closeModal('busModal2')">&times;</span>
             <div class="busModalTitle">
                 <div id="busTime"></div>
                 <div id="busChannel-TYCW"></div>
@@ -331,7 +337,8 @@
 
 
 
-    <div id="pcVer">
+    <div id="pcVer" class="background">
+        <canvas class="starCanvas"></canvas>
         <div id="piestaInfo" class="introContainer">
             <div id="introLogo">
                 <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">

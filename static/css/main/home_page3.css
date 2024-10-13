@@ -12,8 +12,26 @@ body {
   overflow: hidden;
 }
 
+
 /* 휴대폰 사이즈 */
 @media (max-width: 767px) {
+  .closeButton {
+    position: absolute;
+    top: 10px; 
+    right: 20px; 
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+  .starCanvas {
+    position: fixed; /* 스크롤해도 항상 고정된 위치 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* 클릭 등의 이벤트가 canvas에 적용되지 않도록 설정 */
+}  
   #home_poster,
   #home_lineup,
   #home_info {

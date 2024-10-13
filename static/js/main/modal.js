@@ -148,3 +148,8 @@ function handleModalClose(event) {
 
 window.onclick = handleModalClose;
 window.addEventListener('touchend', handleModalClose);
+
+// function closeModal(modalId) {
+//   const modal = document.getElementById(modalId);
+//   modal.style.display = 'none';
+// }
