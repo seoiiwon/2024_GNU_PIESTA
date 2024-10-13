@@ -75,6 +75,9 @@ body {
 }
 /* 모바일 디바이스에서 적용되는 css -> 가로 해상도가 1024px(아이패드 프로) 보다 작은 화면에 적용  */
 @media (max-width: 767px) {
+  .info .title {
+    font-family: "Pretendard";
+  }
   .starCanvas {
     position: fixed;
     top: 0;
@@ -82,6 +85,9 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
+  }
+  .info .title {
+    font-family: "Pretendard";
   }
   /* 제목 BOOTH */
   .title {
@@ -122,6 +128,9 @@ body {
     max-height: 50vh; /* 화면 높이의 절반으로 제한 */
     padding-bottom: 23vh;
   }
+  .box-container::-webkit-scrollbar {
+    display: none;
+  }
   .box-icon {
     margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 조정 */
     font-size: 5vw; /* 아이콘 크기 */
@@ -143,10 +152,11 @@ body {
   }
   .box-title {
     font-weight: bold;
-    font-size: clamp(12px, 2vw, 24px);
+    font-size: clamp(0.9em, 2vw, 1.2em);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: "Pretendard";
   }
 
   .box-description {
@@ -172,7 +182,7 @@ body {
   }
 
   .heart {
-    margin-left: 10vw;
+    margin-left: 3vw;
     margin-top: 3vw;
   }
 }
@@ -200,7 +210,7 @@ body {
     font-size: 3.5em;
     font-weight: 500;
     text-align: center;
-    margin-top: 20vh; /* 여백 조정 */
+    margin-top: 18vh; /* 여백 조정 */
     position: relative; /* 다른 요소들과 겹치지 않게 상대 위치 */
     color: #ffffff;
   }
@@ -232,7 +242,10 @@ body {
     margin-top: 8vw;
     overflow-y: auto;
     max-height: 50vh; /* 화면 높이의 절반으로 제한 */
-    padding-bottom: 23vh;
+    padding-bottom: 40vh;
+  }
+  .box-container::-webkit-scrollbar {
+    display: none;
   }
   .box-icon {
     margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 조정 */
@@ -250,20 +263,22 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex; /* 수평 정렬을 위한 flexbox 사용 */
     align-items: center; /* 아이콘과 텍스트를 수직으로 정렬 */
-    height: 15vw;
+    height: 14vw;
     justify-content: space-between;
   }
   .box-title {
     font-weight: bold;
-    font-size: clamp(0.8em, 2vw, 1em);
+    font-size: clamp(1em, 2vw, 1.5em);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-family: "Pretendard";
   }
 
   .box-description {
     font-size: 3vw;
     color: #666666;
+    font-family: "Pretendard";
   }
   i {
     font-size: 7vw;
@@ -280,7 +295,7 @@ body {
     height: 3vw;
     width: 65vw;
     margin: 0 auto;
-    margin-top: 7.5vw;
+    margin-top: 6vw;
   }
   .filter-buttons label {
     font-family: "Felixti";
@@ -296,7 +311,7 @@ body {
     font-size: 2.5vw;
   }
   .heart {
-    margin-left: 10vw;
+    margin-left: 3vw;
     margin-top: 3vw;
     width: 7vw;
   }
