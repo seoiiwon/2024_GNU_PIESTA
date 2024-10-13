@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/hamberger.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/logo.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
+    
     <script>
         const jsonFilePath = "{{ url_for('static', path='json/bus_info.json') }}";
     </script>
@@ -259,6 +260,8 @@
             </div>
         </div>
     </div>
+
+
     <!-- 칠암캠퍼스 버스 정보 모달 (시내버스) -->
     <div id="busModal1" class="busModal">
         <div class="busModalContent">
@@ -300,7 +303,6 @@
     </div>
 
 
-
     <!-- 통영, 창원캠퍼스 버스 정보 모달 (시외버스) -->
     <div id="busModal2" class="busModal">
         <div class="busModalContent">
@@ -329,12 +331,6 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
 
     <div id="pcVer" class="background">

@@ -15,31 +15,25 @@ from api.timetable import timetable_router
 from api.main import notice
 from config.booth_data import init_db  
 
-# from routers import
 
 app = FastAPI()
 
-
-# CORS 설정 추가
 from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # 또는 허용할 도메인 목록
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-
-# static 폴더 연결
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-# 데이터베이스 초기화
 @app.on_event("startup")
 def startup_event():
-    Base.metadata.create_all(bind=engine)  # 데이터베이스 테이블 생성
-    init_db()  # 기본 데이터 삽입
+    Base.metadata.create_all(bind=engine) 
+    init_db()
     
 app.add_middleware(
     CORSMiddleware,
@@ -60,15 +54,15 @@ app.include_router(test.router)
 app.include_router(notice.router)
 
 
-# @app.get("/favicon.ico", include_in_schema=False)
-# async def favicon():
-#     return FileResponse("favicon.ico")
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return FileResponse("favicon.ico")
 
 
 HOST = "0.0.0.0"
 PORT = 80
-HOST = "127.0.0.1"
-PORT = 8000
+# HOST = "127.0.0.1"
+# PORT = 8000
 
 
 if __name__ == "__main__":
