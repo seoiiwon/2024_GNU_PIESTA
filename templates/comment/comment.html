@@ -17,17 +17,23 @@
       rel="stylesheet"
       href="{{ url_for('static', path='css/main/hamberger.css') }}"
     />
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
     <script src="static/js/comment/comment.js" defer></script>
     <script
       src="{{ url_for('static', path='js/main/logo.js') }}"
       defer
     ></script>
     <script
+    src="{{ url_for('static', path='js/main/stars.js') }}"
+    defer
+  ></script>
+    <script
       src="{{ url_for('static', path='js/main/hamberger.js') }}"
       defer
     ></script>
   </head>
   <body>
+    <canvas class="starCanvas"></canvas>
     <div class="content">
       <!-- 로고 -->
       <div>
@@ -95,5 +101,31 @@
       </form>
     </div>
 
+
+
+    <div id="pcVer">
+      <div id="piestaInfo" class="introContainer">
+          <div id="introLogo">
+              <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+          </div>
+          <div id="introContentContainer">
+              <div class="intro">PIONEER & FESTA</div>
+              <div class="intro">2024 대동제; PIESTA</div>
+              <div class="intro">2024.10.16 WED ~ 10.18 FRI</div>
+          </div>
+          <div id="qrContainer">
+              <div id="QRimg" class="qr">
+                  <img src="{{ url_for('static', path='images/piesta_QR.jpg')}}" id="QR">
+              </div>
+              <div class="qr">QR로 웹사이트 바로가기</div>
+          </div>
+      </div>
+
+      <div id="piestaPoster" class="introContainer">
+          <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" id="poster">
+      </div>
+    </div>
+
     <script src="scripts.js"></script>
   </body>
+</html>

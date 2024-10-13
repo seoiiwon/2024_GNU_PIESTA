@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>faq</title>
     <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/faq/faq.css') }}">
     <script src="{{ url_for('static', path='js/faq/faq.js') }}" defer></script>
@@ -11,60 +11,81 @@
     <script src="{{ url_for('static', path='js/main/logo.js') }}" defer></script>
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/hamberger.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', path='css/main/logo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
     <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet'>
+    <script src="{{ url_for('static', path='js/main/stars.js') }}" defer></script>
 </head>
 <body>
     <div class="container">
-    <!-- 로고 -->
-    <div>
-        <div id="logoImg">
-            <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
-            <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+        <!-- 로고 -->
+        <canvas class="starCanvas"></canvas>
+        <header id="header">
+            <div>
+                <div id="logoImg">
+                    <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+                    <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+                </div>
+            </div>
+
+            <!-- 햄버거 버튼 -->
+            <a class="menu-trigger" href="#">
+                <span class="hambergerBread"></span>
+                <span class="hambergerCenter"></span>
+                <span class="hambergerBread"></span>
+            </a>
+            <div id="hambergerContents" class="hambergerContents">
+                <div id="navContainer">
+                    <div id="hrefHOME" data-url="/home">HOME</div>
+                    <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
+                    <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
+                    <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
+                    <div id="hrefFAQ" data-url="/faq">FAQ</div>
+                </div>
+                <div id="piestaWebHost">
+                    <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>
+                    &nbsp;X&nbsp;
+                    <a id="mutsa" href="https://www.instagram.com/likelion_gnu/">멋쟁이사자처럼</a>
+                </div>
+            </div>
+        </header>
+            <h2 class="FAQ">FAQ</h2>
+            <section class="faq-section" id="faqSection">
+                <ul>
+                    {% for faq in faqAll %}
+                    <li class="faq-item">
+                        <div class="faq-question" onclick="toggleAnswer('{{ loop.index }}')">Q{{ loop.index }}. {{ faq.question }}</div>
+                        <div class="faq-answer" id="answer-{{ loop.index }}" style="max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.3s ease, opacity 0.3s ease;">
+                            {{ faq.answer }}
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </section>
         </div>
     </div>
 
-    <!-- 햄버거 버튼 -->
-    <a class="menu-trigger" href="#">
-        <span class="hambergerBread"></span>
-        <span class="hambergerCenter"></span>
-        <span class="hambergerBread"></span>
-    </a>
-    <div id="hambergerContents" class="hambergerContents">
-        <div id="navContainer">
-            <div id="hrefHOME" data-url="/home">HOME</div>
-            <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
-            <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
-            <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
-            <div id="hrefFAQ" data-url="/faq">FAQ</div>
+
+    <div id="pcVer">
+        <div id="piestaInfo" class="introContainer">
+            <div id="introLogo">
+                <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
+            </div>
+            <div id="introContentContainer">
+                <div class="intro">PIONEER & FESTA</div>
+                <div class="intro">2024 대동제; PIESTA</div>
+                <div class="intro">2024.10.16 WED ~ 10.18 FRI</div>
+            </div>
+            <div id="qrContainer">
+                <div id="QRimg" class="qr">
+                    <img src="{{ url_for('static', path='images/piesta_QR.jpg')}}" id="QR">
+                </div>
+                <div class="qr">QR로 웹사이트 바로가기</div>
+            </div>
         </div>
-        <div id="piestaWebHost">
-            <a id="ohgam" href="https://www.instagram.com/gnu_5gam/">오감 총학생회</a>
-            &nbsp;X&nbsp;
-            <a id="mutsa" href="https://www.instagram.com/likelion_gnu/">멋쟁이사자처럼</a>
+
+        <div id="piestaPoster" class="introContainer">
+            <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" id="poster">
         </div>
-    </div>
-        <!-- FAQ 섹션을 로고 바로 밑으로 배치 -->
-        <section class="faq-section">
-            <h2 class="FAQ">FAQ</h2>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleAnswer(1)">Q1. 부스 참여하려면 미리 예약해야 하나요?</button>
-                <div class="faq-answer" id="answer-1">
-                    개당 120g으로 1개로 충분합니다. 더욱 풍성한 개거품을 원하실 경우 1개 정도 더 이용하셔도 좋습니다!
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleAnswer(2)">Q2. 재학생존 입장 시간은 언제인가요?</button>
-                <div class="faq-answer" id="answer-2">
-                    내용이 여기에 들어갑니다.
-                </div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-question" onclick="toggleAnswer(3)">Q3. 부스 운영 시간은 어디에서 확인할 수 있나요?</button>
-                <div class="faq-answer" id="answer-3">
-                    내용이 여기에 들어갑니다.
-                </div>
-            </div>
-        </section>
     </div>
 </body>
 </html>

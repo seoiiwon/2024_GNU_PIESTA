@@ -5,10 +5,13 @@ function showPopup(day, eventTitle, eventTime, eventDetail) {
   const popupTitle = document.getElementById("popup-title");
   const popupDetail = document.getElementById("popup-detail");
 
-  let day1Background = "#BBB6D8";
-  let day2Background = "#E5A4D0";
-  let day3Background = "#F7E695";
-  let popupRightColor = "#EFEFEF";
+  let day1LeftBG = "#BCB1FF";
+  let day2LeftBG = "#FFA0E0";
+  let day3LeftBG = "#FFD260";
+
+  let day1RightBG = "#DCD6FF";
+  let day2RightBG = "#FFC0EB";
+  let day3RightBG = "#FFF0A7";
 
   // 팝업 내용 채우기
   popupTitle.innerHTML = eventTitle.replace(/,/g, "<br>");
@@ -16,14 +19,14 @@ function showPopup(day, eventTitle, eventTime, eventDetail) {
   popupDetail.innerHTML = eventDetail.replace(/,/g, "<br>");
 
   if (day == 1) {
-    popupLeft.style.backgroundColor = day1Background;
-    popupRight.style.backgroundColor = popupRightColor;
+    popupLeft.style.backgroundColor = day1LeftBG;
+    popupRight.style.backgroundColor = day1RightBG;
   } else if (day == 2) {
-    popupLeft.style.backgroundColor = day2Background;
-    popupRight.style.backgroundColor = popupRightColor;
+    popupLeft.style.backgroundColor = day2LeftBG;
+    popupRight.style.backgroundColor = day2RightBG;
   } else if (day == 3) {
-    popupLeft.style.backgroundColor = day3Background;
-    popupRight.style.backgroundColor = popupRightColor;
+    popupLeft.style.backgroundColor = day3LeftBG;
+    popupRight.style.backgroundColor = day3RightBG;
   }
 
   popup.style.display = "flex";
@@ -45,3 +48,13 @@ window.onclick = function (event) {
     });
   }
 };
+
+function closeModal() {
+  const popup = document.getElementById('popup');
+
+  popup.style.visibility = "hidden";
+  popup.style.transform = "translateX(100%)";
+  setTimeout(() => {
+    popup.style.display = "none";
+  })
+}

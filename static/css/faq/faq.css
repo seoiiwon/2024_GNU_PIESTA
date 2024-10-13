@@ -1,50 +1,49 @@
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh; /* 높이 대신 min-height를 사용하여 동적 성장을 허용 */
-    padding-top: 40px;
-    overflow-x: hidden; /* 가로 스크롤 방지 */
-    overflow-y: auto; /* 내용이 넘칠 경우 세로 스크롤 허용 */
-}
-
-font-face {
+@font-face {
     font-weight: 400;
     font-family: "Pretendard-Regular";
     src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
       format("woff");
 }
-
-#logoImg {
-    position: fixed;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100;
-    /* opacity: 0; */
-    /* visibility: hidden; */
-    /* transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; */
+@font-face {
+    font-weight: 400; /* 폰트의 두께 */
+    font-family: 'Felixti'; /* 폰트 이름 */
+    src: url('/static/font/Felixti.TTF') format('truetype');
 }
 
-.logoDate {
-    margin-top: 2px;
-    text-align: center;
-    font-family: "Pretendard-Regular";
-    color: #afafaf;
-    font-size: 2.5vw;
-    letter-spacing: 0.5vw;
-}
-
-@media (max-width: 768px) {
-    #logoImg {
-        width: 60vw;
+@media (max-width: 767px) {
+    .starCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }  
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
+        color: #cbbce3;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding-top: 40px;
+        overflow-x: hidden;
+        overflow-y: hidden; /* 전체 페이지 스크롤 방지 */
     }
-}
+    
+    #header {
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50; /* 햄버거 메뉴보다 낮게 설정 */
+        transition: z-index 0.3s;
+    }
 
-@media (max-width: 768px) {
     .FAQ {
         text-align: center;
         font-family: "Felixti";
@@ -53,85 +52,112 @@ font-face {
         color: white;
         letter-spacing: 0.5vw;
         padding-bottom: 20px;
-        padding-top: 20px;
     }
 
     .container {
-        width: 100%; /* 전체 너비를 사용하도록 설정 */
-        max-width: 380px; /* 반응형 디자인을 위한 최대 너비 설정 */
+        width: 100%;
+        max-width: 800px;
         border-radius: 20px;
         padding: 20px;
         position: relative;
         margin-top: 20%;
-        overflow-y: auto; /* FAQ 항목이 많을 경우 세로 스크롤 허용 */
-        max-height: 80vh;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column; /* 세로 방향으로 정렬 */
+        align-items: center; /* 가로 중앙 정렬 */
+        justify-content: center; /* 세로 중앙 정렬 */
+        z-index: 1;
     }
 
     .faq-section {
-        margin-top: 20px;
-        overflow: visible;
+        position: relative;
+        overflow-y: auto; /* FAQ 섹션에만 스크롤 적용 */
+        height: 80vh; /* 페이지 높이를 조정해서 섹션만 스크롤 가능하게 */
+        z-index: 1;
+        padding-bottom: 25vh;
     }
+    .faq-section::-webkit-scrollbar{
+        display:none;
+      }
 
     .faq-item {
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         background-color: white;
-        border-radius: 20px;
+        border-radius: 15px;
         overflow: hidden;
-        transition: max-height 0.4s ease-out;
-        padding: 15px;
+        padding: 10px;
+        width: 84vw;
     }    
 
     .faq-question {
         width: 100%;
         background-color: white;
         border: none;
+        padding-left: 10px;
         color: #413978;
-        padding: 4px;
-        padding-top: 7px;
+        padding-top: 10px;
         cursor: pointer;
-        font-size: 15px;
+        font-size: 1.4em;
         text-align: left;
+        font-weight: bold;
     }
 
     .faq-answer {
         background-color: white;
         padding: 10px;
         font-size: 15px;
-        padding-top: 7px;
-        display: none;
+        padding-top: 1vh;
         color: #413978;
         overflow: hidden;
-        transition: max-height 0.3s ease-out; /* 부드러운 전환 효과 */
+        max-height: 0; /* 기본 상태에서 높이를 0으로 설정 */
+        opacity: 0; /* 기본 상태에서 보이지 않도록 설정 */
+        transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* 부드러운 전환 효과 */
         line-height: 1.6;
     }
     
     .faq-answer.active {
-        display: block;
-        max-height: 500px; /* 충분히 큰 높이로 설정 */
+        opacity: 1; /* 활성화된 상태에서 보이도록 설정 */
+        max-height: 1000px; /* 최대 높이를 충분히 크게 설정 */
+        overflow-y: visible; /* 내용이 많으면 스크롤을 사용할 수 있도록 설정 */
     }
 
     .faq-item.active .faq-question {
         border-bottom: 1px solid #423B78;
     }
-
-    #hambuger {
-        width: 50px; /* 너비를 50px로 설정 */
-        height: 50px; /* 높이를 50px로 설정 */
-        position: fixed; /* 위치 고정 */
-        top: 6%; /* 상단에서 10px 떨어짐 */
-        left: 85%; /* 좌측에서 10px 떨어짐 */
-    }
 }
 
-@media (min-width: 768px) {
-    #logoImg {
-        width: 50%; /* 로고의 부모 요소에 대한 너비 설정 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .starCanvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+    }  
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #3b2862, #2c2f74, #cbbce3);
+        color: #cbbce3;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding-top: 40px;
+        overflow-x: hidden;
+        overflow-y: hidden; /* 전체 페이지 스크롤 방지 */
     }
-
-    #logoImg img {
-        width: 100%; /* 내부의 img 태그에 너비 100% 설정 */
-        height: auto; /* 비율 유지하면서 크기 조정 */
-        margin-top: 15px;
+    
+    #header {
+        width: 100%;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 50; /* 햄버거 메뉴보다 낮게 설정 */
+        transition: z-index 0.3s;
     }
 
     .FAQ {
@@ -153,7 +179,6 @@ font-face {
         position: relative;
         margin-top: 20%;
         overflow-y: auto;
-        max-height: 80vh;
         display: flex;
         flex-direction: column; /* 세로 방향으로 정렬 */
         align-items: center; /* 가로 중앙 정렬 */
@@ -161,18 +186,26 @@ font-face {
     }
 
     .faq-section {
-        margin-top: 20px;
-        overflow: visible;
+        position: relative;
+        overflow-y: auto; /* FAQ 섹션에만 스크롤 적용 */
+        height: 80vh; /* 페이지 높이를 조정해서 섹션만 스크롤 가능하게 */
+        z-index: 1;
+        padding-bottom: 25vh;
     }
+    .faq-section::-webkit-scrollbar{
+        display:none;
+      }
 
     .faq-item {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         background-color: white;
         border-radius: 20px;
         overflow: hidden;
         transition: max-height 0.4s ease-out;
-        padding: 15px;
-        width: 600px;
+        /* padding: 15px; */
+        padding: 0 3vw;
+        width: 60vw;
+        height: 10vw;
     }    
 
     .faq-question {
@@ -180,38 +213,48 @@ font-face {
         background-color: white;
         border: none;
         color: #413978;
-        padding: 4px;
-        padding-top: 7px;
+        padding: 7px;
+        margin-top: 14px;
         cursor: pointer;
-        font-size: 30px;
+        font-size: 2em;
         text-align: left;
+        font-weight: bold;
     }
 
     .faq-answer {
         background-color: white;
         padding: 10px;
-        font-size: 30px;
+        font-size: 1.8em;
         padding-top: 7px;
-        display: none;
         color: #413978;
         overflow: hidden;
-        transition: height 0.3s ease-out;
+        max-height: 0; /* 기본 상태에서 높이를 0으로 설정 */
+        opacity: 0; /* 기본 상태에서 보이지 않도록 설정 */
+        transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* 부드러운 전환 효과 */
         line-height: 1.6;
     }
 
     .faq-answer.active {
-        display: block;
-        max-height: 500px;
+        opacity: 1; /* 활성화된 상태에서 보이도록 설정 */
+        max-height: 1000px; /* 최대 높이를 충분히 크게 설정 */
+        overflow-y: visible; /* 내용이 많으면 스크롤을 사용할 수 있도록 설정 */
     }
 
     .faq-item.active .faq-question {
         border-bottom: 1px solid #423B78;
     }
-
-    #hambuger {
-        left: 82%;
-        top: 4%;
-        position: fixed;
-        width: 8vw;
-    }
 }
+
+
+
+
+/* PC 사이즈 */
+@media (min-width: 1025px) {
+    .logoContainer,
+    .menu-trigger,
+    .hambergerContents,
+    .container{
+      display: none;
+    }
+  }
+  

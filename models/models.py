@@ -63,3 +63,10 @@ class BoothMenu(Base):
 
     # Back reference to Booth
     booth = relationship("Booth", back_populates="menus")
+
+class Faq(Base):
+    __tablename__ = "faq"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    question = Column(String[30], nullable=False)
+    answer = Column(Text[300], nullable=False)

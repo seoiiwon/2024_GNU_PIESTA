@@ -12,9 +12,6 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 100;
-        /* opacity: 0; */
-        /* visibility: hidden; */
-        /* transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; */
     }
     
     .logoDate {
@@ -25,7 +22,7 @@
         letter-spacing: 0.5vw;
     }
     #logoImg {
-        width: 60vw;
+        width: 55vw;
     }
 }
 
@@ -43,20 +40,17 @@
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 100;
-        /* opacity: 0; */
-        /* visibility: hidden; */
-        /* transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; */
     }
     
     .logoDate {
         text-align: center;
         font-family: "Pretendard-Regular";
         color: #afafaf;
-        font-size: 2.5vw;
+        font-size: 2vw;
         letter-spacing: 0.5vw;
     }
     #logoImg {
-        width: 50%;
+        width: 40vw;
     }
 }
 

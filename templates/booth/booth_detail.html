@@ -36,10 +36,15 @@
       src="{{ url_for('static', path='js/main/logo.js') }}"
       defer
     ></script>
-
+    <script
+    src="{{ url_for('static', path='js/main/stars.js') }}"
+    defer
+  ></script>
+    <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
     <title>2024 GNU FIESTA</title>
   </head>
   <body>
+    <canvas class="starCanvas"></canvas>
     <div id="booth_info">
       <!-- 로고 -->
       <div>

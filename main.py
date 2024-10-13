@@ -65,8 +65,8 @@ app.include_router(notice.router)
 #     return FileResponse("favicon.ico")
 
 
-# HOST = "0.0.0.0"
-# PORT = 80
+HOST = "0.0.0.0"
+PORT = 80
 HOST = "127.0.0.1"
 PORT = 8000
 

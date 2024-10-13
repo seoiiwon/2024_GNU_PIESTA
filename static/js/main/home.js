@@ -13,17 +13,16 @@ const bubble2 = document.getElementById("bubble2");
 document.addEventListener("DOMContentLoaded", function () {
   function scrollToSection(sectionIndex) {
     const section = sections[sectionIndex];
-    console.log("Scrolling to section:", sectionIndex);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
     }
     // 버블버블
     if (sectionIndex >= 2) {
-      bubble1.style.visibility = "hidden";
-      bubble2.style.visibility = "hidden";
+      bubble1.style.opacity = "0";
+      bubble2.style.opacity = "0";
     } else {
-      bubble1.style.visibility = "visible";
-      bubble2.style.visibility = "visible";
+      bubble1.style.opacity = "0.5";
+      bubble2.style.opacity = "0.5";
     }
   }
 
@@ -99,8 +98,8 @@ function countdown() {
   }
 }
 
-countdown(); // 페이지 로드 시 초기 계산
-setInterval(countdown, 1000 * 60 * 60 * 24); // 매일 자정에 갱신
+countdown();
+setInterval(countdown, 1000 * 60 * 60 * 24);
 
 // 라인업
 document.addEventListener("DOMContentLoaded", function () {
