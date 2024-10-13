@@ -48,3 +48,13 @@ window.onclick = function (event) {
     });
   }
 };
+
+function closeModal() {
+  const popup = document.getElementById('popup');
+
+  popup.style.visibility = "hidden";
+  popup.style.transform = "translateX(100%)";
+  setTimeout(() => {
+    popup.style.display = "none";
+  })
+}
