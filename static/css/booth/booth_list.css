@@ -94,7 +94,6 @@ body {
     color: #ffffff;
   }
 
-  
   /* 지도 영역 */
   #map {
     width: 90vw;
@@ -139,6 +138,7 @@ body {
     display: flex; /* 수평 정렬을 위한 flexbox 사용 */
     align-items: center; /* 아이콘과 텍스트를 수직으로 정렬 */
     height: 15vw;
+    justify-content: space-between;
   }
   .box-title {
     font-weight: bold;
@@ -164,6 +164,10 @@ body {
     width: 65vw;
     margin: 0 auto;
     margin-top: 7.5vw;
+  }
+  .heart {
+    margin-left: 10vw;
+    margin-top: 3vw;
   }
 }
 
@@ -194,7 +198,7 @@ body {
     position: relative; /* 다른 요소들과 겹치지 않게 상대 위치 */
     color: #ffffff;
   }
-  
+
   /* 지도 영역 */
   #map {
     width: 90vw;
@@ -210,6 +214,7 @@ body {
     align-self: center;
     flex-direction: column; /* 제목과 설명을 세로로 배치 */
     margin-left: 5vw;
+    flex: 1;
   }
   /* 박스 목록 */
   .box-container {
@@ -239,6 +244,7 @@ body {
     display: flex; /* 수평 정렬을 위한 flexbox 사용 */
     align-items: center; /* 아이콘과 텍스트를 수직으로 정렬 */
     height: 15vw;
+    justify-content: space-between;
   }
   .box-title {
     font-weight: bold;
@@ -265,6 +271,10 @@ body {
     margin: 0 auto;
     margin-top: 7.5vw;
   }
+  .heart {
+    margin-left: 10vw;
+    margin-top: 3vw;
+  }
 }
 
 img.close-img {
@@ -272,10 +282,10 @@ img.close-img {
   height: auto; /* 필요에 따라 height도 설정 */
 }
 
-
-
 @media (min-width: 1025px) {
-  #booth_info, .title, .content_box {
+  #booth_info,
+  .title,
+  .content_box {
     display: none;
   }
 }
