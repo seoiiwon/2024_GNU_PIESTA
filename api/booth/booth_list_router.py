@@ -17,7 +17,7 @@ templates = Jinja2Templates(directory="./templates/booth")
 
 
 class HeartStateRequest(BaseModel):
-    heartStates: List[str]  # heartStates는 문자열 리스트로 받음
+    heartStates: List[str]
 
 # 부스 리스트를 가져오는 GET 요청
 
@@ -37,10 +37,8 @@ async def save_heart_states(request: HeartStateRequest):
 
 @router.get("/booth/list", response_class=HTMLResponse)
 async def get_booth_list(request: Request, db: Session = Depends(get_db), date: str = "10.16", A: str = "[]"):
-    # A를 JSON 문자열로 받아서 리스트로 변환
-    print('여긴어때', A)
     A = json.loads(A)  # A는 JSON 문자열이므로 파싱해야 합니다.
-    # 날짜에 따라 필터링
+    # print("Parsed A:", A)
 
     if date == "10.16":
         booths = db.query(Booth).filter(
@@ -53,17 +51,14 @@ async def get_booth_list(request: Request, db: Session = Depends(get_db), date: 
             Booth.is_operating_on_18th == True).all()
     else:
         booths = []  # 유효하지 않은 날짜에 대한 처리
-    likelist = []
-    dislikelist = []
+
+    boothList = []
     for booth in booths:
         if booth.booth_id in A:
-            likelist.append(booth)
+            boothList.insert(0, booth)
         else:
-            dislikelist.append(booth)
-    print(likelist)
-    print(dislikelist)
-    print('여긴어때', A)
-    print("A 타입:", type(A))
-    return templates.TemplateResponse("booth_list.html", {"request": request, "likelist": likelist, "dislikelist": dislikelist})
+            boothList.append(booth)
+
+    return templates.TemplateResponse(name="booth_list.html", context={"request": request, "boothList" : boothList})
 
 # heartStates 값을 처리하는 POST 요청

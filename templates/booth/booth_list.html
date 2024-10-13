@@ -99,11 +99,6 @@
     </div>
     <!-- 타이틀 영역 -->
     <div class="title">BOOTH</div>
-    <ul>
-      {% for i in A_list %}
-      <li>{{i}}</li>
-      {%endfor%}
-    </ul>
     <!-- 지도 영역 -->
     <div id="map"></div>
     <script
@@ -492,7 +487,11 @@
       <label for="date-18">10.18</label>
     </div>
     <div class="box-container" id="booth-list">
-      {% for booth in likelist %}
+
+      {% for booth in boothList %}
+      <div>{{ booth.booth_id }} - {{ booth.booth_name }}</div>
+     {% endfor %}
+      {% for booth in boothList %}
       <div
         class="box"
         data-date="{% if booth.is_operating_on_16th %}10.16 {% endif %}{% if booth.is_operating_on_17th %}10.17 {% endif %}{% if booth.is_operating_on_18th %}10.18 {% endif %}"
