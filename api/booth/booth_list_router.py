@@ -27,19 +27,15 @@ async def save_heart_states(request: HeartStateRequest):
     A = [int(booth_id) for booth_id in request.heartStates]
     print('여긴되니', A)
 
-    # A 리스트를 JSON 문자열로 변환 후 URL 파라미터로 전달
-    A_str = json.dumps(A)  # 리스트를 문자열로 변환
-    redirect_url = f"/booth/list?A={A_str}"  # GET 요청으로 리다이렉트할 URL 구성
+    A_str = json.dumps(A) 
+    redirect_url = f"/booth/list?A={A_str}"  
 
-    # 303 See Other로 GET 방식으로 리다이렉트
     return RedirectResponse(redirect_url, status_code=303)
 
 
 @router.get("/booth/list", response_class=HTMLResponse)
 async def get_booth_list(request: Request, db: Session = Depends(get_db), date: str = "10.16", A: str = "[]"):
-    A = json.loads(A)  # A는 JSON 문자열이므로 파싱해야 합니다.
-    # print("Parsed A:", A)
-
+    A = json.loads(A) 
     if date == "10.16":
         booths = db.query(Booth).filter(
             Booth.is_operating_on_16th == True).all()
@@ -50,15 +46,6 @@ async def get_booth_list(request: Request, db: Session = Depends(get_db), date: 
         booths = db.query(Booth).filter(
             Booth.is_operating_on_18th == True).all()
     else:
-        booths = []  # 유효하지 않은 날짜에 대한 처리
+        booths = []
 
-    boothList = []
-    for booth in booths:
-        if booth.booth_id in A:
-            boothList.insert(0, booth)
-        else:
-            boothList.append(booth)
-
-    return templates.TemplateResponse(name="booth_list.html", context={"request": request, "boothList" : boothList})
-
-# heartStates 값을 처리하는 POST 요청
+    return templates.TemplateResponse(name="booth_list.html", context={"request": request, "booths" : booths})
