@@ -39,6 +39,18 @@
       src="https://kit.fontawesome.com/2b7b5f2141.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // booth_id가 A에 있는지 체크하는 로직
+      const boxes = document.querySelectorAll(".box");
+      boxes.forEach((box) => {
+        const boothId = parseInt(box.getAttribute("data-booth-id")); // data-booth-id 속성을 추가한 경우
+        if (A.includes(boothId)) {
+          box.style.display = "block"; // 또는 필요한 스타일로 변경
+        } else {
+          box.style.display = "none";
+        }
+      });
+    </script>
 
     <title>2024 GNU FIESTA</title>
   </head>
@@ -91,7 +103,7 @@
     <script>
       var container = document.getElementById("map");
       var options = {
-        center: new kakao.maps.LatLng(35.1549465, 128.1026520),
+        center: new kakao.maps.LatLng(35.1549465, 128.102652),
         level: 3,
       };
 
@@ -412,8 +424,7 @@
           content: content,
           map: map,
           position: marker.getPosition(),
-          zIndex: 500, 
-
+          zIndex: 500,
         });
 
         overlays.push({ overlay: overlay, content: content });
@@ -425,7 +436,7 @@
             return function () {
               // 지도 중심 계산하는거 추가햇슴
               var newCenterPosition = new kakao.maps.LatLng(
-                markerPosition.getLat() + 0.00025, 
+                markerPosition.getLat() + 0.00025,
                 markerPosition.getLng()
               );
               map.setCenter(newCenterPosition);
@@ -471,9 +482,8 @@
       <input type="radio" id="date-18" name="date" value="10.18" />
       <label for="date-18">10.18</label>
     </div>
-
     <div class="box-container" id="booth-list">
-      {% for booth in booths %}
+      {% for booth in booths %} {% if booth.booth_id in A %}
       <div
         class="box"
         data-date="{% if booth.is_operating_on_16th %}10.16 {% endif %}{% if booth.is_operating_on_17th %}10.17 {% endif %}{% if booth.is_operating_on_18th %}10.18 {% endif %}"
@@ -502,7 +512,37 @@
           />
         </div>
       </div>
-      {% endfor %}
+      {% endif %} {% endfor %}
+      {% for booth in booths %} {% if booth.booth_id not in A %}
+      <div
+        class="box"
+        data-date="{% if booth.is_operating_on_16th %}10.16 {% endif %}{% if booth.is_operating_on_17th %}10.17 {% endif %}{% if booth.is_operating_on_18th %}10.18 {% endif %}"
+      >
+        <a
+          href="{{ url_for('get_booth_detail', booth_name=booth.booth_name | urlencode) }}"
+        >
+          <div class="box-icon">
+            <i
+              class="{% if booth.booth_category == '먹거리 판매 부스' %}fa-solid fa-utensils {% elif booth.booth_category == '플리마켓 부스' %}fa-solid fa-shop {% elif booth.booth_category == '체험 부스' %}fa-solid fa-gamepad {% elif booth.booth_category == '홍보 부스' %}fa-solid fa-bullhorn {% elif booth.booth_category == '잡화 판매 부스' %}fa-solid fa-gift {% else %}fa-solid fa-question{% endif %}"
+            ></i>
+          </div>
+          <div class="box-content">
+            <p class="box-title">{{ booth.booth_name }}</p>
+            <p class="box-description">{{ booth.booth_category }}</p>
+          </div>
+        </a>
+        <div
+          class="heart"
+          onclick="toggleHeart('{{ booth.booth_id | urlencode }}')"
+        >
+          <img
+            id="heartImage_{{ booth.booth_id | urlencode }}"
+            src="/static/images/heart_default.png"
+            alt=""
+          />
+        </div>
+      </div>
+      {% endif %} {% endfor %}
     </div>
   </body>
 </html>
