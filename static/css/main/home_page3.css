@@ -40,6 +40,14 @@ body {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(#3b2862, #2c2f74 25%, #999999);
+    /* background: linear-gradient(
+      #0A0D3C 0%, 
+      #101349 12%, 
+      #231F5E 36%,
+      #2F2869 62%,
+      #453267 78%,
+      #70466E 91%,
+      #824A53 100%); */
   }
 
   /* 하위 카테고리 타이틀 */
@@ -296,7 +304,7 @@ body {
 
 /* 태블릿 사이즈 */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .closeButton {
+    .closeButton {
     position: absolute;
     top: 10px; 
     right: 20px; 

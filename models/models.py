@@ -21,9 +21,9 @@ class Notice(Base):
     __tablename__ = "notices"
 
     id = Column(Integer, nullable=False, autoincrement=True, primary_key=True)
-    category = Column(String[10], nullable=False)
-    title = Column(String[20], nullable=False)
-    content = Column(String[300], nullable=False)
+    category = Column(String, nullable=False)
+    title = Column(String, nullable=False)
+    content = Column(String, nullable=False)
 
 
 class Comment(Base):
@@ -68,5 +68,5 @@ class Faq(Base):
     __tablename__ = "faq"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    question = Column(String[30], nullable=False)
-    answer = Column(Text[300], nullable=False)
+    question = Column(String, nullable=False)
+    answer = Column(Text, nullable=False)
