@@ -179,6 +179,7 @@
       word-break: keep-all;  /* 어절 단위로 줄바꿈 */
       line-height: 1.1;
       gap: 4px;
+      font-family: "Pretendard";
   }
   
 
@@ -506,6 +507,7 @@
       color: #000000;
       text-align: center;
       word-break: keep-all;  /* 어절 단위로 줄바꿈 */
+      font-family: "Pretendard";
   }
 
   

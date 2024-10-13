@@ -99,7 +99,8 @@
         cursor: pointer;
         font-size: 1.4em;
         text-align: left;
-        font-weight: bold;
+        font-weight: 600;
+        font-family: "Pretendard";
     }
 
     .faq-answer {
@@ -113,6 +114,7 @@
         opacity: 0; /* 기본 상태에서 보이지 않도록 설정 */
         transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* 부드러운 전환 효과 */
         line-height: 1.6;
+        font-family: "Pretendard";
     }
     
     .faq-answer.active {
@@ -218,7 +220,8 @@
         cursor: pointer;
         font-size: 2em;
         text-align: left;
-        font-weight: bold;
+        font-weight: 600;
+        font-family: "Pretendard";
     }
 
     .faq-answer {
@@ -232,6 +235,7 @@
         opacity: 0; /* 기본 상태에서 보이지 않도록 설정 */
         transition: max-height 0.5s ease-out, opacity 0.5s ease-out; /* 부드러운 전환 효과 */
         line-height: 1.6;
+        font-family: "Pretendard";
     }
 
     .faq-answer.active {
