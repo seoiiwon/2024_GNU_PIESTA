@@ -36,9 +36,9 @@
       defer
     ></script>
     <script
-    src="{{ url_for('static', path='js/main/stars.js') }}"
-    defer
-  ></script>
+      src="{{ url_for('static', path='js/main/stars.js') }}"
+      defer
+    ></script>
     <script
       src="https://kit.fontawesome.com/2b7b5f2141.js"
       crossorigin="anonymous"
@@ -99,6 +99,11 @@
     </div>
     <!-- 타이틀 영역 -->
     <div class="title">BOOTH</div>
+    <ul>
+      {% for i in A_list %}
+      <li>{{i}}</li>
+      {%endfor%}
+    </ul>
     <!-- 지도 영역 -->
     <div id="map"></div>
     <script
@@ -476,7 +481,6 @@
         });
       }
     </script>
-
     <div class="filter-buttons">
       <input type="radio" id="date-16" name="date" value="10.16" checked />
       <label for="date-16">10.16</label>
@@ -488,7 +492,7 @@
       <label for="date-18">10.18</label>
     </div>
     <div class="box-container" id="booth-list">
-      {% for booth in booths %} {% if booth.booth_id in A %}
+      {% for booth in likelist %}
       <div
         class="box"
         data-date="{% if booth.is_operating_on_16th %}10.16 {% endif %}{% if booth.is_operating_on_17th %}10.17 {% endif %}{% if booth.is_operating_on_18th %}10.18 {% endif %}"
@@ -517,37 +521,7 @@
           />
         </div>
       </div>
-      {% endif %} {% endfor %}
-      {% for booth in booths %} {% if booth.booth_id not in A %}
-      <div
-        class="box"
-        data-date="{% if booth.is_operating_on_16th %}10.16 {% endif %}{% if booth.is_operating_on_17th %}10.17 {% endif %}{% if booth.is_operating_on_18th %}10.18 {% endif %}"
-      >
-        <a
-          href="{{ url_for('get_booth_detail', booth_name=booth.booth_name | urlencode) }}"
-        >
-          <div class="box-icon">
-            <i
-              class="{% if booth.booth_category == '먹거리 판매 부스' %}fa-solid fa-utensils {% elif booth.booth_category == '플리마켓 부스' %}fa-solid fa-shop {% elif booth.booth_category == '체험 부스' %}fa-solid fa-gamepad {% elif booth.booth_category == '홍보 부스' %}fa-solid fa-bullhorn {% elif booth.booth_category == '잡화 판매 부스' %}fa-solid fa-gift {% else %}fa-solid fa-question{% endif %}"
-            ></i>
-          </div>
-          <div class="box-content">
-            <p class="box-title">{{ booth.booth_name }}</p>
-            <p class="box-description">{{ booth.booth_category }}</p>
-          </div>
-        </a>
-        <div
-          class="heart"
-          onclick="toggleHeart('{{ booth.booth_id | urlencode }}')"
-        >
-          <img
-            id="heartImage_{{ booth.booth_id | urlencode }}"
-            src="/static/images/heart_default.png"
-            alt=""
-          />
-        </div>
-      </div>
-      {% endif %} {% endfor %}
+      {% endfor %}
     </div>
   </body>
 </html>
