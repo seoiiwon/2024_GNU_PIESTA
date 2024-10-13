@@ -1,162 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Prata"
-      rel="stylesheet"
-    />
-    <!-- BOOTH - Prata font 적용위해 -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', path='css/init.css') }}"
-    />
-    <script
-      src="{{ url_for('static', path='js/booth/booth_detail.js') }}"
-      defer
-    ></script>
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', path='css/main/hamberger.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', path='css/main/logo.css') }}"
-    />
-    <script
-      src="{{ url_for('static', path='js/main/hamberger.js') }}"
-      defer
-    ></script>
-    <script
-      src="{{ url_for('static', path='js/main/logo.js') }}"
-      defer
-    ></script>
-    <script
-    src="{{ url_for('static', path='js/main/stars.js') }}"
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Prata"
+    rel="stylesheet"
+  />
+  <!-- BOOTH - Prata font 적용위해 -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', path='css/init.css') }}"
+  />
+  <script
+    src="{{ url_for('static', path='js/booth/booth_detail.js') }}"
     defer
   ></script>
-    <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
-    <title>2024 GNU FIESTA</title>
-  </head>
-  <body>
-    <canvas class="starCanvas"></canvas>
-    <div id="booth_info">
-      <!-- 로고 -->
-      <div>
-        <div id="logoImg">
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', path='css/main/hamberger.css') }}"
+  />
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', path='css/main/logo.css') }}"
+  />
+  <script
+    src="{{ url_for('static', path='js/main/hamberger.js') }}"
+    defer
+  ></script>
+  <script
+    src="{{ url_for('static', path='js/main/logo.js') }}"
+    defer
+  ></script>
+  <script
+  src="{{ url_for('static', path='js/main/stars.js') }}"
+  defer
+></script>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
+  <title>2024 GNU FIESTA</title>
+</head>
+<body>
+  <canvas class="starCanvas"></canvas>
+
+  <div id="booth_info">
+    <!-- 로고 -->
+    <div>
+      <div id="logoImg">
+        <img
+          src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}"
+          alt="logo"
+        />
+        <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+      </div>
+    </div>
+
+    <!-- 햄버거 버튼 -->
+    <a class="menu-trigger" href="#">
+      <span class="hambergerBread"></span>
+      <span class="hambergerCenter"></span>
+      <span class="hambergerBread"></span>
+    </a>
+    <div id="hambergerContents" class="hambergerContents">
+      <div id="navContainer">
+        <div id="hrefHOME" data-url="/home">HOME</div>
+        <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
+        <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
+        <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
+        <div id="hrefFAQ" data-url="/faq">FAQ</div>
+      </div>
+      <div id="piestaWebHost">
+        <a id="ohgam" href="https://www.instagram.com/gnu_5gam/"
+          >오감 총학생회</a
+        >
+        &nbsp;X&nbsp;
+        <a id="mutsa" href="https://www.instagram.com/likelion_gnu/"
+          >멋쟁이사자처럼</a
+        >
+      </div>
+    </div>
+  </div>
+
+  <!-- 타이틀 영역 -->
+  <div class="title">BOOTH</div>
+
+  <div class="content_box scrollable">
+    <div>
+      <div class="ff sb booth_tt">
+        <div class="booth_name">
+          <h3><i class="fa-solid fa-utensils"></i>{{ booth.booth_name }}</h3>
+        </div>
+        <div class="heart" onclick="toggleHeart()">
           <img
-            src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}"
-            alt="logo"
+            id="heartImage_{{ booth.booth_name }}"
+            class="heart"
+            src="/static/images/heart_default.png"
+            alt="Heart"
           />
-          <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
-        </div>
-      </div>
-
-      <!-- 햄버거 버튼 -->
-      <a class="menu-trigger" href="#">
-        <span class="hambergerBread"></span>
-        <span class="hambergerCenter"></span>
-        <span class="hambergerBread"></span>
-      </a>
-      <div id="hambergerContents" class="hambergerContents">
-        <div id="navContainer">
-          <div id="hrefHOME" data-url="/home">HOME</div>
-          <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
-          <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
-          <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
-          <div id="hrefFAQ" data-url="/faq">FAQ</div>
-        </div>
-        <div id="piestaWebHost">
-          <a id="ohgam" href="https://www.instagram.com/gnu_5gam/"
-            >오감 총학생회</a
-          >
-          &nbsp;X&nbsp;
-          <a id="mutsa" href="https://www.instagram.com/likelion_gnu/"
-            >멋쟁이사자처럼</a
-          >
         </div>
       </div>
     </div>
-    <!-- 타이틀 영역 -->
-    <div class="title">BOOTH</div>
-    <div class="content_box scrollable">
-      <div>
-        <div class="ff sb booth_tt">
-          <div class="booth_name">
-            <h3><i class="fa-solid fa-utensils"></i>{{ booth.booth_name }}</h3>
-            <!-- <div class="booth_info">
-                    <p><i class="fa-solid fa-circle"></i><span>{{ booth.organizer }}</span>|<a href="https://www.instagram.com/{{ booth.instagram_id }}" target="_blank">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a></p>
-                </div> -->
-          </div>
-          <div class="heart" onclick="toggleHeart()">
-            <img
-              id="heartImage_{{ booth.booth_name }}"
-              class="heart"
-              src="/static/images/heart_default.png"
-              alt="Heart"
-            />
-          </div>
-        </div>
+
+    <section class="booth_detail booth_desc">
+      <div class="line-wrapper">
+        <h4>부스 소개</h4>
+        <div class="line"></div>
       </div>
-      <section class="booth_detail booth_desc">
-        <div class="line-wrapper">
-          <h4>부스 소개</h4>
-          <div class="line"></div>
-        </div>
-        <div class="booth_poster">
-          {% if booth_image %}
-          <img src="/static/images/{{ booth_image }}" alt="부스 포스터" />
-          {% endif %}
-        </div>
-        {% if booth.booth_description %}
-        <p>{{ booth.booth_description | replace('\n', '<br />') | safe }}</p>
-        {% else %}
-        <p>등록된 소개글이 없습니다.</p>
+      <div class="booth_poster">
+        {% if booth_image %}
+        <img src="/static/images/{{ booth_image }}" alt="부스 포스터" />
         {% endif %}
-      </section>
+      </div>
+      {% if booth.booth_description %}
+      <p>{{ booth.booth_description | replace('\n', '<br />') | safe }}</p>
+      {% else %}
+      <p>등록된 소개글이 없습니다.</p>
+      {% endif %}
+    </section>
 
-      <section class="booth_detail booth_menu">
-        <div class="line-wrapper">
-          <h4>부스 메뉴</h4>
-          <div class="line"></div>
-        </div>
-        {% for menu_item in booth.menus %}
-        <div class="menu_box">
-          <p>{{ menu_item.item }}</p>
-          <!-- 메뉴 이름을 출력 -->
-          <div class="separator"></div>
-          <p>{{ menu_item.price }}원</p>
-          <!-- 가격을 출력 -->
-        </div>
-        {% else %}
-        <p>등록된 메뉴가 없습니다.</p>
-        <!-- 메뉴가 없을 경우 출력 -->
-        {% endfor %}
-      </section>
+    <section class="booth_detail booth_menu">
+      <div class="line-wrapper">
+        <h4>부스 메뉴</h4>
+        <div class="line"></div>
+      </div>
+      {% for menu_item in booth.menus %}
+      <div class="menu_box">
+        <p>{{ menu_item.item }}</p>
+        <!-- 메뉴 이름을 출력 -->
+        <div class="separator"></div>
+        <p>{{ menu_item.price }}원</p>
+        <!-- 가격을 출력 -->
+      </div>
+      {% else %}
+      <p>등록된 메뉴가 없습니다.</p>
+      <!-- 메뉴가 없을 경우 출력 -->
+      {% endfor %}
+    </section>
 
-      <section class="booth_detail booth_time">
-        <div class="line-wrapper">
-          <h4>위치 및 운영 시간</h4>
-          <div class="line"></div>
-        </div>
-        <p>
-          <i class="fa-solid fa-circle"></i>
-          위치 : <span>{{ booth.location_description }}</span>
-          <!-- 부스 위치 동적으로 출력 -->
-        </p>
-        <p>
-          <i class="fa-solid fa-circle"></i>
-          운영시간 : <span>{{ booth.operation_hours }}</span>
-          <!-- 운영 시간 동적으로 출력 -->
-        </p>
-      </section>
-    </div>
-  </body>
+    <section class="booth_detail booth_time">
+      <div class="line-wrapper">
+        <h4>위치 및 운영 시간</h4>
+        <div class="line"></div>
+      </div>
+      <p>
+        <i class="fa-solid fa-circle"></i>
+        위치 : <span>{{ booth.location_description }}</span>
+        <!-- 부스 위치 동적으로 출력 -->
+      </p>
+      <p>
+        <i class="fa-solid fa-circle"></i>
+        운영시간 : <span>{{ booth.operation_hours }}</span>
+        <!-- 운영 시간 동적으로 출력 -->
+      </p>
+    </section>
+  </div>
+</body>
 </html>

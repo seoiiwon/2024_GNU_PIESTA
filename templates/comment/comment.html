@@ -1,131 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', path='css/comment/comment.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', path='css/main/logo.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', path='css/main/hamberger.css') }}"
-    />
-    <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
-    <script src="static/js/comment/comment.js" defer></script>
-    <script
-      src="{{ url_for('static', path='js/main/logo.js') }}"
-      defer
-    ></script>
-    <script
-    src="{{ url_for('static', path='js/main/stars.js') }}"
-    defer
-  ></script>
-    <script
-      src="{{ url_for('static', path='js/main/hamberger.js') }}"
-      defer
-    ></script>
-  </head>
-  <body>
-    <canvas class="starCanvas"></canvas>
-    <div class="content">
-      <!-- 로고 -->
-      <div>
-        <div id="logoImg">
-          <img
-            src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}"
-            alt="logo"
-          />
-          <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/init.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', path='css/comment/comment.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/main/logo.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/main/hamberger.css') }}"/>
+  <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
 
-      <!-- 햄버거 버튼 -->
-      <a class="menu-trigger" href="#">
-        <span class="hambergerBread"></span>
-        <span class="hambergerCenter"></span>
-        <span class="hambergerBread"></span>
-      </a>
-      <div id="hambergerContents" class="hambergerContents">
-        <div id="navContainer">
-          <div id="hrefHOME" data-url="/home">HOME</div>
-          <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
-          <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
-          <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
-          <div id="hrefFAQ" data-url="/faq">FAQ</div>
-        </div>
-        <div id="piestaWebHost">
-          <a id="ohgam" href="https://www.instagram.com/gnu_5gam/"
-            >오감 총학생회</a
-          >
-          &nbsp;X&nbsp;
-          <a id="mutsa" href="https://www.instagram.com/likelion_gnu/"
-            >멋쟁이사자처럼</a
-          >
-        </div>
-      </div>
-      <div class="notice">
-        <div class="noticetitle">💬 &nbsp;방명록</div>
-        <div class="noticec">
-          오늘 축제에서 무엇을 기대하고 있나요?
-          <br/>
-          방명록을 작성하고 기대감을 마음껏 표현하세요!
-        </div>
+  <!-- <script src="static/js/comment/comment.js" defer></script> -->
+  <script src="{{ url_for('static', path='js/comment/comment.js') }}" defer></script>
+  <script src="{{ url_for('static', path='js/main/logo.js') }}" defer></script>
+  <script src="{{ url_for('static', path='js/main/stars.js') }}" defer></script>
+  <script src="{{ url_for('static', path='js/main/hamberger.js') }}" defer></script>
+</head>
+<body>
+  <canvas class="starCanvas"></canvas>
+  <div class="content">
+    <!-- 로고 -->
+  <div>
+    <div id="logoImg">
+      <img
+        src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}"
+        alt="logo"
+      />
+      <p class="logoDate">2024.10.16.WED ~ 10.18.FRI</p>
+    </div>
+  </div>
+
+  <!-- 햄버거 버튼 -->
+  <a class="menu-trigger" href="#">
+    <span class="hambergerBread"></span>
+    <span class="hambergerCenter"></span>
+    <span class="hambergerBread"></span>
+  </a>
+  
+  <div id="hambergerContents" class="hambergerContents">
+    <div id="navContainer">
+      <div id="hrefHOME" data-url="/home">HOME</div>
+      <div id="hrefTIMETABLE" data-url="/timetable">TIMETABLE</div>
+      <div id="hrefBOOTH" data-url="/booth/list">BOOTH</div>
+      <div id="hrefCOMMENT" data-url="/comment">COMMENT</div>
+      <div id="hrefFAQ" data-url="/faq">FAQ</div>
+    </div>
+    <div id="piestaWebHost">
+      <a id="ohgam" href="https://www.instagram.com/gnu_5gam/"
+        >오감 총학생회</a
+      >
+      &nbsp;X&nbsp;
+      <a id="mutsa" href="https://www.instagram.com/likelion_gnu/"
+        >멋쟁이사자처럼</a
+      >
+    </div>
+  </div>
+
+  <div class="notice">
+    <div class="noticetitle">💬 &nbsp;방명록</div>
+      <div class="noticec">
+        오늘 축제에서 무엇을 기대하고 있나요?
+        <br/>
+        방명록을 작성하고 기대감을 마음껏 표현하세요!
       </div>
     </div>
-    <div id="comments-container">
-      <!-- 서버에서 가져온 댓글 렌더링 -->
-      {% for comment in comments %}
-      <div class="comment">
-        <div class="name">{{ comment.name }}</div>
-        <div class="text">{{ comment.text }}</div>
-      </div>
-      {% endfor %}
+  </div>
+
+  <div id="comments-container">
+    <!-- 서버에서 가져온 댓글 렌더링 -->
+    {% for comment in comments %}
+    <div class="comment">
+      <div class="name">{{ comment.name }}</div>
+      <div class="text">{{ comment.text }}</div>
     </div>
-    <div class="comment-section">
-      <form id="comment-form">
-        <textarea
-          id="comment-input"
-          placeholder="  타인을 비방하거나, 모욕을 주는 방명록은 삭제될 수 있습니다."
-          required=""
-        ></textarea>
-        <div class="go">
-          <button type="submit">💬</button>
+    {% endfor %}
+  </div>
+
+  <div class="comment-section">
+    <form id="comment-form">
+      <textarea
+        id="comment-input"
+        placeholder="  타인을 비방하거나, 모욕을 주는 방명록은 삭제될 수 있습니다."
+        required=""
+      ></textarea>
+      <div class="go">
+        <button type="submit">💬</button>
+      </div>
+    </form>
+  </div>
+
+
+
+  <div id="pcVer">
+    <div id="piestaInfo" class="introContainer">
+        <div id="introLogo">
+            <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
         </div>
-      </form>
+        <div id="introContentContainer">
+            <div class="intro">PIONEER & FESTA</div>
+            <div class="intro">2024 대동제; PIESTA</div>
+            <div class="intro">2024.10.16 WED ~ 10.18 FRI</div>
+        </div>
+        <div id="qrContainer">
+            <div id="QRimg" class="qr">
+                <img src="{{ url_for('static', path='images/piesta_QR.jpg')}}" id="QR">
+            </div>
+            <div class="qr">QR로 웹사이트 바로가기</div>
+        </div>
     </div>
 
-
-
-    <div id="pcVer">
-      <div id="piestaInfo" class="introContainer">
-          <div id="introLogo">
-              <img src="{{ url_for('static', path='images/GNU_PIESTA_logo.svg')}}" alt="logo">
-          </div>
-          <div id="introContentContainer">
-              <div class="intro">PIONEER & FESTA</div>
-              <div class="intro">2024 대동제; PIESTA</div>
-              <div class="intro">2024.10.16 WED ~ 10.18 FRI</div>
-          </div>
-          <div id="qrContainer">
-              <div id="QRimg" class="qr">
-                  <img src="{{ url_for('static', path='images/piesta_QR.jpg')}}" id="QR">
-              </div>
-              <div class="qr">QR로 웹사이트 바로가기</div>
-          </div>
-      </div>
-
-      <div id="piestaPoster" class="introContainer">
-          <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" id="poster">
-      </div>
+    <div id="piestaPoster" class="introContainer">
+        <img src="{{ url_for('static', path='images/PIESTA_poster.jpeg')}}" id="poster">
     </div>
-
-    <script src="scripts.js"></script>
-  </body>
+  </div>
+</body>
 </html>
