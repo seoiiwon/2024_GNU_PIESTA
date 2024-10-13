@@ -121,10 +121,10 @@ font-face {
    
 }
 
-.booth_name ~ div 
+/* .booth_name ~ div 
 {
     margin: auto 0;
-}
+} */
 
 .line-wrapper
 {
@@ -216,9 +216,9 @@ font-face {
 {
     width: 13vw;
     height: auto;
-    padding-top: 1vh;
+    padding-top: 0.25vh;
     padding-right: 4vw;
-    margin-bottom: 4.8vw;
+    margin-bottom: auto;
 }
 .booth_name h3
 {
