@@ -36,6 +36,10 @@
       defer
     ></script>
     <script
+    src="{{ url_for('static', path='js/main/stars.js') }}"
+    defer
+  ></script>
+    <script
       src="https://kit.fontawesome.com/2b7b5f2141.js"
       crossorigin="anonymous"
     ></script>
@@ -55,6 +59,7 @@
     <title>2024 GNU FIESTA</title>
   </head>
   <body>
+    <canvas class="starCanvas"></canvas>
     <div id="booth_info">
       <!-- 로고 -->
       <div>

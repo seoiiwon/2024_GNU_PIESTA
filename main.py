@@ -67,8 +67,8 @@ app.include_router(notice.router)
 
 HOST = "0.0.0.0"
 PORT = 80
-# HOST = "127.0.0.1"
-# PORT = 8000
+HOST = "127.0.0.1"
+PORT = 8000
 
 
 if __name__ == "__main__":
