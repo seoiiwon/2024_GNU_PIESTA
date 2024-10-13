@@ -7,6 +7,14 @@ font-face {
 
 
 @media (max-width: 767px) {
+  .starCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}  
   .header {
     height: 50px;
     background-color: #f1f1f1;
@@ -154,6 +162,14 @@ font-face {
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
+  .starCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}  
 
   .header {
     height: 50px;
