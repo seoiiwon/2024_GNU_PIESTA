@@ -1,3 +1,11 @@
+// box 클릭 시 해당 부스 상세 링크로 이동
+document.querySelectorAll('.box').forEach(box => {
+  box.addEventListener('click', function() {
+      const url = this.getAttribute('data-url');
+      window.location.href = url;
+  });
+});
+
 window.onload = function () {
   document
     .querySelector('input[name="date"]:checked')
