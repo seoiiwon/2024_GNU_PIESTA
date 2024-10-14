@@ -1,4 +1,4 @@
-font-face {
+@font-face {
   font-weight: 400;
   font-family: "Pretendard-Regular";
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
@@ -78,7 +78,7 @@ font-face {
     border-radius: 0px 30px 30px 30px;
     margin-bottom: 10px;
     background: linear-gradient(to bottom, #f0f0f0, #ffc8c8);
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
 
   .name {
@@ -106,7 +106,7 @@ font-face {
     height: 7vh;
     margin: 0;
     border-radius: 15px;
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
     padding: 5px 10px;
   }
   button {
@@ -132,7 +132,7 @@ font-face {
     color: white;
     font-weight: 400;
     font-size: 15px;
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
   .notice {
     position: fixed;
@@ -221,7 +221,7 @@ font-face {
     /* margin-right: 10px; */
     border-radius: 15px;
     padding: 5px 10px;
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
   
   button:hover {
@@ -256,7 +256,7 @@ font-face {
     border-radius: 0px 30px 30px 30px;
     margin-bottom: 10px;
     background: linear-gradient(to bottom, #f0f0f0, #ffc8c8);
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
 
   .name {
@@ -299,7 +299,7 @@ font-face {
     color: white;
     font-size: 20px;
     font-weight: 400;
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
   .notice {
     left: 9%;
