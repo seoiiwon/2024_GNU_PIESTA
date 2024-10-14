@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
 fetch("/static/json/names.json")
     .then((response) => response.json())
     .then((data) => {
+        
         const mbti = data.mbti; // MBTI 목록
         const names = data.names; // 이름 목록
         shuffleArray(mbti);
@@ -23,6 +24,8 @@ fetch("/static/json/names.json")
         fetch("/api/comments")
             .then((response) => response.json())
             .then((comments) => {
+                console.log(comments.length);  // 댓글 개수 출력
+
                 const commentsContainer = document.getElementById("comments-container");
                 commentsContainer.innerHTML = ""; // 기존 댓글 초기화
 
