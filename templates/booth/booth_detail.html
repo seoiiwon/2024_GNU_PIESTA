@@ -40,7 +40,21 @@
   src="{{ url_for('static', path='js/main/stars.js') }}"
   defer
 ></script>
+<script src="{{ url_for('static', path='js/booth/scrap.js') }}" defer></script>
   <link rel="stylesheet" href="{{ url_for('static', path='css/main/pcVer.css') }}">
+  <script>
+    const heartState = JSON.parse(localStorage.getItem('heartStates')) || [];
+  
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.heart').forEach(heart => {
+        const boothId = heart.dataset.boothId;
+        if (heartState.includes(boothId)) {
+          heart.querySelector('img').src = '/static/images/heart_filled.png';
+        }
+      });
+    });
+  </script>
+  
   <title>2024 GNU FIESTA</title>
 </head>
 <body>
@@ -93,14 +107,25 @@
         <div class="booth_name">
           <h3><i class="fa-solid fa-utensils"></i>{{ booth.booth_name }}</h3>
         </div>
-        <div class="heart" onclick="toggleHeart()">
-          <img
-            id="heartImage_{{ booth.booth_name }}"
-            class="heart"
-            src="/static/images/heart_default.png"
-            alt="Heart"
-          />
-        </div>
+        <div class="booth">
+          {% if booth.booth_id|string in heartStates %}
+              <div class="heart" data-booth-id="{{ booth.booth_id }}" onclick="heart('{{ booth.booth_id }}')">
+                  <img
+                      id="heartImage_{{ booth.booth_id }}"
+                      src="/static/images/heart_filled.png" 
+                      alt="Heart"
+                  />
+              </div>
+          {% else %}
+              <div class="heart" data-booth-id="{{ booth.booth_id }}" onclick="heart('{{ booth.booth_id }}')">
+                  <img
+                      id="heartImage_{{ booth.booth_id }}"
+                      src="/static/images/heart_default.png" 
+                      alt="Heart"
+                  />
+              </div>
+          {% endif %}
+      </div>
       </div>
     </div>
 
