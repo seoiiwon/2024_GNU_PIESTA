@@ -1,9 +1,17 @@
-// box 클릭 시 해당 부스 상세 링크로 이동
 document.querySelectorAll('.box').forEach(box => {
-  box.addEventListener('click', function() {
+  box.addEventListener('click', function(event) {
       const url = this.getAttribute('data-url');
       window.location.href = url;
   });
+
+  // heart 클래스의 요소에 클릭 이벤트 리스너 추가
+  const heartElement = box.querySelector('.heart');
+  if (heartElement) {
+      heartElement.addEventListener('click', function(event) {
+          event.stopPropagation(); // 클릭 이벤트 전파 방지
+          toggleHeart('{{ booth.booth_id | urlencode }}');
+      });
+  }
 });
 
 window.onload = function () {
