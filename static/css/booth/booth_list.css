@@ -315,6 +315,7 @@ body {
     margin-left: 3vw;
     margin-top: 3vw;
     width: 7vw;
+    z-index: 100;
   }
 }
 
