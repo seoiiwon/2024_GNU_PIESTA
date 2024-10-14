@@ -17,6 +17,7 @@
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    width: 20px;
   }
   @font-face {
     font-weight: 400; /* 폰트의 두께 */
@@ -350,6 +351,7 @@
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
+    width: 20px;
   }
 
   @font-face {

@@ -215,7 +215,9 @@
         </div>
         <div class="popup-right">
           <span id="popup-detail"></span>
-          <span class="closeButton" onclick="closeModal()">&times;</span>
+          <span class="closeButton" onclick="closeModal()">
+            <img src="{{ url_for('static', path='icons/close_btn.png')}}" alt="">
+          </span>
         </div>
       </div>
     </div>
