@@ -29,6 +29,7 @@ class CommentDelete(BaseModel):
 async def get_comment_page(request: Request, db: Session = Depends(get_db)):
     # 데이터베이스에서 댓글 가져오기
     comments = db.query(CommentModel).all()
+
     # 템플릿에 데이터 전달
     return templates.TemplateResponse(
         "comment/comment.html", {"request": request, "comments": comments}
@@ -46,8 +47,8 @@ async def save_comment(comment: CommentCreate, db: Session = Depends(get_db)):
 
 # 댓글 목록 불러오기
 @router.get("/api/comments", response_model=list[CommentCreate])
-async def read_comments(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
-    comments = db.query(CommentModel).offset(skip).limit(limit).all()
+async def read_comments(db: Session = Depends(get_db)):
+    comments = db.query(CommentModel).all()
     return comments
 
 
