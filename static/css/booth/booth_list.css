@@ -76,7 +76,7 @@ body {
 /* 모바일 디바이스에서 적용되는 css -> 가로 해상도가 1024px(아이패드 프로) 보다 작은 화면에 적용  */
 @media (max-width: 767px) {
   .info .title {
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
   .starCanvas {
     position: fixed;
@@ -87,7 +87,7 @@ body {
     pointer-events: none;
   }
   .info .title {
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
   /* 제목 BOOTH */
   .title {
@@ -156,7 +156,7 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
 
   .box-description {
@@ -273,13 +273,13 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
 
   .box-description {
     font-size: 3vw;
     color: #666666;
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
   }
   i {
     font-size: 7vw;

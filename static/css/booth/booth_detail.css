@@ -50,7 +50,7 @@ font-face {
     display: inline-block;
     padding-right: 2.8vw;
     color: #9F8BEE;
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
 }
 
 .menu_box
@@ -85,7 +85,7 @@ font-face {
     color: #282828;
     /* border-bottom:1.7px solid #ADADAD; */
     padding-bottom: 1.0vw !important;
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
 }
 .content_box
 {
@@ -136,7 +136,7 @@ font-face {
     font-size: 3.05vw;
     font-weight: 500;
     line-height: 1.6; 
-    font-family: "Pretendard";
+    font-family: "Pretendard-Regular";
 }
 
 .fa-instagram
@@ -276,7 +276,7 @@ font-face {
     .booth_detail p 
     {
         font-size: 3.05vw;
-        font-family: "Pretendard";
+        font-family: "Pretendard-Regular";
     }
  
 
@@ -336,14 +336,14 @@ font-face {
     .booth_detail h4
     {
         font-size: 3.8vw;
-        font-family: "Pretendard";
+        font-family: "Pretendard-Regular";
     }
 
     .booth_detail p
     {
         line-height: 2;
         font-size: 2.8vw;
-        font-family: "Pretendard";
+        font-family: "Pretendard-Regular";
     }
     .content_box>div
     {
