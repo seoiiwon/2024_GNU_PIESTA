@@ -169,7 +169,7 @@
       justify-content: center; /* 내용 수평 중앙 정렬 */
       padding: 10px; /* 내부 패딩 */
       font-size: 0.86em; /* 폰트 크기 */
-      font-weight: bold; /* 폰트 두께 */
+      font-weight: 900; /* 폰트 두께 */
       cursor: pointer; /* 커서 스타일 */
       width: 100%; /* 전체 너비 */
       box-sizing:border-box ; /* 패딩 포함 너비 계산 */
@@ -178,7 +178,7 @@
       text-align: center;
       word-break: keep-all;  /* 어절 단위로 줄바꿈 */
       line-height: 1.1;
-      gap: 4px;
+      gap: 1px;
       font-family: "Pretendard-Regular";
   }
   
