@@ -39,6 +39,9 @@ fetch("/static/json/names.json")
 
                     const text = commentDiv.querySelector(".text").textContent;
 
+                    console.log(text);
+                    console.log(password);
+
                     fetch("/api/delete-comment", {
                         method: "POST",
                         headers: {
