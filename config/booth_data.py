@@ -483,6 +483,7 @@ def insert_default_booths(session: Session):
         existing_booth = session.query(Booth).filter_by(booth_name=booth.booth_name).first()
         if existing_booth:
             print(f"부스 '{booth.booth_name}'는 이미 존재합니다.")
+            existing_booth.booth_description = booth.booth_description
         else:
             session.add(booth)
             print(f"부스 '{booth.booth_name}'를 추가합니다.")
