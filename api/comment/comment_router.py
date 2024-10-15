@@ -53,7 +53,7 @@ async def read_comments(db: Session = Depends(get_db)):
 @router.post("/api/delete-comment")
 async def delete_comment(comment: CommentDelete, db: Session = Depends(get_db)):
     if comment.password != ADMIN_COMMENT_PASSWORD:
-        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN)
+        raise HTTPException(status_code=404, detail="Comment not found")
     
     db_comment = (
         db.query(CommentModel).filter(CommentModel.text == comment.text).first()

@@ -152,7 +152,7 @@ body {
   }
   .box-title {
     font-weight: bold;
-    font-size: clamp(0.88em, 2vw, 1.2em);
+    font-size: clamp(0.8em, 2vw, 1.2em);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
