@@ -1,36 +1,36 @@
 from http.client import HTTPException
-from sqlite3 import IntegrityError
-from fastapi import APIRouter, Request, Depends
+from fastapi import APIRouter, Request, Depends, status
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from pydantic import BaseModel
 from config.database import get_db
 from models.models import Comment as CommentModel
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+
+ADMIN_COMMENT_PASSWORD = os.getenv("ADMIN_COMMENT_PASSWORD")
 
 router = APIRouter(tags=["COMMENT"])
 
-# 템플릿 디렉토리 설정
 templates = Jinja2Templates(directory="templates")
 
-
-# Pydantic 모델
 class CommentCreate(BaseModel):
     name: str
     text: str
 
-
 class CommentDelete(BaseModel):
     text: str
+    password: str
 
 
 # HTML 페이지 렌더링
 @router.get("/comment", response_class=HTMLResponse)
 async def get_comment_page(request: Request, db: Session = Depends(get_db)):
-    # 데이터베이스에서 댓글 가져오기
     comments = db.query(CommentModel).all()
 
-    # 템플릿에 데이터 전달
     return templates.TemplateResponse(
         "comment/comment.html", {"request": request, "comments": comments}
     )
@@ -45,19 +45,16 @@ async def save_comment(comment: CommentCreate, db: Session = Depends(get_db)):
     return db_comment
 
 
-# 댓글 목록 불러오기
 @router.get("/api/comments", response_model=list[CommentCreate])
 async def read_comments(db: Session = Depends(get_db)):
     comments = db.query(CommentModel).all()
     return comments
 
-
-from fastapi import HTTPException
-
-
-# 댓글 삭제 엔드포인트
 @router.post("/api/delete-comment")
 async def delete_comment(comment: CommentDelete, db: Session = Depends(get_db)):
+    if comment.password != ADMIN_COMMENT_PASSWORD:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN)
+    
     db_comment = (
         db.query(CommentModel).filter(CommentModel.text == comment.text).first()
     )

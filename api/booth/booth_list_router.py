@@ -13,20 +13,13 @@ from fastapi.responses import RedirectResponse
 router = APIRouter(tags=["BOOTH"])
 templates = Jinja2Templates(directory="./templates/booth")
 
-# 요청 데이터 모델 정의
-
-
 class HeartStateRequest(BaseModel):
     heartStates: List[str]
-
-# 부스 리스트를 가져오는 GET 요청
 
 
 @router.post("/api/save_heart_states")
 async def save_heart_states(request: HeartStateRequest):
     A = [int(booth_id) for booth_id in request.heartStates]
-    print('여긴되니', A)
-
     A_str = json.dumps(A) 
     redirect_url = f"/booth/list?A={A_str}"  
 

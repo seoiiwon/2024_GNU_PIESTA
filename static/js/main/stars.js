@@ -1,17 +1,16 @@
 let width = window.innerWidth;
 let height = window.innerHeight;
-let MAX_PARTICLES = (width * height) / 30000;  // 별의 개수를 조금 더 늘림
+let MAX_PARTICLES = (width * height) / 30000;  
 let DRAW_INTERVAL = 60;
-let canvas = document.querySelector('.starCanvas'); // 클래스 선택자로 변경
+let canvas = document.querySelector('.starCanvas'); 
 let context = canvas.getContext('2d');
 let gradient = null;
 let pixies = [];
 
-// 화면 크기 조정 관련 함수
 function setDimensions() {
     width = window.innerWidth;
     height = window.innerHeight;
-    MAX_PARTICLES = (width * height) / 25000;  // 별의 개수를 약간 증가시킴
+    MAX_PARTICLES = (width * height) / 25000;  
     canvas.width = width;
     canvas.height = height;
 }
@@ -19,34 +18,30 @@ function setDimensions() {
 setDimensions();
 window.addEventListener('resize', setDimensions);
 
-// 가장자리 쪽에 별이 많이 분포되도록 좌표 생성
 function getRandomEdgePosition() {
-    let edgeMargin = 0.2; // 중앙 부분은 빈 공간으로 남기고 가장자리 쪽으로 별이 분포되도록 설정
+    let edgeMargin = 0.2;
     let randX, randY;
     
-    // x 좌표: 화면의 가장자리로 분포 (좌우)
     if (Math.random() < 0.5) {
-        randX = Math.random() * width * edgeMargin; // 왼쪽 가장자리
+        randX = Math.random() * width * edgeMargin; 
     } else {
-        randX = width * (1 - Math.random() * edgeMargin); // 오른쪽 가장자리
+        randX = width * (1 - Math.random() * edgeMargin);
     }
 
-    // y 좌표: 화면의 가장자리로 분포 (상하)
     if (Math.random() < 0.5) {
-        randY = Math.random() * height * edgeMargin; // 상단 가장자리
+        randY = Math.random() * height * edgeMargin; 
     } else {
-        randY = height * (1 - Math.random() * edgeMargin); // 하단 가장자리
+        randY = height * (1 - Math.random() * edgeMargin); 
     }
 
     return {x: randX, y: randY};
 }
 
-// 원형(별) 객체 생성
 function Circle() {
     this.settings = {ttl: 8000, xmax: 5, ymax: 2, rmin: 5, rmax: 10, drt: 1};
 
     this.reset = function () {
-        let pos = getRandomEdgePosition(); // 가장자리 좌표 생성 함수 호출
+        let pos = getRandomEdgePosition(); 
         this.x = pos.x;
         this.y = pos.y;
         this.r = ((this.settings.rmax - 1) * Math.random()) + 1;
@@ -91,7 +86,6 @@ function Circle() {
     };
 }
 
-// 애니메이션 그리기 함수
 function draw() {
     context.clearRect(0, 0, width, height);
 

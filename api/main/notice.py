@@ -38,7 +38,6 @@ async def postNotice(postNoticeSchema : NoticePost, db : Session=Depends(get_db)
         db.rollback()
         raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-# /admin/notice 경로 보호
 @router.get("/admin/notice", response_class=HTMLResponse, status_code=status.HTTP_200_OK)
 async def get_notice(request: Request, password=ADMIN_PASSWORD):
     return templates.TemplateResponse(name="notice.html", context={"request" : request, "password" : password})
