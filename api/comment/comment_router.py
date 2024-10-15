@@ -52,6 +52,9 @@ async def read_comments(db: Session = Depends(get_db)):
 
 @router.post("/api/delete-comment")
 async def delete_comment(comment: CommentDelete, db: Session = Depends(get_db)):
+    print(comment.text)
+    print(comment.password)
+    print(ADMIN_COMMENT_PASSWORD)
     if comment.password != ADMIN_COMMENT_PASSWORD:
         raise HTTPException(status_code=403, detail="Incorrect password")
     
