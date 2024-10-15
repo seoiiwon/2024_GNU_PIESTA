@@ -19,7 +19,6 @@ async def get_booth_detail(booth_name: str, request: Request, db: Session = Depe
     if not booth:
         return HTMLResponse(content="부스를 찾을 수 없습니다.", status_code=404)
 
-    # 포스터 이미지 결정
     if booth.booth_poster:
         jpeg_path = f"./static/images/{booth.booth_poster}.jpeg"
         png_path = f"./static/images/{booth.booth_poster}.png"
@@ -29,8 +28,8 @@ async def get_booth_detail(booth_name: str, request: Request, db: Session = Depe
         elif os.path.exists(png_path):
             booth_image = f"{booth.booth_poster}.png"
         else:
-            booth_image = ""  # 이미지가 없을 경우 빈 문자열 설정
+            booth_image = ""  
     else:
-        booth_image = ""  # booth_poster가 없을 경우 빈 문자열 설정
+        booth_image = "" 
 
     return templates.TemplateResponse("booth_detail.html", {"request": request, "booth": booth, "booth_image": booth_image})

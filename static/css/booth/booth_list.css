@@ -134,7 +134,7 @@ body {
   .box-icon {
     margin-right: 10px; /* 아이콘과 텍스트 사이의 간격 조정 */
     font-size: 5vw; /* 아이콘 크기 */
-    width: 5vw;
+    width: 4vw;
   }
 
   .box {
@@ -152,7 +152,7 @@ body {
   }
   .box-title {
     font-weight: bold;
-    font-size: clamp(0.9em, 2vw, 1.2em);
+    font-size: clamp(0.88em, 2vw, 1.2em);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

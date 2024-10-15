@@ -495,7 +495,6 @@
           "click",
           (function (overlay, content, markerPosition) {
             return function () {
-              // 지도 중심 계산하는거 추가햇슴
               var newCenterPosition = new kakao.maps.LatLng(
                 markerPosition.getLat() + 0.00025,
                 markerPosition.getLng()
@@ -517,7 +516,7 @@
               );
               overlay.setContent(updatedContent);
             };
-          })(overlay, content, marker.getPosition()) // 여기도 getPosition 추가했슴
+          })(overlay, content, marker.getPosition())
         );
       }
 

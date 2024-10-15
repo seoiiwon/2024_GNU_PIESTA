@@ -1,4 +1,3 @@
-// 토글 리스트
 function toggleList(listId) {
   const busLists = ["busList1", "busList2", "busList3"];
 

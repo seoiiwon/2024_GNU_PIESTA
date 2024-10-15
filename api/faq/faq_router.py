@@ -49,7 +49,6 @@ async def postFAQ(postFAQSchema: PostFAQSchema, db: Session=Depends(get_db)):
     
 
 
-# /admin/notice 경로 보호
 @router.get("/admin/faq", response_class=HTMLResponse, status_code=status.HTTP_200_OK)
 async def get_faq(request: Request, password=ADMIN_PASSWORD):
     return templates.TemplateResponse(name="postFAQ.html", context={"request" : request, "password" : password})

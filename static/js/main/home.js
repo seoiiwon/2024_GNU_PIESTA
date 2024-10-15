@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }, scrollThrottleDuration);
   }
 
-  // 터치 이벤트 리스너
   function handleTouchStart(event) {
     startY = event.touches[0].clientY;
   }
@@ -125,5 +124,4 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// 초기 상태 설정
 document.getElementById("lineup/16").classList.add("active");

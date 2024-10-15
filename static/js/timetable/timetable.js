@@ -13,7 +13,6 @@ function showPopup(day, eventTitle, eventTime, eventDetail) {
   let day2RightBG = "#FFC0EB";
   let day3RightBG = "#FFF0A7";
 
-  // 팝업 내용 채우기
   popupTitle.innerHTML = eventTitle.replace(/,/g, "<br>");
   document.getElementById("popup-time").innerText = eventTime;
   popupDetail.innerHTML = eventDetail.replace(/,/g, "<br>");
@@ -36,7 +35,6 @@ function showPopup(day, eventTitle, eventTime, eventDetail) {
   }, 10);
 }
 
-// 모달 밖에 클릭시 팝업 닫기
 window.onclick = function (event) {
   const popup = document.getElementById("popup");
 
