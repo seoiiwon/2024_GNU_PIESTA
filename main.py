@@ -1,6 +1,6 @@
 import uvicorn
 
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from config.database import engine, Base
 from fastapi.responses import FileResponse
@@ -15,6 +15,7 @@ from api.timetable import timetable_router
 from api.main import notice
 from config.booth_data import init_db  
 
+from typing import Set
 
 app = FastAPI()
 
@@ -42,6 +43,25 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+unique_visitors: Set[str] = set()
+total_visitors = 0
+
+@app.middleware("http")
+async def track_visitors(request : Request, call_next):
+    global total_visitors
+
+    client_ip = request.client.host
+    if client_ip not in unique_visitors:
+        unique_visitors.add(client_ip)
+        total_visitors += 1
+    
+    response = await call_next(request)
+    return response
+
+@app.get("/total-visitors")
+async def get_total_visitors():
+    return {"total_unique_visitors" : total_visitors}
 
 # 라우터 포함
 app.include_router(home_router.router)
